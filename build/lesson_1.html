@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Python courses course 1" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="slate/stylesheets/stylesheet.css">
+
+    <title>Einführung in Python</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/tud-python-courses/presentation-notes">View on GitHub</a>
+
+          <h1 id="project_title">Python Kurse - Übung 1</h1>
+          <h2 id="project_tagline">Einführung in Python</h2>
+
+          <section id="downloads">
+            <a class="zip_download_link" href="https://github.com/tud-python-courses/presentation-notes/archive/master.zip">Download this project as a .zip file</a>
+            <!--<a class="tar_download_link" href="">Download this project as a tar.gz file</a>-->
+          </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+          <h1>Präambel</h1>
+
+<ul>
+<li>12 Kurseinheiten</li>
+<li>setzt grundlegende Programmierkentnisse voraus</li>
+<li>Ressourcen
+
+<ul>
+<li><a href="http://auditorium.inf.tu-dresden.de">auditorium</a> &lt;- add link to our group once it exists</li>
+<li>Google (python/python 3 meine frage hier) landet oft in der python 2.7 doku (versionsswitcher im menü)</li>
+<li><a href="docs.python.org">offizielle Dokumentation</a></li>
+<li>unsere <a href="http://github.com/tud-python-courses">Github-Organisation</a></li>
+</ul></li>
+<li>Hinweis: SCM&#39;s sind hilfreich (<a href="https://git-scm.com">git</a>)</li>
+</ul>
+
+<h1>Python Interpreter</h1>
+
+<ul>
+<li>kurz Python Versionen (wir nutzen &gt;3.4)</li>
+<li><a href="http://www.python.org">python</a> installieren</li>
+<li>Unterschiede von <code>python</code> und <code>python3</code></li>
+<li>1 + 1 / &quot;hello world&quot; (string und int operationen), <code>print</code> Befehl</li>
+</ul>
+
+<h1>Python Scripte</h1>
+
+<ul>
+<li><strong>Editor</strong> empfohlen (das ist was wir im Kurs benutzen)
+
+<ul>
+<li><a href="https://atom.io">atom</a> (weil github)</li>
+<li><a href="http://www.sublimetext.com/3">Sublime Text 3</a> (winrar-free)</li>
+<li><a href="http://notepad-plus-plus.org">Notepad++</a> (free)</li>
+<li>vim/emacs (free)</li>
+</ul></li>
+<li><strong>IDE&#39;s</strong><br>
+Benutzen wir hier nicht, da wir kein Kurs über eine IDE machen, sondern über Python selbst (wir beantworten im Kurs keine Fragen zu IDE Problemen)
+
+<ul>
+<li><a href="https://jetbrains.com/pycharm">PyCharm</a> (free + professional für Studenten)</li>
+<li><a href="https://wingware.com/">Wing</a> (kostenpflichtig)</li>
+</ul></li>
+<li><strong>Struktur</strong>
+
+<ul>
+<li>Python Scripte sind Textdateien, die auf <code>.py</code> enden</li>
+<li>Python Module sind ordner mit einer <code>__init__.py</code> Datei (behandeln wir später)</li>
+</ul></li>
+</ul>
+
+<h1>Grundlagen der Sprache</h1>
+
+<p>Python ist eine schwach typisierte Scriptsprache (weakly typed scripting language). Es gibt Typen (anders als in JavaSript), aber Variablen haben kene festen Typen.</p>
+
+<ul>
+<li><p><strong>Kommentare</strong>: <code>#  Dies ist ein Kommentar</code></p></li>
+<li><p><strong>Grundlegende Datentypen</strong>:</p></li>
+</ul>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Funktion</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>object</code></td>
+<td>Basistyp, alles erbt von <code>object</code></td>
+</tr>
+<tr>
+<td><code>int</code></td>
+<td>Ganzzahl &quot;beliebiger&quot; Größe</td>
+</tr>
+<tr>
+<td><code>float</code></td>
+<td>Kommazahl &quot;beliebiger&quot; Größe</td>
+</tr>
+<tr>
+<td><code>bool</code></td>
+<td>Wahrheitswert (True, False)</td>
+</tr>
+<tr>
+<td><code>None</code></td>
+<td>Typ des <code>None</code> objektes</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>Grundtyp aller Typen (z.B. <code>int</code> ist eine Instanz von <code>type</code>)</td>
+</tr>
+<tr>
+<td><code>list</code></td>
+<td>standard Liste</td>
+</tr>
+<tr>
+<td><code>tuple</code></td>
+<td>unveränderbares n-Tupel</td>
+</tr>
+<tr>
+<td><code>set</code></td>
+<td>Menge von Objekten</td>
+</tr>
+<tr>
+<td><code>frozenset</code></td>
+<td>unveränderbare Menge</td>
+</tr>
+<tr>
+<td><code>dict</code></td>
+<td>Hash-Map</td>
+</tr>
+</tbody></table>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Slate theme maintained by <a href="https://github.com/jsncostello">Jason Costello</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+  </body>
+</html>
+
