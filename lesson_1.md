@@ -12,7 +12,6 @@
 - kurz Python Versionen (wir nutzen >3.4)
 - [python](http://www.python.org) installieren
 - Unterschiede von `python` und `python3`
-- 1 + 1 / "hello world" (string und int operationen), `print` Befehl
 
 
 # Python Scripte
