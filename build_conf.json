@@ -1,0 +1,18 @@
+{
+    "lessons": [
+        {
+            "number": 1,
+            "title": "Einführung in Python",
+            "source": "lesson_1.md"
+        }
+    ],
+    "theme": {
+        "stylesheets": [
+            "slate/stylesheets/stylesheet.css"
+        ]
+    },
+    "template": "use_default",
+    "static_template_variables": {
+        "repository_link": "https://github.com/tud-python-courses/lessons"
+    }
+}
