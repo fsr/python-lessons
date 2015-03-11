@@ -76,7 +76,7 @@ if __name__ == '__main__':
 
 ## Wichtige Eigenschaften
 - Keine Semikolons
-- Kein geschweiften Klammern für Codeblöcke 
+- Kein geschweiften Klammern für Codeblöcke
 - Einrückungen zeigen Codeblöcke an
 - Funktionsaufrufe immer mit runden Klammern
 - Funktionen definieren mit `def <funktionsname>([parameter_liste, ...]):`
@@ -98,15 +98,15 @@ if __name__ == '__main__':
 - __Klassen:__ *PascalCase*, alles direkt zusammen, groß beginnend und jedes neue Wort groß
 - __Variablen, Funktionen, Methoden:__ *snake_case*, alles klein und Wörter mit Unterstrich getrennt  
   __Merke:__ `-` ist als Operator __*niemals*__ in Namen zulässig (da Python eine Kontextfreie Sprache ist)
-- __protected Variablen, Funktionen, Methoden:__ beginnen mit Unterstrich `_` oder mit `__` für private
+- __protected Variablen, Funktionen, Methoden:__ beginnen mit Unterstrich `_` oder mit `__` für private  
   __Merke:__ Python hat kein Zugriffsmanagement. Die Regel mit dem Unterstrich ist nur eine Konvention um zu verhindern, dass ander Teile des Codes nutzen, der eine hohe Wahrscheinlichkeit hat in Zukuft verändert zu werden.
 
 # Strings
 ## Grundlagen
-- Der Typ des Strings ist `str`. 
+- Der Typ eines Strings ist `str`.
 - Strings sind in Python immutable (nicht veränderbar). Jede String Operation erzeugt einen neuen String.
 - Ein String kann erzeugt werden mit einer Zeichenkette in Anführungszeichen, `''` oder `""` (beide sind äquivalent).
-- rohe Srtings mir dem Präfix `r`, `r"mystring"` oder `r'mystring'`
+- rohe Strings mir dem Präfix `r`, `r"mystring"` oder `r'mystring'`
 - Strings in Python 3 sind UTF-8 encoded.
 
 ## Verknüpfen
@@ -114,25 +114,28 @@ if __name__ == '__main__':
   ```py
   'Hallo' + '_' + 'Welt' #  => 'Hallo_Welt'
 ```
-- Mehrere Strings können via `str.join` verknüpft werden
+- Listen, Tupel etc. von Strings können via `str.join` verknüpft werden
   ```py
 '_'.join(['Hallo', 'Welt']) #  => 'Hallo_Welt'
-    ``` 
+    ```
     Dabei ist der String auf welchem die Methode aufgerufen wird der Separator.
 
 ## Formatierung
 
+
+Wir wollen den String `'my string 4 vier'` erzeugen.
+
 ```py
-# Wir wollen den String 'my string 4 vier' erzeugen.
-
-
 # mit `str.format()`  
 
-'my string {} {}'.format(4, 'vier') 
+'my string {} {}'.format(4, 'vier')
 # in Reihenfolge der argumente
 
 'my string {number} {name}'.format(name='vier', number=4)`
 # via Name, Reihenfolge egal
+
+'my string {number} {}'.format('vier', number=4)
+# oder beides kombiniert
 
 
 # und mit dem %-Operator
@@ -140,6 +143,6 @@ if __name__ == '__main__':
 'string %d %s' % (4, 'vier')
 # in Reihenfolge
 
-'string %(number)d %(name)s' % {number:4, name:'vier'} 
-# via Name Namen
+'string %(number)d %(name)s' % {number:4, name:'vier'}
+# via Name
   ```
