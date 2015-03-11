@@ -81,26 +81,23 @@ if __name__ == '__main__':
 - Funktionsaufrufe immer mit runden Klammern
 - Funktionen definieren mit `def <funktionsname>([parameter_liste, ...]):`
 - Variablen mit der Struktur `__name__` sind spezielle werte (gewöhnlich aus `builtin` oder methoden von standardtypen)  
-  z.B. `__file__` ist immer der Name des scriptes (in welchem `__file__` aufgerufen wird)
+  z.B. `__file__` ist immer der Name des scriptes (in welchem `__file__` aufgerufen wird),  
+  `__builtin__` ist das module mit den immer verfügbaren funktionen und datentypen wie `list` oder `tuple`
 
 # Operatoren
-- __mathematisch:__  
-  `+`, `-`, `*`, `/` 
+- __mathematisch:__ `+`, `-`, `*`, `/` 
 - __boolean:__  
   `<`, `>`, `<=`, `>=`, `==` (Wert gleich), `is` (gleiches Objekt/gleiche Referenz)
-- __logisch:__  
-  `and`, `or`, `not`  
-  __Vergleichendes Beispiel:__  
-   `(a && b) || (!c)` aus __C__ oder __Java__ entspricht `(a and b) or not c` in __Python__
-- __binär:__  
-  `&`, `|`, `<<`, `>>`, `^` (xor), `~` (invertieren)
+- __logisch:__ `and`, `or`, `not`  
+  `(a && b) || (!c)` aus C oder Java entspricht `(a and b) or not c` in Python
+- __binär:__ `&`, `|`, `<<`, `>>`, `^` (xor), `~` (invertieren)
 - __Accessoren:__ `.` (für Methoded und attribute), `[]` (für Datenstrukturen mit Index)
 
 # Namenskonventionen
 - __Klassen:__ *PascalCase*, alles direkt zusammen, groß beginnend und jedes neue Wort groß
 - __Variablen, Funktionen, Methoden:__ *snake_case*, alles klein und Wörter mit Unterstrich getrennt  
-  __Merke:__ `-` ist als Operator __*niemals*__ in Namen zulässig (da Python eine Kontextfreie Sprache ist)
-- __protected Variablen, Funktionen, Methoden:__ beginnen mit Unterstrich `_` oder mit `__` für private  
+  __Merke:__ Da '-' ein Operator ist, ist es in Namen von Variablen, Funktionene etc. __*nicht*__ zulässig (damit Python eine Kontextfreie Sprache ist)
+- __protected Variablen, Funktionen, Methoden:__ beginnen mit einem Unterstrich `_` oder mit zweien `__` für private  
   __Merke:__ Python hat kein Zugriffsmanagement. Die Regel mit dem Unterstrich ist nur eine Konvention um zu verhindern, dass ander Teile des Codes nutzen, der eine hohe Wahrscheinlichkeit hat in Zukuft verändert zu werden.
 
 # Strings
