@@ -6,7 +6,7 @@
     - Google (python/python 3 meine frage hier) landet oft in der python 2.7 doku (versionsswitcher im menü)
     - [offizielle Dokumentation](docs.python.org)
     - unsere [Github-Organisation](http://github.com/tud-python-courses)
-- Hinweis: SCM's sind hilfreich ([git](https://git-scm.com))
+- Hinweis: SCM's sind hilfreich ([git](https://git-scm.com), [mercurial](http://mercurial.selenic.com/))
 
 
 # Python Interpreter
