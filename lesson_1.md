@@ -31,7 +31,18 @@ Benutzen wir hier nicht, da wir kein Kurs über eine IDE machen, sondern über P
 # Grundlagen der Sprache
 Python ist eine schwach typisierte Scriptsprache (weakly typed scripting language). Es gibt Typen (anders als in JavaSript), aber Variablen haben kene festen Typen.
 
-- __Kommentare__: `#  Dies ist ein Kommentar`
+- __Kommentare__:
+
+```py
+# in python nur einzeiler Kommentare
+
+def my_function(params):
+    """
+    Oder docstrings wie dieser,
+    aber nur zu beginn einer Funktions- oder Klassendefinition
+    """
+    pass
+```
 
 - __Grundlegende Datentypen__:
 
@@ -40,7 +51,7 @@ Python ist eine schwach typisierte Scriptsprache (weakly typed scripting languag
 | `object` | Basistyp, alles erbt von `object` |
 | `int` | Ganzzahl "beliebiger" Größe |
 | `float` | Kommazahl "beliebiger" Größe |
-| `bool` | Wahrheitswert (True, False) |
+| `bool` | Wahrheitswert (`True`, `False`) |
 | `None` | Typ des `None` objektes |
 | `type` | Grundtyp aller Typen (z.B. `int` ist eine Instanz von `type`) |
 | `list` | standard Liste |
