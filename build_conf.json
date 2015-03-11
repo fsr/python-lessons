@@ -4,6 +4,11 @@
             "number": 1,
             "title": "Einführung in Python",
             "source": "lesson_1.md"
+        },
+        {
+            "number": 2,
+            "title": "Python Programmierparadigmen",
+            "source": "lesson_2.md"
         }
     ],
     "theme": {

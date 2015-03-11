@@ -8,6 +8,7 @@
     - unsere [Github-Organisation](http://github.com/tud-python-courses)
 - Hinweis: SCM's sind hilfreich ([git](https://git-scm.com))
 
+
 # Python Interpreter
 - kurz Python Versionen (wir nutzen >3.4)
 - [python](http://www.python.org) installieren
@@ -19,6 +20,7 @@
     - [atom](https://atom.io) (weil github)
     - [Sublime Text 3](http://www.sublimetext.com/3) (winrar-free)
     - [Notepad++](http://notepad-plus-plus.org) (free)
+    - [cloud9](https://c9.io) (online, free für open source projekte)
     - vim/emacs (free)
 - __IDE's__  
 Benutzen wir hier nicht, da wir kein Kurs über eine IDE machen, sondern über Python selbst (wir beantworten im Kurs keine Fragen zu IDE Problemen)
@@ -27,6 +29,7 @@ Benutzen wir hier nicht, da wir kein Kurs über eine IDE machen, sondern über P
 - __Struktur__
     - Python Scripte sind Textdateien, die auf `.py` enden
     - Python Module sind ordner mit einer `__init__.py` Datei (behandeln wir später)
+
 
 # Grundlagen der Sprache
 Python ist eine schwach typisierte Scriptsprache (weakly typed scripting language). Es gibt Typen (anders als in JavaSript), aber Variablen haben kene festen Typen.
@@ -44,10 +47,10 @@ def my_function(params):
     pass
 ```
 
-- __Grundlegende Datentypen__:
+- __builtin Datentypen__:
 
 | Name | Funktion |
-|------|----------|
+|:----:|:---------|
 | `object` | Basistyp, alles erbt von `object` |
 | `int` | Ganzzahl "beliebiger" Größe |
 | `float` | Kommazahl "beliebiger" Größe |
@@ -59,3 +62,41 @@ def my_function(params):
 | `set` | Menge von Objekten |
 | `frozenset` | unveränderbare Menge |
 | `dict` | Hash-Map |
+
+# Das erste Programm
+Ein simples "Hallo Welt"-Programm
+
+```py
+def my_function():
+    print('Hallo Welt!')
+
+if __name__ == '__main__':
+    my_function()
+```
+
+## Wichtige Eigenschaften
+- Keine Semikolons
+- Kein geschweiften Klammern für Codeblöcke 
+- Einrückungen zeigen Codeblöcke an
+- Funktionsaufrufe immer mit runden Klammern
+- Funktionen definieren mit `def <funktionsname>([parameter_liste, ...]):`
+- Variablen mit `__name__` sind spezielle werte (gewöhnlich aus `builtin` oder standardtypen)
+- Scripte können auch komplett ohne Funktionen ausgeführt werden (nicht empfohlen)
+
+# Operatoren
+- __mathematisch:__  
+  `+`, `-`, `*`, `/`
+- __logisch:__  
+  `and` (logisches "und"), `or` (logisches "oder"), `not` (logisches "nicht")  
+  __Vergleichendes Beispiel:__  
+   `(a && b) || (!c)` aus __C__ oder __Java__ entspricht `(a and b) or (not c)` in __Python__
+- __binär:__  
+  `&`, `|`, `<<`, `>>`, `^` (xor), `~` (invertieren)
+- __Accessoren:__ `.` (für Methoded und attribute), `[]` (für Datenstrukturen mit Index)
+
+# Namenskonventionen
+- __Klassen:__ *PascalCase*, groß beginnend und jedes neue Wort groß
+- __Variablen, Funktionen, Methoden:__ *snake_case*, klein beginnend und Wörter mit Unterstrich getrennt  
+  __Merke:__ `-` ist als Operator __*niemals*__ in Namen zulässig (da Python eine Kontextfreie Sprache ist)
+- __protected Variablen, Funktionen, Methoden:__ beginnen mit Unterstrich `_` oder mit `__` für private
+  __Merke:__ Python hat kein Zugriffsmanagement. Die Regel mit dem Unterstrich ist nur eine Konvention um zu verhindern, dass ander Teile des Codes nutzen, der eine hohe Wahrscheinlichkeit hat in Zukuft verändert zu werden.
