@@ -95,8 +95,51 @@ if __name__ == '__main__':
 - __Accessoren:__ `.` (für Methoded und attribute), `[]` (für Datenstrukturen mit Index)
 
 # Namenskonventionen
-- __Klassen:__ *PascalCase*, groß beginnend und jedes neue Wort groß
-- __Variablen, Funktionen, Methoden:__ *snake_case*, klein beginnend und Wörter mit Unterstrich getrennt  
+- __Klassen:__ *PascalCase*, alles direkt zusammen, groß beginnend und jedes neue Wort groß
+- __Variablen, Funktionen, Methoden:__ *snake_case*, alles klein und Wörter mit Unterstrich getrennt  
   __Merke:__ `-` ist als Operator __*niemals*__ in Namen zulässig (da Python eine Kontextfreie Sprache ist)
 - __protected Variablen, Funktionen, Methoden:__ beginnen mit Unterstrich `_` oder mit `__` für private
   __Merke:__ Python hat kein Zugriffsmanagement. Die Regel mit dem Unterstrich ist nur eine Konvention um zu verhindern, dass ander Teile des Codes nutzen, der eine hohe Wahrscheinlichkeit hat in Zukuft verändert zu werden.
+
+# Strings
+## Grundlagen
+- Der Typ des Strings ist `str`. 
+- Strings sind in Python immutable (nicht veränderbar). Jede String Operation erzeugt einen neuen String.
+- Ein String kann erzeugt werden mit einer Zeichenkette in Anführungszeichen, `''` oder `""` (beide sind äquivalent).
+- rohe Srtings mir dem Präfix `r`, `r"mystring"` oder `r'mystring'`
+- Strings in Python 3 sind UTF-8 encoded.
+
+## Verknüpfen
+- Strings können durch Konkatenation verknüpft werden  
+  ```py
+  'Hallo' + '_' + 'Welt' #  => 'Hallo_Welt'
+```
+- Mehrere Strings können via `str.join` verknüpft werden
+  ```py
+'_'.join(['Hallo', 'Welt']) #  => 'Hallo_Welt'
+    ``` 
+    Dabei ist der String auf welchem die Methode aufgerufen wird der Separator.
+
+## Formatierung
+
+```py
+# Wir wollen den String 'my string 4 vier' erzeugen.
+
+
+# mit `str.format()`  
+
+'my string {} {}'.format(4, 'vier') 
+# in Reihenfolge der argumente
+
+'my string {number} {name}'.format(name='vier', number=4)`
+# via Name, Reihenfolge egal
+
+
+# und mit dem %-Operator
+
+'string %d %s' % (4, 'vier')
+# in Reihenfolge
+
+'string %(number)d %(name)s' % {number:4, name:'vier'} 
+# via Name Namen
+  ```
