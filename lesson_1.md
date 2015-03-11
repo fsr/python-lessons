@@ -1,8 +1,8 @@
-# Präambel
+# Über diesen Kurs
 - 12 Kurseinheiten
 - setzt grundlegende Programmierkentnisse voraus
 - Ressourcen
-    - [auditorium](http://auditorium.inf.tu-dresden.de) <- add link to our group once it exists
+    - [auditorium](http://auditorium.inf.tu-dresden.de) # TODO add link to our group once it exists
     - Google (python/python 3 meine frage hier) landet oft in der python 2.7 doku (versionsswitcher im menü)
     - [offizielle Dokumentation](docs.python.org)
     - unsere [Github-Organisation](http://github.com/tud-python-courses)
@@ -80,16 +80,18 @@ if __name__ == '__main__':
 - Einrückungen zeigen Codeblöcke an
 - Funktionsaufrufe immer mit runden Klammern
 - Funktionen definieren mit `def <funktionsname>([parameter_liste, ...]):`
-- Variablen mit `__name__` sind spezielle werte (gewöhnlich aus `builtin` oder standardtypen)
-- Scripte können auch komplett ohne Funktionen ausgeführt werden (nicht empfohlen)
+- Variablen mit der Struktur `__name__` sind spezielle werte (gewöhnlich aus `builtin` oder methoden von standardtypen)  
+  z.B. `__file__` ist immer der Name des scriptes (in welchem `__file__` aufgerufen wird)
 
 # Operatoren
 - __mathematisch:__  
-  `+`, `-`, `*`, `/`
+  `+`, `-`, `*`, `/` 
+- __boolean:__  
+  `<`, `>`, `<=`, `>=`, `==` (Wert gleich), `is` (gleiches Objekt/gleiche Referenz)
 - __logisch:__  
-  `and` (logisches "und"), `or` (logisches "oder"), `not` (logisches "nicht")  
+  `and`, `or`, `not`  
   __Vergleichendes Beispiel:__  
-   `(a && b) || (!c)` aus __C__ oder __Java__ entspricht `(a and b) or (not c)` in __Python__
+   `(a && b) || (!c)` aus __C__ oder __Java__ entspricht `(a and b) or not c` in __Python__
 - __binär:__  
   `&`, `|`, `<<`, `>>`, `^` (xor), `~` (invertieren)
 - __Accessoren:__ `.` (für Methoded und attribute), `[]` (für Datenstrukturen mit Index)
