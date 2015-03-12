@@ -1,8 +1,10 @@
 \documentclass[]{tudbeamer}
 %\documentclass[]{beamer}
+%\usetheme{Dresden}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
 \usepackage{listings}
+\usepackage{comment}
 \usepackage{verbatim}
 \usepackage{menukeys}
 \usepackage{ngerman}
@@ -28,6 +30,10 @@
 }
 
 
+% Does not work in tables! You have to use \lstinline{} instead!
+\newcommand{\codeline}[1]{\colorbox{codegray}{\lstinline{#1}}}
+
+
 
 \title{Python-Kurs}
 \subtitle{Lesson}
@@ -41,12 +47,14 @@
 \tableofcontents
 \end{frame}
 
+\begin{comment}
 % -------------------------- Sectionname ---------------------------------
-%\section{Sectionname}
-%\begin{frame}[fragile]{Sectionname} % Use [fragile] for Frames with lstlisting!
-% Write Code in the following Block
-%\begin{lstlisting}
-%\end{lstlisting}
-%\end{frame}
+\section{Sectionname}
+\begin{frame}[fragile]{Sectionname} % Use [fragile] for Frames with lstlisting!
+Write Code in the following Block
+\begin{lstlisting}
+\end{lstlisting}
+\end{frame}	
+\end{comment}
 
 \end{document}
