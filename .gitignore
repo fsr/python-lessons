@@ -1,5 +1,7 @@
 build/
-
+.texpadtmp/
+*.pdf
+*.pyg
 c9/
 
 *.log
