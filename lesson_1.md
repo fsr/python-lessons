@@ -10,9 +10,11 @@
 
 
 # Python Interpreter
-- kurz Python Versionen (wir nutzen >3.4)
-- [python](http://www.python.org) installieren
-- Unterschiede von `python` und `python3`
+- Die zwei verbreitet verwendeten Python Versionen sind 2.7 und 3.4, wir werden 3.4 nutzen, weil es cooler ist und bessere Features hat
+- Python kann auf [hier](http://www.python.org) heruntergeladen und installiert werden oder mit dem Paketmanager eurer Wahl. (Das Paket sollte `python3` und `python3-dev` sein, außer unter Arch)
+- Python funktioniert besser unter Linux und Mac (ist aber okay unter Windows)
+- Den Interpreter startet man mit `python3` im Terminal oder mit `Python.exe`
+- Der Interpreter stellt die volle Funktionoalität von Python bereit, einschließlich dem Erstellen von Klassen und Funktionen
 
 
 # Python Scripte
@@ -59,8 +61,8 @@ def my_function(params):
 | `type` | Grundtyp aller Typen (z.B. `int` ist eine Instanz von `type`) |
 | `list` | standard Liste |
 | `tuple` | unveränderbares n-Tupel |
-| `set` | Menge von Objekten |
-| `frozenset` | unveränderbare Menge |
+| `set` | (mathematische) Menge von Objekten |
+| `frozenset` | unveränderbare (mathematische) Menge von Objekten |
 | `dict` | Hash-Map |
 
 # Das erste Programm
