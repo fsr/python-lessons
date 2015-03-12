@@ -30,7 +30,7 @@ Benutzen wir hier nicht, da wir kein Kurs über eine IDE machen, sondern über P
     - [Wing](https://wingware.com/) (kostenpflichtig)
 - __Struktur__
     - Python Scripte sind Textdateien, die auf `.py` enden
-    - Python Module sind ordner mit einer `__init__.py` Datei (behandeln wir später)
+    - Python Packages sind ordner mit einer `__init__.py` Datei (behandeln wir später)
 
 
 # Grundlagen der Sprache
@@ -92,7 +92,7 @@ if __name__ == '__main__':
   `<`, `>`, `<=`, `>=`, `==` (Wert gleich), `is` (gleiches Objekt/gleiche Referenz)
 - __logisch:__ `and`, `or`, `not`  
   `(a && b) || (!c)` aus C oder Java entspricht `(a and b) or not c` in Python
-- __binär:__ `&`, `|`, `<<`, `>>`, `^` (xor), `~` (invertieren)
+- __bitweise:__ `&`, `|`, `<<`, `>>`, `^` (xor), `~` (invertieren)
 - __Accessoren:__ `.` (für Methoded und attribute), `[]` (für Datenstrukturen mit Index)
 
 # Namenskonventionen
