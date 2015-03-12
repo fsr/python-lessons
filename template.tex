@@ -7,13 +7,30 @@
 \usepackage{menukeys}
 \usepackage{ngerman}
 \usepackage{listings}
+\usepackage{color}
 
-\lstset{language=Python}
+\definecolor{codegray}{gray}{0.97}
+\definecolor{stringgreen}{rgb}{0.0, 0.7, 0.6}
+
+\lstset{language=Python,
+	backgroundcolor=\color{codegray},
+	frame=single,
+	basicstyle=\ttfamily\footnotesize,
+	keywordstyle=\color{orange},
+	commentstyle=\color{gray},
+	numberstyle=\tiny\color{gray},
+	stringstyle=\color{stringgreen},
+	tabsize=4,
+	showstringspaces=false,
+	breaklines=true,
+	keepspaces=true,
+	numbers=left,
+}
 
 
 
 \title{Python-Kurs}
-%\subtitle{Lesson}
+\subtitle{Lesson}
 
 \begin{document}
 
@@ -27,8 +44,8 @@
 % -------------------------- Sectionname ---------------------------------
 %\section{Sectionname}
 %\begin{frame}[fragile]{Sectionname} % Use [fragile] for Frames with lstlisting!
-%\begin{lstlisting}  % Start your code-block
-
+% Write Code in the following Block
+%\begin{lstlisting}
 %\end{lstlisting}
 %\end{frame}
 
