@@ -6,3 +6,5 @@ c9/
 
 *.log
 *.aux
+*.vrb
+*.out
