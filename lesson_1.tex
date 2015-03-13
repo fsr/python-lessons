@@ -38,6 +38,7 @@
 
 \title{Python-Kurs}
 \subtitle{Lesson}
+\author{Felix}
 
 \begin{document}
 
@@ -227,31 +228,36 @@
 	\end{itemize}
 \end{frame}
 
-\begin{comment}
+
+% ------------------------ Stings - Formatierung ------------------------------
 \subsection{Formatierung}
-Wir wollen den String `'my string 4 vier'` erzeugen.
+\begin{frame}[fragile]{Strings - Formatierung}
+	Wir wollen den String \codeline{'my string 4 vier'} erzeugen.
 
-```py
-# mit `str.format()`  
+	\begin{lstlisting}
+	# mit `str.format()`  
 
-'my string {} {}'.format(4, 'vier')
-# in Reihenfolge der argumente
+	'my string {} {}'.format(4, 'vier')
+	# in Reihenfolge der argumente
 
-'my string {number} {name}'.format(name='vier', number=4)`
-# via Name, Reihenfolge egal
+	'my string {number} {name}'.format(name='vier', number=4)`
+	# via Name, Reihenfolge egal
 
-'my string {number} {}'.format('vier', number=4)
-# oder beides kombiniert
+	'my string {number} {}'.format('vier', number=4)
+	# oder beides kombiniert
+	\end{lstlisting}
+\end{frame}
 
+\begin{frame}[fragile]{Strings - Formatierung}
+	Wir wollen den String \codeline{'my string 4 vier'} erzeugen.
+	\begin{lstlisting}
+	# und mit dem %-Operator
 
-# und mit dem %-Operator
+	'string %d %s' % (4, 'vier')
+	# in Reihenfolge
 
-'string %d %s' % (4, 'vier')
-# in Reihenfolge
-
-'string %(number)d %(name)s' % {number:4, name:'vier'}
-# via Name
-  ```
-\end{comment}
-
+	'string %(number)d %(name)s' % {number:4, name:'vier'}
+	# via Name
+	\end{lstlisting}
+\end{frame}
 \end{document}
