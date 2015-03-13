@@ -3,12 +3,13 @@
         {
             "number": 1,
             "title": "Einführung in Python",
-            "source": "lesson_1.md"
+            "source": "lesson_1.tex",
+            "pdf": true
         },
         {
             "number": 2,
             "title": "Python Programmierparadigmen",
-            "source": "lesson_2.md"
+            "source": "lesson_2.tex"
         }
     ],
     "theme": {

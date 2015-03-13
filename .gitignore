@@ -3,3 +3,6 @@ build/
 *.pdf
 *.pyg
 c9/
+
+*.log
+*.aux
