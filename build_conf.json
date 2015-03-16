@@ -1,4 +1,12 @@
 {
+    "builds": [
+        {
+            "source_dir": "latex/slides",
+            "target_dir": "build/pdf",
+            "command": "pdflatex",
+            "files": ["lesson_1.tex"]
+        }
+    ]
     "files": [
         {
             "number": 1,
