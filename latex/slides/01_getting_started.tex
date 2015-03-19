@@ -92,17 +92,7 @@
     Python ist eine schwach typisierte Scriptsprache (weakly typed scripting language). Es gibt Typen (anders als in JavaSript), aber Variablen haben keine festen Typen.\\
 
     \textbf{Kommentare:}
-    \begin{lstlisting}
-		# in python nur einzeilige Kommentare
-		
-		def my_function(params):
-		    """
-		    Oder docstrings wie dieser,
-		    aber nur zu beginn einer Funktions-
-		    oder Klassendefinition
-		    """
-		    pass
-    \end{lstlisting}
+    \lstinputlisting{resources/01_getting_started/comments.py}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -128,13 +118,7 @@
 \section{Das erste Programm}
 \begin{frame}[fragile]{Das erste Programm}
 	Ein simples \glqq{}Hallo Welt\grqq{}-Programm:\\[.5cm]
-	\begin{lstlisting}
-		def my_function():
-		    print('Hallo Welt!')
-		
-		if __name__ == '__main__':
-		    my_function()
-	\end{lstlisting}
+	\lstinputlisting{resources/01_getting_started/hello_world.py}
 \end{frame}
 
 
@@ -180,10 +164,10 @@
 \end{frame}
 
 
-% ------------------------- Stings - Grundlagen -------------------------------
+% ------------------------- Strings - Grundlagen -------------------------------
 \section{Strings}
 \subsection{Grundlagen}
-\begin{frame}[fragile]{Stings - Grundlagen}
+\begin{frame}[fragile]{Strings - Grundlagen}
 	\begin{itemize}
 	    \item Der Typ eines Strings ist \codeline{str}.
 	    \item Strings sind in Python immutable (nicht veränderbar). Jede String Operation erzeugt einen neuen String.
@@ -194,53 +178,30 @@
 \end{frame}
 
 
-% ------------------------- Stings - Verknüpfen -------------------------------
+% ------------------------- Strings - Verknüpfen -------------------------------
 \subsubsection{Verknüpfen}
-\begin{frame}[fragile]{Stings - Verknüpfen}
+\begin{frame}[fragile]{Strings - Verknüpfen}
 	\begin{itemize}
 	    \item Strings können durch Konkatenation verknüpft werden \\
-	    \begin{lstlisting}
-			'Hallo' + '_' + 'Welt' #  => 'Hallo_Welt'
-		\end{lstlisting}  
+	    \lstinputlisting[lastline=1]{resources/01_getting_started/string_concatenation.py}  
 	    \item Listen, Tupel etc. von Strings können via `str.join` verknüpft werden \\
-	    \begin{lstlisting}
-			'_'.join(['Hallo', 'Welt']) #  => 'Hallo_Welt'
-		\end{lstlisting}
+	    \lstinputlisting[firstline=3]{resources/01_getting_started/string_concatenation.py}
 	    Dabei ist der String auf welchem die Methode aufgerufen wird der Separator.
 	\end{itemize}
 \end{frame}
 
 
-% ------------------------ Stings - Formatierung ------------------------------
+% ------------------------ Strings - Formatierung ------------------------------
 \subsection{Formatierung}
 \begin{frame}[fragile]{Strings - Formatierung}
 	Wir wollen den String \codeline{'my string 4 vier'} erzeugen.
 
-	\begin{lstlisting}
-	# mit `str.format()`  
-
-	'my string {} {}'.format(4, 'vier')
-	# in Reihenfolge der argumente
-
-	'my string {number} {name}'.format(name='vier', number=4)`
-	# via Name, Reihenfolge egal
-
-	'my string {number} {}'.format('vier', number=4)
-	# oder beides kombiniert
-	\end{lstlisting}
+	\lstinputlisting[lastline=10]{resources/01_getting_started/string_format.py}
 \end{frame}
 
 \begin{frame}[fragile]{Strings - Formatierung}
 	Wir wollen den String \codeline{'my string 4 vier'} erzeugen.
-	\begin{lstlisting}
-	# und mit dem %-Operator
-
-	'string %d %s' % (4, 'vier')
-	# in Reihenfolge
-
-	'string %(number)d %(name)s' % {number:4, name:'vier'}
-	# via Name
-	\end{lstlisting}
+	\lstinputlisting[firstline=12]{resources/01_getting_started/string_format.py}
 \end{frame}
 
 
