@@ -32,15 +32,15 @@
 % own content here
 
 % --------------------------- Über den Kurs -----------------------------------
-\section{Über diesen Kurs}
-\begin{frame}{Über diesen Kurs}
+\section{\"Uber diesen Kurs}
+\begin{frame}{\"Uber diesen Kurs}
 	\begin{itemize}
     	\item 12 Kurseinheiten
     	\item setzt grundlegende Programmierkentnisse voraus
     	\item Ressourcen
     	\begin{itemize}
     	    \item \href{http://auditorium.inf.tu-dresden.de}{auditorium} %TODO: add link to our group once it exists
-	        \item Google (python/python 3 meine frage hier) landet oft in der python 2.7 Doku (Versionsswitcher im Menü)
+	        \item Google (python/python 3 meine frage hier) landet oft in der python 2.7 Doku (Versionsswitcher im Men\"u)
     	    \item \href{docs.python.org}{offizielle Dokumentation}
     	    \item unsere \href{https://github.com/fsr}{Github-Organisation}
     	\end{itemize}
@@ -56,7 +56,7 @@
     	\item Python kann auf \href{http://www.python.org}{hier} heruntergeladen und installiert werden oder mit dem Paketmanager eurer Wahl. (Das Paket sollte \texttt{python3} und \texttt{python3-dev} sein, au\ss{}er unter Arch)
     	\item Python funktioniert besser unter Linux und Mac (ist aber okay unter Windows)
     	\item Den Interpreter startet man mit \texttt{python3} im Terminal oder mit \texttt{Python.exe}
-    	\item Der Interpreter stellt die volle Funktionalität von Python bereit, einschließ\ss{}lich dem Erstellen von Klassen und Funktionen
+    	\item Der Interpreter stellt die volle Funktionalit\"at von Python bereit, einschließ\ss{}lich dem Erstellen von Klassen und Funktionen
 	\end{itemize}
 \end{frame}
 
@@ -69,18 +69,18 @@
         \item \href{https://atom.io}{atom} (weil Github)
         \item \href{http://www.sublimetext.com/3}{Sublime Text 3} (\glqq{}Winrar-free\grqq{})
         \item \href{http://notepad-plus-plus.org}{Notepad++} (free)
-        \item \href{https://c9.i}{cloud9} (online, free für open source Projekte)
+        \item \href{https://c9.i}{cloud9} (online, free f\"ur open source Projekte)
         \item vim/emacs (free)
     \end{itemize}
-    \item[IDEs] Benutzen wir hier nicht, da wir kein Kurs über eine IDE machen, sondern über Python selbst (wir beantworten im Kurs keine Fragen zu IDE Problemen)
+    \item[IDEs] Benutzen wir hier nicht, da wir kein Kurs \"uber eine IDE machen, sondern \"uber Python selbst (wir beantworten im Kurs keine Fragen zu IDE Problemen)
    	\begin{itemize}
-       	\item \href{https://jetbrains.com/pycharm}{PyCharm} (free + professional für Studenten)
+       	\item \href{https://jetbrains.com/pycharm}{PyCharm} (free + professional f\"ur Studenten)
        	\item \href{https://wingware.com/}{Wing} (kostenpflichtig)
    	\end{itemize}
    	\item[Struktur]
    	\begin{itemize}
        	\item Python Scripte sind Textdateien, die auf \texttt{.py} enden
-        \item Python Packages sind Ordner mit einer \texttt{\_\_init\_\_.py} Datei (behandeln wir später)
+        \item Python Packages sind Ordner mit einer \texttt{\_\_init\_\_.py} Datei (behandeln wir sp\"ater)
     \end{itemize}
 \end{description}
 \end{frame}
@@ -110,15 +110,15 @@
 	\begin{tabular}{c|l}
 		Name & Funktion \\ \hline
 		\texttt{object} & Basistyp, alles erbt von \texttt{object} \\
-		\texttt{int} & Ganzzahl \glqq{}beliebiger\grqq{} Grö\ss{}e \\
-		\texttt{float} & Kommazahl \glqq{}beliebiger\grqq{} Grö\ss{}e \\
+		\texttt{int} & Ganzzahl \glqq{}beliebiger\grqq{} Gr\"o\ss{}e \\
+		\texttt{float} & Kommazahl \glqq{}beliebiger\grqq{} Gr\"o\ss{}e \\
 		\texttt{bool} & Wahrheitswert (\texttt{True}, \texttt{False})\\
 		\texttt{None} & Typ des \texttt{None}-Objektes \\
 		\texttt{type} & Grundtyp aller Typen (z.B. \texttt{int} ist eine Instanz von \texttt{int}) \\
 		\texttt{list} & standard Liste \\
-		\texttt{tuple} & unveränderbares n-Tupel \\
+		\texttt{tuple} & unver\"anderbares n-Tupel \\
 		\texttt{set} & (mathematische) Menge von Objekten \\
-		\texttt{frozenset} & unveränderbare (mathematische) Menge von Objekten \\
+		\texttt{frozenset} & unver\"anderbare (mathematische) Menge von Objekten \\
 		\texttt{dict} & Hash-Map \\
 	\end{tabular}
 \end{frame}
@@ -143,13 +143,13 @@
 	\textbf{Wichtige Eigenschaften:}
 	\begin{itemize}
 	    \item Keine Semikolons
-	    \item Kein geschweiften Klammern für Codeblöcke
-	    \item Einrückungen zeigen Codeblöcke an
+	    \item Kein geschweiften Klammern f\"ur Codebl\"ocke
+	    \item Einr\"uckungen zeigen Codebl\"ocke an
 	    \item Funktionsaufrufe immer mit runden Klammern
 	    \item Funktionen definieren mit \codeline{def <funktionsname>([parameter_liste, ...]):}
-	    \item Variablen mit der Struktur \codeline{__name__} sind spezielle Werte (gewöhnlich aus \codeline{builtin} oder Methoden von Standardtypen)\\
+	    \item Variablen mit der Struktur \codeline{__name__} sind spezielle Werte (gew\"ohnlich aus \codeline{builtin} oder Methoden von Standardtypen)\\
 	      z.B. \codeline{__file__} ist immer der Name des Scriptes (in welchem \codeline{__file__} aufgerufen wird),  
-	      \codeline{__builtin__} ist das Modul mit den immer verfügbaren Funktionen und Datentypen wie \codeline{list} oder \codeline{tuple}
+	      \codeline{__builtin__} ist das Modul mit den immer verf\"ugbaren Funktionen und Datentypen wie \codeline{list} oder \codeline{tuple}
 	\end{itemize}
 \end{frame}
 
@@ -162,7 +162,7 @@
 	    \item[vergleichend] \codeline{<}, \codeline{>}, \codeline{<=}, \codeline{>=}, \codeline{==} (Wert gleich), \codeline{is} (gleiches Objekt/gleiche Referenz)
 	    \item[logisch] \codeline{and}, \codeline{or}, \codeline{not}\\ \codeline{(a && b) || (!c)} aus C oder Java entspricht \codeline{(a and b) or not c} in Python
 	    \item[bitweise] \codeline{&}, \codeline{\|}, \codeline{\<\<}, \codeline{\>\>}, \codeline{\^} (xor), \codeline{\~} (invertieren)
-	    \item[Accessoren] \codeline{.} (für Methoden und Attribute), \codeline{[]} (für Datenstrukturen mit Index)
+	    \item[Accessoren] \codeline{.} (f\"ur Methoden und Attribute), \codeline{[]} (f\"ur Datenstrukturen mit Index)
 	\end{description}
 \end{frame}
 
@@ -172,10 +172,10 @@
 \begin{frame}[fragile]{Namenskonventionen}
 	\begin{description}
 	    \item[\textbf{Klassen}] \textit{PascalCase}, alles direkt zusammen, gro\ss{} beginnend und jedes neue Wort gro\ss{}
-	    \item[\textbf{Variablen, Funktionen, Methoden}] \textit{snake\_case}, alles klein und Wörter mit Unterstrich getrennt \\
-	    \textbf{Merke:} Da \codeline{-} ein Operator ist, ist es in Namen von Variablen, Funktionen etc. \textbf{nicht} zulässig (damit Python eine Kontextfreie Sprache ist)
-	    \item[\textbf{protected Variablen, Funktionen, Methoden}] beginnen mit einem Unterstrich \codeline{\_} oder mit zweien \codeline{\_\_} für private
-	    \item[\textbf{Merke}] Python hat kein Zugriffsmanagement. Die Regel mit dem Unterstrich ist nur eine Konvention um zu verhindern, dass andere Teile des Codes nutzen, der eine hohe Wahrscheinlichkeit hat in Zukunft verändert zu werden.
+	    \item[\textbf{Variablen, Funktionen, Methoden}] \textit{snake\_case}, alles klein und W\"orter mit Unterstrich getrennt \\
+	    \textbf{Merke:} Da \codeline{-} ein Operator ist, ist es in Namen von Variablen, Funktionen etc. \textbf{nicht} zul\"assig (damit Python eine Kontextfreie Sprache ist)
+	    \item[\textbf{protected Variablen, Funktionen, Methoden}] beginnen mit einem Unterstrich \codeline{\_} oder mit zweien \codeline{\_\_} f\"ur private
+	    \item[\textbf{Merke}] Python hat kein Zugriffsmanagement. Die Regel mit dem Unterstrich ist nur eine Konvention um zu verhindern, dass andere Teile des Codes nutzen, der eine hohe Wahrscheinlichkeit hat in Zukunft ver\"andert zu werden.
 	\end{description}
 \end{frame}
 
@@ -186,23 +186,23 @@
 \begin{frame}[fragile]{Stings - Grundlagen}
 	\begin{itemize}
 	    \item Der Typ eines Strings ist \codeline{str}.
-	    \item Strings sind in Python immutable (nicht veränderbar). Jede String Operation erzeugt einen neuen String.
-	    \item Ein String kann erzeugt werden mit einer Zeichenkette in Anführungszeichen, \codeline{\'\'} oder \codeline{\"\"} (beide sind äquivalent).
-	    \item rohe Strings mir dem Präfix \codeline{r}, \codeline{r\"mystring\"} oder \codeline{r\'mystring\'}
+	    \item Strings sind in Python immutable (nicht ver\"anderbar). Jede String Operation erzeugt einen neuen String.
+	    \item Ein String kann erzeugt werden mit einer Zeichenkette in Anf\"uhrungszeichen, \codeline{\'\'} oder \codeline{\"\"} (beide sind \"aquivalent).
+	    \item rohe Strings mir dem Pr\"afix \codeline{r}, \codeline{r\"mystring\"} oder \codeline{r\'mystring\'}
 	    \item Strings in Python 3 sind UTF-8 encoded.
 	\end{itemize}
 \end{frame}
 
 
 % ------------------------- Stings - Verknüpfen -------------------------------
-\subsubsection{Verknüpfen}
-\begin{frame}[fragile]{Stings - Verknüpfen}
+\subsubsection{Verknpfen}
+\begin{frame}[fragile]{Stings - Verknpfen}
 	\begin{itemize}
-	    \item Strings können durch Konkatenation verknüpft werden \\
+	    \item Strings k\"onnen durch Konkatenation verknpft werden \\
 	    \begin{lstlisting}
 			'Hallo' + '_' + 'Welt' #  => 'Hallo_Welt'
 		\end{lstlisting}  
-	    \item Listen, Tupel etc. von Strings können via `str.join` verknüpft werden \\
+	    \item Listen, Tupel etc. von Strings k\"onnen via `str.join` verknpft werden \\
 	    \begin{lstlisting}
 			'_'.join(['Hallo', 'Welt']) #  => 'Hallo_Welt'
 		\end{lstlisting}
