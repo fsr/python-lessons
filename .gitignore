@@ -12,3 +12,4 @@ c9/
 *.pdf
 *.toc
 *.snm
+.DS_Store
