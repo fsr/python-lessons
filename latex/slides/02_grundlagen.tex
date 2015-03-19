@@ -1,0 +1,78 @@
+
+%%	Getting started:
+%%	1) Copy this file and name the copy it like the topic it covers
+%%	2) In the following make sure to modify the copy, NOT THE ORIGINAL
+%%	3) Look for the points marked with "TODO" and complete them
+%%	4) compile this file
+
+\input{slides_template}	% nothing to do here
+% TODO change "course_info" to the name of your actual …_info(.tex)
+\input{course_info} % TODO modify this if you have not already done so
+
+% meta-information
+\newcommand{\topic}{
+	% TODO fill in the actual topic
+	Grundlagen von Python
+}
+
+% nothing to do here
+\title{\topic}
+\supertitle{\course}
+\date{\today}
+
+% the actual document
+\begin{document}
+
+\maketitle
+
+\begin{frame}
+	\tableofcontents
+\end{frame}
+
+
+\section{Scriptcharakter}
+\begin{frame}{Scriptcharakter}
+
+Beim Ausführen oder Importieren wird der Code im obersten Level des Moduls (der .py Datei) ausgeführt. Daher ist es üblich auf dem obersten Level Funktionen und Klassen zu definieren, sowie globale Variablen und die imports anderer Python Module durchzuführen. \\
+Soll das entsprechende Modul dann ausführbar sein und nicht nur als Bibliothek dienen, definiert man üblicherweise eine \texttt{def main():} Funktion, in welche man seinen
+"Arbeitscode" schreibt und endet mit dem Boilerplate-Syntax \texttt{ if __name__ == '__main__': main()}, welcher die \texttt{main} funktion nur dann ausführt, wenn das modul direkt via des Python Interpreters aufgerufen wurde (und nicht importiert).\\
+
+\begin{itemize}
+	\item Python code wird nicht kompiliert, sondern beim importieren in Python bytecode übersetzt
+	\item Bytecode wird auf einer VM ausgeführt
+	\item Kein Memory Management von nöten, alles sind Referenzen
+	\item Syntaxerror wird beim importieren geworfen
+	\item Andere Fehler findet man erst, wenn die betreffende Zeile ausgeführt wird.
+\end{itemize}
+
+
+\end{frame}
+
+\section{Programmierpradigmen}
+\begin{frame}{Programmierpradigmen}
+Python ist in erster Linie eine imperative und objektorientierte Sprache. Variablen, Klassen und Funktionene sind alle 'first class citizen'.
+
+\subsection{Imperatives Programmieren}
+
+In Python können reine Funktionen und Variablen auf oberster Ebene definiert werden.
+
+\subsection{Objekt Orientiertes Programmieren}
+
+Allerdings ist in Python auch alles ein Objekt. Egal ob \texttt{int}, \texttt{bool}, \texttt{str} oder \texttt{type}, alle diese Datentypen sind Instanzen von \texttt{object} und haben Attribute und Methoden.\\
+Der Type eines jeden Wertes lässt sich mit \texttt{type()} herausfinden.
+
+\end{frame}
+
+
+\section{Klassen und Attribute}
+\begin{frame}{Klassen und Attribute}
+
+
+\end{frame}
+
+\section{Methoden}
+\begin{frame}{Methoden}
+
+\end{frame}
+
+\end{document}
