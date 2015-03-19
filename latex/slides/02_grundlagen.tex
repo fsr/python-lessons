@@ -5,7 +5,7 @@
 %%	3) Look for the points marked with "TODO" and complete them
 %%	4) compile this file
 
-\input{slides_template}	% nothing to do here
+\input{../templates/slides_template}	% nothing to do here
 % TODO change "course_info" to the name of your actual …_info(.tex)
 \input{course_info} % TODO modify this if you have not already done so
 
@@ -31,11 +31,11 @@
 
 
 \section{Scriptcharakter}
-\begin{frame}{Scriptcharakter}
+\begin{frame}[fragile]{Scriptcharakter}
 
 Beim Ausführen oder Importieren wird der Code im obersten Level des Moduls (der .py Datei) ausgeführt. Daher ist es üblich auf dem obersten Level Funktionen und Klassen zu definieren, sowie globale Variablen und die imports anderer Python Module durchzuführen. \\
-Soll das entsprechende Modul dann ausführbar sein und nicht nur als Bibliothek dienen, definiert man üblicherweise eine \texttt{def main():} Funktion, in welche man seinen
-"Arbeitscode" schreibt und endet mit dem Boilerplate-Syntax \texttt{ if __name__ == '__main__': main()}, welcher die \texttt{main} funktion nur dann ausführt, wenn das modul direkt via des Python Interpreters aufgerufen wurde (und nicht importiert).\\
+Soll das entsprechende Modul dann ausführbar sein und nicht nur als Bibliothek dienen, definiert man üblicherweise eine \codeline{def main():} Funktion, in welche man seinen
+"Arbeitscode" schreibt und endet mit dem Boilerplate-Syntax \codeline{if __name__ == '__main__': main()}, welcher die \texttt{main} funktion nur dann ausführt, wenn das modul direkt via des Python Interpreters aufgerufen wurde (und nicht importiert).\\
 
 \begin{itemize}
 	\item Python code wird nicht kompiliert, sondern beim importieren in Python bytecode übersetzt
