@@ -1,0 +1,41 @@
+%% Fill in metadata here that do not change over the course
+%% They all are marked with the term "TODO". 
+%% Search functions usually do the trick
+
+% TODO select the targeted language
+% Select neither when using tudbeamer
+%\usepackage[english]{babel}
+% \usepackage[ngerman]{babel}
+
+% TODO select the encoding
+\usepackage[utf8]{inputenc}
+% usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+
+\newcommand{\course}{
+	Einführung in Python
+}
+
+\author{
+	Justus Adam, Felix Döring
+}
+
+\lstset{
+	% TODO adapt these settings to your mainly used language
+	% also see http://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings
+	% NOTE you can override these settings in individual cases 
+	language = Python,
+	showspaces = false,
+	showtabs = false,
+	showstringspaces = false,
+	escapechar = @
+}
+
+%% User defined macros here
+
+% Does not work in tables! You have to use \lstinline$...$ instead!
+\newcommand{\codeline}[1]{\colorbox{codegray}{\lstinline$#1$}}
+
+% define my own colors
+\definecolor{codegray}{gray}{0.97}
+\definecolor{stringgreen}{rgb}{0.0, 0.7, 0.6}

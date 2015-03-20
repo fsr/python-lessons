@@ -2,9 +2,14 @@ build/
 .texpadtmp/
 *.pdf
 *.pyg
-c9/
+.c9/
 
 *.log
 *.aux
 *.vrb
 *.out
+*.nav
+*.pdf
+*.toc
+*.snm
+.DS_Store
