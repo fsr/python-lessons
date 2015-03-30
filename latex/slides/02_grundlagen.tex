@@ -60,8 +60,8 @@ In Python können reine Funktionen und Variablen auf oberster Ebene definiert we
 
 \subsection{Objekt Orientiertes Programmieren}
 
-Allerdings ist in Python auch alles ein Objekt. Egal ob \texttt{int}, \texttt{bool}, \texttt{str} oder \texttt{type}, alle diese Datentypen sind Instanzen von \texttt{object} und haben Attribute und Methoden.\\
-Der Type eines jeden Wertes lässt sich mit \texttt{type()} herausfinden.
+Python ist darüber hinaus auch fundamental objektorientiert. Das bedeutet in Python ist alles ein Objekt. Egal ob \texttt{int}, \texttt{bool}, \texttt{str} oder \texttt{type}, alle diese Datentypen sind Instanzen von \texttt{object} und haben Attribute und Methoden.\\
+Der Type eines jeden Wertes, einer jeden Variable lässt sich mit \texttt{type()} herausfinden.
 
 \end{frame}
 
@@ -69,11 +69,25 @@ Der Type eines jeden Wertes lässt sich mit \texttt{type()} herausfinden.
 \section{Klassen und Attribute}
 \begin{frame}{Klassen und Attribute}
 
+Typen in Python werden ausgedrückt durch Klassen. Keyword \texttt{class}. Klassen sind Vorlagen, Templates, für Datenstrukturen, welche man Instanzen der Klasse nennt.
+Jede Variable, jeder Wert in Python in eine Instanz von \texttt{object}. \texttt{object} und alle Typen selbst sind widerum Objekte, genauer gesagt Instanzen vom Typ \texttt{type} und \texttt{type} widerum ist eine Subklasse von \texttt{object}. 
+
+Klassen und Objekt haben Felder, die via Strings kodiert werden und sich Attribute nennen. Klassenattribute werden für die Klasse definiert und sind für alle ihre Instanzen gleich. Instanzattribute werden außerhalb der Klassendefnition hinzugefügt (normalerweise im Initialisierer) und sind für jede Instanz unterschiedlich.
+
+Zugriff auf Attribute erfolgt über die Punktnotation wie in z.B. Ruby oder Java. Gesetzt werden Attribute wie Variablen mit \texttt{=}.
+
+Generell kann man Python Objekten zu jedem Zeitpunkt neue Attribute hinzufügen (dies gilt auch für \texttt{type} objekte) ist im allgemeinen außerhalb des Initialisierers jedoch nicht empfohlen.
 
 \end{frame}
 
 \section{Methoden}
 \begin{frame}{Methoden}
+
+Methoden sind Funktionen. Der allgemeine type von Methoden, wie auch von Funktionen ist \texttt{function}. 
+
+Im Gegensatz zu Funktionen liegen Methoden in einem gesonderten namespace, dem namespace ihrer Klasse. Um auf die reine Mehtode zuzugreifen verwendet man daher die Notation \texttt{ClassName.method_name}.
+
+Methoden haben ein implizites erstes Argument (typischerweise "self" genannt, kann aber auch jeder andere Name sein). Durch diesen Parameter wird der Methode beim Aufruf auf einer Instanz automatisch das Objekt selbst übergeben, auf welchem die Methode ausgeführt wird.
 
 \end{frame}
 
