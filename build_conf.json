@@ -1,25 +1,18 @@
 {
-    "builds": [
-        {
+    "builds": {
+        "pdf": {
             "source_dir": "latex/slides",
             "target_dir": "build/pdf",
             "command": "pdflatex",
             "files": ["lesson_1.tex"]
-        }
-    ]
-    "files": [
-        {
-            "number": 1,
-            "title": "Einführung in Python",
-            "source": "lesson_1.tex",
-            "pdf": true
         },
-        {
-            "number": 2,
-            "title": "Python Programmierparadigmen",
-            "source": "lesson_2.tex"
+        "html": {
+            "source_dir": "latex/slides",
+            "target_dir": "build/html",
+            "command": "htlatex",
+            "files": ["lesson_1.tex"]
         }
-    ],
+    },
     "theme": {
         "stylesheets": [
             "slate/stylesheets/stylesheet.css"
