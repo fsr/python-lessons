@@ -76,7 +76,7 @@ Klassen und Objekt haben Felder, die via Strings kodiert werden und sich Attribu
 
 Zugriff auf Attribute erfolgt über die Punktnotation wie in z.B. Ruby oder Java. Gesetzt werden Attribute wie Variablen mit \texttt{=}.
 
-Generell kann man Python Objekten zu jedem Zeitpunkt neue Attribute hinzufügen (dies gilt auch für \texttt{type} objekte) ist im allgemeinen außerhalb des Initialisierers jedoch nicht empfohlen.
+Generell kann man Python Objekten zu jedem Zeitpunkt neue Attribute hinzufügen (dies gilt auch für \texttt{type} Objekte) ist im allgemeinen außerhalb des Initialisierers jedoch nicht empfohlen.
 
 \end{frame}
 
@@ -88,6 +88,23 @@ Methoden sind Funktionen. Der allgemeine type von Methoden, wie auch von Funktio
 Im Gegensatz zu Funktionen liegen Methoden in einem gesonderten namespace, dem namespace ihrer Klasse. Um auf die reine Mehtode zuzugreifen verwendet man daher die Notation \texttt{ClassName.method_name}.
 
 Methoden haben ein implizites erstes Argument (typischerweise "self" genannt, kann aber auch jeder andere Name sein). Durch diesen Parameter wird der Methode beim Aufruf auf einer Instanz automatisch das Objekt selbst übergeben, auf welchem die Methode ausgeführt wird.
+
+\end{frame}
+
+\subsection{Spezielle Methoden}
+\begin{frame}{Methoden}
+
+Dies sind Methoden die auf den meisten Grundlegenden Datenstrukturen implementiert sind, z.B. Object.\\
+Diese Methoden beginnen gewöhnlicherweise mit zwei Unterstrichen und enden mit zwei Unterstrichen.
+
+\begin{description}
+	\item[Initialisierer] Oft auch (fälschlicherweise) Konstruktor genannt. Name: \texttt{__int__}\\
+		Wird immer aufgerufen wenn eine neue Instanz der KLasse erstellt wird.
+	\item[Finalisierer] Oft auch (fälschlicherweise) Destructor genannt. Name: \texttt{__del__}\\
+		Wird immer aufgerufen wenn das Objekt vom Garbage Collector aufgeräumt wird. Wird im allgemeinen selten verwendet.
+	\item[String Konvertierer] Äquivalent zu Java's \texttt{toString} Methode. Name: \texttt{__str__}
+	\item[String Repräsentation] Ähnlich wie \texttt{__str__} aber gedacht für eine für Debug verwendbare Repräsentation andstatt für Output wie \texttt{__str__}.
+\end{description}
 
 \end{frame}
 
