@@ -4,13 +4,13 @@
             "source_dir": "latex/slides",
             "target_dir": "build/pdf",
             "command": "pdflatex",
-            "files": ["lesson_1.tex"]
+            "files": ["01_getting_started.tex", "02_grundlagen.tex"]
         },
         "html": {
             "source_dir": "latex/slides",
             "target_dir": "build/html",
             "command": "htlatex",
-            "files": ["lesson_1.tex"]
+            "files": ["01_getting_started.tex", "02_grundlagen.tex"]
         }
     },
     "theme": {
