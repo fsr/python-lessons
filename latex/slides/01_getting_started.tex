@@ -53,7 +53,7 @@
 \begin{frame}{Der Python Interpreter}
 	\begin{itemize}
     	\item Die zwei verbreitet verwendeten Python Versionen sind 2.7 und 3.4, wir werden 3.4 nutzen, weil es cooler ist und bessere Features hat
-    	\item Python kann auf \href{http://www.python.org}{hier} heruntergeladen und installiert werden oder mit dem Paketmanager eurer Wahl. (Das Paket sollte \texttt{python3} und \texttt{python3-dev} sein, au\ss{}er unter Arch)
+		\item Python kann auf \href{http://www.python.org}{hier} heruntergeladen und installiert werden oder mit dem Paketmanager eurer Wahl. (Das Paket sollte \texttt{python3} und \texttt{python3-dev} sein, au\ss{}er unter Arch)
     	\item Python funktioniert besser unter Linux und Mac (ist aber okay unter Windows)
     	\item Den Interpreter startet man mit \texttt{python3} im Terminal oder mit \texttt{Python.exe}
     	\item Der Interpreter stellt die volle Funktionalität von Python bereit, einschließ\ss{}lich dem Erstellen von Klassen und Funktionen
@@ -132,7 +132,7 @@
 	    \item Funktionsaufrufe immer mit runden Klammern
 	    \item Funktionen definieren mit \codeline{def <funktionsname>([parameter_liste, ...]):}
 	    \item Variablen mit der Struktur \codeline{__name__} sind spezielle Werte (gewöhnlich aus \codeline{builtin} oder Methoden von Standardtypen)\\
-	      z.B. \codeline{__file__} ist immer der Name des Scriptes (in welchem \codeline{__file__} aufgerufen wird),  
+	      z.B. \codeline{__file__} ist immer der Name des Scriptes (in welchem \codeline{__file__} aufgerufen wird),
 	      \codeline{__builtin__} ist das Modul mit den immer verfügbaren Funktionen und Datentypen wie \codeline{list} oder \codeline{tuple}
 	\end{itemize}
 \end{frame}
@@ -142,7 +142,7 @@
 \section{Operatoren}
 \begin{frame}[fragile]{Operatoren}
 	\begin{description}
-	    \item[mathematisch] \codeline{+}, \codeline{-}, \codeline{*}, \codeline{/} 
+	    \item[mathematisch] \codeline{+}, \codeline{-}, \codeline{*}, \codeline{/}
 	    \item[vergleichend] \codeline{<}, \codeline{>}, \codeline{<=}, \codeline{>=}, \codeline{==} (Wert gleich), \codeline{is} (gleiches Objekt/gleiche Referenz)
 	    \item[logisch] \codeline{and}, \codeline{or}, \codeline{not}\\ \codeline{(a && b) || (!c)} aus C oder Java entspricht \codeline{(a and b) or not c} in Python
 	    \item[bitweise] \codeline{&}, \codeline{\|}, \codeline{\<\<}, \codeline{\>\>}, \codeline{\^} (xor), \codeline{\~} (invertieren)
@@ -183,7 +183,7 @@
 \begin{frame}[fragile]{Strings - Verknüpfen}
 	\begin{itemize}
 	    \item Strings können durch Konkatenation verknüpft werden \\
-	    \lstinputlisting[lastline=1]{resources/01_getting_started/string_concatenation.py}  
+	    \lstinputlisting[lastline=1]{resources/01_getting_started/string_concatenation.py}
 	    \item Listen, Tupel etc. von Strings können via `str.join` verknüpft werden \\
 	    \lstinputlisting[firstline=3]{resources/01_getting_started/string_concatenation.py}
 	    Dabei ist der String auf welchem die Methode aufgerufen wird der Separator.
