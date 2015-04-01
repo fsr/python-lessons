@@ -53,10 +53,10 @@
 \begin{frame}{Der Python Interpreter}
 	\begin{itemize}
     	\item Die zwei verbreitet verwendeten Python Versionen sind 2.7 und 3.4, wir werden 3.4 nutzen, weil es cooler ist und bessere Features hat
-		\item Python kann auf \href{http://www.python.org}{hier} heruntergeladen und installiert werden oder mit dem Paketmanager eurer Wahl. (Das Paket sollte \texttt{python3} und \texttt{python3-dev} sein, au\ss{}er unter Arch)
+		\item Python kann auf \href{http://www.python.org}{hier} heruntergeladen und installiert werden oder mit dem Paketmanager eurer Wahl. (Das Paket sollte \texttt{python3} und \texttt{python3-dev} sein, außer unter Arch)
     	\item Python funktioniert besser unter Linux und Mac (ist aber okay unter Windows)
     	\item Den Interpreter startet man mit \texttt{python3} im Terminal oder mit \texttt{Python.exe}
-    	\item Der Interpreter stellt die volle Funktionalität von Python bereit, einschließ\ss{}lich dem Erstellen von Klassen und Funktionen
+    	\item Der Interpreter stellt die volle Funktionalität von Python bereit, einschließßlich dem Erstellen von Klassen und Funktionen
 	\end{itemize}
 \end{frame}
 
@@ -67,7 +67,7 @@
    	\item[Editor] empfohlen (das ist was wir im Kurs benutzen)
     \begin{itemize}
         \item \href{https://atom.io}{atom} (weil Github)
-        \item \href{http://www.sublimetext.com/3}{Sublime Text 3} (\glqq Winrar-free\grqq )
+        \item \href{http://www.sublimetext.com/3}{Sublime Text 3} ("Winrar-free")
         \item \href{http://notepad-plus-plus.org}{Notepad++} (free)
         \item \href{https://c9.i}{cloud9} (online, free für open source Projekte)
         \item vim/emacs (free)
@@ -100,8 +100,8 @@
 	\begin{tabular}{c|l}
 		Name & Funktion \\ \hline
 		\texttt{object} & Basistyp, alles erbt von \texttt{object} \\
-		\texttt{int} & Ganzzahl \glqq{}beliebiger\grqq{} Grö\ss{}e \\
-		\texttt{float} & Kommazahl \glqq{}beliebiger\grqq{} Grö\ss{}e \\
+		\texttt{int} & Ganzzahl "beliebiger" Größe \\
+		\texttt{float} & Kommazahl "beliebiger" Größe \\
 		\texttt{bool} & Wahrheitswert (\texttt{True}, \texttt{False})\\
 		\texttt{None} & Typ des \texttt{None}-Objektes \\
 		\texttt{type} & Grundtyp aller Typen (z.B. \texttt{int} ist eine Instanz von \texttt{int}) \\
@@ -117,7 +117,7 @@
 % ------------------------- Das erste Programm --------------------------------
 \section{Das erste Programm}
 \begin{frame}[fragile]{Das erste Programm}
-	Ein simples \glqq{}Hallo Welt\grqq{}-Programm:\\[.5cm]
+	Ein simples "Hallo Welt"-Programm:\\[.5cm]
 	\lstinputlisting{resources/01_getting_started/hello_world.py}
 \end{frame}
 
@@ -155,7 +155,7 @@
 \section{Namenskonventionen}
 \begin{frame}[fragile]{Namenskonventionen}
 	\begin{description}
-	    \item[\textbf{Klassen}] \textit{PascalCase}, alles direkt zusammen, gro\ss{} beginnend und jedes neue Wort gro\ss{}
+	    \item[\textbf{Klassen}] \textit{PascalCase}, alles direkt zusammen, groß beginnend und jedes neue Wort groß
 	    \item[\textbf{Variablen, Funktionen, Methoden}] \textit{snake\_case}, alles klein und Wörter mit Unterstrich getrennt \\
 	    \textbf{Merke:} Da \codeline{-} ein Operator ist, ist es in Namen von Variablen, Funktionen etc. \textbf{nicht} zulässig (damit Python eine Kontextfreie Sprache ist)
 	    \item[\textbf{protected Variablen, Funktionen, Methoden}] beginnen mit einem Unterstrich \codeline{\_} oder mit zweien \codeline{\_\_} für private
