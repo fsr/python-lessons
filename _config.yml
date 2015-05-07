@@ -3,8 +3,8 @@ title: Python Lesson Exercises
 email: programmierung@ifsr.de
 description: >
   Rendered exercise descriptions for the python lessons
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://fsr.github.io/python-lessons/" # the base hostname & protocol for your site
+baseurl: "/python-lessons/" # the subpath of your site, e.g. /blog/
+url: "http://fsr.github.io/" # the base hostname & protocol for your site
 # twitter_username: jekyllrb
 github_username: fsr
 
