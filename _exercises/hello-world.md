@@ -6,7 +6,7 @@ number: 1
 ### Step 1
 
 #### Run
-Start the interpreter using `python3` and try to print `'Hello World'` using the `print()` function.
+Start the interpreter using `python3` and print `'Hello World'` using the `print()` function.
 
 ### Step 2
 
@@ -29,7 +29,7 @@ Run the script interactively using `python3 -i script.py` and once the interpret
 ### Step 4
 
 #### Edit
-Call the function at the top level of the script.
+In the script, call the function at the top level.
 
 #### Run
 Run the whole thing again.
