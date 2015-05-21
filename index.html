@@ -7,7 +7,8 @@ layout: default
   <h1 class="page-heading">Exercises</h1>
 
   <ul class="post-list">
-    {% for post in site.exercises | sort: 'number' reversed %}
+    {% assign exercises = site.exercises | sort: 'number' %}
+    {% for post in exercises %}
       {% if post.number and post.published != false %}
         <li>
           <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
