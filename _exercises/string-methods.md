@@ -8,25 +8,22 @@ number: 3
 ### Step 1
 
 Using the documentation on [this page](https://docs.python.org/3/library/stdtypes.html#string-methods) write a script, that takes user input (see exercise 2).
-And checks whether it is (either):
+And checks whether it is (either)[^case]:
 
 1. uppercase
 2. numeric
-3. contains the substring `":-)"` or
+3. contains the substring `":-)"`[^substring] or
 4. none of the above
 
-report which of these it was.
+report which of these it was. If multiple branches are true, you need only report one.
 
-Notes and hints[^branches] [^case] [^typechecking]
+[^substring]:
+	The using `in` checks for subelements and substrings as well.
 
-[^branches]:
-	If multiple branches are true, you need only report one
 
 [^case]:
 	python does not have a case statement
 
-[^typechecking]:
-	types can be checked with either `your_type == type(variable)` or `isinstance`
 
 ### Step 2
 

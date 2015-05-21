@@ -15,12 +15,21 @@ Write a script that reads an input string from the command line and then prints 
 
 ### Step 2
 
-Modify the script so it asks for the name using input, `input("message")`, and then greet the person `"Hello NAME, welcome to python"` using string formatting with the `format` method.
+Modify the script so it asks for the name using input, `input("message")`, and then greet the person `"Hello NAME, welcome to python"` using string formatting with the `format` method.[^format]
+
+[^format]:
+    Format strings work like so: "hello {}, welcome".format('grandma') -> "hello grandma, welcome"
 
 ### Step 3
 
-Now ask for first and last name separately and this time greet by using named fields `"{firstname}"`. Remember, that for named fields `format` has to be called with keyword arguments `format(varname=value)`.
+Now ask for first and last name separately and this time greet by using named fields[^named_fields]
+
+[^named_fields]:
+    For named fields `format` has to be called with keyword arguments `format(varname=value)`.
 
 ### Step 3
 
-Mix both by asking some input and then printing a formatted string with at least two named and two unnamed fields.
+Mix both by asking some input and then printing a formatted string with at least two named and two unnamed fields.[^mix_format]
+
+[^mix_format]:
+    For both mixed call with positional first, then named (kwargs), like so `"My {} string {abc}, {}, what {name}".format('yellow', 'left', abc='blue', name='fred') -> "My yellow string blue, left, what fred"`
