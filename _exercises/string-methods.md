@@ -3,17 +3,17 @@ title: String Methods
 number: 3
 ---
 
-*Remember: String formatting can be very useful for when creating strings for printing to the console*
+*Remember: String formatting can be very useful when creating strings for printing to the console*
 
 ### Step 1
 
 Using the documentation on [this page](https://docs.python.org/3/library/stdtypes.html#string-methods) write a script, that takes user input (see exercise 2).
 And checks whether it is (either):
 
-- a) uppercase
-- b) numeric
-- c) contains the substring `":-)"`
-- d) none of the above
+1. uppercase
+2. numeric
+3. contains the substring `":-)"` or
+4. none of the above
 
 report which of these it was.
 
@@ -32,7 +32,8 @@ Notes and hints[^branches] [^case] [^typechecking]
 
 Expand the 'uppercase' branch, to not only report that it was uppercase, but also print a lowercase version. [^docpage]
 
-[^docpage]: [Python String Documentation Page](https://docs.python.org/3/library/stdtypes.html#string-methods)
+[^docpage]:
+	[Python String Documentation Page](https://docs.python.org/3/library/stdtypes.html#string-methods)
 
 ### Step 3
 
@@ -47,6 +48,8 @@ Expand the 'none of the above' branch to split the string at every letter 'a' [^
 
 `'aglloatyat' -> ['', 'gllo', 'ty', 't'] -> ';gllo;ty;t'`
 
-[^string_splitting]: Strings can be split with the `split(separator)` method. This method also accepts a second parameter (int) how often it should split the string at maximum.
+[^string_splitting]:
+	Strings can be split with the `split(separator)` method. This method also accepts a second parameter (int) how often it should split the string at maximum.
 
-[^string_join]: Strings are joined with the `join(separator)` method.
+[^string_join]:
+	Strings are joined with the `join(separator)` method.
