@@ -1,0 +1,15 @@
+.small {
+  font-size: small;
+
+  a, pre, code {
+    font-size: small;
+  }
+}
+
+.footnotes {
+  @extend .small;
+
+  margin-top: 70px;
+  padding-top: 30px;
+  border-top: 1px solid $grey-color;
+}

@@ -13,11 +13,20 @@ And checks whether it is (either):
 - a) uppercase
 - b) numeric
 - c) contains the substring `":-)"`
-- d) none of th above
+- d) none of the above
 
 report which of these it was.
 
-*Note: If multiple branches are true, you need only report one*
+Notes and hints[^branches] [^case] [^typechecking]
+
+[^branches]: 
+	If multiple branches are true, you need only report one
+
+[^case]: 
+	python does not have a case statement
+
+[^typechecking]:
+	types can be checked with either `your_type == type(variable)` or `isinstance`
 
 ### Step 2
 
