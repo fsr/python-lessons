@@ -49,4 +49,4 @@ Expand the 'none of the above' branch to split the string at every letter 'a' [^
 	Strings can be split with the `split(separator)` method. This method also accepts a second parameter (int) how often it should split the string at maximum.
 
 [^string_join]:
-	Strings are joined with the `join(separator)` method.
+	Strings are joined with the `separator_string.join(['list', 'of', 'strings'])` method.
