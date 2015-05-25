@@ -9,12 +9,12 @@ layout: default
   <ul class="post-list">
     {% assign exercises = site.exercises | sort: 'number' %}
     {% for post in exercises %}
-      {% if post.number and post.published != false %}
+      {% if site.show_drafts or post.number %}
         <li>
           <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
           <h2>
-            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.number }}: {{ post.title }}</a>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{% if post.number %}{{ post.number }}{% else %}D{% endif %}: {{ post.title }}</a>
           </h2>
         </li>
       {% endif %}

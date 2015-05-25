@@ -11,6 +11,11 @@ github_username: fsr
 # Build settings
 markdown: kramdown
 
+exclude:
+  - .c9/
+  - .git/
+  - latex/
+
 defaults:
   -
     scope:
