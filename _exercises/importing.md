@@ -1,3 +1,3 @@
 ---
-title: Importiant importing - path path path
+title: Important importing - path path path
 ---

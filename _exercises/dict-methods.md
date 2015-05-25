@@ -1,5 +1,5 @@
 ---
-title: Overloading dict
+title: Because builtin is not enough - Inheritance
 ---
 
 ### Inheriting form dict

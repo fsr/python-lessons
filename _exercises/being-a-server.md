@@ -1,5 +1,5 @@
 ---
-Title: The other side - Being a Server
+title: The other side - Being a Server
 ---
 
 ### Write a gci script

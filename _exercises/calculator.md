@@ -18,8 +18,7 @@ It should at least accept +, -, \*, / as operators.
 
 ### Example:
 
-```
-Enter your equation:
-2 - 4
--2
-```
+    Enter your equation:
+    2 - 4  
+    -2
+

@@ -1,5 +1,5 @@
 ---
-title: Argparse
+title: Your own unix, with blackjack and ... python
 ---
 
 We want to recreate (parts of) `cp`, `mv`, `cd` and `ls` in python.
