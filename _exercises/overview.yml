@@ -1,0 +1,14 @@
+all:
+    - sqlite / peewee
+    - os.path / os / pathlib
+    - functools
+    - urllib.request
+    - http / cgi / ssl / hashlib
+    - descriptors
+    - collections
+    - importlib / sys.path
+    - list/dict/generator comprehension
+    - file descriptors
+    - subprocess
+    - threading / multiprocessing
+    - decorators
