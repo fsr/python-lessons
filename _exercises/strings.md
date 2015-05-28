@@ -1,6 +1,7 @@
 ---
 title: Strings
 number: 2
+status: reviewed
 ---
 
 We want to explore string concatenation and formatting.

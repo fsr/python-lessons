@@ -1,6 +1,7 @@
 ---
 title: Hello World
 number: 1
+status: reviewed
 ---
 
 ### Step 1

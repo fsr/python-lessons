@@ -1,0 +1,4 @@
+{% assign light = include.light %}
+<span style="font-size: 20px;">
+    <span class="tl-red{% unless light == 'red' %} pale{% endunless %}">&#x25cf;</span><span class="tl-yellow{% unless light == 'yellow' %} pale{% endunless %}">&#x25cf;</span><span class="tl-green{% unless light == 'green' %} pale{% endunless %}">&#x25cf;</span>{% if include.message %}&nbsp;&nbsp;<span class="tl-{{ light }}">{{ include.message }}</span>{% endif %}
+</span>

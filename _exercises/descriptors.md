@@ -1,5 +1,6 @@
 ---
 title: Am I an attribute? - Descriptors
+status: drafty
 ---
 
 ### Use properties to hide your true intentions.

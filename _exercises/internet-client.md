@@ -1,5 +1,6 @@
 ---
 title: On the client side of the internet
+status: drafty
 ---
 
 ### Implementing versions of `ping`

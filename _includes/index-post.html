@@ -1,6 +1,9 @@
 {% assign post=include.post %}
+
 <li>
     <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-    <h2><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{% if post.number %}{{ post.number }}{% else %}#{% endif %}: {{ post.title }}</a></h2>
+    <h2>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{% if post.number %}{{ post.number }}{% else %}#{% endif %}: {{ post.title }} &nbsp;&nbsp;{% case post.status %}{% when 'drafty' %} {% include traffic-light.html light='red' message=post.status %}{% when 'finished' %} {% include traffic-light.html light='yellow' message=post.status %}{% when 'reviewed' %} {% include traffic-light.html light='green' message=post.status %}{% endcase %}</a>
+    </h2>
 </li>    
