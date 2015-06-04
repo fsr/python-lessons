@@ -3,10 +3,11 @@ title: Text Statistics
 status: finished
 ---
 
-Download [this](//) file.
+Write some lorem [ipsum text](//http://www.loremipsum.de) into a file.
 
 Read the file and make a statistic of how often every word appears in the file and print that to the command line.
 
+Print the results to the command line.
 
 ### Tips
 
