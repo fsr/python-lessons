@@ -5,16 +5,7 @@ status: finished
 
 Download [this](//) file.
 
-Read the file[^file_reading] and make a statistic of how often every word appears in the file and print that to the command line.
-
-[^file_reading]:
-    Use a context manager `with` and the function `open(filename, mode="r")` like so 
-    {% highlight python %}
-    with open('path/to/file', mode='r') as file:
-        contents = file.read()
-    # now it implicitly calls file.close()
-    contents.do_something()
-    {% endhighlight %}
+Read the file and make a statistic of how often every word appears in the file and print that to the command line.
 
 
 ### Tips

@@ -1,6 +1,7 @@
 ---
 title: Get me the file! - file(handle(r)s)
-status: drafty
+status: finished
+number: 5
 ---
 
 ## Step 1
@@ -15,7 +16,7 @@ Check the result.
 
 ## Step 2
 
-Get some lorem ipsum paragraphs and and them to the file (by hand).
+Get some lorem ipsum paragraphs (your can use [this](http://www.loremipsum.de) page) and and them to the file (by hand).
 
 Open the file in python using `with` and write the contents to the console.
 

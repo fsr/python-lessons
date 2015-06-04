@@ -1,6 +1,5 @@
 ---
 title: Objects and classes
-published: false
 number: 4
 status: finished
 ---
