@@ -1,6 +1,7 @@
 ---
 title: Because builtin is not enough - Inheritance
 status: drafty
+number: 7
 ---
 
 ### Inheriting form dict
