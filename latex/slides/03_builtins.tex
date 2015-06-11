@@ -1,6 +1,7 @@
 \input{../templates/slides_template}	% nothing to do here
 % TODO change "course_info" to the name of your actual …_info(.tex)
 \input{course_info} % TODO modify this if you have not already done so
+\usepackage[utf8]{inputenc}
 
 % meta-information
 \newcommand{\topic}{
@@ -23,17 +24,19 @@
 \end{frame}
 
 \section{exceptions}
-\begin{frame}
+\begin{frame}{Exception handling}
 \begin{itemize}
 	\item Alle exceptions erben von \codeline{Exception}
 	\item catching mit try/except
 	\item finally um code auszuführen der unbedingt laufen muss, egal ob eine excetion vorliegt oder nicht
 \end{itemize}
+\end{frame}
+\begin{frame}{}
 \lstinputlisting{resources/03_builtins/exceptions.py}
 \end{frame}
 
 \section{booleans}
-\begin{frame}
+\begin{frame}{Boolsche Werte}
 \begin{itemize}
 	\item type Name \codeline{bool}
 	\item \codeline{True} oder \codeline{False}
@@ -47,8 +50,11 @@
 \begin{itemize}
 	\item enthält variable Anzahl anderer Objekte in gleichbleibender Reihenfolge.
 	\item optimiert für einsietige Benutzung wie eine Queue (append und pop)
+\end{itemize}
 \end{frame}
-\lstinpulisting{resources/03_builtins/list.py}
+\begin{frame}{}
+	\lstinputlisting{resources/03_builtins/list.py}
+\end{frame}
 
 \section{tuple}
 \begin{frame}{tuple}
@@ -56,7 +62,9 @@
 	\item Gruppiert Daten
 	\item kann nicht mehr verändert werden sobald kreiert
 \end{itemize}
-\lstinputlisting{resources/03_builtins/tuple.py}
+\end{frame}
+\begin{frame}{}
+	\lstinputlisting{resources/03_builtins/tuple.py}
 \end{frame}
 
 \section{dict}
@@ -67,6 +75,8 @@
 	\item jeder hashbare Typ kann ein Key sein
 	\item dazu zählen Typen selbst, da diese per Default hashbar sind
 \end{itemize}
+\end{frame}
+\begin{frame}{}
 \lstinputlisting{resources/03_builtins/dict.py}
 \end{frame}
 
@@ -82,11 +92,13 @@
 	\item frozensets sind nicht veränderbar, aber hashbar
 	\item -> sets (und frozensets) können frozensets enthalten (da hashbar)
 \end{itemize}
-\lstinputlisting{resources/03_builtins/set.py}
+\end{frame}
+\begin{frame}{}
+	\lstinputlisting{resources/03_builtins/set.py}
 \end{frame}
 
 \section{iteraton}
-\begin{frame}
+\begin{frame}{Iteration}
 \begin{itemize}
 	\item nur foreach
 	\item für Interger iteration gibt es \codeline{range([start], stop, step=1)}
@@ -94,34 +106,42 @@
 	\item alles mit einer \codeline{__iter__} methode ist iterierbar
 	\item \codeline{iter(iterable)} construiert dir einen stateful iterator
 \end{itemize}
-\lstinputlisting{resources/03_builtins/iterate.py}
+\end{frame}
+\begin{frame}{}
+	\lstinputlisting{resources/03_builtins/iterate.py}
 \end{frame}
 
 \section{unpacking}
-\begin{frame}
+\begin{frame}{Unpacking}
 \begin{itemize}
 	\item kann auf Tupel und Listen angewendet werden
 	\item nützlich in for Schleifen
 \end{itemize}
-\lstinputlisting{resources/03_builtins/unpacking.py}
+\end{frame}
+\begin{frame}{}
+	\lstinputlisting{resources/03_builtins/unpacking.py}
 \end{frame}
 
 \section{contenxt manager}
-\begin{frame}
+\begin{frame}{Context Manager}
 \begin{itemize}
 	\item keyword \codeline{with}
 	\item kann jedes objekt sein, was eine \codeline{__enter__} und \codeline{__exit__} methode hat
 \end{itemize}
-\lstinputlisting{resources/03_builtins/cm.py}
+\end{frame}
+\begin{frame}{}
+	\lstinputlisting{resources/03_builtins/cm.py}
 \end{frame}
 
-\section{filehandling}
-\begin{frame}
+\section{file handling}
+\begin{frame}{File handling}
 \begin{itemize}
 	\item open files with \codeline{open(filename, mode="r")}
 	\item filehandlers are iterators over lines
 \end{itemize}
-\lstlistings{resources/03_builtins/file.py}
+\end{frame}
+\begin{frame}{}
+	\lstinputlisting{resources/03_builtins/file.py}
 \end{frame}
 
 % nothing to do from here on

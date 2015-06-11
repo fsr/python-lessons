@@ -11,7 +11,7 @@ for i in (1,2,3):
     pass
 
 for i in {1:'value1', 2:'value2'}:
-    # iteration über die keys
+    # iteration ueber die keys
     pass
 
 
@@ -32,5 +32,5 @@ for value1, value2 in [
 for value1, value2 in zip([1,3,42], ['werner', 'geh mal in den keller', 'ich glaub die russen komm\'', 'dieser string wird in der iteration nicht auftauchen', 'dieser auch nicht'])
 
 for key, value in {1:'value1', 2:'value2'}.items():
-    # iteration über keys und values mit tuple unpacking
+    # iteration ueber keys und values mit tuple unpacking
     pass

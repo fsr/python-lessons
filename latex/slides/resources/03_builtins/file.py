@@ -4,7 +4,7 @@ with open(myfile, mode='r') as f:
         # code
 
 
-with open(myfile, mode="w+") as f:
+with open(myfile, mode='w+') as f:
 
     for line in document:
         f.write(line)

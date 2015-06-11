@@ -7,8 +7,8 @@ class MyException(Exception):
 
 try:
     # code
-    raise KeyError("message")
-# mit nutr einer exception
+    raise KeyError('message')
+# mit nur einer exception
 # except MyException as error:
 except (KeyError, MyException) as error:
     print(error)

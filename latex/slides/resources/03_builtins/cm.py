@@ -4,7 +4,7 @@ class MyManager:
         pass
 
     def __exit__(self):
-        # schließe handler etc ...
+        # schliesse handler etc ...
         pass
 
     def do_things(self):
