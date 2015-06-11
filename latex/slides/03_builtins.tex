@@ -22,6 +22,25 @@
 	\tableofcontents
 \end{frame}
 
+\section{exceptions}
+\begin{frame}
+\begin{itemize}
+	\item Alle exceptions erben von \codeline{Exception}
+	\item catching mit try/except
+	\item finally um code auszuführen der unbedingt laufen muss, egal ob eine excetion vorliegt oder nicht
+\end{itemize}
+\lstinputlisting{resources/03_builtins/exceptions.py}
+\end{frame}
+
+\section{booleans}
+\begin{frame}
+\begin{itemize}
+	\item type Name \codeline{bool}
+	\item \codeline{True} oder \codeline{False}
+	\item operationen sind und, oder, nicht \codeline{and, or, not}
+\end{itemize}
+\end{frame}
+
 \section{list}
 \begin{frame}{list}
 
@@ -37,6 +56,7 @@
 	\item Gruppiert Daten
 	\item kann nicht mehr verändert werden sobald kreiert
 \end{itemize}
+\lstinputlisting{resources/03_builtins/tuple.py}
 \end{frame}
 
 \section{dict}
@@ -69,6 +89,8 @@
 \begin{frame}
 \begin{itemize}
 	\item nur foreach
+	\item für Interger iteration gibt es \codeline{range([start], stop, step=1)}
+	\item zum iterator kombinieren kann man \codeline{zip(iterator_1, iterator_2, ..., iterator_n)} verwenden
 	\item alles mit einer \codeline{__iter__} methode ist iterierbar
 	\item \codeline{iter(iterable)} construiert dir einen stateful iterator
 \end{itemize}
@@ -82,6 +104,24 @@
 	\item nützlich in for Schleifen
 \end{itemize}
 \lstinputlisting{resources/03_builtins/unpacking.py}
+\end{frame}
+
+\section{contenxt manager}
+\begin{frame}
+\begin{itemize}
+	\item keyword \codeline{with}
+	\item kann jedes objekt sein, was eine \codeline{__enter__} und \codeline{__exit__} methode hat
+\end{itemize}
+\lstinputlisting{resources/03_builtins/cm.py}
+\end{frame}
+
+\section{filehandling}
+\begin{frame}
+\begin{itemize}
+	\item open files with \codeline{open(filename, mode="r")}
+	\item filehandlers are iterators over lines
+\end{itemize}
+\lstlistings{resources/03_builtins/file.py}
 \end{frame}
 
 % nothing to do from here on
