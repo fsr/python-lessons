@@ -25,27 +25,63 @@
 \section{list}
 \begin{frame}{list}
 
-Eine Datenstruktur die eine variable Anzahl anderer Objekte enthält mit gleichbleibender Reihenfolge. Optimiert um wie eine Queue einseitig verlänger-und verkürzbar zu sein.
-
-Verwendung:
-
-
-
+\begin{itemize}
+	\item enthält variable Anzahl anderer Objekte in gleichbleibender Reihenfolge.
+	\item optimiert für einsietige Benutzung wie eine Queue (append und pop)
 \end{frame}
-
+\lstinpulisting{resources/03_builtins/list.py}
 
 \section{tuple}
 \begin{frame}{tuple}
-Eine Datenstruktur die, einmal kreiert nicht mehr verändert werden kann, weder Länge noch Inhalt.
+\begin{itemize}
+	\item Gruppiert Daten
+	\item kann nicht mehr verändert werden sobald kreiert
+\end{itemize}
 \end{frame}
 
 \section{dict}
 \begin{frame}{dict}
-	Eine einfache HashMap. Jeder hashbare Typ kann ein Key sein, dazu Zählen Typen selbst, da diese per Default hasbar sind
+\begin{itemize}
+	\item einfache HashMap
+	\item ungeordnet
+	\item jeder hashbare Typ kann ein Key sein
+	\item dazu zählen Typen selbst, da diese per Default hashbar sind
+\end{itemize}
+\lstinputlisting{resources/03_builtins/dict.py}
 \end{frame}
 
 \section{set/frozenset}
 \begin{frame}{set/frozenset}
+\begin{itemize}
+	\item nur hashbare Einträge
+	\item enhält jedes Element nur einmal
+	\item schnelle \codeline{in} überprüfung (enthält Element)
+	\item Kann operationen wie superset, subset, isdisjoint und difference \codeline{<, >, disdisjoint(), -}
+	\item ungeordnet
+	\item sets sind nicht hashbar
+	\item frozensets sind nicht veränderbar, aber hashbar
+	\item -> sets (und frozensets) können frozensets enthalten (da hashbar)
+\end{itemize}
+\lstinputlisting{resources/03_builtins/set.py}
+\end{frame}
+
+\section{iteraton}
+\begin{frame}
+\begin{itemize}
+	\item nur foreach
+	\item alles mit einer \codeline{__iter__} methode ist iterierbar
+	\item \codeline{iter(iterable)} construiert dir einen stateful iterator
+\end{itemize}
+\lstinputlisting{resources/03_builtins/iterate.py}
+\end{frame}
+
+\section{unpacking}
+\begin{frame}
+\begin{itemize}
+	\item kann auf Tupel und Listen angewendet werden
+	\item nützlich in for Schleifen
+\end{itemize}
+\lstinputlisting{resources/03_builtins/unpacking.py}
 \end{frame}
 
 % nothing to do from here on

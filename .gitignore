@@ -13,3 +13,5 @@ build/
 *.toc
 *.snm
 .DS_Store
+_site/
+.sass-cache/
