@@ -6,7 +6,8 @@
             "command": "pdflatex",
             "files": [
                 "01_getting_started.tex",
-                "02_grundlagen.tex"
+                "02_grundlagen.tex",
+                "03_builtins.tex"
             ]
         },
         "html": {
