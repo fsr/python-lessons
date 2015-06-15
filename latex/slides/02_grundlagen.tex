@@ -8,6 +8,7 @@
 \input{../templates/slides_template}	% nothing to do here
 % TODO change "course_info" to the name of your actual …_info(.tex)
 \input{course_info} % TODO modify this if you have not already done so
+\usepackage{comment}
 
 % meta-information
 \newcommand{\topic}{
@@ -49,9 +50,9 @@ Soll das entsprechende Modul dann ausführbar sein und nicht nur als Bibliothek 
 
 
 \end{frame}
-
+	
 \section{Programmierpradigmen}
-\begin{frame}{Programmierpradigmen}
+\begin{frame}[fragile]{Programmierpradigmen}
 Python ist in erster Linie eine imperative und objektorientierte Sprache. Variablen, Klassen und Funktionene sind alle 'first class citizen'.
 
 \subsection{Imperatives Programmieren}
@@ -65,9 +66,8 @@ Der Type eines jeden Wertes, einer jeden Variable lässt sich mit \texttt{type()
 
 \end{frame}
 
-
 \section{Klassen und Attribute}
-\begin{frame}{Klassen und Attribute}
+\begin{frame}[fragile]{Klassen und Attribute}
 
 Typen in Python werden ausgedrückt durch Klassen. Keyword \texttt{class}. Klassen sind Vorlagen, Templates, für Datenstrukturen, welche man Instanzen der Klasse nennt.
 Jede Variable, jeder Wert in Python in eine Instanz von \texttt{object}. \texttt{object} und alle Typen selbst sind widerum Objekte, genauer gesagt Instanzen vom Typ \texttt{type} und \texttt{type} widerum ist eine Subklasse von \texttt{object}. 
@@ -80,32 +80,33 @@ Generell kann man Python Objekten zu jedem Zeitpunkt neue Attribute hinzufügen 
 
 \end{frame}
 
+
 \section{Methoden}
-\begin{frame}{Methoden}
+\begin{frame}[fragile]{Methoden}
 
 Methoden sind Funktionen. Der allgemeine type von Methoden, wie auch von Funktionen ist \texttt{function}. 
 
-Im Gegensatz zu Funktionen liegen Methoden in einem gesonderten namespace, dem namespace ihrer Klasse. Um auf die reine Mehtode zuzugreifen verwendet man daher die Notation \texttt{ClassName.method_name}.
+Im Gegensatz zu Funktionen liegen Methoden in einem gesonderten namespace, dem namespace ihrer Klasse. Um auf die reine Mehtode zuzugreifen verwendet man daher die Notation \texttt{ClassName.method\_name}.
 
 Methoden haben ein implizites erstes Argument (typischerweise "self" genannt, kann aber auch jeder andere Name sein). Durch diesen Parameter wird der Methode beim Aufruf auf einer Instanz automatisch das Objekt selbst übergeben, auf welchem die Methode ausgeführt wird.
 
 \end{frame}
-
 \subsection{Spezielle Methoden}
-\begin{frame}{Methoden}
+\begin{frame}[fragile]{Methoden}
 
 Dies sind Methoden die auf den meisten Grundlegenden Datenstrukturen implementiert sind, z.B. Object.\\
 Diese Methoden beginnen gewöhnlicherweise mit zwei Unterstrichen und enden mit zwei Unterstrichen.
 
 \begin{description}
-	\item[Initialisierer] Oft auch (fälschlicherweise) Konstruktor genannt. Name: \texttt{__int__}\\
+	\item[Initialisierer] Oft auch (fälschlicherweise) Konstruktor genannt. Name: \texttt{\_\_int\_\_}\\
 		Wird immer aufgerufen wenn eine neue Instanz der KLasse erstellt wird.
-	\item[Finalisierer] Oft auch (fälschlicherweise) Destructor genannt. Name: \texttt{__del__}\\
+	\item[Finalisierer] Oft auch (fälschlicherweise) Destructor genannt. Name: \texttt{\_\_del\_\_}\\
 		Wird immer aufgerufen wenn das Objekt vom Garbage Collector aufgeräumt wird. Wird im allgemeinen selten verwendet.
-	\item[String Konvertierer] Äquivalent zu Java's \texttt{toString} Methode. Name: \texttt{__str__}
-	\item[String Repräsentation] Ähnlich wie \texttt{__str__} aber gedacht für eine für Debug verwendbare Repräsentation andstatt für Output wie \texttt{__str__}.
+	\item[String Konvertierer] Äquivalent zu Java's \texttt{toString} Methode. Name: \texttt{\_\_str\_\_}
+	\item[String Repräsentation] Ähnlich wie \texttt{\_\_str\_\_} aber gedacht für eine für Debug verwendbare Repräsentation andstatt für Output wie \texttt{\_\_str\_\_}.
 \end{description}
 
 \end{frame}
+
 
 \end{document}
