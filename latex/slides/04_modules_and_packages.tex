@@ -1,0 +1,85 @@
+
+%%	Getting started:
+%%	1) Copy this file and name the copy it like the topic it covers
+%%	2) In the following make sure to modify the copy, NOT THE ORIGINAL
+%%	3) Look for the points marked with "TODO" and complete them
+%%	4) compile this file
+
+\input{../templates/slides_template.tex}	 % nothing to do here
+% TODO change "course_info" to the name of your actual …_info(.tex)
+\input{course_info} % TODO modify this if you have not already done so
+\usepackage{comment}
+
+% meta-information
+\newcommand{\topic}{
+	% TODO fill in the actual topic
+	Module und Pakete
+}
+
+% nothing to do here
+\title{\topic}
+\supertitle{\course}
+\date{\today}
+
+% the actual document
+\begin{document}
+
+\maketitle
+
+\begin{frame}
+	\tableofcontents
+\end{frame}
+
+%% Für einzelne Zeilen Code \codeline{} vewenden (ist mit Markup) für einzelne Worte \texttt{} verwenden (auch in Tabellen!)
+
+\section{Modules}
+\subsection{Eigene Module}
+\begin{frame}[fragile]{Module}
+	\begin{itemize}
+		\item Ein Modul ist eine extra Datei mit Definitionen und Funktionen
+		\item Der Dateiname setzt sich aus Modulname + \texttt{.py} zusammen
+		\item Das komplette Modul wird mit \texttt{import} hinzugefügt
+		\item Einzelne Funktionen mit \texttt{from} Modul \texttt{import} Funktion
+		\item Mit Hilfe von \texttt{as} kann ein Alias angelegt werden
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+	\lstinputlisting{resources/04_modules_and_packages/incdec.py}
+	\lstinputlisting{resources/04_modules_and_packages/modules.py}
+\end{frame}
+
+\subsection{Suchpfad für Module}
+\begin{frame}
+	Wenn ein Modul importiert wird, sucht Python nach diesem an folgenden Orten:
+	\begin{itemize}
+		\item in der Standart Bibliothek
+		\item im aktuellen Verzeichnis
+		\item im Pyhtonpath
+	\end{itemize}
+\end{frame}
+
+\subsection{Standart Module}
+\begin{frame}{Standart Module}
+	Einige Module werden in der Standart libary mitgeliefert.\\
+	Beispiele hierfür sind:
+	\begin{itemize}
+		\item \texttt{re} (Regular expressions),
+		\item \texttt{sys},
+		\item \texttt{os},
+		\item ...
+	\end{itemize}
+\end{frame}
+
+\section{Packages}
+\begin{frame}{Packages}
+	\begin{itemize}
+		\item Packages sind Ordner, welche Module oder weitere Packages enthalten
+		\item Diese Ordner müssen eine \texttt{\_\_init\_\_.py} enthalten, um als Packages erkannt zu werden
+		\item \texttt{\_\_init\_\_.py} kann leer sein, oder Code enthalten, welcher beim initialisieren ausgeführt wird
+		\item 
+	\end{itemize}
+\end{frame}
+
+\end{document}
