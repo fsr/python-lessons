@@ -24,10 +24,13 @@ Run this script.
 #### Edit
 
 Write a second module `stringopts.py` an group this and the first one in a Package.[^package]
-`stringopts` should include functions that are called `get_length`, `reverse` and `does_include`
+`stringopts` should include functions that are called `get_length`, `reverse`[^reverse] and `does_include`
 
 [^package]:
     Do not forget to add a `__init__.py`
+
+[^reverse]:
+    To reverse Strings you could use `myString[::-1]`
 
 Edit your script and use functions of both.
 
