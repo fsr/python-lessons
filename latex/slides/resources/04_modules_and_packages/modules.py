@@ -2,7 +2,7 @@
 import incdec
 
 # Die Funktionen koennen wie folgt aufgerufen werden:
-incdec.inrement(3)
+incdec.increment(3)
 # => 4
 incdec.decrement(3)
 # => 2
