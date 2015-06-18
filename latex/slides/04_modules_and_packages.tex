@@ -66,8 +66,17 @@
 	\end{itemize}
 \end{frame}
 
-\subsection{Standard Module}
-\begin{frame}{Standard Module}
+\subsection{Suchpfad modifizieren}
+\begin{frame}
+Zusätzliche directories für den PYTHONPATH kann man beim aufruf übergeben\\
+\texttt{PYTHONPATH=/my/directory python3 script.py}\\
+Oder im programm
+\lstinputlisting{resources/04_modules_and_packages/path.py}
+Änderungen am pfad sind erst \textbf{nach} der entsprechenden Codezeile verfürbar.
+\end{frame}
+
+\subsection{Standart Module}
+\begin{frame}{Standart Module}
 	Python liefert viele nützliche Module bereits in der Standardbibliothek mit, von welchen wir eineige bereits kennen gelernt haben.
 	z.B. sys, os, http, re, fuctools, itertools, collections, hashlib, urllib und viele mehr. Daher bezeichnet man Python oft auch als "Batteries included".
 \end{frame}
@@ -76,7 +85,7 @@
 \begin{frame}{Packages}
 	\begin{itemize}
 		\item Packages sind Ordner, welche mindestens ein \texttt{\_\_init\_\_.py} Modul enthalten.
-		\item der Inhalt dieses Moduls ist prinzipiell egal. 
+		\item der Inhalt dieses Moduls ist prinzipiell egal.
 		\item Packages können genau wie Module importiert werden.
 		\item Wird das Package selbst importiert, sind alle Definitionen in \texttt{\_\_init\_\_.py} über das importierte Package erreichbar.
 		\item Sie werden benutzt um Module in sinnvolle Gruppen zusammenzufassen.
