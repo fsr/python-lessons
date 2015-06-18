@@ -23,7 +23,7 @@ Run this script.
 
 #### Edit
 
-Write a second module `stringopts.py` an group this and the first one in a Package.[^package]
+Write a second module `stringopts.py` and group this and the first one in a Package.[^package]
 `stringopts` should include functions that are called `get_length`, `reverse`[^reverse] and `does_include`
 
 [^package]:
@@ -36,4 +36,4 @@ Edit your script and use functions of both.
 
 #### Run
 
-Run and test you script.
+Run and test your script.
