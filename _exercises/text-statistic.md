@@ -5,7 +5,7 @@ number: 8
 ---
 
 
-Write some [lorem ipsum text](//http://www.loremipsum.de) into a file.
+Write some [lorem ipsum text](http://www.loremipsum.de) into a file.
 
 Read the file[^filereading] and make a statistic of how often every word appears in the file[^dict] and print that to the command line.
 
