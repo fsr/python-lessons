@@ -38,7 +38,7 @@
 	\begin{itemize}
 		\item Ein Module ist die python-interne Repräsentation einer \texttt{.py} Datei
 		\item Der Dateiname setzt sich daher aus Modulname + \texttt{.py} zusammen
-		\item Module beinhalten eine beliebige Anzahl an Definitionen (Klasse, Funktionen, Variablen/Konstanten)
+		\item Module beinhalten eine beliebige Anzahl an Definitionen (Klassen, Funktionen, Variablen/Konstanten)
 		\item Das komplette Modul wird mit \texttt{import} hinzugefügt
 		\item Einzelne Inhalte mit \texttt{from} Modul \texttt{import} Name
 		\item Mit Hilfe von \texttt{as} kann ein Alias für den importierten namen angelegt werden
@@ -55,19 +55,19 @@
 \begin{frame}
 	Wenn ein Modul importiert wird, sucht Python nach diesem an allen Orten, welche im sogenannten PYTHONPATH aufgelistet sind. Python intern ist dieser in \texttt{sys.path} zu finden, in der Kommandozeile ist er mit der Umgebungsvariable PYTHONPATH erreichbar.\\
 	Dieser Pfad \texttt{sys.path} kann zur Laufzeit verändert werden.\\
-	Standardmäßig enthält er meist:
+	Standardmä\ss{}ig enthält er meist:
 	\begin{itemize}
-		\item die Standart Bibliothek der derzeitig verwendeten Python Version
-		\item den aktuellen Verzeichnis in dem der Interpreter aufgerufen wurde
+		\item die Standard Bibliothek der derzeitig verwendeten Python Version
+		\item das aktuellen Verzeichnis in dem der Interpreter aufgerufen wurde
 		\item eine Verzeichnis mit plattfomspezifischen Modulen, z.B.
 			"/usr/local/Cellar/python3/3.4.3/Frameworks/Python.framework/
 			Versions/3.4/lib/python3.4/plat-darwin" für Mac
-		\item Benutzerspezifische Module für die jezeilige python version, z.B. "/usr/local/lib/python3.4/site-packages" für Python 3.4
+		\item Benutzerspezifische Module für die jeweilige Python Version, z.B. "/usr/local/lib/python3.4/site-packages" für Python 3.4
 	\end{itemize}
 \end{frame}
 
-\subsection{Standart Module}
-\begin{frame}{Standart Module}
+\subsection{Standard Module}
+\begin{frame}{Standard Module}
 	Python liefert viele nützliche Module bereits in der Standardbibliothek mit, von welchen wir eineige bereits kennen gelernt haben.
 	z.B. sys, os, http, re, fuctools, itertools, collections, hashlib, urllib und viele mehr. Daher bezeichnet man Python oft auch als "Batteries included".
 \end{frame}
