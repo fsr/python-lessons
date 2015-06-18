@@ -1,6 +1,7 @@
 ---
 title: Important importing - path path path
 status: finished
+number: 10
 ---
 
 ## Step 1
