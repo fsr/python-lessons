@@ -3,7 +3,7 @@
         "pdf": {
             "source_dir": "latex/slides",
             "target_dir": "build/pdf",
-            "command": "xelatex",
+            "command": "pdflatex",
             "files": [
                 "01_getting_started.tex",
                 "02_grundlagen.tex",
