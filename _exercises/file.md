@@ -16,7 +16,7 @@ Check the result.
 
 ## Step 2
 
-Get some lorem ipsum paragraphs (your can use [this](http://www.loremipsum.de) page) and and them to the file (by hand).
+Get some lorem ipsum paragraphs (you can use [this](http://www.loremipsum.de) page) and add them to the file (by hand).
 
 Open the file in python using `with` and write the contents to the console.
 
