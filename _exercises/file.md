@@ -41,4 +41,4 @@ Write the script so that it accepts a filepath as input[^args].
 
 Read `stdin`, half the lines and write the content into the file at the filepath we took as input.
 
-Call the script with some input (unix pipeline is very useful). For example `lorem.txt | python3 script.py 'output.txt'`
+Call the script with some input (unix pipeline is very useful). For example `less lorem.txt | python3 script.py 'output.txt'` with lorem.txt being the file containing test text.
