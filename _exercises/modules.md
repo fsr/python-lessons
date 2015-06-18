@@ -30,7 +30,7 @@ Write a second module `stringopts.py` an group this and the first one in a Packa
     Do not forget to add a `__init__.py`
 
 [^reverse]:
-    To reverse Strings you could use `myString[::-1]`
+    To reverse Strings you could use `myString[::-1]` or `reversed(myString)`
 
 Edit your script and use functions of both.
 
