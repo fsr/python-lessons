@@ -38,7 +38,7 @@
 	\begin{itemize}
 		\item Ein Module ist die python-interne Repräsentation einer \texttt{.py} Datei
 		\item Der Dateiname setzt sich daher aus Modulname + \texttt{.py} zusammen
-		\item Module beinhalten eine beliabige Anzahl an Definitionen (Klasse, Funktionen, Variablen/Konstanten)
+		\item Module beinhalten eine beliebige Anzahl an Definitionen (Klasse, Funktionen, Variablen/Konstanten)
 		\item Das komplette Modul wird mit \texttt{import} hinzugefügt
 		\item Einzelne Inhalte mit \texttt{from} Modul \texttt{import} Name
 		\item Mit Hilfe von \texttt{as} kann ein Alias für den importierten namen angelegt werden
@@ -59,7 +59,9 @@
 	\begin{itemize}
 		\item die Standart Bibliothek der derzeitig verwendeten Python Version
 		\item den aktuellen Verzeichnis in dem der Interpreter aufgerufen wurde
-		\item eine Verzeichnis mit plattfomspezifischen Modulen, z.B. "/usr/local/Cellar/python3/3.4.3/Frameworks/Python.framework/Versions/3.4/lib/python3.4/plat-darwin" für Mac
+		\item eine Verzeichnis mit plattfomspezifischen Modulen, z.B.
+			"/usr/local/Cellar/python3/3.4.3/Frameworks/Python.framework/
+			Versions/3.4/lib/python3.4/plat-darwin" für Mac
 		\item Benutzerspezifische Module für die jezeilige python version, z.B. "/usr/local/lib/python3.4/site-packages" für Python 3.4
 	\end{itemize}
 \end{frame}
@@ -73,10 +75,10 @@
 \section{Packages}
 \begin{frame}{Packages}
 	\begin{itemize}
-		\item Packages sind Ordner, welcher mindentens ein \texttt{\_\_init\_\_.py} Modul entahlten.
+		\item Packages sind Ordner, welche mindentens ein \texttt{\_\_init\_\_.py} Modul entahlten.
 		\item der Inhalt dieses Moduls ist prinzipiell egal. 
 		\item Packages können genau wie Module importiert werden.
-		\item Wir das Package selbst importiert, sind alle Definitionen in \texttt{\_\_init\_\_.py} über das importierte Package erreichbar.
+		\item Wird das Package selbst importiert, sind alle Definitionen in \texttt{\_\_init\_\_.py} über das importierte Package erreichbar.
 		\item Sie werden benutzt um Module in sinnvolle Gruppen zusammenzufassen.
 	\end{itemize}
 \end{frame}
