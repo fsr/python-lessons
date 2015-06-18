@@ -8,6 +8,7 @@
                 "01_getting_started.tex",
                 "02_grundlagen.tex",
                 "03_builtins.tex"
+		"04_modules_and_packages.tex"
             ]
         },
         "html": {
