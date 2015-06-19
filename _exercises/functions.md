@@ -1,11 +1,19 @@
 ---
 title: Functions as values
 status: drafty
+author: justus
 ---
 
 ## Regular
 
 Create a function that takes two numbers as arguments and multiplies them, returning the result.
+
+## Assignment
+
+Rename the function.[^renaming] Verify it works as intended.
+
+[^renaming]:
+    Declare a new variable, assign the function to it and then delete the old identifier
 
 ## Curried
 

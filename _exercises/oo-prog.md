@@ -2,6 +2,7 @@
 title: Objects and classes
 number: 4
 status: finished
+author: justus
 ---
 
 __Fire up the interpreter!__
@@ -14,7 +15,7 @@ Create an empty[^empty] class[^class] (name irrelevant, but let's call it "A").
 
 [^class]:
     Classes are created using the keyword `class`.
-    
+
 [^empty]:
     Empty things are created with the `pass` keyword as the last statement inside the block.
 
@@ -43,20 +44,20 @@ Create another instance of class "A" called "b".
 
 Try to access the attributes `id_value` and `id_string`. What happens?
 
-### Step 3 
+### Step 3
 
 Create another **non-empty** class called "B" with a method[^methods] called "my_method" that simply returns the number 42.
 
 [^methods]:
     Methods are declared like regular functions using `def name(params):`. However they have to be inside the class (indented) and the first parameter will be the class instance, usually called "self".
-        
+
         class SomeClass:
             def method(self, other_params):
                 # self is an object instance
                 stuff
                 return something
-        
-Try it with an nistance of the class.
+
+Try it with an instance of the class.
 
 Try it using the alternative call method.[^alt_call]
 
@@ -67,7 +68,7 @@ Try it using the alternative call method.[^alt_call]
 
 Create a new class "C" and implement the initializer[^initializer] such that it accepts some arguments and sets them as attributes.[^attr_init]
 
-Create some instances, check the atttributes work as intended.
+Create some instances, check the attributes work as intended.
 
 [^attr_init]:
     Attributes in the initializer are set like any other `self.attr = value`.
@@ -89,8 +90,8 @@ Try the method on some instances.[^anon_class]
 
 [^anon_class]:
     You can use the instance directly, without saving it. `Class(params).method()`
-    
-Try the alternative call.[^alt_call] 
+
+Try the alternative call.[^alt_call]
 
 ### Step 7
 
@@ -98,8 +99,8 @@ Create a class inheriting from "D", called "DChild"[^super] that accepts another
 
 [^super]:
     You'll need to call the parent class constructor using `super().__init__(params)`.
-    
-    
+
+
 ### Step 8
 
 Play around with inheritance.[^super2]

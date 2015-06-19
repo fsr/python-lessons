@@ -22,7 +22,7 @@ defaults:
       path: ""
       type: "exercises"
     values:
-      layout: "post"
+      layout: "exercise"
 
 collections:
   exercises:

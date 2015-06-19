@@ -1,4 +1,4 @@
-all:
+targets:
     - sqlite / peewee
     - os.path / os / pathlib
     - functools
