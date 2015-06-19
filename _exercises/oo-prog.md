@@ -2,7 +2,7 @@
 title: Objects and classes
 number: 4
 status: finished
-author: justus
+authors: justus
 ---
 
 __Fire up the interpreter!__
@@ -78,7 +78,7 @@ Create some instances, check the attributes work as intended.
 
 ### Step 5
 
-Add a class attribute to "C". Verify the instances you just created all have that same attibute.
+Add a class attribute to "C". Verify the instances you just created all have that same attribute.
 
 Modify it from one of the instances, verify it changes the value for all of them.
 
@@ -95,7 +95,7 @@ Try the alternative call.[^alt_call]
 
 ### Step 7
 
-Create a class inheriting from "D", called "DChild"[^super] that accepts another integer and stores it. Overload the `plus` method to return the sum of the two intergers.
+Create a class inheriting from "D", called "DChild"[^super] that accepts another integer and stores it. Overload the `plus` method to return the sum of the two integers.
 
 [^super]:
     You'll need to call the parent class constructor using `super().__init__(params)`.

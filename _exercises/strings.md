@@ -2,7 +2,7 @@
 title: Strings
 number: 2
 status: reviewed
-author: justus
+authors: justus
 ---
 
 We want to explore string concatenation and formatting.

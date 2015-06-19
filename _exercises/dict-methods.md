@@ -2,7 +2,7 @@
 title: Because builtin is not enough - Inheritance
 status: drafty
 number: 7
-author: justus
+authors: justus
 ---
 
 ### Inheriting form dict

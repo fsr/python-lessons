@@ -1,7 +1,7 @@
 ---
 title: Functions as values
 status: drafty
-author: justus
+authors: justus
 ---
 
 ## Regular

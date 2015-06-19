@@ -6,22 +6,25 @@ layout: default
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
     <p class="post-meta">
-      {% if page.author %}Author:
-        {% if site.data.authors contains page.author %}
-          {% if site.data.authors[page.author].homepage %}<a href="{{ site.data.authors[page.author].homepage %}}">{% endif %}
-          {% if site.data.authors[page.author].fullname %}{{ site.data.authors[page.author].fullname }}
-          {% else %}{{ page.author }}
-          {% endif %}
-          {% if site.data.authors[page.author].homepage %}</a>{% endif %}
-          {% if site.data.authors[page.author].email %}(<a href="mailto:{{ site.data.authors[page.author].email }}">E-Mail</a>)
-          {% endif %}
-        {% else %}
-          {{ page.author }}
-        {% endif %}
 
+      {% if page.authors %}Authors:
+        {% for author in page.authors %}
+          {% if site.data.authors contains author %}
+            {% if site.data.authors[author].homepage %}<a href="{{ site.data.authors[author].homepage %}}">{% endif %}
+            {% if site.data.authors[author].fullname %}{{ site.data.authors[author].fullname }}
+            {% else %}{{ author }}
+            {% endif %}
+            {% if site.data.authors[author].homepage %}</a>{% endif %}
+            {% if site.data.authors[author].email %}(<a href="mailto:{{ site.data.authors[author].email }}">E-Mail</a>)
+            {% endif %}
+          {% else %}
+            {{ author }}
+          {% endif %}
+          {% unless forloop.last %} -{% endunless %}
+        {% endfor %}
       {% endif %}
       {% if page.meta %}
-        {% if page.author %} •
+        {% if page.authors %} •
         {% endif %}
         {{ page.meta }}
       {% endif %}</p>

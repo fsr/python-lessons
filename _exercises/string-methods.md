@@ -2,7 +2,7 @@
 title: String Methods
 number: 3
 status: reviewed
-author: justus
+authors: justus
 ---
 
 *Remember: String formatting can be very useful when creating strings for printing to the console*

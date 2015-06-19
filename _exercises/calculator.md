@@ -2,7 +2,7 @@
 title: Calculator
 status: finished
 number: 6
-author: justus
+authors: justus
 ---
 
 ### Description

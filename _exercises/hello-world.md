@@ -2,7 +2,7 @@
 title: Hello World
 number: 1
 status: reviewed
-author: justus
+authors: justus
 ---
 
 ### Step 1

@@ -1,7 +1,7 @@
 ---
 title: Your own unix, with blackjack and ... python
 status: drafty
-author: justus
+authors: justus
 ---
 
 We want to recreate (parts of) `cp`, `mv`, `cd` and `ls` in python.
