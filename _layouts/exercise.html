@@ -8,16 +8,17 @@ layout: default
     <p class="post-meta">
       {% if page.author %}Author:
         {% if site.data.authors contains page.author %}
-          {% if site.data.authors[page.author].email %}<a href="mailto:{{ site.data.authors[page.author].email }}">
-            {% if site.data.authors[page.author].fullname %}{{ site.data.authors[page.author].fullname }}
-            {% else %}{{ page.author }}
-            {% endif %}</a>
-          {% endif %}
-        {% else %}
+          {% if site.data.authors[page.author].homepage %}<a href="{{ site.data.authors[page.author].homepage %}}">{% endif %}
           {% if site.data.authors[page.author].fullname %}{{ site.data.authors[page.author].fullname }}
           {% else %}{{ page.author }}
           {% endif %}
+          {% if site.data.authors[page.author].homepage %}</a>{% endif %}
+          {% if site.data.authors[page.author].email %}(<a href="mailto:{{ site.data.authors[page.author].email }}">E-Mail</a>)
+          {% endif %}
+        {% else %}
+          {{ page.author }}
         {% endif %}
+
       {% endif %}
       {% if page.meta %}
         {% if page.author %} •
