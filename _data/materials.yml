@@ -1,0 +1,17 @@
+slides:
+  -
+    number: 1
+    name: Getting Started
+    url: https://ifsr.de/kurs-materialien/python/01_getting_started.pdf
+  -
+    number: 2
+    name: Grundlagen
+    url: https://ifsr.de/kurs-materialien/python/02_grundlagen.pdf
+  -
+    number: 3
+    name: Builtins
+    url: https://ifsr.de/kurs-materialien/python/03_builtins.pdf
+  -
+    number: 4
+    name: Modules and Packages
+    url: https://ifsr.de/kurs-materialien/python/04_modules_and_packages.pdf
