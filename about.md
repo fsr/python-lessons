@@ -8,6 +8,6 @@ This site hosts the exercises for the fsr python lessons. Sources can be found o
 
 
 Modules and concepts this course wants to teach:
+
 {% for target in site.data.overview.targets %}
-- {{ target }}
-{% endfor %}
+- {{ target }}{% endfor %}
