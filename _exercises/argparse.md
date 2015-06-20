@@ -16,7 +16,7 @@ Create a python file `cd.py`.
 This file should be executable[^executable].
 
 [^executable]:
-    Permissions have to be set appropriately and the line `#! /usr/bin/env python3` has to appear at the top of the file.
+    Permissions have to be set appropriately (at least `chmod u+x cd.py`) and the line `#! /usr/bin/env python3` has to appear at the top of the file.
 
 It will take one input (verify that not more than one have been given) and change the current working directory to that location, if it is valid and exists, otherwise print an error message and terminate.
 

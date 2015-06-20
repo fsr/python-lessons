@@ -44,4 +44,7 @@ def func():
     return "..."
 {% endhighlight %}
 
-Now replace it with a lambda expression
+Now replace it with a lambda expression.[^lambda]
+
+[^lambda]:
+    `lambda param_a, param_b: expression`
