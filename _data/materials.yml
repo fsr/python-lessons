@@ -15,3 +15,11 @@ slides:
     number: 4
     name: Modules and Packages
     url: https://ifsr.de/kurs-materialien/python/04_modules_and_packages.pdf
+  -
+    number: 5
+    name: PIP
+    url: https://ifsr.de/kurs-materialien/python/05_pip.pdf
+  -
+    number: 6
+    name: Decorators
+    url: https://ifsr.de/kurs-materialien/python/06_decorators.pdf
