@@ -1,0 +1,76 @@
+
+%%	Getting started:
+%%	1) Copy this file and name the copy it like the topic it covers
+%%	2) In the following make sure to modify the copy, NOT THE ORIGINAL
+%%	3) Look for the points marked with "TODO" and complete them
+%%	4) compile this file
+
+\input{../templates/slides_template}	% nothing to do here
+% TODO change "course_info" to the name of your actual …_info(.tex)
+\input{course_info} % TODO modify this if you have not already done so
+
+% meta-information
+\newcommand{\topic}{
+	% TODO fill in the actual topic
+	Decorators
+}
+
+% nothing to do here
+\title{\topic}
+\supertitle{\course}
+\date{\today}
+
+% the actual document
+\begin{document}
+
+\maketitle
+
+\begin{frame}
+	\tableofcontents
+\end{frame}
+
+
+%% Für einzelne Zeilen Code \codeline{} vewenden (ist mit Markup) für einzelne Worte \texttt{} verwenden (auch in Tabellen!)
+
+
+% TODO from here on: build your own content
+\section{Fakten über Funktionen}
+\begin{frame}{Fakten über Funktionen}
+	\begin{itemize}
+		\item Funktionen können Variablen zugewiesen werden,
+		\lstinputlisting[lastline=8]{resources/06_decorators/functions.py}
+		\item Sie können in Funktionen definiert werden,
+		\lstinputlisting[firstline=11, lastline=19]{resources/06_decorators/functions.py}
+	\end{itemize}
+\end{frame}
+\begin{frame}{Fakten über Funktionen}
+	\begin{itemize}
+		\item Sie können andere Funktionen zurückgeben,
+		\lstinputlisting[firstline=22, lastline=29]{resources/06_decorators/functions.py}
+		\item Sie können als Parameter mitgegeben werden
+		\lstinputlisting[firstline=32]{resources/06_decorators/functions.py}
+	\end{itemize}
+\end{frame}
+
+\section{Decorator}
+\subsection{einfache Decorator}
+\begin{frame}{einfache Decorator}
+	Decorator sind Wrapper über existierende Funktionen. Dabei werden die zuvor genannten Eigenschaften verwendet.\\
+	Eine Funktion, die eine weitere als Argument hat, erstellt eine neue Funktion.
+	\lstinputlisting[lastline=18]{resources/06_decorators/decorator.py}
+\end{frame}
+
+\begin{frame}[fragile]{einfache Decorator}
+	Durch das \texttt{@} Symbol lässt sich der Decorator wesentlich einfacher verwenden.
+	\lstinputlisting[firstline=22, lastline=35]{resources/06_decorators/decorator.py}
+	Es können auch mehrere Decorator übereinander geschrieben werden.
+\end{frame}
+
+\subsection{Decorator mit Argumenten}
+\begin{frame}{Decorator mit Argumenten}
+	Decorator erwarten Funktionen als Argumente. Aus diesem Grund kann man nicht einfach andere Argumente mitgeben, sondern sich eine Funktion schreiben, die dann den Decorator erstellt.
+	\lstinputlisting[firstline= 38]{resources/06_decorators/decorator.py}
+\end{frame}
+
+% nothing to do from here on
+\end{document}
