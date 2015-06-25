@@ -1,0 +1,4 @@
+pathlib>=1.0
+pyyaml>=3.08
+markdown
+
