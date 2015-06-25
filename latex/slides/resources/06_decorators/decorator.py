@@ -12,9 +12,9 @@ def tell_the_world(func):
 print tell_the_world(get_date)("25th June 2015")
 
 # als decorator
-tell_the_world_its = tell_the_world(get_date)
+get_date = tell_the_world(get_date)
 
-print tell_the_world_its("25th June 2015")
+print get_date("25th June 2015")
 # => Hello World, today it's 25th June 2015.
 
 
