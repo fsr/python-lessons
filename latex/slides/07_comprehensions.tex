@@ -38,8 +38,8 @@
   In allen üblichen modernen Sprachen vorhanden.
 \end{frame}
 
-\section{list Comprehention}
-\begin{frame}{List Comprehention}
+\section{list comprehension}
+\begin{frame}{List comprehension}
   Grundlegender Syntax: \codeline{[ EXPRESSION for LAUFVARIABLE in ITERABLE (if FILTER) ]}\\
   \begin{description}
     \item[EXPRESSION] Ist ein beliebiger Ausdruck (man stelle sich ein implizites \texttt{return} vor) wie ein Wert, eine Variable, eine Gleichung \codeline{3 * 8}, etc ...
@@ -51,8 +51,8 @@
 
 \end{frame}
 
-\section{dict comprehention}
-\begin{frame}{Dict Comprehention}
+\section{dict comprehension}
+\begin{frame}{Dict comprehension}
   Grundlegender Syntax: \codeline{\{ KEY : VALUE for LAUFVARIABLE in ITERABLE (if FILTER) \}}\\
   Fast der gleiche Syntax, nur diesmal mit 2 expressions \textit{KEY} und \textit{VALUE}. Ansonten gelten die gleichen Regeln.
 \end{frame}
@@ -60,7 +60,7 @@
 
 \section{Generators}
 \begin{frame}{Generators}
-  Grundlegender Sytax ist gleich dem der list comprehention. Erzeugt aber ein iterable (generator).
+  Grundlegender Sytax ist gleich dem der list comprehension. Erzeugt aber ein iterable (generator).
 	Da sich \codeline{list} und \codeline{dict} auch aus iterables bauen lassen gilt daher:\\
 
 		\codeline{list(EXPRESSION for VARIABLE in ITERABLE) == [EXPRESSION for VARIABLE in ITERABLE]}\\
@@ -72,7 +72,7 @@
 
 \section{Misc}
 \begin{frame}{Misc}
-  Mit \texttt{tuple()} und der generator expression lassen sich theoretisch auch tuple comprehentions bauen, ist aber konzeptionell eher Unsinn.
+  Mit \texttt{tuple()} und der generator expression lassen sich theoretisch auch tuple comprehensions bauen, ist aber konzeptionell eher Unsinn.
 \end{frame}
 
 
