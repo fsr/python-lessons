@@ -23,3 +23,7 @@ slides:
     number: 6
     name: Decorators
     url: https://ifsr.de/kurs-materialien/python/06_decorators.pdf
+  -
+    number: 7
+    name: Comprehensions
+    url: https://ifsr.de/kurs-materialien/python/07_comprehensions.pdf
