@@ -1,0 +1,75 @@
+
+%%	Getting started:
+%%	1) Copy this file and name the copy it like the topic it covers
+%%	2) In the following make sure to modify the copy, NOT THE ORIGINAL
+%%	3) Look for the points marked with "TODO" and complete them
+%%	4) compile this file
+
+\input{../templates/slides_template}	% nothing to do here
+% TODO change "course_info" to the name of your actual …_info(.tex)
+\input{course_info} % TODO modify this if you have not already done so
+
+% meta-information
+\newcommand{\topic}{
+	% TODO fill in the actual topic
+	Comprehensions
+}
+
+% nothing to do here
+\title{\topic}
+\supertitle{\course}
+\date{\today}
+
+% the actual document
+\begin{document}
+
+\maketitle
+
+\begin{frame}
+	\tableofcontents
+\end{frame}
+
+
+%% Für einzelne Zeilen Code \codeline{} vewenden (ist mit Markup) für einzelne Worte \texttt{} verwenden (auch in Tabellen!)
+
+\section{Basics}
+\begin{frame}{Basics}
+  Comprehensions sind eine bequeme Art und Weise um Funktoren (Datenstrukturen die andere Datenstrukturen beinhalten) mit kleinen Expressions zu erstellen.
+  In allen üblichen modernen Sprachen vorhanden.
+\end{frame}
+
+\section{list Comprehention}
+\begin{frame}{List Comprehention}
+  Grundlegender Syntax: \codeline{[ EXPRESSION for LAUFVARIABLE in ITERABLE (if FILTER)]}\\
+  Der \texttt{if} Teil in Klammern ist optional.\\
+  \begin{description}
+    \item[EXPRESSION] Ist ein beliebiger Ausdruck (man stelle sich ein implizites \texttt{return} vor) wie ein Wert, eine Variable, eine Gleichung \codeline{3 * 8}, etc ...
+    \item[LAUFVARIABLE] Eine beliebige variable, die in \textit{EXPRESSION} und \textit{FILTER} zur verfügung steht
+    \item[ITERABLE] Ist häufig etwas wie \codeline{range()} oder eine andere Liste.
+    \item[FILTER] Eine optionale boolean expression, womit Einträge gefiltert werden (falls \texttt{False})
+  \end{description}
+
+
+\end{frame}
+
+\section{dict comprehention}
+\begin{frame}{Dict Comprehention}
+  Grundlegender Syntax: \codeline{{ KEY : VALUE for LAUFVARIABLE in ITERABLE (if FILTER) }}\\
+  Fast der gleiche Syntax, nur diesmal mit 2 expressions \textit{KEY} und \textit{VALUE}. Ansonten gelten die gleichen Regeln.
+\end{frame}
+
+
+\section{Generators}
+\begin{frame}{Generators}
+  Grundlegender Sytax ist gleich dem der list comprehention. Erzeugt ein iterable (generator). D.h. \codeline{list( EXPRESSION for VARIABLE in ITERABLE ) == [EXPRESSION for VARIABLE in ITERABLE]}
+\end{frame}
+
+
+\section{Misc}
+\begin{frame}{Misc}
+  Mit \texttt{tuple()} und der generator expression lassen sich theoretisch auch tuple comprehentions bauen, ist aber konzeptionell eher Unsinn.
+\end{frame}
+
+
+% nothing to do from here on
+\end{document}
