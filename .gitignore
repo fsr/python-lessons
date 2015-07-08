@@ -4,7 +4,6 @@ build/
 *.pyg
 .c9/
 
-*.md
 *.log
 *.aux
 *.vrb
