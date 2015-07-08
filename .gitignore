@@ -13,6 +13,9 @@ build/
 *.pdf
 *.toc
 *.snm
+*.fdb_latexmk
+*.fls
+*.synctex.gz
 .DS_Store
 _site/
 .sass-cache/
