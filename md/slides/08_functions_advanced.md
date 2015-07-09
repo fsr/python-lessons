@@ -1,4 +1,9 @@
-# Advanced functions
+---
+theme: black
+title: Advanced function (signatures)
+---
+
+## Advanced functions
 
 ## Functions as Values
 
@@ -56,7 +61,9 @@ greet('Herbert', 'Gruess Gott')  # ==> 'Gruess Gott Herbert'
 
 ### Don't
 
-Ever, EVER, even though the language allows it, make a mutable value the default value of a function. Mutable Values include `list`, `dict`, `set`.
+Ever, EVER, even though the language allows it, make a mutable value the default value of a function. Mutable Values include `list`, `dict`, `set` and your own classes (more precisely their attributes).
+
+Immutable values would be `string`, `function` (sort of), `int`, `type`and `None`.
 
 ```python
 def func(param1, param2=[]):
