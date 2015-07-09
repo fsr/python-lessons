@@ -8,6 +8,7 @@ import Filesystem
 import System.Process
 import Prelude hiding (FilePath)
 import System.Environment
+import Text.Printf
 
 
 sourceDir = "md/slides"
@@ -16,13 +17,13 @@ targetTexDir = "latex/slides"
 fileFilter = flip hasExtension "md"
 
 
-revealCommand infile outfile =
-  "pandoc -t revealjs " ++ encodeString infile ++ " -o " ++ encodeString outfile ++ " --no-highlight --template md/template.html -s"
+revealCommand =
+  printf "pandoc -t revealjs %s -o %s --no-highlight --template md/template.html -s"
 
 toRevealName file = targetHtmlDir </> addExtension (basename file) "html"
 
-texCommand infile outfile =
-  "pandoc -t beamer " ++ encodeString infile ++ " -o " ++ encodeString outfile
+texCommand =
+  printf "pandoc -t beamer %v -o %v"
 
 toTexName file = targetTexDir </> addExtension (basename file) "tex"
 
@@ -38,13 +39,17 @@ buildEvent e =
 
 build :: FilePath -> IO ()
 build file = do
-  let revealName = toRevealName file
-  let texName = toTexName file
-  putStrLn $ "compiling file '" ++ encodeString file ++ "' to html file '" ++ encodeString revealName ++ "'"
-  callCommand $ revealCommand file revealName
-  putStrLn $ "compiling file '" ++ encodeString file ++ "' to tex file '" ++ encodeString texName ++ "'"
-  callCommand $ texCommand file texName
+  putStrLn $ printf "compiling $ html '%v' -> '%v'" fileName revealName
+  callCommand $ revealCommand fileName revealName
+  putStrLn $ printf "compiling $ tex '%v' -> '%v'" fileName texName
+  callCommand $ texCommand fileName texName
+  where
+    fileName  = encodeString file
+    revealName = encodeString $ toRevealName file
+    texName    = encodeString $ toTexName file
 
+
+main :: IO ()
 main = do
   args <- getArgs
   case args of
