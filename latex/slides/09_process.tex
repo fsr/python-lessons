@@ -1,0 +1,248 @@
+\section{\texorpdfstring{\texttt{subprocess}}{subprocess}}\label{subprocess}
+
+\begin{frame}
+
+The \texttt{subprocess} module allows for execution of arbitrary
+external executables from the system.
+
+One can think of it like a terminal.
+
+\end{frame}
+
+\section{Basics}\label{basics}
+
+\begin{frame}
+
+Subprocesses run inherently asynchronous. Subprocesses run on the system
+directly, not in a shell (unless specified). The programs available to
+run depend on the underlying system, the invocation doesn't, the library
+takes care of converting the parameters into a windows compatible
+\texttt{CreateProcess()} string.
+
+\end{frame}
+
+\section{Constants}\label{constants}
+
+\begin{frame}{File descriptors}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  \texttt{DEVNULL}\\The systems trashcan.
+\item
+  \texttt{PIPE}\\A connection for 2 processes.
+\item
+  \texttt{STDOUT}\\The standard output pipe or the current process.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Exceptions}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  \texttt{SubprocessError} The base error for this module.
+\item
+  \texttt{TimeoutError}\\Some timeout expired.
+\item
+  \texttt{CalledProcessError}\\The subprocess exited in an unexpected
+  way.
+\end{itemize}
+
+\end{frame}
+
+\section{\texorpdfstring{\texttt{Popen}
+class}{Popen class}}\label{popen-class}
+
+\begin{frame}[fragile]
+
+The base class in this module is the \texttt{Popen} class.
+
+The function signature may be confusing at first.
+
+\begin{verbatim}
+Popen(args, bufsize=-1, executable=None, stdin=None, stdout=None,
+    stderr=None, preexec_fn=None, close_fds=True, shell=False,
+    cwd=None, env=None, universal_newlines=False, startupinfo=None,
+    creationflags=0, restore_signals=True, start_new_session=False,
+    pass_fds=())
+\end{verbatim}
+
+\end{frame}
+
+\begin{frame}{Some important arguments}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  \texttt{args}\\The invocation arguments. Should be \texttt{tuple} or
+  \texttt{list} of \texttt{strings} containing process name and
+  arguments. Basically split the shell command on the spaces:
+  \texttt{ls\ -A\ *.md\ ==\textgreater{}\ {[}\textquotesingle{}ls\textquotesingle{},\ \textquotesingle{}-A\textquotesingle{},\ \textquotesingle{}*.md\textquotesingle{}{]}}.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{itemize}
+\item
+  \texttt{shell} (default: \texttt{False})\\Executes in a shell. Should
+  always be \texttt{False}, otherwise the call is unsafe.
+\item
+  \texttt{stdout}, \texttt{stdin}, \texttt{stderr}\\In- and output
+  connections for the child process.\\The \texttt{DEVNULL},
+  \texttt{PIPE} and \texttt{STDOUT} constants are often useful here.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{itemize}
+\item
+  \texttt{env}\\Environment variables for the child process. Default
+  will be a subset of \texttt{os.environ} (python process environment).
+\item
+  \texttt{cwd}\\The working directory for the child process.
+\end{itemize}
+
+\end{frame}
+
+\section{Popen objects}\label{popen-objects}
+
+\begin{frame}
+
+When Popen is instantiated the underlying process starts executing, and
+the returned \texttt{Popen} object contains information about the
+running process.
+
+\end{frame}
+
+\begin{frame}{Getting information}
+
+\begin{itemize}
+\item
+  \texttt{process.args}\\Get the arguments the process was called with.
+\item
+  \texttt{obj.stdout}, \texttt{obj.stdin}, \texttt{obj.stderr}\\In- and
+  output connections as they were set during process initialization.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{itemize}
+\item
+  \texttt{process.pid}\\Process ID used by the system.
+\item
+  \texttt{process.poll()}\\Check if the process has terminated. Returns
+  the returncode of the process. If it hasn't exited returns
+  \texttt{None}.
+\item
+  \texttt{process.returncode}\\Attribute returned by function above. But
+  does not check. Thus the above function should be used instead.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Interacting with the process}
+
+\begin{itemize}
+\item
+  \texttt{process.wait(timeout=None)}\\Wait for the process to terminate
+  for \emph{timeout} seconds. If \emph{timeout} is \texttt{None} wait
+  unit terminate indefinitely.
+\item
+  \texttt{process.send\_signal(signal)}\\Send a signal to the process.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  \texttt{process.communicate(input=None,\ timeout=None)}\\Write
+  \emph{input} data to the process's \texttt{stdin} (if \texttt{stdin}
+  was \texttt{PIPE}), wait for process termination, read the processes
+  \texttt{stdout} data (if \texttt{stdout} was \texttt{PIPE}) and return
+  it. Timeout works as above.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{itemize}
+\item
+  \texttt{process.terminate()}\\Sends a termination signal to the
+  process (\texttt{SIGTERM}).
+\item
+  \texttt{process.kill()}\\Force the process to terminate
+  (\texttt{SIGKILL}).
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]{Popen with context manager}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{with} \NormalTok{subprocess.Popen([}\StringTok{'ls'}\NormalTok{]) }\CharTok{as} \NormalTok{process:}
+    \KeywordTok{pass}
+\end{Highlighting}
+\end{Shaded}
+
+Closes file descriptors on exit and waits for the process.
+
+\end{frame}
+
+\section{Convenience functions}\label{convenience-functions}
+
+\begin{frame}
+
+The module provides shorthands for commonly used ways of using
+\texttt{Popen}. Note that all these internally just call \texttt{Popen}.
+
+\end{frame}
+
+\begin{frame}[fragile]
+
+\begin{itemize}
+\item
+  \texttt{call}
+
+\begin{verbatim}
+call(args, *, stdin=None, stdout=None,
+stderr=None, shell=False, timeout=None)
+\end{verbatim}
+
+  Calls a process, waits for termination and returns the returncode.
+\item
+  \texttt{check\_call(arguments\ as\ above)}\\Calls a process, waits for
+  termination, returns nothing if successful (returncode == 0), if
+  unsuccessful raises a \texttt{CalledProcessError}.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]
+
+\begin{itemize}
+\item
+  \texttt{check\_output}
+
+\begin{verbatim}
+check_output(args, *, stdin=None, stdout=None,
+stderr=None, shell=False, timeout=None)
+\end{verbatim}
+
+  Run the command and returns the output of the process. Also raises
+  \texttt{CalledProcessError} if the returncode was not 0.
+\end{itemize}
+
+\end{frame}
