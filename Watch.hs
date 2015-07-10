@@ -1,4 +1,4 @@
-{-# LANGUAGE OverloadedStrings #-} -- for FilePath literals
+{-# LANGUAGE OverloadedStrings #-}
 import System.FSNotify
 import Control.Concurrent (threadDelay)
 import Control.Monad (forever)
