@@ -3,4 +3,4 @@ _site
 .c9/
 *.log
 latex/
-.rbuild/
+rbuild/
