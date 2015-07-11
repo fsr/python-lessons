@@ -3,7 +3,7 @@ theme: black
 title: Advanced function (signatures)
 ---
 
-## Advanced functions
+# Using functions
 
 ## Functions as Values
 
