@@ -4,7 +4,7 @@
 
 ---
 
-Genau wie PHP kann auch Pyhton direkt vom Webserver ausgeführt werden.
+Genau wie PHP kann auch Pyhton direkt vom Webserver ausgeführt werden. 
 
 ### Apache
 
