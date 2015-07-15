@@ -11,7 +11,9 @@
                 "04_modules_and_packages.tex",
                 "05_pip.tex",
                 "06_decorators.tex",
-                "07_comprehensions.tex"
+                "07_comprehensions.tex",
+		"08_functions_advanced.tex",
+		"09_process.tex"
             ]
         },
         "html": {
