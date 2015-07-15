@@ -1,5 +1,4 @@
 ---
-theme: black
 title: Advanced function (signatures)
 ---
 
