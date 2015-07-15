@@ -27,3 +27,11 @@ slides:
     number: 7
     name: Comprehensions
     url: https://ifsr.de/kurs-materialien/python/07_comprehensions.pdf
+-
+  number: 8
+  name: Funktions (advanced)
+  url: https://ifsr.de/kurs-materialien/python/08_functions_advanced.pdf
+-
+  number: 9
+  name: Process
+  url: https://ifsr.de/kurs-materialien/python/09_process.pdf
