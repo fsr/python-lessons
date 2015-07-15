@@ -16,7 +16,7 @@ targetTexDir = "latex/slides"
 fileFilter = flip hasExtension "md"
 revealCommand = printf "pandoc -t revealjs %s -o %s --no-highlight --template md/template.html -s"
 toRevealName file = targetHtmlDir </> addExtension (basename file) "html"
-texCommand = printf "pandoc -t beamer %s -o %s"
+texCommand = printf "pandoc -t beamer %s -o %s -s"
 toTexName file = targetTexDir </> addExtension (basename file) "tex"
 
 
