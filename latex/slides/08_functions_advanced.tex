@@ -1,3 +1,81 @@
+\documentclass[ignorenonframetext,]{beamer}
+\usetheme{black}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{:}
+\setbeamercolor{caption name}{fg=normal text.fg}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\usepackage{lmodern}
+\ifxetex
+  \usepackage{fontspec,xltxtra,xunicode}
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\else
+  \ifluatex
+    \usepackage{fontspec}
+    \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+    \newcommand{\euro}{€}
+  \else
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+      \fi
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+\newcommand{\RegionMarkerTok}[1]{{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\NormalTok}[1]{{#1}}
+
+% Comment these out if you don't want a slide with just the
+% part/section/subsection/subsubsection title:
+\AtBeginPart{
+  \let\insertpartnumber\relax
+  \let\partname\relax
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \let\insertsectionnumber\relax
+  \let\sectionname\relax
+  \frame{\sectionpage}
+}
+\AtBeginSubsection{
+  \let\insertsubsectionnumber\relax
+  \let\subsectionname\relax
+  \frame{\subsectionpage}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{0}
+
+\title{Advanced function (signatures)}
+\date{}
+
+\begin{document}
+\frame{\titlepage}
+
 \section{Using functions}\label{using-functions}
 
 \begin{frame}[fragile]{Functions as Values}
@@ -7,9 +85,9 @@ Functions can be assigned like normal values.
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{def} \NormalTok{function(params):}
-    \ControlFlowTok{return} \DecValTok{4}
+    \KeywordTok{return} \DecValTok{4}
 
-\NormalTok{my_var }\OperatorTok{=} \NormalTok{function}
+\NormalTok{my_var = function}
 
 \NormalTok{my_var(}\DecValTok{2}\NormalTok{)  }\CommentTok{# ==> 4}
 \end{Highlighting}
@@ -24,10 +102,10 @@ Or passed as parameters.
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{def} \NormalTok{callif(boolean, callback):}
-    \ControlFlowTok{if} \NormalTok{boolean:}
+    \KeywordTok{if} \NormalTok{boolean:}
         \NormalTok{callback()}
 
-\NormalTok{callif(}\VariableTok{True}\NormalTok{, }\KeywordTok{lambda} \NormalTok{: }\BuiltInTok{print}\NormalTok{(}\StringTok{"hello world"}\NormalTok{))}
+\NormalTok{callif(}\OtherTok{True}\NormalTok{, }\KeywordTok{lambda} \NormalTok{: }\DataTypeTok{print}\NormalTok{(}\StringTok{"hello world"}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
 
@@ -37,12 +115,12 @@ Or passed as parameters.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{class} \NormalTok{MyClass(}\BuiltInTok{object}\NormalTok{):}
-    \KeywordTok{def} \NormalTok{function(}\VariableTok{self}\NormalTok{, param):}
-        \ControlFlowTok{return} \DecValTok{4}
+\KeywordTok{class} \NormalTok{MyClass(}\DataTypeTok{object}\NormalTok{):}
+    \KeywordTok{def} \NormalTok{function(}\OtherTok{self}\NormalTok{, param):}
+        \KeywordTok{return} \DecValTok{4}
 
 
-\NormalTok{my_var }\OperatorTok{=} \NormalTok{MyClass.function}
+\NormalTok{my_var = MyClass.function}
 
 \NormalTok{my_var(MyClass(), }\DecValTok{2}\NormalTok{)  }\CommentTok{# ==> 4}
 \end{Highlighting}
@@ -59,8 +137,8 @@ will see why later).
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{def} \NormalTok{greet(name, greeting}\OperatorTok{=}\StringTok{'Hello'}\NormalTok{):}
-    \ControlFlowTok{return} \StringTok{'\{\} \{\}'}\NormalTok{.}\BuiltInTok{format}\NormalTok{(greeting, name)}
+\KeywordTok{def} \NormalTok{greet(name, greeting=}\StringTok{'Hello'}\NormalTok{):}
+    \KeywordTok{return} \StringTok{'\{\} \{\}'}\NormalTok{.}\DataTypeTok{format}\NormalTok{(greeting, name)}
 
 \NormalTok{greet(}\StringTok{'Herbert'}\NormalTok{)  }\CommentTok{# ==> 'Hallo Herbert'}
 \NormalTok{greet(}\StringTok{'Herbert'}\NormalTok{, }\StringTok{'Gruess Gott'}\NormalTok{)  }\CommentTok{# ==> 'Gruess Gott Herbert'}
@@ -83,8 +161,8 @@ Immutable values would be \texttt{string}, \texttt{function} (sort of),
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{def} \NormalTok{func(param1, param2}\OperatorTok{=}\NormalTok{[]):}
-    \BuiltInTok{print}\NormalTok{(param2)}
+\KeywordTok{def} \NormalTok{func(param1, param2=[]):}
+    \DataTypeTok{print}\NormalTok{(param2)}
     \NormalTok{param2.append(param1)}
 \end{Highlighting}
 \end{Shaded}
@@ -120,9 +198,9 @@ default \texttt{None} and reassign.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{def} \NormalTok{func(param1, param2}\OperatorTok{=}\VariableTok{None}\NormalTok{):}
-    \NormalTok{param2 }\OperatorTok{=} \NormalTok{[] }\ControlFlowTok{if} \NormalTok{param2 }\OperatorTok{is} \VariableTok{None} \ControlFlowTok{else} \NormalTok{param2}
-    \ControlFlowTok{pass}
+\KeywordTok{def} \NormalTok{func(param1, param2=}\OtherTok{None}\NormalTok{):}
+    \NormalTok{param2 = [] }\KeywordTok{if} \NormalTok{param2 is }\OtherTok{None} \KeywordTok{else} \NormalTok{param2}
+    \KeywordTok{pass}
 \end{Highlighting}
 \end{Shaded}
 
@@ -141,15 +219,15 @@ matter.
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{def} \NormalTok{land(house, tree, pond):}
-    \ControlFlowTok{return} \StringTok{'You own land with a \{\} a \{\} and a \{\}'}\NormalTok{.}\BuiltInTok{format}\NormalTok{(house, tree, pond)}
+    \KeywordTok{return} \StringTok{'You own land with a \{\} a \{\} and a \{\}'}\NormalTok{.}\DataTypeTok{format}\NormalTok{(house, tree, pond)}
 
 \NormalTok{land(}\StringTok{'green house'}\NormalTok{, }\StringTok{'maple'}\NormalTok{, }\StringTok{'fish pond'}\NormalTok{)}
 \CommentTok{# or called by name}
-\NormalTok{land(house}\OperatorTok{=}\StringTok{'green house'}\NormalTok{, pond}\OperatorTok{=}\StringTok{'fish pond'}\NormalTok{, tree}\OperatorTok{=}\StringTok{'maple'}\NormalTok{)}
+\NormalTok{land(house=}\StringTok{'green house'}\NormalTok{, pond=}\StringTok{'fish pond'}\NormalTok{, tree=}\StringTok{'maple'}\NormalTok{)}
 \CommentTok{# or mixed}
-\NormalTok{land(}\StringTok{'green house'}\NormalTok{, pond}\OperatorTok{=}\StringTok{'fish pond'}\NormalTok{, tree}\OperatorTok{=}\StringTok{'maple'}\NormalTok{)}
+\NormalTok{land(}\StringTok{'green house'}\NormalTok{, pond=}\StringTok{'fish pond'}\NormalTok{, tree=}\StringTok{'maple'}\NormalTok{)}
 \CommentTok{# but THIS does not work}
-\NormalTok{land(}\StringTok{'maple'}\NormalTok{, house}\OperatorTok{=}\StringTok{'green house'}\NormalTok{, tree}\OperatorTok{=}\StringTok{'maple'}\NormalTok{)}
+\NormalTok{land(}\StringTok{'maple'}\NormalTok{, house=}\StringTok{'green house'}\NormalTok{, tree=}\StringTok{'maple'}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -160,7 +238,7 @@ matter.
 The rule is:
 
 \begin{itemize}
-\tightlist
+\itemsep1pt\parskip0pt\parsep0pt
 \item
   You may call as many parameters position as they wish.
 \item
@@ -194,15 +272,15 @@ only be called by name (obviously).
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{def} \NormalTok{function(param1, }\OperatorTok{*}\NormalTok{aggr, param2}\OperatorTok{=}\DecValTok{0}\NormalTok{):}
-    \ControlFlowTok{pass}
+\KeywordTok{def} \NormalTok{function(param1, *aggr, param2=}\DecValTok{0}\NormalTok{):}
+    \KeywordTok{pass}
 \NormalTok{function(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{)  }\CommentTok{# correct, aggr = (2,3,4)}
 \NormalTok{function(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{78}\NormalTok{,}\DecValTok{9}\NormalTok{,}\DecValTok{90}\NormalTok{,}\DecValTok{0}\NormalTok{)  }
 \CommentTok{# also correct, aggr = (2,4,5,6,78,9,90,0)}
 \NormalTok{function()  }\CommentTok{# incorrect param1 requires at least one argument}
-\NormalTok{function(}\DecValTok{1}\NormalTok{, param2}\OperatorTok{=}\DecValTok{7}\NormalTok{)  }\CommentTok{# correct, aggr = ()}
-\NormalTok{function(param2}\OperatorTok{=}\DecValTok{8}\NormalTok{)  }\CommentTok{# incorrect, param1 needs a value}
-\NormalTok{function(param2}\OperatorTok{=}\DecValTok{0}\NormalTok{, param1}\OperatorTok{=}\DecValTok{6}\NormalTok{)  }\CommentTok{# correct}
+\NormalTok{function(}\DecValTok{1}\NormalTok{, param2=}\DecValTok{7}\NormalTok{)  }\CommentTok{# correct, aggr = ()}
+\NormalTok{function(param2=}\DecValTok{8}\NormalTok{)  }\CommentTok{# incorrect, param1 needs a value}
+\NormalTok{function(param2=}\DecValTok{0}\NormalTok{, param1=}\DecValTok{6}\NormalTok{)  }\CommentTok{# correct}
 \end{Highlighting}
 \end{Shaded}
 
@@ -214,8 +292,8 @@ The type of an aggregate is \textbf{always} \texttt{tuple}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{def} \NormalTok{f(}\OperatorTok{*}\NormalTok{args):}
-    \BuiltInTok{print}\NormalTok{(}\BuiltInTok{type}\NormalTok{(args)) }\CommentTok{# ==> tuple}
+\KeywordTok{def} \NormalTok{f(*args):}
+    \DataTypeTok{print}\NormalTok{(}\DataTypeTok{type}\NormalTok{(args)) }\CommentTok{# ==> tuple}
 \end{Highlighting}
 \end{Shaded}
 
@@ -234,8 +312,8 @@ parameters have to be called by name, and cannot be called positionally.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{def} \NormalTok{function(param1, param2, }\OperatorTok{*}\NormalTok{, param3}\OperatorTok{=}\DecValTok{6}\NormalTok{):}
-    \ControlFlowTok{pass}
+\KeywordTok{def} \NormalTok{function(param1, param2, *, param3=}\DecValTok{6}\NormalTok{):}
+    \KeywordTok{pass}
 \end{Highlighting}
 \end{Shaded}
 
@@ -253,13 +331,13 @@ type \texttt{dict}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{def} \NormalTok{function(param1, }\OperatorTok{**}\NormalTok{aggr):}
-    \ControlFlowTok{pass}
+\KeywordTok{def} \NormalTok{function(param1, **aggr):}
+    \KeywordTok{pass}
 
 \NormalTok{function(}\DecValTok{1}\NormalTok{)  }\CommentTok{# correct, aggr = \{\}}
-\NormalTok{function(}\DecValTok{1}\NormalTok{, some}\OperatorTok{=}\DecValTok{9}\NormalTok{)  }\CommentTok{# correct, aggr = \{'some':9\}}
-\NormalTok{function(some}\OperatorTok{=}\DecValTok{6}\NormalTok{)  }\CommentTok{# incorrect, param1 requires a value}
-\NormalTok{function(some}\OperatorTok{=}\DecValTok{0}\NormalTok{, param1}\OperatorTok{=}\DecValTok{8}\NormalTok{, param2}\OperatorTok{=}\DecValTok{4}\NormalTok{)  }
+\NormalTok{function(}\DecValTok{1}\NormalTok{, some=}\DecValTok{9}\NormalTok{)  }\CommentTok{# correct, aggr = \{'some':9\}}
+\NormalTok{function(some=}\DecValTok{6}\NormalTok{)  }\CommentTok{# incorrect, param1 requires a value}
+\NormalTok{function(some=}\DecValTok{0}\NormalTok{, param1=}\DecValTok{8}\NormalTok{, param2=}\DecValTok{4}\NormalTok{)  }
 \CommentTok{# correct, aggr = \{'some':0, 'param2':4\}}
 \end{Highlighting}
 \end{Shaded}
@@ -283,12 +361,12 @@ is, that each aggregator can only occur once.
 \KeywordTok{def} \NormalTok{function(}
         \NormalTok{param1,}
         \NormalTok{param2,}
-        \OperatorTok{*}\NormalTok{args,}
-        \NormalTok{kwparam1}\OperatorTok{=}\DecValTok{0}\NormalTok{,}
-        \NormalTok{kwparam2}\OperatorTok{=}\VariableTok{None}\NormalTok{,}
-        \OperatorTok{**}\NormalTok{kwargs}
+        \NormalTok{*args,}
+        \NormalTok{kwparam1=}\DecValTok{0}\NormalTok{,}
+        \NormalTok{kwparam2=}\OtherTok{None}\NormalTok{,}
+        \NormalTok{**kwargs}
     \NormalTok{):}
-    \ControlFlowTok{pass}
+    \KeywordTok{pass}
 \end{Highlighting}
 \end{Shaded}
 
@@ -313,3 +391,5 @@ def name(
 \emph{Note that the square brackets mean optional}
 
 \end{frame}
+
+\end{document}
