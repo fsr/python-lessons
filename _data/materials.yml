@@ -35,3 +35,7 @@ slides:
     number: 9
     name: Process
     url: https://ifsr.de/kurs-materialien/python/09_process.pdf
+  -
+    number: 10
+    name: Web client
+    url: https://ifsr.de/kurs-materialien/python/10_web_client.pdf
