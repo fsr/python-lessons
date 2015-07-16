@@ -1,6 +1,8 @@
 ---
 title: On the client side of the internet
 status: drafty
+number: 13
+authors: justus
 ---
 
 ### Implementing versions of `ping`
