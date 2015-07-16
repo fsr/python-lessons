@@ -1,13 +1,14 @@
 ---
 title: Easy to comprehend - Comprehensions
 status: drafty
+number: 12
 ---
 
 ### list
 
 Using comprehensions make a list containing numbers from 1 to 10.
 
-Read [this]({{ site.baseurl }}/misc/lorem) file word by word, using comprehensions build a new list that contains the length of every word.
+Read [this]({   { site.baseurl }}/misc/lorem) file word by word, using comprehensions build a new list that contains the length of every word.
 
 Write a function that, given two lists, builds the cartesian product of the lists with tuples.[^nested]
 
