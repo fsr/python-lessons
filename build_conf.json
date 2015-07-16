@@ -12,8 +12,9 @@
                 "05_pip.tex",
                 "06_decorators.tex",
                 "07_comprehensions.tex",
-        		"08_functions_advanced.tex",
-        		"09_process.tex"
+        		    "08_functions_advanced.tex",
+        		    "09_process.tex",
+                "10_web_client.tex"
             ]
         },
         "html": {
