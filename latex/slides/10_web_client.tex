@@ -24,6 +24,44 @@
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 % use microtype if available
 \IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+\newcommand{\ImportTok}[1]{{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+\newcommand{\BuiltInTok}[1]{{#1}}
+\newcommand{\ExtensionTok}[1]{{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+\newcommand{\RegionMarkerTok}[1]{{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\NormalTok}[1]{{#1}}
 
 % Comment these out if you don't want a slide with just the
 % part/section/subsection/subsubsection title:
@@ -46,6 +84,8 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{6pt plus 2pt minus 1pt}
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{0}
 
 \title{Python als Webclient}
@@ -71,19 +111,19 @@ authentication, redirections, cookies and more.
 \ldots{} öffnet eine URL. (surprise)
 
 \begin{verbatim}
-urlopen(url, data=None, [timeout, ]*, cafile=None, capath=None, cadefault=False, context=None)
+urlopen(url, data=None, [timeout, ]\*, cafile=None, capath=None, cadefault=False, context=None)
 \end{verbatim}
 
 \textbf{url} kann ein String sein, wie `http://python.org' oder
 `ftp://store.stuff.de', oder eine komplexere Anfrage in Form eines
-Request objects sein.\\\textbf{data} enthält Daten, die an den Server
-gesendet werden. Muss vom Typ \texttt{bytes} oder ein iterable von
-\texttt{bytes} Objekten sein.
+Request objects sein.\\
+\textbf{data} enthält Daten, die an den Server gesendet werden. Muss vom
+Typ \texttt{bytes} oder ein iterable von \texttt{bytes} Objekten sein.
 
-Bei URLs mit \emph{http}-Requests wird ein
-\hyperref[httpresponse-class]{httplib.client.HTTPResponse} Objekt zurück
-gegeben.\\Bei \emph{\textbf{ftp}}, \emph{\textbf{file}} und
-\emph{\textbf{data}} ein urllib.response.addinfourl Objekt.
+Bei URLs mit \emph{http}-Requests wird ein httplib.client.HTTPResponse
+Objekt zurück gegeben.\\
+Bei \emph{ftp}, \emph{file} und \emph{data} ein
+urllib.response.addinfourl Objekt.
 
 \end{frame}
 
@@ -93,9 +133,71 @@ gegeben.\\Bei \emph{\textbf{ftp}}, \emph{\textbf{file}} und
 Request(url, data=None, headers={}, origin_req_host=None, unverifiable=False, method=None)
 \end{verbatim}
 
+\textbf{url} muss ein String mit einer gültigen URL sein\\
+\textbf{data} wie bei urlopen \textbf{headers} entweder ein
+\texttt{dict} mit \{ Header-Name : Header-Value, \ldots{} \} oder eine
+\texttt{list} von Tupeln mit {[}( Header-Name, Header-Value ),
+\ldots{}{]}\\
+\textbf{method} ein String, welcher die Art des HTTP Request angibt
+(\texttt{HEAD}, \texttt{GET}, \texttt{POST},\ldots{})
+
 \end{frame}
 
-\begin{frame}{HTTPResponse Klasse}
+\begin{frame}[fragile]
+
+Die Request Klasse wird verwendet, wenn man z.B. die gesendeten Header,
+wie `Content-Type' oder `User-Agent' oder die Method, wie `POST', `PUT'
+oder `HEAD' kontrollieren möchte.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{r }\OperatorTok{=} \NormalTok{Request(}
+    \StringTok{'http://python.org'}\NormalTok{,}
+    \NormalTok{headers}\OperatorTok{=}\NormalTok{\{ }\StringTok{'content-type'}\NormalTok{: }\StringTok{'application/json'} \NormalTok{\},}
+    \NormalTok{method}\OperatorTok{=}\StringTok{'PUT'}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\end{frame}
+
+\begin{frame}[fragile]{HTTPResponse Klasse}
+
+Die Instanzen der HTTPResponse Klasse werden nicht vom Nutzer erstellt.
+
+\begin{verbatim}
+http.client.HTTPResponse(sock, debuglevel=0, method=None, url=None)
+\end{verbatim}
+
+Sie beinhalten Funktionen wie \texttt{read()}, \texttt{getheader()} oder
+\texttt{getheaders()} und Variablen wie \texttt{status} oder
+\texttt{version}.
+
+\texttt{read()} gibt zurückgelieferten Ihnalt aus, \texttt{getheader()}
+und \texttt{getheaders()} einen oder alle Header
+
+\texttt{status} gibt den HTML Statuscode an \texttt{version} die HTML
+version
+
+\end{frame}
+
+\section{Requests}\label{requests}
+
+\begin{frame}[fragile]
+
+Das \href{https://github.com/kennethreitz/requests}{Requests} Modul ist
+eine gute Alternative zu \texttt{urllib.request}. Es vereinfacht HTTP
+Requests.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{>>>} \NormalTok{r }\OperatorTok{=} \NormalTok{requests.get(}\StringTok{'https://api.github.com'}\NormalTok{, auth}\OperatorTok{=}\NormalTok{(}\StringTok{'user'}\NormalTok{, }\StringTok{'pass'}\NormalTok{))}
+\OperatorTok{>>>} \NormalTok{r.status_code}
+\DecValTok{204}
+\OperatorTok{>>>} \NormalTok{r.headers[}\StringTok{'content-type'}\NormalTok{]}
+\CommentTok{'application/json'}
+\end{Highlighting}
+\end{Shaded}
 
 \end{frame}
 

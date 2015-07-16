@@ -36,13 +36,30 @@
 \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
 \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
 \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
 \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
 \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+\newcommand{\ImportTok}[1]{{#1}}
 \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
 \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
 \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+\newcommand{\BuiltInTok}[1]{{#1}}
+\newcommand{\ExtensionTok}[1]{{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
 \newcommand{\RegionMarkerTok}[1]{{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
 \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
 \newcommand{\NormalTok}[1]{{#1}}
 
@@ -67,6 +84,8 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{6pt plus 2pt minus 1pt}
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{0}
 
 \title{Subprocesses in python}
@@ -103,13 +122,16 @@ takes care of converting the parameters into a windows compatible
 \begin{frame}{File descriptors}
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
-  \texttt{DEVNULL}\\The systems trashcan.
+  \texttt{DEVNULL}\\
+  The systems trashcan.
 \item
-  \texttt{PIPE}\\A connection for 2 processes.
+  \texttt{PIPE}\\
+  A connection for 2 processes.
 \item
-  \texttt{STDOUT}\\The standard output pipe or the current process.
+  \texttt{STDOUT}\\
+  The standard output pipe or the current process.
 \end{itemize}
 
 \end{frame}
@@ -117,14 +139,15 @@ takes care of converting the parameters into a windows compatible
 \begin{frame}{Exceptions}
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   \texttt{SubprocessError} The base error for this module.
 \item
-  \texttt{TimeoutError}\\Some timeout expired.
+  \texttt{TimeoutError}\\
+  Some timeout expired.
 \item
-  \texttt{CalledProcessError}\\The subprocess exited in an unexpected
-  way.
+  \texttt{CalledProcessError}\\
+  The subprocess exited in an unexpected way.
 \end{itemize}
 
 \end{frame}
@@ -151,11 +174,12 @@ Popen(args, bufsize=-1, executable=None, stdin=None, stdout=None,
 \begin{frame}{Some important arguments}
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
-  \texttt{args}\\The invocation arguments. Should be \texttt{tuple} or
-  \texttt{list} of \texttt{strings} containing process name and
-  arguments. Basically split the shell command on the spaces:
+  \texttt{args}\\
+  The invocation arguments. Should be \texttt{tuple} or \texttt{list} of
+  \texttt{strings} containing process name and arguments. Basically
+  split the shell command on the spaces:
   \texttt{ls\ -A\ *.md\ ==\textgreater{}\ {[}\textquotesingle{}ls\textquotesingle{},\ \textquotesingle{}-A\textquotesingle{},\ \textquotesingle{}*.md\textquotesingle{}{]}}.
 \end{itemize}
 
@@ -165,12 +189,14 @@ Popen(args, bufsize=-1, executable=None, stdin=None, stdout=None,
 
 \begin{itemize}
 \item
-  \texttt{shell} (default: \texttt{False})\\Executes in a shell. Should
-  always be \texttt{False}, otherwise the call is unsafe.
+  \texttt{shell} (default: \texttt{False})\\
+  Executes in a shell. Should always be \texttt{False}, otherwise the
+  call is unsafe.
 \item
-  \texttt{stdout}, \texttt{stdin}, \texttt{stderr}\\In- and output
-  connections for the child process.\\The \texttt{DEVNULL},
-  \texttt{PIPE} and \texttt{STDOUT} constants are often useful here.
+  \texttt{stdout}, \texttt{stdin}, \texttt{stderr}\\
+  In- and output connections for the child process.\\
+  The \texttt{DEVNULL}, \texttt{PIPE} and \texttt{STDOUT} constants are
+  often useful here.
 \end{itemize}
 
 \end{frame}
@@ -179,10 +205,12 @@ Popen(args, bufsize=-1, executable=None, stdin=None, stdout=None,
 
 \begin{itemize}
 \item
-  \texttt{env}\\Environment variables for the child process. Default
-  will be a subset of \texttt{os.environ} (python process environment).
+  \texttt{env}\\
+  Environment variables for the child process. Default will be a subset
+  of \texttt{os.environ} (python process environment).
 \item
-  \texttt{cwd}\\The working directory for the child process.
+  \texttt{cwd}\\
+  The working directory for the child process.
 \end{itemize}
 
 \end{frame}
@@ -201,10 +229,12 @@ running process.
 
 \begin{itemize}
 \item
-  \texttt{process.args}\\Get the arguments the process was called with.
+  \texttt{process.args}\\
+  Get the arguments the process was called with.
 \item
-  \texttt{obj.stdout}, \texttt{obj.stdin}, \texttt{obj.stderr}\\In- and
-  output connections as they were set during process initialization.
+  \texttt{obj.stdout}, \texttt{obj.stdin}, \texttt{obj.stderr}\\
+  In- and output connections as they were set during process
+  initialization.
 \end{itemize}
 
 \end{frame}
@@ -213,14 +243,16 @@ running process.
 
 \begin{itemize}
 \item
-  \texttt{process.pid}\\Process ID used by the system.
+  \texttt{process.pid}\\
+  Process ID used by the system.
 \item
-  \texttt{process.poll()}\\Check if the process has terminated. Returns
-  the returncode of the process. If it hasn't exited returns
-  \texttt{None}.
+  \texttt{process.poll()}\\
+  Check if the process has terminated. Returns the returncode of the
+  process. If it hasn't exited returns \texttt{None}.
 \item
-  \texttt{process.returncode}\\Attribute returned by function above. But
-  does not check. Thus the above function should be used instead.
+  \texttt{process.returncode}\\
+  Attribute returned by function above. But does not check. Thus the
+  above function should be used instead.
 \end{itemize}
 
 \end{frame}
@@ -229,11 +261,12 @@ running process.
 
 \begin{itemize}
 \item
-  \texttt{process.wait(timeout=None)}\\Wait for the process to terminate
-  for \emph{timeout} seconds. If \emph{timeout} is \texttt{None} wait
-  unit terminate indefinitely.
+  \texttt{process.wait(timeout=None)}\\
+  Wait for the process to terminate for \emph{timeout} seconds. If
+  \emph{timeout} is \texttt{None} wait unit terminate indefinitely.
 \item
-  \texttt{process.send\_signal(signal)}\\Send a signal to the process.
+  \texttt{process.send\_signal(signal)}\\
+  Send a signal to the process.
 \end{itemize}
 
 \end{frame}
@@ -241,13 +274,13 @@ running process.
 \begin{frame}
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
-  \texttt{process.communicate(input=None,\ timeout=None)}\\Write
-  \emph{input} data to the process's \texttt{stdin} (if \texttt{stdin}
-  was \texttt{PIPE}), wait for process termination, read the processes
-  \texttt{stdout} data (if \texttt{stdout} was \texttt{PIPE}) and return
-  it. Timeout works as above.
+  \texttt{process.communicate(input=None,\ timeout=None)}\\
+  Write \emph{input} data to the process's \texttt{stdin} (if
+  \texttt{stdin} was \texttt{PIPE}), wait for process termination, read
+  the processes \texttt{stdout} data (if \texttt{stdout} was
+  \texttt{PIPE}) and return it. Timeout works as above.
 \end{itemize}
 
 \end{frame}
@@ -256,11 +289,11 @@ running process.
 
 \begin{itemize}
 \item
-  \texttt{process.terminate()}\\Sends a termination signal to the
-  process (\texttt{SIGTERM}).
+  \texttt{process.terminate()}\\
+  Sends a termination signal to the process (\texttt{SIGTERM}).
 \item
-  \texttt{process.kill()}\\Force the process to terminate
-  (\texttt{SIGKILL}).
+  \texttt{process.kill()}\\
+  Force the process to terminate (\texttt{SIGKILL}).
 \end{itemize}
 
 \end{frame}
@@ -269,8 +302,8 @@ running process.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{with} \NormalTok{subprocess.Popen([}\StringTok{'ls'}\NormalTok{]) }\CharTok{as} \NormalTok{process:}
-    \KeywordTok{pass}
+\ControlFlowTok{with} \NormalTok{subprocess.Popen([}\StringTok{'ls'}\NormalTok{]) }\ImportTok{as} \NormalTok{process:}
+    \ControlFlowTok{pass}
 \end{Highlighting}
 \end{Shaded}
 
@@ -300,9 +333,10 @@ stderr=None, shell=False, timeout=None)
 
   Calls a process, waits for termination and returns the returncode.
 \item
-  \texttt{check\_call(arguments\ as\ above)}\\Calls a process, waits for
-  termination, returns nothing if successful (returncode == 0), if
-  unsuccessful raises a \texttt{CalledProcessError}.
+  \texttt{check\_call(arguments\ as\ above)}\\
+  Calls a process, waits for termination, returns nothing if successful
+  (returncode == 0), if unsuccessful raises a
+  \texttt{CalledProcessError}.
 \end{itemize}
 
 \end{frame}
