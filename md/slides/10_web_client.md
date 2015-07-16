@@ -45,10 +45,17 @@ r = Request(
 
 ## HTTPResponse Klasse
 
-Die Instanzen der HTTPResponse Klasse werden nicht vom Nutzer erstellt und beinhalten neben mehreren exceptions, Konstanten mit Statuscodes
+Die Instanzen der HTTPResponse Klasse werden nicht vom Nutzer erstellt.
 
     http.client.HTTPResponse(sock, debuglevel=0, method=None, url=None)
 
+Sie beinhalten Funktionen wie `read()`, `getheader()` oder `getheaders()` und Variablen wie `status` oder `version`.
+
+`read()` gibt zurückgelieferten Ihnalt aus,
+`getheader()` und `getheaders()` einen oder alle Header
+
+`status` gibt den HTML Statuscode an
+`version` die HTML version
 
 # Requests
 
