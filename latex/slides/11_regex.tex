@@ -65,17 +65,17 @@ Dafür gibt es einige Sonderzeichen:\\
 \textbf{.} (Punkt) Matcht alle Zeichen außer
 \texttt{\textbackslash{}n}\\
 \textbf{\^{}} Markiert den Anfang des Stings\\
-\textbf{\$} Markiert das Ende des Strings (oder dem Zeilenende)\\
-\textbf{*} Der vorangestellte Character muss 0 - n Mal vorkommen\\
-\textbf{+} Der vorangestellte Character muss 0 - n Mal vorkommen
+\textbf{\$} Markiert das Ende des Strings (oder das Zeilenende)\\
+\textbf{*} Der vorangestellte Charakter muss 0 - n Mal vorkommen\\
+\textbf{+} Der vorangestellte Charakter muss 0 - n Mal vorkommen
 
 \end{frame}
 
 \begin{frame}
 
-\textbf{?} Der vorangestellte Character muss 0 - 1 Mal vorkommen\\
-\textbf{\{m\}} Der vorangestellte Character muss genau m Mal vorkommen\\
-\textbf{\{m,n\}} Der vorangestellte Character muss m - n Mal vorkommen\\
+\textbf{?} Der vorangestellte Charakter muss 0 - 1 Mal vorkommen\\
+\textbf{\{m\}} Der vorangestellte Charakter muss genau m Mal vorkommen\\
+\textbf{\{m,n\}} Der vorangestellte Charakter muss m - n Mal vorkommen\\
 \textbf{\textbackslash{}} zum escapen von Sonderzeichen\\
 \textbf{{[}{]}} matcht eines der in den Klammern stehenden Zeichen\\
 \textbf{\textbar{}} ist ein ODER entweder der Character davor oder der
@@ -90,7 +90,7 @@ Des weiteren gibt es noch spezielle Sequenzen, wie z. B.\\
 \texttt{{[}0-9{]}}\\
 \textbf{\textbackslash{}D} ist das Gegenteil, alles was keine Unicode
 Ziffern sind\\
-\textbf{\textbackslash{}s} für alle Whitespace Charactere, das
+\textbf{\textbackslash{}s} für alle Whitespace Charaktere, das
 entspricht {[}
 \textbackslash{}t\textbackslash{}n\textbackslash{}r\textbackslash{}f\textbackslash{}v{]}\\
 \textbf{\textbackslash{}S} entspricht wieder dem Gegenteil\\
@@ -107,7 +107,7 @@ entspricht {[}
 compile(pattern, flags=0)
 \end{verbatim}
 
-Wandelt einen String in eine regular expression Objekt um
+Wandelt einen String in ein regular expression Objekt um
 
 \begin{verbatim}
 search(pattern, string, flags=0)
@@ -153,7 +153,8 @@ Die restlichen Funktionen können in den
 \begin{frame}
 
 Ein solches Objekt hat im Großen und Ganzen die selben Methoden, jedoch
-ohne zusaätzliches, da das Objekt an sich bereits ein Pattern enthält.
+ohne zusaätzliches Pattern, da das Objekt an sich bereits ein Pattern
+enthält.
 
 \end{frame}
 
@@ -177,8 +178,7 @@ Gibt die Endposition des Patterns im String zurück
 span([group])
 \end{verbatim}
 
-Gibt eint Tuple zurück
-\texttt{(m.start({[}group{]}),m.end({[}group{]}))}
+Gibt ein Tuple zurück \texttt{(m.start({[}group{]}),m.end({[}group{]}))}
 
 \end{frame}
 
