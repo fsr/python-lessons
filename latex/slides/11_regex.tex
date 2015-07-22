@@ -1,0 +1,185 @@
+\documentclass[ignorenonframetext,]{beamer}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{:}
+\setbeamercolor{caption name}{fg=normal text.fg}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\usepackage{lmodern}
+\ifxetex
+  \usepackage{fontspec,xltxtra,xunicode}
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\else
+  \ifluatex
+    \usepackage{fontspec}
+    \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+    \newcommand{\euro}{€}
+  \else
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+      \fi
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+
+% Comment these out if you don't want a slide with just the
+% part/section/subsection/subsubsection title:
+\AtBeginPart{
+  \let\insertpartnumber\relax
+  \let\partname\relax
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \let\insertsectionnumber\relax
+  \let\sectionname\relax
+  \frame{\sectionpage}
+}
+\AtBeginSubsection{
+  \let\insertsubsectionnumber\relax
+  \let\subsectionname\relax
+  \frame{\subsectionpage}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+
+\title{re - Regular Expressions}
+\date{}
+
+\begin{document}
+\frame{\titlepage}
+
+\section{Syntax}\label{syntax}
+
+\begin{frame}
+
+Wie auch bei anderen Sprachen, gibt es in Python regular expressions.
+Dafür gibt es einige Sonderzeichen:\\
+\textbf{.} (Punkt) Matcht alle Zeichen außer
+\texttt{\textbackslash{}n}\\
+\textbf{\^{}} Markiert den Anfang des Stings\\
+\textbf{\$} Markiert das Ende des Strings (oder dem Zeilenende)\\
+\textbf{*} Der vorangestellte Character muss 0 - n Mal vorkommen\\
+\textbf{+} Der vorangestellte Character muss 0 - n Mal vorkommen
+
+\end{frame}
+
+\begin{frame}
+
+\textbf{?} Der vorangestellte Character muss 0 - 1 Mal vorkommen\\
+\textbf{\{m\}} Der vorangestellte Character muss genau m Mal vorkommen\\
+\textbf{\{m,n\}} Der vorangestellte Character muss m - n Mal vorkommen\\
+\textbf{\textbackslash{}} zum escapen von Sonderzeichen\\
+\textbf{{[}{]}} matcht eines der in den Klammern stehenden Zeichen\\
+\textbf{\textbar{}} ist ein ODER entweder der Character davor oder der
+danach.
+
+\end{frame}
+
+\begin{frame}
+
+Des weiteren gibt es noch spezielle Sequenzen, wie z. B.\\
+\textbf{\textbackslash{}d} für Unicode Ziffern, äquivalent für
+\texttt{{[}0-9{]}}\\
+\textbf{\textbackslash{}D} ist das Gegenteil, alles was keine Unicode
+Ziffern sind\\
+\textbf{\textbackslash{}s} für alle Whitespace Charactere, das
+entspricht {[}
+\textbackslash{}t\textbackslash{}n\textbackslash{}r\textbackslash{}f\textbackslash{}v{]}\\
+\textbf{\textbackslash{}S} entspricht wieder dem Gegenteil\\
+\textbf{\textbackslash{}w} für alle Unicode Zeichen {[}a-zA-Z0-9\_{]}\\
+\textbf{\textbackslash{}W} für alle Nicht-Unicode Zeichen
+
+\end{frame}
+
+\section{Methoden}\label{methoden}
+
+\begin{frame}[fragile]
+
+\begin{verbatim}
+compile(pattern, flags=0)
+\end{verbatim}
+
+Wandelt einen String in eine regular expression Objekt um
+
+\begin{verbatim}
+search(pattern, string, flags=0)
+\end{verbatim}
+
+Sucht in \texttt{string} nach dem Pattern \texttt{pattern}
+
+\begin{verbatim}
+match(pattern, string, flags=0)
+\end{verbatim}
+
+Sucht am Begin des Strings nach dem Pattern
+
+\begin{verbatim}
+fullmatch(pattern, string, flags=0)
+\end{verbatim}
+
+Der komplette String und das Pattern müssen übereinstimmen.
+
+\end{frame}
+
+\begin{frame}[fragile]
+
+\begin{verbatim}
+findall(pattern, string, flags=0)
+\end{verbatim}
+
+Gibt eine Liste von Strings mit allen passenden Übereinstimmungen zurück
+
+\begin{verbatim}
+finditer(pattern, string, flags=0)
+\end{verbatim}
+
+Gibt einen Iterator, welcher \texttt{match} Objekte beinhaltet zurück
+
+Die restlichen Funktionen können in den
+\href{https://docs.python.org/3/library/re.html}{Docs} gefunden werden.
+
+\end{frame}
+
+\section{regular expression Objekt}\label{regular-expression-objekt}
+
+\begin{frame}
+
+Ein solches Objekt hat im Großen und Ganzen die selben Methoden, jedoch
+ohne zusaätzliches, da das Objekt an sich bereits ein Pattern enthält.
+
+\end{frame}
+
+\section{Match Objekt}\label{match-objekt}
+
+\begin{frame}[fragile]
+
+\begin{verbatim}
+start([group])
+\end{verbatim}
+
+Gibt die Startposition des Patterns im String zurück
+
+\begin{verbatim}
+start([group])
+\end{verbatim}
+
+Gibt die Endposition des Patterns im String zurück
+
+\begin{verbatim}
+span([group])
+\end{verbatim}
+
+Gibt eint Tuple zurück
+\texttt{(m.start({[}group{]}),m.end({[}group{]}))}
+
+\end{frame}
+
+\end{document}
