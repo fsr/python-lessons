@@ -2,15 +2,73 @@
 title: re - Regular Expressions
 ---
 
-# Syntax
+# Grundlage
 
 ---
 
-Wie auch bei anderen Sprachen, gibt es in Python regular expressions. Dafür gibt es einige Sonderzeichen:  
-**.** (Punkt) Matcht alle Zeichen außer `\n`  
-**^** Markiert den Anfang des Stings  
-**$** Markiert das Ende des Strings (oder das Zeilenende)  
-**\*** Der vorangestellte Charakter muss 0 - n Mal vorkommen  
+Das `re` Modul der python standard library ist die Python Implementierung von regulären Ausdrücken.
+
+Reguläre Ausdrücke werden verwendet um die Struktur von Text/Sprachen zu beschreiben.
+
+---
+
+Ein erstellter regulärer Ausdruck kann verwendet werden um:
+
+- die Struktur eines Textes zu überprüfen
+- bestimmte Teile eines Textes zu extrahieren
+
+---
+
+Die Anwendung eines regulären Ausdruckes nennt man Matching.
+
+Matcht der reguläre Ausdruck einem String, bedeutet dies, dass der String die Struktur hat die der reguläre Ausdruck beschreibt.
+
+Reguläre ausdrücke werden oft auch "regex" genannt (für regular Expression).
+
+# Matching Regeln
+
+---
+
+Jeder Buchstabe und jede Zahl matcht immer **einmal** sich selbst.
+
+d.h.
+
+Der String `"a"` matcht der regex `"a"`.
+Der String `"abc"` matcht der regex `"abc"`, nicht aber regex `"a"`.
+`"4"` matcht `"4"`, nicht aber `"5"`, `"a"` oder `"41"` usw.
+
+
+## Sonderzeichen
+
+`.` (Punkt) matcht **einem** beliebingen Schriftzeichen, außer `\n` (newline)
+
+Für die regex `"."` gilt
+
+- `"a"` matcht
+- `"b"` matcht
+- `"4"` matcht
+- `"ab"` matcht nicht, denn `"."` ist nur ein Zeichen und `"ab"` sind zwei.
+
+---
+
+`[]` matcht jedem der in den Klammern stehenden Zeichen, jedoch nur **einmal** (wie bei `.`).
+
+Für die regex `"[abg]"` gilt also
+
+- `"a"` matcht
+- `"b"` matcht
+- `"g"` matcht
+- `"ab"` matcht nicht (zwei zeichen matchen nicht einem)
+
+---
+
+Regexes bauen sich dann aus kleineren regexes auf
+
+``
+
+---
+
+`*` Die vorangestellte Charakter muss 0 - n Mal vorkommen  
 **+** Der vorangestellte Charakter muss 0 - n Mal vorkommen  
 
 ---
@@ -19,7 +77,9 @@ Wie auch bei anderen Sprachen, gibt es in Python regular expressions. Dafür gib
 **{m}** Der vorangestellte Charakter muss genau m Mal vorkommen  
 **{m,n}** Der vorangestellte Charakter muss m - n Mal vorkommen  
 **\\** zum escapen von Sonderzeichen  
-**[]** matcht eines der in den Klammern stehenden Zeichen  
+
+`^` Matcht dem Anfang eines Stings  
+`$` Matcht dem Ende eines Strings (oder das Zeilenende)  
 **|** ist ein ODER entweder der Character davor oder der danach.
 
 ---
