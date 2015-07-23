@@ -56,46 +56,300 @@
 \begin{document}
 \frame{\titlepage}
 
-\section{Syntax}\label{syntax}
+\section{Grundlage}\label{grundlage}
 
 \begin{frame}
 
-Wie auch bei anderen Sprachen, gibt es in Python regular expressions.
-Dafür gibt es einige Sonderzeichen:\\
-\textbf{.} (Punkt) Matcht alle Zeichen außer
-\texttt{\textbackslash{}n}\\
-\textbf{\^{}} Markiert den Anfang des Stings\\
-\textbf{\$} Markiert das Ende des Strings (oder das Zeilenende)\\
-\textbf{*} Der vorangestellte Charakter muss 0 - n Mal vorkommen\\
-\textbf{+} Der vorangestellte Charakter muss 0 - n Mal vorkommen
+Das \texttt{re} Modul der python standard library ist die Python
+Implementierung von regulären Ausdrücken.
+
+Reguläre Ausdrücke werden verwendet um die Struktur von Text/Sprachen zu
+beschreiben.
 
 \end{frame}
 
 \begin{frame}
 
-\textbf{?} Der vorangestellte Charakter muss 0 - 1 Mal vorkommen\\
-\textbf{\{m\}} Der vorangestellte Charakter muss genau m Mal vorkommen\\
-\textbf{\{m,n\}} Der vorangestellte Charakter muss m - n Mal vorkommen\\
-\textbf{\textbackslash{}} zum escapen von Sonderzeichen\\
-\textbf{{[}{]}} matcht eines der in den Klammern stehenden Zeichen\\
-\textbf{\textbar{}} ist ein ODER entweder der Character davor oder der
+Ein erstellter regulärer Ausdruck kann verwendet werden um:
+
+\begin{itemize}
+\tightlist
+\item
+  die Struktur eines Textes zu überprüfen
+\item
+  bestimmte Teile eines Textes zu extrahieren
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+Die Anwendung eines regulären Ausdruckes nennt man Matching.
+
+Matcht der reguläre Ausdruck einem String, bedeutet dies, dass der
+String die Struktur hat die der reguläre Ausdruck beschreibt.
+
+Reguläre ausdrücke werden oft auch ``regex'' genannt (kurz für regular
+Expression).
+
+\end{frame}
+
+\section{Matching Regeln}\label{matching-regeln}
+
+\begin{frame}
+
+Jeder Buchstabe und jede Zahl matcht immer \textbf{einmal} sich selbst.
+
+d.h.
+
+Der String \texttt{"a"} matcht der regex \texttt{"a"}.\\
+Der String \texttt{"abc"} matcht der regex \texttt{"abc"}, nicht aber
+regex \texttt{"a"}.\\
+\texttt{"4"} matcht \texttt{"4"}, nicht aber \texttt{"5"}, \texttt{"a"}
+oder \texttt{"41"} usw.
+
+\end{frame}
+
+\begin{frame}{Sonderzeichen}
+
+\texttt{.} (Punkt) matcht \textbf{einem} beliebingen Schriftzeichen,
+außer \texttt{\textbackslash{}n} (newline)
+
+Für die regex \texttt{"."} gilt
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{"a"} matcht
+\item
+  \texttt{"b"} matcht
+\item
+  \texttt{"4"} matcht
+\item
+  \texttt{"ab"} matcht nicht, denn \texttt{"."} ist nur ein Zeichen und
+  \texttt{"ab"} sind zwei.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+\texttt{{[}{]}} matcht jedem der in den Klammern stehenden Zeichen,
+jedoch nur \textbf{einmal} (wie bei \texttt{.}).
+
+Für die regex \texttt{"{[}abg{]}"} gilt also
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{"a"} matcht
+\item
+  \texttt{"b"} matcht
+\item
+  \texttt{"g"} matcht
+\item
+  \texttt{"ab"} matcht nicht (zwei zeichen matchen nicht einem)
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+\texttt{\textbackslash{}} zum escaped ein Sonderzeichen.
+
+Alle hier aufgeführten Sonderzeichen können nicht in einem Pattern
+vorkommen, als das, was sie eigentlich bedeuten, dafür müssen sie extra
+markiert werden.
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{"\textbackslash{}\textbackslash{}"} als Pattern matcht auf den
+  String \texttt{"\textbackslash{}"}
+\item
+  \texttt{"\textbackslash{}."} als Pattern matcht auf den String
+  \texttt{"."}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+\texttt{\^{}} Matcht dem Anfang eines Stings\\
+Es matcht alles, was bis zum ersten auftreten des Patterns existert
+
+Für die regex \texttt{"\^{}a"} ergibt sich also
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{"a"} matcht
+\item
+  \texttt{"ba"} matcht
+\item
+  \texttt{"aba"} matcht nicht, da nach ``a'' noch weitere Zeichen folgen
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+\texttt{\$} Matcht dem Ende eines Strings (oder das Zeilenende)
+
+Für die regex \texttt{"a\$"} folgt daraus
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{"a"} matcht
+\item
+  \texttt{"ab"} matcht
+\item
+  \texttt{"ba"} matcht nicht, da der Anfang nciht stimmt
+\item
+  \texttt{"aba"} matcht
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+\texttt{\textbar{}} ist ein ODER entweder der Character davor oder der
 danach.
+
+Für die regex \texttt{"a\textbar{}b"} gilt
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{"a"} matcht
+\item
+  \texttt{"b"} matcht
+\item
+  \texttt{"ab"} matcht nicht, da \texttt{"a\textbar{}b"} mit {[}ab{]}
+  gleichzusetzen ist
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+Regexes bauen sich dann aus kleineren regexes auf.\\
+So kann man auch sagen, wie häufig ein Zeichen auftreten soll.
+
+\end{frame}
+
+\begin{frame}
+
+\texttt{*} Die vorangestellte Charakter muss 0 - n Mal vorkommen
+
+Für die regex \texttt{"a*"} gilt
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{""} matcht
+\item
+  \texttt{"a"} matcht
+\item
+  \texttt{"aa"} matcht
+\item
+  \texttt{"aaaab"} matcht nicht, da ein anderes Zeichen als ``a''
+  vorkommt
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+\texttt{+} Der vorangestellte Charakter muss 1 - n Mal vorkommen
+
+Für die regex \texttt{"a+"} gilt
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{""} matcht nicht, da es kein mal vorkommt
+\item
+  \texttt{"a"} matcht
+\item
+  \texttt{"aa"} matcht
+\item
+  \texttt{"ab"} matcht nicht, da ein anderes Zeichen als ``a'' vorkommt
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+\texttt{?} Der vorangestellte Charakter muss 0 - 1 Mal vorkommen
+
+Für die regex \texttt{"a?"} gilt
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{""} matcht
+\item
+  \texttt{"a"} matcht
+\item
+  \texttt{"aa"} matcht nicht, da das Zeichen öfter, als nur ein mal
+  vorkommt
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+\texttt{\{m\}} Der vorangestellte Charakter muss genau m Mal vorkommen
+
+Für die regex \texttt{"y\{3\}"} gilt
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{yyy} matcht
+\item
+  \texttt{"y"} matcht nicht, da es zu wenige Zeichen sind
+\item
+  \texttt{"yyyy"} matcht nicht, da es mehr Zeichen sind
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+\texttt{\{m,n\}} Der vorangestellte Charakter muss m - n Mal vorkommen
+
+Für die regex \texttt{"y\{2,5\}"} gilt
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{yyy} matcht
+\item
+  \texttt{"y"} matcht nicht, da es zu wenige Zeichen sind
+\item
+  \texttt{"yyyy"} matcht
+\item
+  \texttt{"yyyyyy"} matcht nicht, da es zu viele Zeichen sind
+\end{itemize}
 
 \end{frame}
 
 \begin{frame}
 
 Des weiteren gibt es noch spezielle Sequenzen, wie z. B.\\
-\textbf{\textbackslash{}d} für Unicode Ziffern, äquivalent für
+\texttt{\textbackslash{}d} für Unicode Ziffern, äquivalent für
 \texttt{{[}0-9{]}}\\
-\textbf{\textbackslash{}D} ist das Gegenteil, alles was keine Unicode
+\texttt{\textbackslash{}D} ist das Gegenteil, alles was keine Unicode
 Ziffern sind\\
-\textbf{\textbackslash{}s} für alle Whitespace Charaktere, das
-entspricht {[}
-\textbackslash{}t\textbackslash{}n\textbackslash{}r\textbackslash{}f\textbackslash{}v{]}\\
-\textbf{\textbackslash{}S} entspricht wieder dem Gegenteil\\
-\textbf{\textbackslash{}w} für alle Unicode Zeichen {[}a-zA-Z0-9\_{]}\\
-\textbf{\textbackslash{}W} für alle Nicht-Unicode Zeichen
+\texttt{\textbackslash{}s} für alle Whitespace Charaktere, das
+entspricht
+\texttt{{[}\ \textbackslash{}\textbackslash{}t\textbackslash{}\textbackslash{}n\textbackslash{}\textbackslash{}r\textbackslash{}\textbackslash{}f\textbackslash{}\textbackslash{}v{]}}\\
+\texttt{\textbackslash{}S} entspricht wieder dem Gegenteil\\
+\texttt{\textbackslash{}w} für alle Unicode Zeichen {[}a-zA-Z0-9\_{]}\\
+\texttt{\textbackslash{}W} für alle Nicht-Unicode Zeichen
 
 \end{frame}
 

@@ -23,7 +23,7 @@ Die Anwendung eines regulären Ausdruckes nennt man Matching.
 
 Matcht der reguläre Ausdruck einem String, bedeutet dies, dass der String die Struktur hat die der reguläre Ausdruck beschreibt.
 
-Reguläre ausdrücke werden oft auch "regex" genannt (für regular Expression).
+Reguläre ausdrücke werden oft auch "regex" genannt (kurz für regular Expression).
 
 # Matching Regeln
 
@@ -33,8 +33,8 @@ Jeder Buchstabe und jede Zahl matcht immer **einmal** sich selbst.
 
 d.h.
 
-Der String `"a"` matcht der regex `"a"`.
-Der String `"abc"` matcht der regex `"abc"`, nicht aber regex `"a"`.
+Der String `"a"` matcht der regex `"a"`.  
+Der String `"abc"` matcht der regex `"abc"`, nicht aber regex `"a"`.  
 `"4"` matcht `"4"`, nicht aber `"5"`, `"a"` oder `"41"` usw.
 
 
@@ -62,35 +62,112 @@ Für die regex `"[abg]"` gilt also
 
 ---
 
-Regexes bauen sich dann aus kleineren regexes auf
+`\` zum escaped ein Sonderzeichen.
 
-``
+Alle hier aufgeführten Sonderzeichen können nicht in einem Pattern vorkommen, als das, was sie eigentlich bedeuten, dafür müssen sie extra markiert werden.
 
----
-
-`*` Die vorangestellte Charakter muss 0 - n Mal vorkommen  
-**+** Der vorangestellte Charakter muss 0 - n Mal vorkommen  
+- `"\\"` als Pattern matcht auf den String `"\"`
+- `"\."` als Pattern matcht auf den String `"."`
 
 ---
-
-**?** Der vorangestellte Charakter muss 0 - 1 Mal vorkommen  
-**{m}** Der vorangestellte Charakter muss genau m Mal vorkommen  
-**{m,n}** Der vorangestellte Charakter muss m - n Mal vorkommen  
-**\\** zum escapen von Sonderzeichen  
 
 `^` Matcht dem Anfang eines Stings  
+Es matcht alles, was bis zum ersten auftreten des Patterns existert
+
+Für die regex `"^a"` ergibt sich also
+
+- `"a"` matcht
+- `"ba"` matcht
+- `"aba"` matcht nicht, da nach "a" noch weitere Zeichen folgen
+
+---
+
 `$` Matcht dem Ende eines Strings (oder das Zeilenende)  
-**|** ist ein ODER entweder der Character davor oder der danach.
+
+Für die regex `"a$"` folgt daraus
+
+- `"a"` matcht
+- `"ab"` matcht
+- `"ba"` matcht nicht, da der Anfang nciht stimmt
+- `"aba"` matcht
+
+---
+
+`|` ist ein ODER entweder der Character davor oder der danach.
+
+Für die regex `"a|b"` gilt
+
+- `"a"` matcht
+- `"b"` matcht
+- `"ab"` matcht nicht, da `"a|b"` mit [ab] gleichzusetzen ist
+
+---
+
+Regexes bauen sich dann aus kleineren regexes auf.  
+So kann man auch sagen, wie häufig ein Zeichen auftreten soll.
+
+---
+
+`*` Die vorangestellte Charakter muss 0 - n Mal vorkommen
+
+Für die regex `"a*"` gilt
+
+- `""` matcht
+- `"a"` matcht
+- `"aa"` matcht
+- `"aaaab"` matcht nicht, da ein anderes Zeichen als "a" vorkommt
+
+---
+
+`+` Der vorangestellte Charakter muss 1 - n Mal vorkommen  
+
+Für die regex `"a+"` gilt
+
+- `""` matcht nicht, da es kein mal vorkommt
+- `"a"` matcht
+- `"aa"` matcht
+- `"ab"` matcht nicht, da ein anderes Zeichen als "a" vorkommt
+
+---
+
+`?` Der vorangestellte Charakter muss 0 - 1 Mal vorkommen  
+
+Für die regex `"a?"` gilt
+
+- `""` matcht
+- `"a"` matcht
+- `"aa"` matcht nicht, da das Zeichen öfter, als nur ein mal vorkommt
+
+---
+
+`{m}` Der vorangestellte Charakter muss genau m Mal vorkommen
+
+Für die regex `"y{3}"` gilt
+
+- `yyy` matcht
+- `"y"` matcht nicht, da es zu wenige Zeichen sind
+- `"yyyy"` matcht nicht, da es mehr Zeichen sind
+
+---
+
+`{m,n}` Der vorangestellte Charakter muss m - n Mal vorkommen
+
+Für die regex `"y{2,5}"` gilt
+
+- `yyy` matcht
+- `"y"` matcht nicht, da es zu wenige Zeichen sind
+- `"yyyy"` matcht
+- `"yyyyyy"` matcht nicht, da es zu viele Zeichen sind
 
 ---
 
 Des weiteren gibt es noch spezielle Sequenzen, wie z. B.  
-**\\d** für Unicode Ziffern, äquivalent für `[0-9]`  
-**\\D** ist das Gegenteil, alles was keine Unicode Ziffern sind  
-**\\s** für alle Whitespace Charaktere, das entspricht [ \\t\\n\\r\\f\\v]  
-**\\S** entspricht wieder dem Gegenteil  
-**\\w** für alle Unicode Zeichen [a-zA-Z0-9_]  
-**\\W** für alle Nicht-Unicode Zeichen  
+`\d` für Unicode Ziffern, äquivalent für `[0-9]`  
+`\D` ist das Gegenteil, alles was keine Unicode Ziffern sind  
+`\s` für alle Whitespace Charaktere, das entspricht `[ \\t\\n\\r\\f\\v]`  
+`\S` entspricht wieder dem Gegenteil  
+`\w` für alle Unicode Zeichen [a-zA-Z0-9_]  
+`\W` für alle Nicht-Unicode Zeichen  
 
 # Methoden
 
