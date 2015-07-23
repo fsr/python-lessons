@@ -62,6 +62,16 @@ Für die regex `"[abg]"` gilt also
 
 ---
 
+`()` erstellt eine Gruppe. Alles was in den Klammern steht, muss genauso vor kommen
+
+Für die regex `"(abc)"` gilt
+
+- `"a"` matcht nicht
+- `"ab"` matcht nicht
+- `'abc'` matcht
+
+---
+
 `\` zum escaped ein Sonderzeichen.
 
 Alle hier aufgeführten Sonderzeichen können nicht in einem Pattern vorkommen, als das, was sie eigentlich bedeuten, dafür müssen sie extra markiert werden.
@@ -77,8 +87,8 @@ Es matcht alles, was bis zum ersten auftreten des Patterns existert
 Für die regex `"^a"` ergibt sich also
 
 - `"a"` matcht
-- `"ba"` matcht
-- `"aba"` matcht nicht, da nach "a" noch weitere Zeichen folgen
+- `"ba"` matcht nicht, da der falsche Character am Begin steht
+- `"aba"` matcht
 
 ---
 
@@ -87,13 +97,13 @@ Für die regex `"^a"` ergibt sich also
 Für die regex `"a$"` folgt daraus
 
 - `"a"` matcht
-- `"ab"` matcht
-- `"ba"` matcht nicht, da der Anfang nciht stimmt
+- `"ba"` matcht
+- `"bab"` matcht nicht, da der falsche Character am Ende steht
 - `"aba"` matcht
 
 ---
 
-`|` ist ein ODER entweder der Character davor oder der danach.
+`|` ist ein ODER entweder die regex davor oder der danach.
 
 Für die regex `"a|b"` gilt
 
@@ -108,7 +118,7 @@ So kann man auch sagen, wie häufig ein Zeichen auftreten soll.
 
 ---
 
-`*` Die vorangestellte Charakter muss 0 - n Mal vorkommen
+`*` Die vorangestellte regex muss 0 - n Mal vorkommen
 
 Für die regex `"a*"` gilt
 
@@ -119,7 +129,7 @@ Für die regex `"a*"` gilt
 
 ---
 
-`+` Der vorangestellte Charakter muss 1 - n Mal vorkommen  
+`+` Die vorangestellte regex muss 1 - n Mal vorkommen  
 
 Für die regex `"a+"` gilt
 
@@ -130,7 +140,7 @@ Für die regex `"a+"` gilt
 
 ---
 
-`?` Der vorangestellte Charakter muss 0 - 1 Mal vorkommen  
+`?` Die vorangestellte regex muss 0 - 1 Mal vorkommen  
 
 Für die regex `"a?"` gilt
 
@@ -140,21 +150,21 @@ Für die regex `"a?"` gilt
 
 ---
 
-`{m}` Der vorangestellte Charakter muss genau m Mal vorkommen
+`{m}` Die vorangestellte regex muss genau m Mal vorkommen
 
 Für die regex `"y{3}"` gilt
 
-- `yyy` matcht
+- `"yyy"` matcht
 - `"y"` matcht nicht, da es zu wenige Zeichen sind
 - `"yyyy"` matcht nicht, da es mehr Zeichen sind
 
 ---
 
-`{m,n}` Der vorangestellte Charakter muss m - n Mal vorkommen
+`{m,n}` Die vorangestellte regex muss m - n Mal vorkommen
 
 Für die regex `"y{2,5}"` gilt
 
-- `yyy` matcht
+- `"yyy"` matcht
 - `"y"` matcht nicht, da es zu wenige Zeichen sind
 - `"yyyy"` matcht
 - `"yyyyyy"` matcht nicht, da es zu viele Zeichen sind
@@ -164,33 +174,46 @@ Für die regex `"y{2,5}"` gilt
 Des weiteren gibt es noch spezielle Sequenzen, wie z. B.  
 `\d` für Unicode Ziffern, äquivalent für `[0-9]`  
 `\D` ist das Gegenteil, alles was keine Unicode Ziffern sind  
-`\s` für alle Whitespace Charaktere, das entspricht `[ \\t\\n\\r\\f\\v]`  
+`\s` für alle Whitespace Charaktere, das entspricht `"[ \\t\\n\\r\\f\\v]"`  
 `\S` entspricht wieder dem Gegenteil  
-`\w` für alle Unicode Zeichen [a-zA-Z0-9_]  
+`\w` für alle Unicode Zeichen `"[a-zA-Z0-9_]"`  
 `\W` für alle Nicht-Unicode Zeichen  
+`[^...]` entspricht allem, was nicht in den Klammern steht
 
 # Methoden
 
 ---
 
-    compile(pattern, flags=0)
+```python
+compile(pattern, flags=0)
+```
 Wandelt einen String in ein regular expression Objekt um  
 
-    search(pattern, string, flags=0)
+```python
+search(pattern, string, flags=0)
+```
 Sucht in `string` nach dem Pattern `pattern`
 
-    match(pattern, string, flags=0)
+```python
+match(pattern, string, flags=0)
+```
 Sucht am Begin des Strings nach dem Pattern
 
-    fullmatch(pattern, string, flags=0)
+```python
+fullmatch(pattern, string, flags=0)
+```
 Der komplette String und das Pattern müssen übereinstimmen.
 
 ---
 
-    findall(pattern, string, flags=0)
+```pyhton
+findall(pattern, string, flags=0)
+```
 Gibt eine Liste von Strings mit allen passenden Übereinstimmungen zurück  
 
-    finditer(pattern, string, flags=0)
+```python
+finditer(pattern, string, flags=0)
+```
 Gibt einen Iterator, welcher `match` Objekte beinhaltet zurück  
 
 Die restlichen Funktionen können in den [Docs](https://docs.python.org/3/library/re.html) gefunden werden.
@@ -205,11 +228,18 @@ Ein solches Objekt hat im Großen und Ganzen die selben Methoden, jedoch ohne zu
 
 ---
 
-    start([group])
+
+```python
+start([group])
+```
 Gibt die Startposition des Patterns im String zurück  
 
-    start([group])
+```python
+start([group])
+```
 Gibt die Endposition des Patterns im String zurück  
 
-    span([group])
+```python
+span([group])
+```
 Gibt ein Tuple zurück `(m.start([group]),m.end([group]))`

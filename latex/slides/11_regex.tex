@@ -24,6 +24,44 @@
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 % use microtype if available
 \IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+\newcommand{\ImportTok}[1]{{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+\newcommand{\BuiltInTok}[1]{{#1}}
+\newcommand{\ExtensionTok}[1]{{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+\newcommand{\RegionMarkerTok}[1]{{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\NormalTok}[1]{{#1}}
 
 % Comment these out if you don't want a slide with just the
 % part/section/subsection/subsubsection title:
@@ -155,6 +193,25 @@ Für die regex \texttt{"{[}abg{]}"} gilt also
 
 \begin{frame}
 
+\texttt{()} erstellt eine Gruppe. Alles was in den Klammern steht, muss
+genauso vor kommen
+
+Für die regex \texttt{"(abc)"} gilt
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{"a"} matcht nicht
+\item
+  \texttt{"ab"} matcht nicht
+\item
+  \texttt{\textquotesingle{}abc\textquotesingle{}} matcht
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
 \texttt{\textbackslash{}} zum escaped ein Sonderzeichen.
 
 Alle hier aufgeführten Sonderzeichen können nicht in einem Pattern
@@ -185,9 +242,9 @@ Für die regex \texttt{"\^{}a"} ergibt sich also
 \item
   \texttt{"a"} matcht
 \item
-  \texttt{"ba"} matcht
+  \texttt{"ba"} matcht nicht, da der falsche Character am Begin steht
 \item
-  \texttt{"aba"} matcht nicht, da nach ``a'' noch weitere Zeichen folgen
+  \texttt{"aba"} matcht
 \end{itemize}
 
 \end{frame}
@@ -203,9 +260,9 @@ Für die regex \texttt{"a\$"} folgt daraus
 \item
   \texttt{"a"} matcht
 \item
-  \texttt{"ab"} matcht
+  \texttt{"ba"} matcht
 \item
-  \texttt{"ba"} matcht nicht, da der Anfang nciht stimmt
+  \texttt{"bab"} matcht nicht, da der falsche Character am Ende steht
 \item
   \texttt{"aba"} matcht
 \end{itemize}
@@ -214,7 +271,7 @@ Für die regex \texttt{"a\$"} folgt daraus
 
 \begin{frame}
 
-\texttt{\textbar{}} ist ein ODER entweder der Character davor oder der
+\texttt{\textbar{}} ist ein ODER entweder die regex davor oder der
 danach.
 
 Für die regex \texttt{"a\textbar{}b"} gilt
@@ -241,7 +298,7 @@ So kann man auch sagen, wie häufig ein Zeichen auftreten soll.
 
 \begin{frame}
 
-\texttt{*} Die vorangestellte Charakter muss 0 - n Mal vorkommen
+\texttt{*} Die vorangestellte regex muss 0 - n Mal vorkommen
 
 Für die regex \texttt{"a*"} gilt
 
@@ -262,7 +319,7 @@ Für die regex \texttt{"a*"} gilt
 
 \begin{frame}
 
-\texttt{+} Der vorangestellte Charakter muss 1 - n Mal vorkommen
+\texttt{+} Die vorangestellte regex muss 1 - n Mal vorkommen
 
 Für die regex \texttt{"a+"} gilt
 
@@ -282,7 +339,7 @@ Für die regex \texttt{"a+"} gilt
 
 \begin{frame}
 
-\texttt{?} Der vorangestellte Charakter muss 0 - 1 Mal vorkommen
+\texttt{?} Die vorangestellte regex muss 0 - 1 Mal vorkommen
 
 Für die regex \texttt{"a?"} gilt
 
@@ -301,14 +358,14 @@ Für die regex \texttt{"a?"} gilt
 
 \begin{frame}
 
-\texttt{\{m\}} Der vorangestellte Charakter muss genau m Mal vorkommen
+\texttt{\{m\}} Die vorangestellte regex muss genau m Mal vorkommen
 
 Für die regex \texttt{"y\{3\}"} gilt
 
 \begin{itemize}
 \tightlist
 \item
-  \texttt{yyy} matcht
+  \texttt{"yyy"} matcht
 \item
   \texttt{"y"} matcht nicht, da es zu wenige Zeichen sind
 \item
@@ -319,14 +376,14 @@ Für die regex \texttt{"y\{3\}"} gilt
 
 \begin{frame}
 
-\texttt{\{m,n\}} Der vorangestellte Charakter muss m - n Mal vorkommen
+\texttt{\{m,n\}} Die vorangestellte regex muss m - n Mal vorkommen
 
 Für die regex \texttt{"y\{2,5\}"} gilt
 
 \begin{itemize}
 \tightlist
 \item
-  \texttt{yyy} matcht
+  \texttt{"yyy"} matcht
 \item
   \texttt{"y"} matcht nicht, da es zu wenige Zeichen sind
 \item
@@ -346,10 +403,12 @@ Des weiteren gibt es noch spezielle Sequenzen, wie z. B.\\
 Ziffern sind\\
 \texttt{\textbackslash{}s} für alle Whitespace Charaktere, das
 entspricht
-\texttt{{[}\ \textbackslash{}\textbackslash{}t\textbackslash{}\textbackslash{}n\textbackslash{}\textbackslash{}r\textbackslash{}\textbackslash{}f\textbackslash{}\textbackslash{}v{]}}\\
+\texttt{"{[}\ \textbackslash{}\textbackslash{}t\textbackslash{}\textbackslash{}n\textbackslash{}\textbackslash{}r\textbackslash{}\textbackslash{}f\textbackslash{}\textbackslash{}v{]}"}\\
 \texttt{\textbackslash{}S} entspricht wieder dem Gegenteil\\
-\texttt{\textbackslash{}w} für alle Unicode Zeichen {[}a-zA-Z0-9\_{]}\\
-\texttt{\textbackslash{}W} für alle Nicht-Unicode Zeichen
+\texttt{\textbackslash{}w} für alle Unicode Zeichen
+\texttt{"{[}a-zA-Z0-9\_{]}"}\\
+\texttt{\textbackslash{}W} für alle Nicht-Unicode Zeichen\\
+\texttt{{[}\^{}...{]}} entspricht allem, was nicht in den Klammern steht
 
 \end{frame}
 
@@ -357,27 +416,35 @@ entspricht
 
 \begin{frame}[fragile]
 
-\begin{verbatim}
-compile(pattern, flags=0)
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{compile}\NormalTok{(pattern, flags}\OperatorTok{=}\DecValTok{0}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
 Wandelt einen String in ein regular expression Objekt um
 
-\begin{verbatim}
-search(pattern, string, flags=0)
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{search(pattern, string, flags}\OperatorTok{=}\DecValTok{0}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
 Sucht in \texttt{string} nach dem Pattern \texttt{pattern}
 
-\begin{verbatim}
-match(pattern, string, flags=0)
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{match(pattern, string, flags}\OperatorTok{=}\DecValTok{0}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
 Sucht am Begin des Strings nach dem Pattern
 
-\begin{verbatim}
-fullmatch(pattern, string, flags=0)
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fullmatch(pattern, string, flags}\OperatorTok{=}\DecValTok{0}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
 Der komplette String und das Pattern müssen übereinstimmen.
 
@@ -391,9 +458,11 @@ findall(pattern, string, flags=0)
 
 Gibt eine Liste von Strings mit allen passenden Übereinstimmungen zurück
 
-\begin{verbatim}
-finditer(pattern, string, flags=0)
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{finditer(pattern, string, flags}\OperatorTok{=}\DecValTok{0}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
 Gibt einen Iterator, welcher \texttt{match} Objekte beinhaltet zurück
 
@@ -416,21 +485,27 @@ enthält.
 
 \begin{frame}[fragile]
 
-\begin{verbatim}
-start([group])
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{start([group])}
+\end{Highlighting}
+\end{Shaded}
 
 Gibt die Startposition des Patterns im String zurück
 
-\begin{verbatim}
-start([group])
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{start([group])}
+\end{Highlighting}
+\end{Shaded}
 
 Gibt die Endposition des Patterns im String zurück
 
-\begin{verbatim}
-span([group])
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{span([group])}
+\end{Highlighting}
+\end{Shaded}
 
 Gibt ein Tuple zurück \texttt{(m.start({[}group{]}),m.end({[}group{]}))}
 
