@@ -7,7 +7,7 @@ authors: justus
 
 We want to explore string concatenation and formatting.
 
-*Hint: Test after every step whether the code is working as intended*
+*Hint: Test after every step whether the code is working as intended.*
 
 ### Step 1
 
