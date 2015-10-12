@@ -1,8 +1,9 @@
 ---
 title: 'Getting started'
 ---
-
 # Über diesen Kurs
+
+---
 
 -   12 Kurseinheiten
 -   setzt grundlegende Programmierkenntnisse voraus
@@ -16,6 +17,8 @@ title: 'Getting started'
     [mercurial](http://mercurial.selenic.com/))
 
 # Der Python Interpreter
+
+---
 
 -   Die zwei verbreitet verwendeten Python Versionen sind 2.7 und 3.5,
     wir werden 3.5 nutzen, weil es cooler ist und bessere Features hat
