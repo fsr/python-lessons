@@ -1,5 +1,5 @@
 ---
-title: 'Getting started'
+title: Getting started
 ---
 # Über diesen Kurs
 
@@ -15,6 +15,7 @@ title: 'Getting started'
     -   unsere [Github-Organisation](https://github.com/fsr)
     -   Hinweis: SCM’s sind hilfreich ([git](https://git-scm.com),
     [mercurial](http://mercurial.selenic.com/))
+
 
 # Der Python Interpreter
 
@@ -35,6 +36,7 @@ title: 'Getting started'
 -   Der Interpreter stellt die volle Funktionalität von Python bereit,
     einschließlich dem Erstellen von Klassen und Funktionen
 
+
 # Python Scripte
 
 ## Editor
@@ -51,15 +53,15 @@ hilfreich bei größeren Projekten, hier nicht genutzt
 
 -   [PyCharm](https://jetbrains.com/pycharm) (free + professional für Studenten)
 
----
-
 ## Struktur
 
 -   Python Scripte sind Textdateien, die auf `.py` enden
 -   Python Packages sind Ordner mit einer `__init__.py` Datei (behandeln wir später)
 
+
 # Grundlagen der Sprache
 
+---
 
 Python ist eine schwach typisierte Scriptsprache (weakly typed scripting language). Es gibt
 Typen (anders als in JavaScript), aber Variablen haben keine festen
@@ -105,6 +107,8 @@ def my_function(params):
 
 # Das erste Programm
 
+---
+
 Ein simples “Hallo
 Welt”-Programm:
 ```python
@@ -135,6 +139,8 @@ if __name__ == '__main__':
 
 # Operatoren
 
+---
+
 ## mathematisch
 
 `+`, `-`, `*`, `/`
@@ -161,6 +167,8 @@ Accessoren
 
 # Namenskonvention
 
+---
+
 
 ## Klassen
 
@@ -185,6 +193,8 @@ Codes nutzen, der eine hohe Wahrscheinlichkeit hat in Zukunft
 verändert zu werden.
 
 # Strings
+
+---
 
 ## Grundlagen
 
