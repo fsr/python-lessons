@@ -131,11 +131,14 @@ if __name__ == '__main__':
 ---
 
 -   Funktionen definieren mit
--   Variablen mit der Struktur sind spezielle Werte (gewöhnlich aus oder
+```python
+def <funktionsname>([parameter_liste, ...]):
+```
+-   Variablen mit der Struktur `__name__` sind spezielle Werte (gewöhnlich aus `builtin` oder
     Methoden von Standardtypen)\
-    z.B. ist immer der Name es Scriptes (in welchem aufgerufen wird),
+    z.B. `__file__` ist immer der Name es Scriptes (in welchem `__file__`aufgerufen wird), `__builtin__`
     ist das Modul mit den immer verfügbaren Funktionen und Datentypen
-    wie oder
+    wie `list` oder `tuple`
 
 # Operatoren
 
