@@ -1,5 +1,5 @@
 ---
-title: '<span> Getting started </span>'
+title: 'Getting started'
 ---
 
 # Über diesen Kurs
