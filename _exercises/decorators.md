@@ -1,7 +1,7 @@
 ---
 title: It is beautiful - Decorator
 status: drafty
-number: 11
+# number: 11
 authors: felix
 ---
 
