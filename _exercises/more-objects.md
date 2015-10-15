@@ -1,7 +1,7 @@
 ---
 title: Even more objects!
 status: drafty
-author: felixw
+authors: felixw
 number: 5
 ---
 

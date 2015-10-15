@@ -1,7 +1,7 @@
 ---
 title: Be persistent - save your data
 status: drafty
-author: felixw
+authors: felixw
 ---
 
 ### Using JSON
