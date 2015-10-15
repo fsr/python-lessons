@@ -1,6 +1,6 @@
 ---
 title: Even more objects! - deeper into classes
-status: complete
+status: finished
 authors: felixw
 number: 5
 ---
