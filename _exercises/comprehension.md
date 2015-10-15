@@ -1,7 +1,7 @@
 ---
 title: Easy to comprehend - Comprehensions
 status: drafty
-number: 12
+# number: 12
 ---
 
 ### list

@@ -1,7 +1,7 @@
 ---
 title: Text Statistics
 status: finished
-number: 8
+# number: 8
 authors: justus
 ---
 
