@@ -35,20 +35,27 @@
 
 \section{Scriptcharakter}
 \begin{frame}[fragile]{Scriptcharakter}
-
-Beim Ausführen oder Importieren wird der Code im obersten Level des Moduls (der .py Datei) ausgeführt. Daher ist es üblich auf dem obersten Level Funktionen und Klassen zu definieren, sowie globale Variablen und die imports anderer Python Module durchzuführen. \\
-Soll das entsprechende Modul dann ausführbar sein und nicht nur als Bibliothek dienen, definiert man üblicherweise eine \codeline{def main():} Funktion, in welche man seinen
-"Arbeitscode" schreibt und endet mit dem Boilerplate-Syntax \codeline{if __name__ == '__main__': main()}, welcher die \texttt{main} funktion nur dann ausführt, wenn das modul direkt via des Python Interpreters aufgerufen wurde (und nicht importiert).\\
-
 \begin{itemize}
-	\item Python code wird nicht kompiliert, sondern beim importieren in Python bytecode übersetzt
+	\item Beim Ausführen oder Importieren wird der Code im obersten Level des Moduls (der .py Datei) ausgeführt
+	\item Funktionen und Klassen und globale Variablen werden üblicherweise auf dem obersten Level definiert
+	\item Imports anderer Python Module werden auch hier ausgeführt
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Scriptcharakter}
+\lstinputlisting{resources/02_grundlagen/boilerplate.py}
+Soll das entsprechende Modul dann ausführbar sein und nicht nur als Bibliothek dienen, definiert man üblicherweise eine main-Funktion.\\
+Zus\"atzlich f\"ugt man am Ende des Moduls die Boilerplate ein.\\
+\end{frame}
+
+\begin{frame}[fragile]{Scriptcharakter}
+\begin{itemize}
+	\item Python Code wird nicht kompiliert, sondern beim importieren in Python Bytecode übersetzt
 	\item Bytecode wird auf einer VM ausgeführt
 	\item Kein Memory Management von nöten, alles sind Referenzen
 	\item Syntaxerror wird beim importieren geworfen
 	\item Andere Fehler findet man erst, wenn die betreffende Zeile ausgeführt wird.
 \end{itemize}
-
-
 \end{frame}
 	
 \section{Programmierpradigmen}
