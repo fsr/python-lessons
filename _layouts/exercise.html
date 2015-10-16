@@ -28,9 +28,20 @@ layout: default
         {% endif %}
         {{ page.meta }}
       {% endif %}</p>
+      <p class="post-meta">
+      {% if page.lesson %}Related lesson:
+          {% for slide in site.data.materials.slides %}
+            {% if slide.number == page.lesson %}
+              <a href="{{slide.url}}">
+                {{ slide.name }}
+              </a>
+            {% endif %}
+          {% endfor %}
+      {% endif %}</p>
   </header>
 
   <article class="post-content">
+
     {{ content }}
   </article>
 

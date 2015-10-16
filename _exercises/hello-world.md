@@ -3,6 +3,7 @@ title: Hello World
 number: 1
 status: reviewed
 authors: justus
+lesson: 1
 ---
 
 ### Step 1

@@ -3,6 +3,7 @@ title: String Methods
 number: 3
 status: reviewed
 authors: justus
+lesson: 1
 ---
 
 *Remember: String formatting can be very useful when creating strings for printing to the console*

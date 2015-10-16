@@ -3,6 +3,7 @@ title: Strings
 number: 2
 status: reviewed
 authors: justus
+lesson: 1
 ---
 
 We want to explore string concatenation and formatting.

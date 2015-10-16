@@ -1,8 +1,9 @@
 ---
 title: Even more objects! - deeper into classes
 status: reviewed
-authors: felixw, felix
-number: 5
+authors: [felixw, felix]
+#number: 5
+lesson: 2
 ---
 
 ### Step 1
