@@ -35,51 +35,78 @@
 
 \section{Scriptcharakter}
 \begin{frame}[fragile]{Scriptcharakter}
-\begin{itemize}
-	\item Beim Ausführen oder Importieren wird der Code im obersten Level des Moduls (der .py Datei) ausgeführt
-	\item Funktionen und Klassen und globale Variablen werden üblicherweise auf dem obersten Level definiert
-	\item Imports anderer Python Module werden auch hier ausgeführt
-\end{itemize}
+	\begin{itemize}
+		\item Beim Ausführen oder Importieren wird der Code im obersten Level des Moduls (der .py Datei) ausgeführt
+		\item Funktionen und Klassen und globale Variablen werden üblicherweise auf dem obersten Level definiert
+		\item Imports anderer Python Module werden auch hier ausgeführt
+	\end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{Scriptcharakter}
-\lstinputlisting{resources/02_grundlagen/boilerplate.py}
-Soll das entsprechende Modul dann ausführbar sein und nicht nur als Bibliothek dienen, definiert man üblicherweise eine main-Funktion.\\
-Zus\"atzlich f\"ugt man am Ende des Moduls die Boilerplate ein.\\
+	\lstinputlisting{resources/02_grundlagen/boilerplate.py}
+	Soll das entsprechende Modul dann ausführbar sein und nicht nur als Bibliothek dienen, definiert man üblicherweise eine main-Funktion.\\
+	Zus\"atzlich f\"ugt man am Ende des Moduls die Boilerplate ein.\\
 \end{frame}
 
-\begin{frame}[fragile]{Scriptcharakter}
-\begin{itemize}
-	\item Python Code wird nicht kompiliert, sondern beim importieren in Python Bytecode übersetzt
-	\item Bytecode wird auf einer VM ausgeführt
-	\item Kein Memory Management von nöten, alles sind Referenzen
-	\item Syntaxerror wird beim importieren geworfen
-	\item Andere Fehler findet man erst, wenn die betreffende Zeile ausgeführt wird.
-\end{itemize}
+\begin{frame}{Scriptcharakter}
+	\begin{itemize}
+		\item Python Code wird nicht kompiliert, sondern beim importieren in Python Bytecode übersetzt
+		\item Bytecode wird auf einer VM ausgeführt
+		\item Kein Memory Management von nöten, alles sind Referenzen
+		\item Syntaxerror wird beim importieren geworfen
+		\item Andere Fehler findet man erst, wenn die betreffende Zeile ausgeführt wird.
+	\end{itemize}
 \end{frame}
-	
-\section{Programmierpradigmen}
-\begin{frame}[fragile]{Programmierpradigmen}
-Python ist in erster Linie eine imperative und objektorientierte Sprache. Variablen, Klassen und Funktionene sind alle 'first class citizen'.
 
+
+
+\section{Programmierparadigmen}
 \subsection{Imperatives Programmieren}
+\begin{frame}[fragile]{Programmierpradigmen}
+	\begin{itemize}
+		\item Python ist vor allem eine imperative und objektorientierte Sprache
+		\item reine Funktionen und Variablen können auf oberster Ebene definiert werden
+		\item Variablen, Klassen und Funktionen sind ab der Ebene sichtbar, in der sie eingeführt werden
+	\end{itemize}
+\end{frame}
 
-In Python können reine Funktionen und Variablen auf oberster Ebene definiert werden.
+\subsection{Das Scoping Problem}
+\begin{frame}[fragile]{Das Problem mit dem Scope}
+	\lstinputlisting{resources/02_grundlagen/scope.py}
+	\textit{Das Problem:} Variablen sind zwar nach innen sichtbar, werden aber beim Reassignment innerhalb der Funktion neu angelegt und verschwinden so aus dem Scope.
+\end{frame}
 
-\subsection{Objekt Orientiertes Programmieren}
+\begin{frame}[fragile]{Die Lösung}
+	\lstinputlisting{resources/02_grundlagen/scope_fix.py}
+\end{frame}
 
-Python ist darüber hinaus auch fundamental objektorientiert. Das bedeutet in Python ist alles ein Objekt. Egal ob \texttt{int}, \texttt{bool}, \texttt{str} oder \texttt{type}, alle diese Datentypen sind Instanzen von \texttt{object} und haben Attribute und Methoden.\\
-Der Type eines jeden Wertes, einer jeden Variable lässt sich mit \texttt{type()} herausfinden.
-
+\subsection{Objektorientiertes Programmieren}
+\begin{frame}[fragile]{Objektorientiertung}
+	\begin{itemize}
+		\item Python ist auch fundamental objektorientiert
+		\item Alles in Python ist ein Objekt
+		\item Selbst die Datentypen \texttt{int}, \texttt{bool}, \texttt{str} und \texttt{type} sind Instanzen von \texttt{object} und haben folglich Methoden und Attribute
+		\item Der Typ jedes Wertes und jeder Variable lässt sich mit \texttt{type()} ermitteln
+	\end{itemize}
 \end{frame}
 
 \section{Klassen und Attribute}
+% TODO: Dieser Frame muss noch mal überarbeitet werden
 \begin{frame}[fragile]{Klassen und Attribute}
+	\begin{itemize}
+		\item Typen in Python werden ausgedrückt durch Klassen (Keyword \texttt{class})
+		\item Klassen dienen als Vorlage bzw. Schablone -> Objekte sind dann Instanzen davon
+		\item Die Besonderheit: alle Variablen und Werte sind Instanzen von \texttt{object}
+	\end{itemize}
+	\texttt{object} und alle Typen selbst sind widerum Objekte, genauer gesagt Instanzen vom Typ \texttt{type} und \texttt{type} widerum ist eine Subklasse von \texttt{object}.
+\end{frame}
 
-Typen in Python werden ausgedrückt durch Klassen. Keyword \texttt{class}. Klassen sind Vorlagen, Templates, für Datenstrukturen, welche man Instanzen der Klasse nennt.
-Jede Variable, jeder Wert in Python in eine Instanz von \texttt{object}. \texttt{object} und alle Typen selbst sind widerum Objekte, genauer gesagt Instanzen vom Typ \texttt{type} und \texttt{type} widerum ist eine Subklasse von \texttt{object}. 
-
-Klassen und Objekt haben Felder, die via Strings kodiert werden und sich Attribute nennen. Klassenattribute werden für die Klasse definiert und sind für alle ihre Instanzen gleich. Instanzattribute werden außerhalb der Klassendefnition hinzugefügt (normalerweise im Initialisierer) und sind für jede Instanz unterschiedlich.
+\begin{frame}[fragile]{Klassen und Attribute}
+	\begin{itemize}
+		\item Klassen und Objekte können selbst auch Variablen tragen (ähnlich wie in Java)
+		\item Man unterscheidet dabei zwischen Klassenattributen und Instanzattributen
+	\end{itemize}
+Klassenattribute werden für die Klasse definiert und sind für alle ihre Instanzen gleich. Instanzattribute werden außerhalb der Klassendefnition hinzugefügt (normalerweise im Initialisierer) und sind für jede Instanz unterschiedlich.
 
 Zugriff auf Attribute erfolgt über die Punktnotation wie in z.B. Ruby oder Java. Gesetzt werden Attribute wie Variablen mit \texttt{=}.
 
@@ -91,28 +118,41 @@ Generell kann man Python Objekten zu jedem Zeitpunkt neue Attribute hinzufügen 
 \section{Methoden}
 \begin{frame}[fragile]{Methoden}
 
-Methoden sind Funktionen. Der allgemeine type von Methoden, wie auch von Funktionen ist \texttt{function}. 
+Methoden sind Funktionen. Der allgemeine type von Methoden, wie auch von Funktionen ist \texttt{function}.
 
 Im Gegensatz zu Funktionen liegen Methoden in einem gesonderten namespace, dem namespace ihrer Klasse. Um auf die reine Mehtode zuzugreifen verwendet man daher die Notation \texttt{ClassName.method\_name}.
 
 Methoden haben ein implizites erstes Argument (typischerweise "self" genannt, kann aber auch jeder andere Name sein). Durch diesen Parameter wird der Methode beim Aufruf auf einer Instanz automatisch das Objekt selbst übergeben, auf welchem die Methode ausgeführt wird.
 
 \end{frame}
+
+
 \subsection{Spezielle Methoden}
 \begin{frame}[fragile]{Methoden}
+	Dies sind Methoden die auf den meisten Grundlegenden Datenstrukturen implementiert sind, z.B. Object.\\
+	Diese Methoden beginnen gewöhnlicherweise mit zwei Unterstrichen und enden mit zwei Unterstrichen.
 
-Dies sind Methoden die auf den meisten Grundlegenden Datenstrukturen implementiert sind, z.B. Object.\\
-Diese Methoden beginnen gewöhnlicherweise mit zwei Unterstrichen und enden mit zwei Unterstrichen.
+	\begin{description}
+		\item[Initialisierer] Oft auch (fälschlicherweise) Konstruktor genannt. Name: \texttt{\_\_int\_\_}\\
+			Wird immer aufgerufen wenn eine neue Instanz der Klasse erstellt wird.
+		\item[Finalisierer] Oft auch (fälschlicherweise) Destructor genannt. Name: \texttt{\_\_del\_\_}\\
+			Wird immer aufgerufen wenn das Objekt vom Garbage Collector aufgeräumt wird. Wird im allgemeinen selten verwendet.
+		\item[String Konvertierer] Äquivalent zu Java's \texttt{toString} Methode. Name: \texttt{\_\_str\_\_}
+		\item[String Repräsentation] Ähnlich wie \texttt{\_\_str\_\_} aber gedacht für eine für Debug verwendbare Repräsentation andstatt für Output wie \texttt{\_\_str\_\_}.
+	\end{description}
+\end{frame}
 
-\begin{description}
-	\item[Initialisierer] Oft auch (fälschlicherweise) Konstruktor genannt. Name: \texttt{\_\_int\_\_}\\
-		Wird immer aufgerufen wenn eine neue Instanz der KLasse erstellt wird.
-	\item[Finalisierer] Oft auch (fälschlicherweise) Destructor genannt. Name: \texttt{\_\_del\_\_}\\
-		Wird immer aufgerufen wenn das Objekt vom Garbage Collector aufgeräumt wird. Wird im allgemeinen selten verwendet.
-	\item[String Konvertierer] Äquivalent zu Java's \texttt{toString} Methode. Name: \texttt{\_\_str\_\_}
-	\item[String Repräsentation] Ähnlich wie \texttt{\_\_str\_\_} aber gedacht für eine für Debug verwendbare Repräsentation andstatt für Output wie \texttt{\_\_str\_\_}.
-\end{description}
+\begin{frame}[fragile]{Klassen- und Objektattribute im Detail}
+	Klassenattribute sind für jede Instanz eines Objektes gleich.
+	\lstinputlisting{resources/02_grundlagen/classattributes.py}
+\end{frame}
 
+\begin{frame}[fragile]{Klassen- und Objektattribute im Detail}
+	Gewöhnlich definiert man Instanzattribute allerdings im \textit{Initialisierer}.
+	\lstinputlisting{resources/02_grundlagen/instanceattributes.py}
+	\begin{itemize}
+		\item Instanzattribute sollten immmer in \_\_init\_\_ definiert werden, um sicherzustellen, dass alle Instanzen die gleichen Attribute haben
+	\end{itemize}
 \end{frame}
 
 
