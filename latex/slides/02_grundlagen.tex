@@ -116,8 +116,8 @@
 \begin{frame}[fragile]{Klassen und Attribute}
 	\begin{itemize}
 		\item Zugriff auf Attribute über Punktnotation (wie in Ruby/Java)
-		\item Attribute werden wie Variablen mit \texttt{=} gesetzt
-		\item Man kann Objekten jederzeit neue Attribute hinzufügen (auch \texttt{type} Objekten)
+		\item Attribute werden wie Variablen mithilfe von \texttt{=} gesetzt
+		\item Man kann Objekten jederzeit neue Attribute hinzufügen (auch \texttt{type}-Objekten)
 		\item Ist außerhalb des Initialisierers nicht empfehlenswert
 	\end{itemize}
 \end{frame}
@@ -128,7 +128,7 @@
 	\begin{itemize}
 		\item Methoden sind Funktionen
 		\item Allgemeiner Typ von Methoden ist daher \texttt{function}
-		\item Methoden liegen im Namespace der zugehörigen Klasse, müssen daher mit \texttt{ClassName.method\_name} angesteuert werden (oder auf dem Objekt aufgerufen werden)
+		\item Methoden liegen im Namespace der zugehörigen Klasse, müssen daher mit \texttt{ClassName.method\_name()} angesteuert werden (oder auf dem Objekt aufgerufen werden)
 		\item Methoden haben ein implizites erstes Argument (typischerweise "self" genannt, kann aber variieren)
 		\item Beim Aufruf auf einer Instanz wird das Objekt selbst automatisch übergeben
 	\end{itemize}
@@ -137,16 +137,17 @@
 
 \subsection{Spezielle Methoden}
 \begin{frame}[fragile]{Methoden}
-	Dies sind Methoden die auf den meisten Grundlegenden Datenstrukturen implementiert sind, z.B. Object.\\
-	Diese Methoden beginnen gewöhnlicherweise mit zwei Unterstrichen und enden mit zwei Unterstrichen.
+	Dies sind Methoden die auf den meisten Grundlegenden Datenstrukturen implementiert sind, z.B. \texttt{object}.\\
+	Die folgenden beginnen und enden normalerweise mit zwei Unterstrichen.
 
 	\begin{description}
-		\item[Initialisierer] Oft auch (fälschlicherweise) Konstruktor genannt. Name: \texttt{\_\_int\_\_}\\
+		\item[Initialisierer] Oft auch (fälschlicherweise) Konstruktor genannt.\\ Name: \texttt{\_\_int\_\_}\\
 			Wird immer aufgerufen wenn eine neue Instanz der Klasse erstellt wird.
-		\item[Finalisierer] Oft auch (fälschlicherweise) Destructor genannt. Name: \texttt{\_\_del\_\_}\\
-			Wird immer aufgerufen wenn das Objekt vom Garbage Collector aufgeräumt wird. Wird im allgemeinen selten verwendet.
+		\item[Finalisierer] Oft auch (fälschlicherweise) Destructor genannt.\\
+			Name: \texttt{\_\_del\_\_}\\
+			Wird immer aufgerufen wenn das Objekt vom Garbage Collector aufgeräumt wird. (selten verwendet)
 		\item[String Konvertierer] Äquivalent zu Java's \texttt{toString} Methode. Name: \texttt{\_\_str\_\_}
-		\item[String Repräsentation] Ähnlich wie \texttt{\_\_str\_\_} aber gedacht für eine für Debug verwendbare Repräsentation andstatt für Output wie \texttt{\_\_str\_\_}.
+		\item[String Repräsentation] Ähnlich wie \texttt{\_\_str\_\_} aber gedacht für eine für Debug verwendbare Repräsentation anstatt für Output wie \texttt{\_\_str\_\_}.
 	\end{description}
 \end{frame}
 
@@ -159,7 +160,7 @@
 	Gewöhnlich definiert man Instanzattribute allerdings im \textit{Initialisierer}.
 	\lstinputlisting{resources/02_grundlagen/instanceattributes.py}
 	\begin{itemize}
-		\item Instanzattribute sollten immmer in \_\_init\_\_ definiert werden, um sicherzustellen, dass alle Instanzen die gleichen Attribute haben
+		\item Instanzattribute sollten immer in \_\_init\_\_ definiert werden, um sicherzustellen, dass alle Instanzen die gleichen Attribute haben
 	\end{itemize}
 \end{frame}
 
