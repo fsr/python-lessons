@@ -5,8 +5,8 @@ class TestClass():
 def main():
     a = TestClass()
     b = TestClass()
-    # beide Variablen haben für 'num' von der Erstellung an den gleichen Wert
+    # beide Variablen haben fuer 'num' von der Erstellung an den gleichen Wert
 
-    # das Ändern der Variable überschreibt das Klassenattribut mit einem Instanzattribut
+    # das Aendern der Variable ueberschreibt das Klassenattribut mit einem Instanzattribut
     a.num = -3
     print(b.num)  # -> liefert immer noch 12
