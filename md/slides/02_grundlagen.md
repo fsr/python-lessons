@@ -8,15 +8,15 @@ title: Grundlagen von Python
 
 -   Beim Ausführen oder Importieren wird der Code im obersten Level des
     Moduls (der .py Datei) ausgeführt
--   Funktionen und Klassen und globale Variablen werden üblicherweise
+-   Funktionen, Klassen und globale Variablen werden üblicherweise
     auf dem obersten Level definiert
 -   Imports anderer Python Module werden auch hier ausgeführt
 
 ---
 
-Soll das entsprechende Modul dann ausführbar sein und nicht
-nur als Bibliothek dienen, definiert man üblicherweise eine main-Funktion.  
-Zusätzlich fügt man am Ende des Moduls die Boilerplate ein.
+Soll das entsprechende Modul ausführbar sein und nicht
+nur als Bibliothek dienen, definiert man üblicherweise eine _main_-Funktion.  
+Zusätzlich fügt man am Ende des Moduls die _Boilerplate_ ein.
 
 ---
 
@@ -34,8 +34,8 @@ if __name__ == '__main__':
 -   Python Code wird nicht kompiliert, sondern beim importieren in
     Python Bytecode übersetzt
 -   Bytecode wird auf einer VM ausgeführt
--   Kein Memory Management von nöten, alles sind Referenzen
--   Syntaxerror wird beim importieren geworfen
+-   Kein Memory Management nötig, alles sind Referenzen
+-   Syntaxerror wird beim Importieren geworfen
 -   Andere Fehler findet man erst, wenn die betreffende Zeile
     ausgeführt wird.
 
@@ -81,7 +81,8 @@ var = 12
 
 def foo():
     global var
-    # global sagt dem Interpreter, dass er hier auf die oberhalb definierte Variable zurueckgreifen soll
+    # global sagt dem Interpreter, dass er hier auf die
+    # oberhalb definierte Variable zurueckgreifen soll
     var = 9
 
 def main():
@@ -99,7 +100,7 @@ if __name__ == '__main__':
 -   Alles in Python ist ein Objekt
 -   Selbst die Datentypen `int`, `bool`, `str` und `type` sind Instanzen
     von `object` und haben folglich Methoden und Attribute
--   Der Typ jedes Wertes und jeder Variable lässt sich mit `type()`
+-   Der Typ jedes Wertes und jeder Variablen lässt sich mit `type()`
     ermitteln
 
 
@@ -153,6 +154,9 @@ im Initialisierer) und sind für jede Instanz unterschiedlich.
 -   Methoden liegen im Namespace der zugehörigen Klasse, müssen daher
     mit `ClassName.method_name()` angesteuert werden (oder auf dem
     Objekt aufgerufen werden)
+
+---
+
 -   Methoden haben ein implizites erstes Argument (typischerweise “self”
     genannt, kann aber variieren)
 -   Beim Aufruf auf einer Instanz wird das Objekt selbst automatisch
@@ -162,7 +166,7 @@ im Initialisierer) und sind für jede Instanz unterschiedlich.
 
 Dies sind Methoden die auf den meisten
 Grundlegenden Datenstrukturen implementiert sind, z.B. `object`.\
-Die folgenden beginnen und enden normalerweise mit zwei Unterstrichen.
+Die Folgenden beginnen und enden normalerweise mit zwei Unterstrichen.
 
 ---
 
@@ -194,15 +198,18 @@ Wird immer aufgerufen wenn das Objekt vom Garbage Collector aufgeräumt wird.
 Klassenattribute sind für jede Instanz eines Objektes gleich.
 ```python
 class TestClass():
-    # jeder Instanz wird bei Erstellung bereits dieses Attribut zugewiesen
+    # jeder Instanz wird bei Erstellung bereits
+    # dieses Attribut zugewiesen
     num = 12
 
 def main():
     a = TestClass()
     b = TestClass()
-    # beide Variablen haben fuer 'num' von der Erstellung an den gleichen Wert
+    # beide Variablen haben fuer 'num' von der
+    # Erstellung an den gleichen Wert
 
-    # das Aendern der Variable ueberschreibt das Klassenattribut mit einem Instanzattribut
+    # das Aendern der Variable ueberschreibt das
+    # Klassenattribut mit einem Instanzattribut
     a.num = -3
     print(b.num)  # -> liefert immer noch 12
 ```
@@ -214,7 +221,8 @@ Gewöhnlich definiert man Instanzattribute allerdings im
 ```python
 class Human():
     def __init__(self, firstname, lastname):
-        # die beiden Parameterwerte werden in Instanzattributen gespeichert.
+        # die beiden Parameterwerte werden in Instanz-
+        # attributen gespeichert.
         self.firstname = firstname
         self.lastame = lastname
 
