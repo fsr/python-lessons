@@ -37,14 +37,14 @@
 \begin{frame}[fragile]{Scriptcharakter}
 	\begin{itemize}
 		\item Beim Ausführen oder Importieren wird der Code im obersten Level des Moduls (der .py Datei) ausgeführt
-		\item Funktionen und Klassen und globale Variablen werden üblicherweise auf dem obersten Level definiert
+		\item Funktionen, Klassen und globale Variablen werden üblicherweise auf dem obersten Level definiert
 		\item Imports anderer Python Module werden auch hier ausgeführt
 	\end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{Scriptcharakter}
 	\lstinputlisting{resources/02_grundlagen/boilerplate.py}
-	Soll das entsprechende Modul dann ausführbar sein und nicht nur als Bibliothek dienen, definiert man üblicherweise eine main-Funktion.\\
+	Soll das entsprechende Modul ausführbar sein und nicht nur als Bibliothek dienen, definiert man üblicherweise eine main-Funktion.\\
 	Zus\"atzlich f\"ugt man am Ende des Moduls die Boilerplate ein.\\
 \end{frame}
 
@@ -52,8 +52,8 @@
 	\begin{itemize}
 		\item Python Code wird nicht kompiliert, sondern beim importieren in Python Bytecode übersetzt
 		\item Bytecode wird auf einer VM ausgeführt
-		\item Kein Memory Management von nöten, alles sind Referenzen
-		\item Syntaxerror wird beim importieren geworfen
+		\item Kein Memory Management nötig, alles sind Referenzen
+		\item Syntaxerror wird beim Importieren geworfen
 		\item Andere Fehler findet man erst, wenn die betreffende Zeile ausgeführt wird.
 	\end{itemize}
 \end{frame}
@@ -138,7 +138,7 @@
 \subsection{Spezielle Methoden}
 \begin{frame}[fragile]{Methoden}
 	Dies sind Methoden die auf den meisten Grundlegenden Datenstrukturen implementiert sind, z.B. \texttt{object}.\\
-	Die folgenden beginnen und enden normalerweise mit zwei Unterstrichen.
+	Die Folgenden beginnen und enden normalerweise mit zwei Unterstrichen.
 
 	\begin{description}
 		\item[Initialisierer] Oft auch (fälschlicherweise) Konstruktor genannt.\\ Name: \texttt{\_\_int\_\_}\\
