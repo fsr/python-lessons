@@ -13,7 +13,7 @@
 % meta-information
 \newcommand{\topic}{
 	% TODO fill in the actual topic
-	Module und Pakete
+	Module, Pakete und PIP
 }
 
 % nothing to do here
@@ -32,11 +32,11 @@
 
 %% Für einzelne Zeilen Code \codeline{} vewenden (ist mit Markup) für einzelne Worte \texttt{} verwenden (auch in Tabellen!)
 
-\section{Modules}
+\section{Module}
 \subsection{Eigene Module}
 \begin{frame}[fragile]{Module}
 	\begin{itemize}
-		\item Ein Module ist die python-interne Repräsentation einer \texttt{.py} Datei
+		\item Ein Modul ist die python-interne Repräsentation einer \texttt{.py} Datei
 		\item Der Dateiname setzt sich daher aus Modulname + \texttt{.py} zusammen
 		\item Module beinhalten eine beliebige Anzahl an Definitionen (Klassen, Funktionen, Variablen/Konstanten)
 		\item Das komplette Modul wird mit \texttt{import} hinzugefügt
@@ -75,8 +75,8 @@ Oder im programm
 Änderungen am Pfad sind erst \textbf{nach} der entsprechenden Codezeile verfügbar.
 \end{frame}
 
-\subsection{Standart Module}
-\begin{frame}{Standart Module}
+\subsection{Standardmodule}
+\begin{frame}{Standardmodule}
 	Python liefert viele nützliche Module bereits in der Standardbibliothek mit, von welchen wir eineige bereits kennen gelernt haben.
 	z.B. sys, os, http, re, fuctools, itertools, collections, hashlib, urllib und viele mehr. Daher bezeichnet man Python oft auch als "Batteries included".
 \end{frame}
@@ -90,6 +90,46 @@ Oder im programm
 		\item Wird das Package selbst importiert, sind alle Definitionen in \texttt{\_\_init\_\_.py} über das importierte Package erreichbar.
 		\item Sie werden benutzt um Module in sinnvolle Gruppen zusammenzufassen.
 	\end{itemize}
+\end{frame}
+
+% -------------------- merged from presentation about 'pip' -------------------
+
+\section{PIP}
+\subsection{Installation von PIP}
+\begin{frame}{Installation von PIP}
+	Nicht jedes Modul ist in der Standard Bibliothek vorhanden, muss aber nicht zwingen manuell als Dateien hinzugefügt werden. Man kann ganz PIP zur Hilfe nehmen.\\[.5cm]
+	\textbf{Installation:}\\
+	\begin{enumerate}
+		\item Downloaden der \texttt{get-pip.py} von pypa \href{https://bootstrap.pypa.io/get-pip.py}{(hier)}
+		\item Installieren via \texttt{python3 get-pip.py}\\[.5cm]
+	\end{enumerate}
+
+	Hinweis für Mac-Nutzer:\\
+	Bei der Pythoninstallation via Homebrew wird pip gleich mit installiert.
+\end{frame}
+
+\subsection{Verwendung}
+\begin{frame}{Verwendung}
+	Die Installation von Modulen ist einfach und es gibt mehrere Möglichkeiten.
+	\begin{itemize}
+		\item die letzte Version eine Moduls:\\
+		\noindent\hspace*{.5cm} \texttt{pip install Modulname}
+		\item eine bestimmte Version:\\
+		\noindent\hspace*{.5cm} \texttt{pip install Modulname == 2.1}
+		\item alle Versionen ab einem Minimum:\\
+		\noindent\hspace*{.5cm} \texttt{pip install Modulname >= 2.1}
+		\item alle Versionen bis zu einem Maximum:\\
+		\noindent\hspace*{.5cm} \texttt{pip install Modulname <= 2.1}
+	\end{itemize}
+\end{frame}
+
+\subsection{Die requirements.txt}
+\begin{frame}{Die requirements.txt}
+	Wenn jemand Scripts ausführen möchte, in denen Module verwendet werden, die mit Hilfe von PIP installiert wurden, ist es hilfreich eine \texttt{requirements.txt} mitzuliefern.\\
+	In dieser sind alle Module aufgelistet, die benötigt werden.\\[.5cm]
+	\lstinputlisting{resources/05_pip/requirements.txt}
+
+	Eine solche kann via \texttt{pip install -r requirements.txt} installiert werden
 \end{frame}
 
 \end{document}
