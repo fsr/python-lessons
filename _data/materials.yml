@@ -16,36 +16,41 @@ slides:
     published: False
   -
     number: 4
-    name: Modules and Packages
-    url: https://ifsr.de/kurs-materialien/python/04_modules_and_packages.pdf
+    name: Module, Packages, PIP
+    url: https://ifsr.de/kurs-materialien/python/04_modules_packages_pip.pdf
     published: False
   -
     number: 5
-    name: PIP
-    url: https://ifsr.de/kurs-materialien/python/05_pip.pdf
+    name: Decorators
+    url: https://ifsr.de/kurs-materialien/python/05_decorators.pdf
     published: False
   -
     number: 6
-    name: Decorators
-    url: https://ifsr.de/kurs-materialien/python/06_decorators.pdf
+    name: Comprehensions
+    url: https://ifsr.de/kurs-materialien/python/06_comprehensions.pdf
     published: False
   -
     number: 7
-    name: Comprehensions
-    url: https://ifsr.de/kurs-materialien/python/07_comprehensions.pdf
+    name: Functions (advanced)
+    url: https://ifsr.de/kurs-materialien/python/07_functions_advanced.pdf
     published: False
   -
     number: 8
-    name: Functions (advanced)
-    url: https://ifsr.de/kurs-materialien/python/08_functions_advanced.pdf
+    name: Process
+    url: https://ifsr.de/kurs-materialien/python/08_process.pdf
     published: False
   -
     number: 9
-    name: Process
-    url: https://ifsr.de/kurs-materialien/python/09_process.pdf
+    name: Web client
+    url: https://ifsr.de/kurs-materialien/python/09_web_client.pdf
     published: False
   -
     number: 10
-    name: Web client
-    url: https://ifsr.de/kurs-materialien/python/10_web_client.pdf
+    name: Regex
+    url: https://ifsr.de/kurs-materialien/python/10_regex.pdf
+    published: False
+  -
+    number: 11
+    name: Web server
+    url: https://ifsr.de/kurs-materialien/python/11_web_server.pdf
     published: False

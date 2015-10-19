@@ -10,6 +10,8 @@ github_username: fsr
 
 # Build settings
 markdown: kramdown
+kramdown:
+  input: GFM
 
 exclude:
   - .c9/
