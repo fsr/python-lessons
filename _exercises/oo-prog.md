@@ -1,6 +1,6 @@
 ---
 title: Objects and classes
-#number: 4
+number: 4
 status: reviewed
 authors: justus
 lesson: 2

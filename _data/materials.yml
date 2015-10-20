@@ -8,7 +8,7 @@ slides:
     number: 2
     name: Grundlagen
     url: https://ifsr.de/kurs-materialien/python/02_grundlagen.pdf
-    published: False
+    published: True
   -
     number: 3
     name: Builtins

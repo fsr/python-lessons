@@ -2,7 +2,7 @@
 title: Even more objects! - deeper into classes
 status: reviewed
 authors: [felixw, felix]
-#number: 5
+number: 5
 lesson: 2
 ---
 
