@@ -12,3 +12,5 @@ The slides for the lessons can be found here:
 <del>{{ slide.number }}. {{ slide.name }}</del>
 {% endif %}
 {% endfor %}
+
+The solutions of the exercises can be found at [GitHub](https://github.com/Feliix42/python-solutions)
