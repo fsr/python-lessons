@@ -172,7 +172,7 @@ Die Folgenden beginnen und enden normalerweise mit zwei Unterstrichen.
 
 **Initialisierer**  
 Oft auch (fälschlicherweise) Konstruktor genannt.  
-Name: `__int__`  
+Name: `__init__`  
 Wird immer aufgerufen wenn eine neue Instanz der Klasse erstellt wird.
 
 ---
