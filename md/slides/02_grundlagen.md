@@ -197,7 +197,7 @@ Wird immer aufgerufen wenn das Objekt vom Garbage Collector aufgeräumt wird.
 
 Klassenattribute sind für jede Instanz eines Objektes gleich.
 ```python
-class TestClass():
+class TestClass:
     # jeder Instanz wird bei Erstellung bereits
     # dieses Attribut zugewiesen
     num = 12
@@ -219,7 +219,7 @@ def main():
 Gewöhnlich definiert man Instanzattribute allerdings im
 *Initialisierer*.
 ```python
-class Human():
+class Human:
     def __init__(self, firstname, lastname):
         # die beiden Parameterwerte werden in Instanz-
         # attributen gespeichert.

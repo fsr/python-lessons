@@ -1,4 +1,4 @@
-class Human():
+class Human:
     def __init__(self, firstname, lastname):
         # die beiden Parameterwerte werden in Instanzattributen gespeichert.
         self.firstname = firstname

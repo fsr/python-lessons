@@ -1,4 +1,4 @@
-class TestClass():
+class TestClass:
     # jeder Instanz wird bei Erstellung bereits dieses Attribut zugewiesen
     num = 12
 
