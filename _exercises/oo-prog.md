@@ -48,7 +48,7 @@ Create another instance of class "A" called "b".
 Try to access the attributes `id_value` and `id_string`. What happens? [^err]
 
 [^err]:
-  The interpreter will throw an error, since these two attributes are only defined for the instance 'a'. This problem results from instance attributes being defined outside the *Initializer*.
+    The interpreter will throw an error, since these two attributes are only defined for the instance 'a'. This problem results from instance attributes being defined outside the *Initializer*.
 
 ### Step 3
 
@@ -89,7 +89,7 @@ Add a class attribute to "C". Verify the instances you just created all have tha
 Modify it from one of the instances. Now check the value from another instance. Does it change there? [^no]
 
 [^no]:
-  No. I doesn't change there.
+    No. I doesn't change there.
 
 ### Step 6
 
