@@ -10,6 +10,8 @@ __Fire up the interpreter!__
 
 *Hint: The names in this example are just (very poor) suggestions. You can use your own, more creative, names, if you can think of any.*
 
+The steps 7 and 8 are a little bit more advanced. Inheritance will be introduced in a future lesson, so you might want to come back and do this two tasks later.
+
 ### Step 1
 
 Create an empty[^empty] class[^class] (name irrelevant, but let's call it "A").
@@ -43,7 +45,10 @@ Access these attributes and make sure they have the correct value.[^access_attr]
 
 Create another instance of class "A" called "b".
 
-Try to access the attributes `id_value` and `id_string`. What happens?
+Try to access the attributes `id_value` and `id_string`. What happens? [^err]
+
+[^err]:
+  The interpreter will throw an error, since these two attributes are only defined for the instance 'a'. This problem results from instance attributes being defined outside the *Initializer*.
 
 ### Step 3
 
@@ -81,7 +86,10 @@ Create some instances, check the attributes work as intended.
 
 Add a class attribute to "C". Verify the instances you just created all have that same attribute.
 
-Modify it from one of the instances, verify it changes the value for all of them.
+Modify it from one of the instances. Now check the value from another instance. Does it change there? [^no]
+
+[^no]:
+  No. I doesn't change there.
 
 ### Step 6
 
@@ -94,7 +102,7 @@ Try the method on some instances.[^anon_class]
 
 Try the alternative call.[^alt_call]
 
-### Step 7
+### *Step 7*
 
 Create a class inheriting from "D", called "DChild"[^super] that accepts another integer and stores it. Overload the `plus` method to return the sum of the two integers.
 
@@ -102,7 +110,7 @@ Create a class inheriting from "D", called "DChild"[^super] that accepts another
     You'll need to call the parent class constructor using `super().__init__(params)`.
 
 
-### Step 8
+### *Step 8*
 
 Play around with inheritance.[^super2]
 
