@@ -24,23 +24,23 @@
 \end{frame}
 
 \section{exceptions}
-\begin{frame}{Exception handling}
+\begin{frame}{Exception Handling}
 \begin{itemize}
-	\item Alle exceptions erben von \codeline{Exception}
-	\item catching mit try/except
-	\item finally um code auszuführen der unbedingt laufen muss, egal ob eine excetion vorliegt oder nicht
+	\item Alle Exceptions erben von \texttt{Exception}
+	\item Catching mit try/except
+	\item \texttt{finally} um Code auszuführen, der \textit{unbedingt} laufen muss, egal ob eine Exception vorliegt oder nicht
 \end{itemize}
 \end{frame}
-\begin{frame}{}
+\begin{frame}{Exception Handling}
 \lstinputlisting{resources/03_builtins/exceptions.py}
 \end{frame}
 
 \section{booleans}
 \begin{frame}{Boolsche Werte}
 \begin{itemize}
-	\item type Name \codeline{bool}
-	\item \codeline{True} oder \codeline{False}
-	\item operationen sind und, oder, nicht \codeline{and, or, not}
+	\item \textit{type} ist \texttt{bool}
+	\item Mögliche Werte: \texttt{True} oder \texttt{False}
+	\item Operationen sind \textit{und}, \textit{oder}, \textit{nicht} \texttt{and, or, not}
 \end{itemize}
 \end{frame}
 
@@ -48,11 +48,14 @@
 \begin{frame}{list}
 
 \begin{itemize}
-	\item enthält variable Anzahl anderer Objekte in gleichbleibender Reihenfolge.
-	\item optimiert für einsietige Benutzung wie eine Queue (append und pop)
+	\item enthält variable Anzahl von Objekten
+	\item eine Liste kann beliebig viele verschiedene Datentypen enthalten (z.B. \texttt{bool} und \texttt{list})
+	\item Auch Listen können in Listen gespeichert werden!
+	\item Listenobjekte haben eine feste Reihenfolge (\textit{first in, last out})
+	\item optimiert für einseitige Benutzung wie z.B. Queue (\texttt{append} und \texttt{pop})
 \end{itemize}
 \end{frame}
-\begin{frame}{}
+\begin{frame}{list}
 	\lstinputlisting{resources/03_builtins/list.py}
 \end{frame}
 
@@ -60,10 +63,11 @@
 \begin{frame}{tuple}
 \begin{itemize}
 	\item Gruppiert Daten
-	\item kann nicht mehr verändert werden sobald kreiert
+	\item kann nicht mehr verändert werden, sobald es erstellt wurde
+	\item Funktionen mit mehreren Rückgabewerten geben ein Tupel zurück
 \end{itemize}
 \end{frame}
-\begin{frame}{}
+\begin{frame}{tuple}
 	\lstinputlisting{resources/03_builtins/tuple.py}
 \end{frame}
 
@@ -74,27 +78,28 @@
 	\item einfache HashMap
 	\item ungeordnet
 	\item jeder hashbare Typ kann ein Key sein
-	\item dazu zählen Typen selbst, da diese per Default hashbar sind
+	\item jedem Key ist dann ein Value zugeordnet
 \end{itemize}
 \end{frame}
-\begin{frame}{}
+\begin{frame}{dict}
 \lstinputlisting{resources/03_builtins/dict.py}
 \end{frame}
 
 \section{set/frozenset}
 \begin{frame}{set/frozenset}
 \begin{itemize}
-	\item nur hashbare Einträge
+	\item kann nur hashbare Einträge enthalten
+	\item \texttt{set} selbst ist nicht hashbar
+	\item \texttt{frozensets} sind hashbar, jedoch nicht mehr veränderbar
 	\item enhält jedes Element nur einmal
-	\item schnelle \codeline{in} überprüfung (enthält Element)
-	\item Kann operationen wie superset, subset, isdisjoint und difference \codeline{<, >, disdisjoint(), -}
+	\item schnellere Überprüfung mit \texttt{in} (prüft, ob Element enthalten ist)
+	% TODO
+	\item Mögliche Operationen: \texttt{superset()}, \texttt{subset()}, \texttt{isdisjoint()}, \texttt{difference()}, \texttt{<, >, disdisjoint(), -}
 	\item ungeordnet
-	\item sets sind nicht hashbar
-	\item frozensets sind nicht veränderbar, aber hashbar
-	\item -> sets (und frozensets) können frozensets enthalten (da hashbar)
+	\item (frozen)sets können frozensets enthalten
 \end{itemize}
 \end{frame}
-\begin{frame}{}
+\begin{frame}{set/frozenset}
 	\lstinputlisting{resources/03_builtins/set.py}
 \end{frame}
 
@@ -102,10 +107,10 @@
 \begin{frame}{Iteration}
 \begin{itemize}
 	\item nur foreach
-	\item für Interger iteration gibt es \codeline{range([start], stop, step=1)}
-	\item zum iterator kombinieren kann man \codeline{zip(iterator_1, iterator_2, ..., iterator_n)} verwenden
-	\item alles mit einer \codeline{__iter__} methode ist iterierbar
-	\item \codeline{iter(iterable)} construiert dir einen stateful iterator
+	\item für Integer Iterationen gibt es \codeline{range([start], stop, step=1)}
+	\item zum Iteratoren kombinieren kann man \codeline{zip(iterator_1, iterator_2, ..., iterator_n)} verwenden
+	\item alles mit einer \codeline{__iter__} Methode ist iterierbar
+	\item \codeline{iter(iterable)} konstruiert einen stateful iterator
 \end{itemize}
 \end{frame}
 \begin{frame}{}
