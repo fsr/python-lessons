@@ -107,49 +107,55 @@
 \begin{frame}{Iteration}
 \begin{itemize}
 	\item nur foreach
-	\item für Integer Iterationen gibt es \codeline{range([start], stop, step=1)}
-	\item zum Iteratoren kombinieren kann man \codeline{zip(iterator_1, iterator_2, ..., iterator_n)} verwenden
-	\item alles mit einer \codeline{__iter__} Methode ist iterierbar
-	\item \codeline{iter(iterable)} konstruiert einen stateful iterator
+	\item für Iterationen über Integer gibt es \texttt{range([start], stop, step=1)}
+	\item um Iteratoren zu kombinieren kann man \texttt{zip(iterator_1, iterator_2, ..., iterator_n)} verwenden
+	\item alles mit einer \texttt{__iter__} Methode ist iterierbar
+	% TODO: stateful Iterator erklären oder entfernen
+	\item \texttt{iter(iterable)} konstruiert einen \textit{stateful iterator}
 \end{itemize}
 \end{frame}
-\begin{frame}{}
+\begin{frame}{Iteration}
+	% TODO am Ende noch mal gucken, ob die Zeilen passen!
 	\lstinputlisting[lastline=28]{resources/03_builtins/iterate.py}
 \end{frame}
-\begin{frame}
+\begin{frame}{Iteration}
 	\lstinputlisting[firstline=30]{resources/03_builtins/iterate.py}
 \end{frame}
 
 \section{unpacking}
 \begin{frame}{Unpacking}
 \begin{itemize}
-	\item kann auf Tupel und Listen angewendet werden
-	\item nützlich in for Schleifen
+	\item einfaches Auflösen von Listen und Tupeln in einzelne Variablen
+	\item nützlich in \textt{for} Schleifen
 \end{itemize}
 \end{frame}
-\begin{frame}{}
+\begin{frame}{unpacking}
 	\lstinputlisting{resources/03_builtins/unpacking.py}
 \end{frame}
 
-\section{contenxt manager}
+\section{Contenxt Manager}
 \begin{frame}{Context Manager}
 \begin{itemize}
-	\item keyword \codeline{with}
-	\item kann jedes objekt sein, was eine \codeline{__enter__} und \codeline{__exit__} methode hat
+	\item Aufruf mit \texttt{with}
+	\item kann jedes Objekt sein, welches eine \texttt{__enter__} und \texttt{__exit__} Methode hat
+	\item praktisch beim \textit{File Handling}
 \end{itemize}
 \end{frame}
-\begin{frame}{}
+\begin{frame}{Context Manager}
 	\lstinputlisting{resources/03_builtins/cm.py}
 \end{frame}
 
-\section{file handling}
-\begin{frame}{File handling}
+\section{File Handling}
+\begin{frame}{File Handling}
 \begin{itemize}
-	\item open files with \codeline{open(filename, mode="r")}
-	\item filehandlers are iterators over lines
-\end{itemize}
+	\item Dateien können mit \texttt{open(filename, mode="r")} geöffnet werden
+	\item \textit{File Handler} sind Iteratoren über die Zeilen einer Datei
+	\item \textbf{Wichtig:} File Handler müssen auch wieder geschlossen werden
+	\item \texttt{r} steht für Lesezugriff,  \texttt{w} für Schreibzugriff
+\end{itemize}[.5cm]
+\textbf{Beachte:} Wird eine Datei mit Schreibzugriff geöffnet, wird sie geleert! Also wichtige Inhalte vorher auslesen.
 \end{frame}
-\begin{frame}{}
+\begin{frame}{File Handling}
 	\lstinputlisting{resources/03_builtins/file.py}
 \end{frame}
 

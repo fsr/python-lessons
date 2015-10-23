@@ -7,7 +7,7 @@ y is t[1]  # ==> True
 
 # oder
 x, *y = t
-y  # ==> 1
+x  # ==> 1
 y  # ==> [3, 'ein string']
 
 a, b, c = 1, 2, 4
