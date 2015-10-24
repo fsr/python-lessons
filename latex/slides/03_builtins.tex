@@ -28,7 +28,7 @@
 \begin{itemize}
 	\item Alle Exceptions erben von \texttt{Exception}
 	\item Catching mit try/except
-	\item \texttt{finally} um Code auszuführen, der \textit{unbedingt} laufen muss, egal ob eine Exception vorliegt oder nicht
+	\item \texttt{finally} um Code auszuf\"uhren, der \textit{unbedingt} laufen muss, egal ob eine Exception vorliegt oder nicht
 \end{itemize}
 \end{frame}
 \begin{frame}{Exception Handling}
@@ -48,11 +48,11 @@
 \begin{frame}{list}
 
 \begin{itemize}
-	\item enthält variable Anzahl von Objekten
+	\item enth\"alt variable Anzahl von Objekten
 	\item eine Liste kann beliebig viele verschiedene Datentypen enthalten (z.B. \texttt{bool} und \texttt{list})
-	\item Auch Listen können in Listen gespeichert werden!
+	\item Auch Listen k\"onnen in Listen gespeichert werden!
 	\item Listenobjekte haben eine feste Reihenfolge (\textit{first in, last out})
-	\item optimiert für einseitige Benutzung wie z.B. Queue (\texttt{append} und \texttt{pop})
+	\item optimiert f\"ur einseitige Benutzung wie z.B. Queue (\texttt{append} und \texttt{pop})
 \end{itemize}
 \end{frame}
 \begin{frame}{list}
@@ -63,8 +63,8 @@
 \begin{frame}{tuple}
 \begin{itemize}
 	\item Gruppiert Daten
-	\item kann nicht mehr verändert werden, sobald es erstellt wurde
-	\item Funktionen mit mehreren Rückgabewerten geben ein Tupel zurück
+	\item kann nicht mehr ver\"andert werden, sobald es erstellt wurde
+	\item Funktionen mit mehreren R\"uckgabewerten geben ein Tupel zur\"uck
 \end{itemize}
 \end{frame}
 \begin{frame}{tuple}
@@ -88,15 +88,15 @@
 \section{set/frozenset}
 \begin{frame}{set/frozenset}
 \begin{itemize}
-	\item kann nur hashbare Einträge enthalten
+	\item kann nur hashbare Eintr\"age enthalten
 	\item \texttt{set} selbst ist nicht hashbar
-	\item \texttt{frozensets} sind hashbar, jedoch nicht mehr veränderbar
-	\item enhält jedes Element nur einmal
-	\item schnellere Überprüfung mit \texttt{in} (prüft, ob Element enthalten ist)
+	\item \texttt{frozensets} sind hashbar, jedoch nicht mehr ver\"anderbar
+	\item enth\"alt jedes Element nur einmal
+	\item schnellere \"Uberpr\"ufung mit \texttt{in} (pr\"uft, ob Element enthalten ist)
 	% TODO
 	\item Mögliche Operationen: \texttt{superset()}, \texttt{subset()}, \texttt{isdisjoint()}, \texttt{difference()}, \texttt{<, >, disdisjoint(), -}
 	\item ungeordnet
-	\item (frozen)sets können frozensets enthalten
+	\item (frozen)sets k\"onnen frozensets enthalten
 \end{itemize}
 \end{frame}
 \begin{frame}{set/frozenset}
@@ -107,10 +107,10 @@
 \begin{frame}{Iteration}
 \begin{itemize}
 	\item nur foreach
-	\item für Iterationen über Integer gibt es \texttt{range([start], stop, step=1)}
+	\item f\"ur Iterationen \"uber Integer gibt es \texttt{range([start], stop, step=1)}
 	\item um Iteratoren zu kombinieren kann man \texttt{zip(iterator_1, iterator_2, ..., iterator_n)} verwenden
 	\item alles mit einer \texttt{__iter__} Methode ist iterierbar
-	% TODO: stateful Iterator erklären oder entfernen
+	% TODO: stateful Iterator erklaeren oder entfernen
 	\item \texttt{iter(iterable)} konstruiert einen \textit{stateful iterator}
 \end{itemize}
 \end{frame}
@@ -125,8 +125,8 @@
 \section{unpacking}
 \begin{frame}{Unpacking}
 \begin{itemize}
-	\item einfaches Auflösen von Listen und Tupeln in einzelne Variablen
-	\item nützlich in \textt{for} Schleifen
+	\item einfaches Aufl\"osen von Listen und Tupeln in einzelne Variablen
+	\item n\"utzlich in \textt{for} Schleifen
 \end{itemize}
 \end{frame}
 \begin{frame}{unpacking}
@@ -148,12 +148,12 @@
 \section{File Handling}
 \begin{frame}{File Handling}
 \begin{itemize}
-	\item Dateien können mit \texttt{open(filename, mode="r")} geöffnet werden
-	\item \textit{File Handler} sind Iteratoren über die Zeilen einer Datei
-	\item \textbf{Wichtig:} File Handler müssen auch wieder geschlossen werden
-	\item \texttt{r} steht für Lesezugriff,  \texttt{w} für Schreibzugriff
+	\item Dateien k\"onnen mit \texttt{open(filename, mode="r")} ge\"offnet werden
+	\item \textit{File Handler} sind Iteratoren \"uber die Zeilen einer Datei
+	\item \textbf{Wichtig:} File Handler m\"ussen auch wieder geschlossen werden
+	\item \texttt{r} steht f\"ur Lesezugriff,  \texttt{w} f\"ur Schreibzugriff
 \end{itemize}[.5cm]
-\textbf{Beachte:} Wird eine Datei mit Schreibzugriff geöffnet, wird sie geleert! Also wichtige Inhalte vorher auslesen.
+\textbf{Beachte:} Wird eine Datei mit Schreibzugriff ge\"offnet, wird sie geleert! Also wichtige Inhalte vorher auslesen.
 \end{frame}
 \begin{frame}{File Handling}
 	\lstinputlisting{resources/03_builtins/file.py}
