@@ -1,8 +1,9 @@
 ---
 title: Calculator
 status: finished
-# number: 6
+# number: 7
 authors: justus
+lesson: 3
 ---
 
 ### Description

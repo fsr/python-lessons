@@ -2,21 +2,25 @@
 title: Be persistent - save your data!
 status: drafty
 authors: felixw
+# number: 9
+lesson: 3
 ---
 
-## (1) Using JSON
+## Statistics worth saving.
 
 Write a script that imports the __text statistics__ script, counts the dummy text and exports the statistics you gathered, using JSON.[^jsondocs]
 
 [^jsondocs]:
-    See the [docs](https://docs.python.org/3/library/json.html) for more information.
+    See the [docs](https://docs.python.org/3/library/json.html) for more information on how to use JSON.
 
 
-## (2) Using pickle
+## Save some contacts.
 
 In __More objects!__ you wrote a rudimentary contact manager. Now splice it with some persistence features.
 
 You can read the documentation for the pickle module [here](https://docs.python.org/3/library/pickle.html).
+
+[TODO: Replace pickle with something better...]
 
 ### Step 2.1
 

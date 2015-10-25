@@ -1,7 +1,7 @@
 ---
 title: Because builtin is not enough - Inheritance
 status: drafty
-# number: 7
+# number: 10
 authors: justus
 ---
 

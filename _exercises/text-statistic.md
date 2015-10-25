@@ -3,6 +3,7 @@ title: Text Statistics
 status: finished
 # number: 8
 authors: justus
+lesson: 3
 ---
 
 
