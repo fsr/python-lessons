@@ -1,12 +1,12 @@
 ---
 title: Calculator
-status: finished
+status: reviewed
 # number: 7
-authors: justus
+authors: [justus, felix]
 lesson: 3
 ---
 
-### Description
+### Step 1
 
 Write a command line program, that accepts dual-operand infix-only mathematical equations and calculates the results, in an endless loop.[^while]
 
@@ -23,8 +23,19 @@ It should at least accept +, -, \*, / as operators.[^strategy]
 [^strategy]:
     Remember to cast the operands to an int or even better float, once you have split it.
 
-### Example:
+**Example:**
 
     Enter your equation:
     2 - 4  
     -2
+
+### Step 2
+
+Log[^a] your calculations and their results in a textfile.  
+Use the following format: `1 + 5 = 6` [^newline]
+
+[^a]:
+    You can log it using **append** mode: `open(filename, 'a')`
+
+[^newline]:
+    Do not forget to add a newline at the end of every line,
