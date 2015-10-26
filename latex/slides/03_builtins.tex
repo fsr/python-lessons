@@ -40,7 +40,7 @@
 \begin{itemize}
 	\item \textit{type} ist \texttt{bool}
 	\item Mögliche Werte: \texttt{True} oder \texttt{False}
-	\item Operationen sind \textit{und}, \textit{oder}, \textit{nicht} \texttt{and, or, not}
+	\item Operationen sind \textit{und}, \textit{oder}, \textit{nicht} (\texttt{and, or, not})
 \end{itemize}
 \end{frame}
 
@@ -108,8 +108,8 @@
 \begin{itemize}
 	\item nur foreach
 	\item f\"ur Iterationen \"uber Integer gibt es \texttt{range([start], stop, step=1)}
-	\item um Iteratoren zu kombinieren kann man \texttt{zip(iterator_1, iterator_2, ..., iterator_n)} verwenden
-	\item alles mit einer \texttt{__iter__} Methode ist iterierbar
+	\item um Iteratoren zu kombinieren kann man \texttt{zip(iterator\_1, iterator\_2, ..., iterator\_n)} verwenden
+	\item alles mit einer \texttt{\_\_iter\_\_} Methode ist iterierbar
 	% TODO: stateful Iterator erklaeren oder entfernen
 	\item \texttt{iter(iterable)} konstruiert einen \textit{stateful iterator}
 \end{itemize}
@@ -126,7 +126,7 @@
 \begin{frame}{Unpacking}
 \begin{itemize}
 	\item einfaches Aufl\"osen von Listen und Tupeln in einzelne Variablen
-	\item n\"utzlich in \textt{for} Schleifen
+	\item n\"utzlich in \texttt{for}-Schleifen
 \end{itemize}
 \end{frame}
 \begin{frame}{unpacking}
@@ -137,7 +137,7 @@
 \begin{frame}{Context Manager}
 \begin{itemize}
 	\item Aufruf mit \texttt{with}
-	\item kann jedes Objekt sein, welches eine \texttt{__enter__} und \texttt{__exit__} Methode hat
+	\item kann jedes Objekt sein, welches eine \texttt{\_\_enter\_\_} und \texttt{\_\_exit\_\_} Methode hat
 	\item praktisch beim \textit{File Handling}
 \end{itemize}
 \end{frame}
