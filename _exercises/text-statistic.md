@@ -9,9 +9,7 @@ lesson: 3
 
 Write some [lorem ipsum text](http://www.loremipsum.de) into a file.
 
-Read the file[^filereading] and make a statistic of how often every word appears in the file[^dict] and print that to the command line.
-
-Print the results to the command line.
+Read the file[^filereading] and make a statistic of how often every word appears in the file[^dict] and print your results to the command line.
 
 Parameterize the function and make the main function peek into `sys.argv` and use all arguments to the script as input file names, combining the results[^tuple].
 
