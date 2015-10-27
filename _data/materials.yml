@@ -13,7 +13,7 @@ slides:
     number: 3
     name: Builtins
     url: https://ifsr.de/kurs-materialien/python/03_builtins.pdf
-    published: False
+    published: True
   -
     number: 4
     name: Module, Packages, PIP

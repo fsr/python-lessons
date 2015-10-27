@@ -1,7 +1,7 @@
 ---
 title: Get me the file! - file(handle(r)s)
 status: reviewed
-# number: 6
+number: 6
 authors: [justus, felixw]
 lesson: 3
 ---

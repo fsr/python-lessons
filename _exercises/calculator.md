@@ -1,7 +1,7 @@
 ---
 title: Calculator
 status: reviewed
-# number: 7
+number: 7
 authors: [justus, felix]
 lesson: 3
 ---
@@ -18,10 +18,23 @@ You may assume the user input has the structure: operand 1, space, operator, spa
 [^input_structure]:
     Since we assume operands and operator are separated by spaces, we can split the string at the spaces. `input.split(' ')`
 
-It should at least accept +, -, \*, / as operators.[^strategy]
+It should at least accept +, -, \*, / as operators.[^strategy] [^ifelse]
 
 [^strategy]:
     Remember to cast the operands to an int or even better float, once you have split it.
+
+[^ifelse]:
+    Also remember, that you can pack multiple if/else commands:
+
+    ```python
+    if condition1:
+        # commands
+    elif condition2:
+        # commands
+    #there is no limit to the number of elifs
+    else:
+        # normal case
+    ```
 
 **Example:**
 
