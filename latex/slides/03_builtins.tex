@@ -132,7 +132,21 @@
 	\lstinputlisting{resources/03_builtins/unpacking.py}
 \end{frame}
 
-\section{Contenxt Manager}
+\section{File Handling}
+\begin{frame}{File Handling}
+\begin{itemize}
+	\item Dateien k\"onnen mit \texttt{open(filename, mode="r")} ge\"offnet werden
+	\item \textit{File Handler} sind Iteratoren \"uber die Zeilen einer Datei
+	\item \textbf{Wichtig:} File Handler m\"ussen auch wieder geschlossen werden
+	\item \texttt{r} steht f\"ur Lesezugriff,  \texttt{w} f\"ur Schreibzugriff
+\end{itemize}
+\textbf{Beachte:} Wird eine Datei mit Schreibzugriff ge\"offnet, wird sie geleert! Also wichtige Inhalte vorher auslesen.
+\end{frame}
+\begin{frame}{File Handling}
+	\lstinputlisting{resources/03_builtins/file.py}
+\end{frame}
+
+\section{Context Manager}
 \begin{frame}{Context Manager}
 \begin{itemize}
 	\item Aufruf mit \texttt{with}
@@ -142,20 +156,6 @@
 \end{frame}
 \begin{frame}{Context Manager}
 	\lstinputlisting{resources/03_builtins/cm.py}
-\end{frame}
-
-\section{File Handling}
-\begin{frame}{File Handling}
-\begin{itemize}
-	\item Dateien k\"onnen mit \texttt{open(filename, mode="r")} ge\"offnet werden
-	\item \textit{File Handler} sind Iteratoren \"uber die Zeilen einer Datei
-	\item \textbf{Wichtig:} File Handler m\"ussen auch wieder geschlossen werden
-	\item \texttt{r} steht f\"ur Lesezugriff,  \texttt{w} f\"ur Schreibzugriff
-\end{itemize}[.5cm]
-\textbf{Beachte:} Wird eine Datei mit Schreibzugriff ge\"offnet, wird sie geleert! Also wichtige Inhalte vorher auslesen.
-\end{frame}
-\begin{frame}{File Handling}
-	\lstinputlisting{resources/03_builtins/file.py}
 \end{frame}
 
 % nothing to do from here on
