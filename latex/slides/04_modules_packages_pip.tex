@@ -32,63 +32,94 @@
 
 %% Für einzelne Zeilen Code \codeline{} vewenden (ist mit Markup) für einzelne Worte \texttt{} verwenden (auch in Tabellen!)
 
+% ---------------------------------- Module ----------------------------------
+
 \section{Module}
 \subsection{Eigene Module}
 \begin{frame}[fragile]{Module}
 	\begin{itemize}
-		\item Ein Modul ist die python-interne Repräsentation einer \texttt{.py} Datei
+		\item Ein Modul ist die python-interne Repr\"asentation einer \texttt{.py} Datei
 		\item Der Dateiname setzt sich daher aus Modulname + \texttt{.py} zusammen
 		\item Module beinhalten eine beliebige Anzahl an Definitionen (Klassen, Funktionen, Variablen/Konstanten)
-		\item Das komplette Modul wird mit \texttt{import} hinzugefügt
+		\item Das komplette Modul wird mit \texttt{import} hinzugef\"ugt
 		\item Einzelne Inhalte mit \texttt{from} Modul \texttt{import} Name
-		\item Mit Hilfe von \texttt{as} kann ein Alias für den importierten namen angelegt werden
+		\item Mit Hilfe von \texttt{as} kann ein Alias f\"ur den importierten Namen angelegt werden
 	\end{itemize}
-
 \end{frame}
 
-\begin{frame}
+\begin{frame}{Ein Beispiel}
+	Die Datei \textbf{incdec.py} enth\"alt eine Reihe von Funktionen:
 	\lstinputlisting{resources/04_modules_and_packages/incdec.py}
+\end{frame}
+
+\begin{frame}{Ein Beispiel}
+	In einem anderen Python-Script kann ich diese Funktionen nutzen:
 	\lstinputlisting{resources/04_modules_and_packages/modules.py}
 \end{frame}
 
-\subsection{Suchpfad für Module}
-\begin{frame}
-	Wenn ein Modul importiert wird, sucht Python nach diesem an allen Orten, welche im sogenannten PYTHONPATH aufgelistet sind. Python intern ist dieser in \texttt{sys.path} zu finden, in der Kommandozeile ist er mit der Umgebungsvariable PYTHONPATH erreichbar.\\
-	Dieser Pfad \texttt{sys.path} kann zur Laufzeit verändert werden.\\
-	Standardmä\ss{}ig enthält er meist:
+
+
+\subsection{Der Sinn der Boilerplate}
+\begin{frame}{Der Sinn der Boilerplate}
 	\begin{itemize}
-		\item die Standard Bibliothek der derzeitig verwendeten Python Version
-		\item das aktuellen Verzeichnis in dem der Interpreter aufgerufen wurde
-		\item eine Verzeichnis mit plattfomspezifischen Modulen, z.B.
-			"/usr/local/Cellar/python3/3.4.3/Frameworks/Python.framework/
-			Versions/3.4/lib/python3.4/plat-darwin" für Mac
-		\item Benutzerspezifische Module für die jeweilige Python Version, z.B. "/usr/local/lib/python3.4/site-packages" für Python 3.4
+		\item Verhindert, dass Code beim Importieren eines Scriptes ausgef\"uhrt wird
+		\item Beim Aufruf des Moduls \"uber \texttt{import} ist der Name des Moduls nicht \texttt{\_\_main\_\_}, sondern der Name des Scriptes (im vorherigen Beispiel w\"are das \texttt{incdec})
 	\end{itemize}
 \end{frame}
 
-\subsection{Suchpfad modifizieren}
-\begin{frame}
-Zusätzliche directories für den PYTHONPATH kann man beim Aufruf übergeben\\
-\texttt{PYTHONPATH=/my/directory python3 script.py}\\
-Oder im programm
-\lstinputlisting{resources/04_modules_and_packages/path.py}
-Änderungen am Pfad sind erst \textbf{nach} der entsprechenden Codezeile verfügbar.
+
+
+\subsection{Suchpfad f\"ur Module}
+\begin{frame}{Suchpfad f\"ur Module}
+	\begin{itemize}
+		\item Python sucht Module beim Import an allen im \textbf{PYTHONPATH} aufgelisteten Ordnern
+		\item dieser findet sich in Python unter \texttt{sys.path}, in der Kommandozeile in der Umgebungsvariable PYTHONPATH
+		\item \texttt{sys.path} l\"asst sich zur Laufzeit im Interpreter \"andern (z.B. um nachtr\"aglich neue eigene Module hinzuzuf\"ugen)
+	\end{itemize}
 \end{frame}
+
+\begin{frame}{Suchpfad f\"ur Module}
+	Standardm\"a\ss{}ig enth\"alt der Suchpfad folgende Module: \\ \ \\
+	\begin{itemize}
+		\item die \textit{Standardbibliothek} der derzeitig verwendeten Python-Version
+		\item das \textit{aktuelle Verzeichnis}, in dem der Interpreter aufgerufen wurde
+		\item eine \textit{Verzeichnis mit plattfomspezifischen Modulen}, z.B.
+			"/usr/local/Cellar/python3/3.4.3/Frameworks/Python.framework/
+			Versions/3.4/lib/python3.4/plat-darwin" f\"ur Mac
+		\item \textit{Benutzerspezifische Module f\"ur die jeweilige Python Version}, z.B. "/usr/local/lib/python3.4/site-packages" f\"ur Python 3.4
+	\end{itemize}
+\end{frame}
+
+
+
+\subsection{Suchpfad modifizieren}
+\begin{frame}{Suchpfad modifizieren}
+	Zus\"atzliche Verzeichnisse f\"ur den PYTHONPATH kann man beim Aufruf \"ubergeben:\\
+	\hspace*{.5cm}\codeline{\$ PYTHONPATH=/my/directory python3 script.py}\\ \ \\
+	Oder im Programm:
+	\lstinputlisting{resources/04_modules_and_packages/path.py}
+	\"Anderungen am Pfad sind erst \textbf{nach} der entsprechenden Codezeile verf\"ugbar.
+\end{frame}
+
+
 
 \subsection{Standardmodule}
 \begin{frame}{Standardmodule}
-	Python liefert viele nützliche Module bereits in der Standardbibliothek mit, von welchen wir eineige bereits kennen gelernt haben.
-	z.B. sys, os, http, re, fuctools, itertools, collections, hashlib, urllib und viele mehr. Daher bezeichnet man Python oft auch als "Batteries included".
+	Python liefert viele n\"utzliche Module bereits in der Standardbibliothek mit, z.B.:
+	\texttt{sys}, \texttt{os}, \texttt{http}, \texttt{re}, \texttt{fuctools}, \texttt{itertools}, \texttt{collections}, \texttt{hashlib}, \texttt{urllib} und viele mehr. \\ \ \\
+	Daher bezeichnet man Python oft auch als \textbf{Batteries included}.
 \end{frame}
+
+% --------------------------------- Packages ---------------------------------
 
 \section{Packages}
 \begin{frame}{Packages}
 	\begin{itemize}
-		\item Packages sind Ordner, welche mindestens ein \texttt{\_\_init\_\_.py} Modul enthalten.
-		\item der Inhalt dieses Moduls ist prinzipiell egal.
-		\item Packages können genau wie Module importiert werden.
-		\item Wird das Package selbst importiert, sind alle Definitionen in \texttt{\_\_init\_\_.py} über das importierte Package erreichbar.
-		\item Sie werden benutzt um Module in sinnvolle Gruppen zusammenzufassen.
+		\item Packages sind Ordner, die mindestens ein \texttt{\_\_init\_\_.py} Modul enthalten.
+		\item der Inhalt dieses Moduls ist prinzipiell egal
+		\item Packages k\"onnen genau wie Module importiert werden
+		\item Wird das Package selbst importiert, sind alle Definitionen in \texttt{\_\_init\_\_.py} \"uber das importierte Package erreichbar.
+		\item wird benutzt, um Module in sinnvolle Gruppen zusammenzufassen
 	\end{itemize}
 \end{frame}
 
@@ -97,22 +128,24 @@ Oder im programm
 \section{PIP}
 \subsection{Installation von PIP}
 \begin{frame}{Installation von PIP}
-	Nicht jedes Modul ist in der Standard Bibliothek vorhanden, muss aber nicht zwingen manuell als Dateien hinzugefügt werden. Man kann ganz PIP zur Hilfe nehmen.\\[.5cm]
+	Nicht jedes Modul ist in der Standardbibliothek vorhanden, muss aber nicht zwingen manuell als Datei hinzugef\"ugt werden. Man kann ganz einfach PIP zur Hilfe nehmen.\\[.5cm]
 	\textbf{Installation:}\\
 	\begin{enumerate}
 		\item Downloaden der \texttt{get-pip.py} von pypa \href{https://bootstrap.pypa.io/get-pip.py}{(hier)}
 		\item Installieren via \texttt{python3 get-pip.py}\\[.5cm]
 	\end{enumerate}
 
-	Hinweis für Mac-Nutzer:\\
-	Bei der Pythoninstallation via Homebrew wird pip gleich mit installiert.
+	Hinweis f\"ur Mac-Nutzer:\\
+	Bei der Pythoninstallation via \textit{Homebrew} wird pip gleich mit installiert.
 \end{frame}
+
+
 
 \subsection{Verwendung}
 \begin{frame}{Verwendung}
-	Die Installation von Modulen ist einfach und es gibt mehrere Möglichkeiten.
+	Die Installation von Modulen ist einfach und es gibt mehrere M\"oglichkeiten:
 	\begin{itemize}
-		\item die letzte Version eine Moduls:\\
+		\item die aktuellste Version eines Moduls:\\
 		\noindent\hspace*{.5cm} \texttt{pip install Modulname}
 		\item eine bestimmte Version:\\
 		\noindent\hspace*{.5cm} \texttt{pip install Modulname == 2.1}
@@ -123,13 +156,15 @@ Oder im programm
 	\end{itemize}
 \end{frame}
 
+
+
 \subsection{Die requirements.txt}
 \begin{frame}{Die requirements.txt}
-	Wenn jemand Scripts ausführen möchte, in denen Module verwendet werden, die mit Hilfe von PIP installiert wurden, ist es hilfreich eine \texttt{requirements.txt} mitzuliefern.\\
-	In dieser sind alle Module aufgelistet, die benötigt werden.\\[.5cm]
+	Wenn jemand Scripte ausf\"uhren m\"ochte, in denen Module verwendet werden, die mit Hilfe von PIP installiert wurden, ist es hilfreich eine \texttt{requirements.txt} mitzuliefern.\\
+	In dieser sind alle Module aufgelistet, die ben\"otigt werden.\\[.5cm]
 	\lstinputlisting{resources/05_pip/requirements.txt}
 
-	Eine solche kann via \texttt{pip install -r requirements.txt} installiert werden
+	Via \texttt{pip install -r requirements.txt} k\"onnen alle Module von der Liste installiert werden
 \end{frame}
 
 \end{document}
