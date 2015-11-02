@@ -1,13 +1,11 @@
 ---
 title: Modules and Packages
 status: finished
-# number: 9
+# number: 10
 authors: felix
 ---
 
 ### Step 1
-
-#### Edit
 
 Write a module `basicmath.py` with functions to add, subtract, multiply and divide two values.
 
@@ -16,13 +14,9 @@ Write a script that uses this module [^import] and call some functions of this m
 [^import]:
     You can import this using `import`
 
-#### Run
-
 Run this script.
 
 ### Step 2
-
-#### Edit
 
 Write a second module `stringopts.py` and group this and the first one in a Package.[^package]
 `stringopts` should include functions that are called `get_length`, `reverse`[^reverse] and `does_include`
@@ -34,7 +28,5 @@ Write a second module `stringopts.py` and group this and the first one in a Pack
     To reverse Strings you could use `myString[::-1]` or `reversed(myString)`
 
 Edit your script and use functions of both.
-
-#### Run
 
 Run and test your script.

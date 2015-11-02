@@ -1,9 +1,9 @@
 ---
 title: Be persistent - save your data!
 status: drafty
-authors: felixw
-# number: 9
-lesson: 3
+authors: [felixw, felix]
+# number: 11
+lesson: 4
 ---
 
 ## Statistics worth saving.
@@ -16,27 +16,19 @@ Write a script that imports the __text statistics__ script, counts the dummy tex
 
 ## Save some contacts.
 
-In __More objects!__ you wrote a rudimentary contact manager. Now splice it with some persistence features.
+### Step 1
+In __More objects!__ you wrote a rudimentary contact manager. Time to create a litte generator around it.
 
-You can read the documentation for the pickle module [here](https://docs.python.org/3/library/pickle.html).
+Use the builtin module `random`[^random] to pick one element from a list of names, mails,..
 
-[TODO: Replace pickle with something better...]
+### Step 2
+Now write a script that generates about 20 contacts and dumps them via JSON.
 
-### Step 2.1
+### Step 3
+If there is already a JSON file load it, add 3 more contacts and dump it again.
 
-Add a function `saveContacts()` which dumps your whole contact list to a file named "backup.pkl".
+Test your script
 
-Call the function inside your *main* function, after you created some contacts.
-
-Run the script and have an eye on the folder the script lives in. What happens during execution?
-
-
-### Step 2.2
-
-Now add a function `loadContacts()` that obviously should retrieve your contact list from the backup file.
-
-To play it safe, import the function `isfile()` from the os.path package[^cheat] and check if the backup file exists before you try to load any contacts from a list. If the file is not existent, return from the function and print a message about this.  
-Otherwise, load the contacts from the file.
-
-[^cheat]:
-    This is in python: `from os.path import isfile`.
+[^random]:
+    You should initialize the random with `random.seed()` and get an `randint` in a certain range.
+    Have a look into the [docs](https://docs.python.org/3/library/random.html) for further information.
