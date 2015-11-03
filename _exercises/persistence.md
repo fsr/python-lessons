@@ -29,10 +29,13 @@ Now write a script that generates about 20 contacts and dumps them via JSON.
 Use randomly generated 12 digits long numbers for the phone numbers. The date of birth can be ignored. Use a hard coded value like `01.01.1859` for all generated contacts.
 
 ### Step 3
-If there is already a JSON file, load it, add 3 more contacts and dump it again.
+If there is already a JSON file[^check], load it, add 3 more contacts and dump it again.
 
 Test your script.
 
 [^random]:
     You should initialize the random with `random.seed()` and get an `randint` in a certain range.
     Have a look into the [docs](https://docs.python.org/3/library/random.html) for further information.
+
+[^check]:
+    To check if an file exists, you can use `os.path.exists(filename)`.
