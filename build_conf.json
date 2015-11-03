@@ -8,13 +8,13 @@
                 "01_getting_started.tex",
                 "02_grundlagen.tex",
                 "03_builtins.tex",
-                "04_modules_and_packages.tex",
-                "05_pip.tex",
-                "06_decorators.tex",
-                "07_comprehensions.tex",
-        		    "08_functions_advanced.tex",
-        		    "09_process.tex",
-                "10_web_client.tex"
+                "04_modules_packages_pip.tex",
+                "05_decorators.tex",
+                "06_comprehensions.tex",
+                "07_functions_advanced.tex",
+        		"08_process.tex",
+        		"09_web_client.tex",
+                "10_regex.tex"
             ]
         },
         "html": {
