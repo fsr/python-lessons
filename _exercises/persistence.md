@@ -1,6 +1,6 @@
 ---
 title: Be persistent - save your data!
-status: drafty
+status: reviewed
 authors: [felixw, felix]
 # number: 11
 lesson: 4
@@ -17,17 +17,19 @@ Write a script that imports the __text statistics__ script, counts the dummy tex
 ## Save some contacts.
 
 ### Step 1
-In __More objects!__ you wrote a rudimentary contact manager. Time to create a litte generator around it.
+In __More objects!__ you wrote a rudimentary contact manager. Time to create a litte generator around it to automatically fill it with some dummy data.
 
-Use the builtin module `random`[^random] to pick one element from a list of names, mails,..
+Load [this](../misc/contactdata.json) (Rightclick -> Download Linked File) JSON file to get a list of first- and lastnames.  
+Use the builtin module `random`[^random] to pick one element from those lists of names.  
+The mail-address should be `firstname.lastname@python.course`.
 
 ### Step 2
 Now write a script that generates about 20 contacts and dumps them via JSON.
 
 ### Step 3
-If there is already a JSON file load it, add 3 more contacts and dump it again.
+If there is already a JSON file, load it, add 3 more contacts and dump it again.
 
-Test your script
+Test your script.
 
 [^random]:
     You should initialize the random with `random.seed()` and get an `randint` in a certain range.
