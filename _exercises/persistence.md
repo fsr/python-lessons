@@ -17,7 +17,7 @@ Write a script that imports the __text statistics__ script, counts the dummy tex
 ## Save some contacts.
 
 ### Step 1
-In __More objects!__ you wrote a rudimentary contact manager. Time to create a litte generator around it to automatically fill it with some dummy data.
+In __More objects!__ you wrote a rudimentary contact manager. Time to create a little generator around it to automatically fill it with some dummy data.
 
 Load [this](../misc/contactdata.json) (Rightclick -> Download Linked File) JSON file to get a list of first- and lastnames.  
 Use the builtin module `random`[^random] to pick one element from those lists of names.  
