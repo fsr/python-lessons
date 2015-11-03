@@ -1,7 +1,7 @@
 ---
 title: Modules and Packages
 status: reviewed
-# number: 10
+number: 10
 authors: felix
 lesson: 4
 ---

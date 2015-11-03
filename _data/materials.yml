@@ -18,7 +18,7 @@ slides:
     number: 4
     name: Module, Packages, PIP
     url: https://ifsr.de/kurs-materialien/python/04_modules_packages_pip.pdf
-    published: False
+    published: True
   -
     number: 5
     name: Decorators

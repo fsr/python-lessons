@@ -2,7 +2,7 @@
 title: Be persistent - save your data!
 status: reviewed
 authors: [felixw, felix]
-# number: 11
+number: 11
 lesson: 4
 ---
 
@@ -25,6 +25,8 @@ The mail-address should be `firstname.lastname@python.course`.
 
 ### Step 2
 Now write a script that generates about 20 contacts and dumps them via JSON.
+
+Use randomly generated 12 digits long numbers for the phone numbers. The date of birth can be ignored. Use a hard coded value like `01.01.1859` for all generated contacts.
 
 ### Step 3
 If there is already a JSON file, load it, add 3 more contacts and dump it again.

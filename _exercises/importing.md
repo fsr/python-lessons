@@ -1,7 +1,7 @@
 ---
 title: Important importing - path path path
 status: reviewed
-# number: 9
+number: 9
 authors: justus
 lesson: 4
 ---
