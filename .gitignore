@@ -4,3 +4,4 @@ _site
 *.log
 latex/
 rbuild/
+.jekyll-metadata
