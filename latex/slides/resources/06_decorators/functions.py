@@ -33,7 +33,7 @@ print greet()
 def say_date(date):
     return "Today it's {date}".format(date=date)
 
-def which_date(function)
+def which_date(function):
     date = "25th June 2015"
     return function(date)
 

@@ -20,7 +20,6 @@ print get_date("25th June 2015")
 
 
 # Nutzung des @ Syntaxes
-
 def tell_the_world(func):
     def complete_sentence(date):
         return "Hello World, {}".format(func(date))
