@@ -11,7 +11,7 @@ lesson: 3
 __Edit__
 
 Write a script. Import the time module.[^time]
-Then write a decorator called `time_teller` this should be our decorator. `time_teller` contains another function that set three Strings into "It is {date}. Since {hour} hours and {minutes} minutes.".
+Then write a function called `time_teller`. This will be our decorator. `time_teller` contains another function that fills three Strings into "It is {date}. Since {hour} hours and {minutes} minutes.".
 
 [^time]:
     Use `import time`
@@ -31,7 +31,7 @@ Run your script.
 
 __Edit__
 
-Change your decorator that it is accepting arguments. Change the String as well to "Now it is {date}"
+Change your decorator so that it accepts arguments. Change the String as well to "Now it is {date}"
 
 Change `get_time` to accept a sting as input (default should be `"%Y/%m/%d %H:%M"`)[^default] and return the date formatted like this.
 
@@ -45,4 +45,4 @@ __Run__
 Run your script and test if the values are correct.
 
 [^dateformats]:
-    A table of the formats could be found in the [Documentation](https://docs.python.org/3.4/library/time.html#module-time){:target="_blank"}
+    A table of the formats can be found in the [Documentation](https://docs.python.org/3.4/library/time.html#module-time){:target="_blank"}
