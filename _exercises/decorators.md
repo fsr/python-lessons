@@ -1,7 +1,7 @@
 ---
 title: It is beautiful - Decorator
 status: reviewed
-# number: 12
+number: 12
 authors: felix
 lesson: 5
 ---
