@@ -71,17 +71,19 @@
 
 
 \section{Generators}
-\begin{frame}{Generators}%TODO: Viel Spaß beim ueberarbeiten
+\begin{frame}{Generators}
 	\begin{description}
 		\item[Generator] Ein Objekt, \"uber das iteriert werden kann. Wenn ein Element daraus verwendet wurde, ist es nicht mehr in dem Generatorobjekt enthalten.\\[1cm]
 	\end{description}
 	
-  Grundlegender Syntax ist gleich dem der list comprehension. Erzeugt aber ein iterable (generator).
-	Da sich \codeline{list} und \codeline{dict} auch aus iterables bauen lassen gilt daher:\\
+	Die grundlegende Syntax ist gleich der einer \textit{List Comprehension}.
+	Da sich \codeline{list} und \codeline{dict} auch aus Iterables bauen lassen gilt prinzipiell:\\
 
 		\codeline{list(EXPRESSION for VARIABLE in ITERABLE) == [EXPRESSION for VARIABLE in ITERABLE]}\\
 		und\\
-		\codeline{dict((KEY, VALUE) for VARIABLE in ITERABLE) == \{KEY:VALUE for VARIABLE in ITERABLE\}}
+		\codeline{dict((KEY, VALUE) for VARIABLE in ITERABLE) == \{KEY:VALUE for VARIABLE in ITERABLE\}}\\
+
+	\textbf{Aber:} Generators verhalten sich anders als Lists oder Dicts!
 
 \end{frame}
 
