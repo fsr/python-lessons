@@ -34,33 +34,49 @@
 
 \section{Basics}
 \begin{frame}{Basics}
-  Comprehensions sind eine bequeme Art und Weise um Funktoren (Datenstrukturen die andere Datenstrukturen beinhalten) mit kleinen Expressions zu erstellen und zu füllen.\\
-  In allen üblichen modernen Sprachen vorhanden.
+  Comprehensions sind eine bequeme Art und Weise, um Funktoren (Datenstrukturen, die andere Datenstrukturen beinhalten) mit kleinen Expressions zu erstellen und zu füllen und sind in allen modernen Sprachen vorhanden.
 \end{frame}
 
-\section{list comprehension}
-\begin{frame}{List comprehension}
+
+
+\section{List Comprehension}
+\begin{frame}{List Comprehension}
   Grundlegender Syntax: \codeline{[ EXPRESSION for LAUFVARIABLE in ITERABLE (if FILTER) ]}\\
   \begin{description}
-    \item[EXPRESSION] Ist ein beliebiger Ausdruck (man stelle sich ein implizites \texttt{return} vor) wie ein Wert, eine Variable, eine Gleichung \codeline{3 * 8}, etc ...
-    \item[LAUFVARIABLE] Eine beliebige variable, die in \textit{EXPRESSION} und \textit{FILTER} zur verfügung steht
-    \item[ITERABLE] Ist häufig etwas wie \codeline{range()} oder eine andere Liste.
-    \item[FILTER] Eine optionale boolean expression, womit Einträge gefiltert werden (falls \codeline{False})
+    \item[EXPRESSION] Ist ein beliebiger Ausdruck (man stelle sich ein implizites \texttt{return} vor). Wie ein Wert, eine Variable, eine Gleichung, etc ... \\
+    	\texttt{EXPRESSION} wird am Ende in der Liste abgelegt.
+    \item[LAUFVARIABLE] Eine beliebige Variable, die in \textit{EXPRESSION} und \textit{FILTER} zur verfügung steht
+    \item[ITERABLE] Ist häufig etwas wie \texttt{range()} oder eine andere Liste.
+    \item[FILTER] Eine optionale boolean expression, womit Einträge gefiltert werden (falls \codeline{False}). N\"utzlich, wenn z.B. nur gerade Zahlen \"ubernommen werden sollen, usw...
   \end{description}
 
-
 \end{frame}
 
-\section{dict comprehension}
-\begin{frame}{Dict comprehension}
-  Grundlegender Syntax: \codeline{\{ KEY : VALUE for LAUFVARIABLE in ITERABLE (if FILTER) \}}\\
-  Fast der gleiche Syntax, nur diesmal mit 2 expressions \textit{KEY} und \textit{VALUE}. Ansonten gelten die gleichen Regeln.
+\begin{frame}{List Comprehension - Beispiel}
+	\lstinputlisting{resources/06_comprehensions/lists.py}
 \end{frame}
+
+
+
+\section{Dict Comprehension}
+\begin{frame}{Dict Comprehension}
+  Grundlegender Syntax: \codeline{\{ KEY : VALUE for LAUFVARIABLE in ITERABLE (if FILTER) \}}\\[.75cm]
+  Fast der gleiche Syntax, nur diesmal mit 2 Expressions: \textit{KEY} und \textit{VALUE}. Ansonsten gelten die gleichen Regeln.
+\end{frame}
+
+\begin{frame}{Dict Comprehension - Beispiel}
+	\lstinputlisting{resources/06_comprehensions/dicts.py}
+\end{frame}
+
 
 
 \section{Generators}
-\begin{frame}{Generators}
-  Grundlegender Sytax ist gleich dem der list comprehension. Erzeugt aber ein iterable (generator).
+\begin{frame}{Generators}%TODO: Viel Spaß beim ueberarbeiten
+	\begin{description}
+		\item[Generator] Ein Objekt, \"uber das iteriert werden kann. Wenn ein Element daraus verwendet wurde, ist es nicht mehr in dem Generatorobjekt enthalten.\\[1cm]
+	\end{description}
+	
+  Grundlegender Syntax ist gleich dem der list comprehension. Erzeugt aber ein iterable (generator).
 	Da sich \codeline{list} und \codeline{dict} auch aus iterables bauen lassen gilt daher:\\
 
 		\codeline{list(EXPRESSION for VARIABLE in ITERABLE) == [EXPRESSION for VARIABLE in ITERABLE]}\\
@@ -70,10 +86,10 @@
 \end{frame}
 
 
-\section{Misc}
-\begin{frame}{Misc}
-  Mit \texttt{tuple()} und der generator expression lassen sich theoretisch auch tuple comprehensions bauen, ist aber konzeptionell eher Unsinn.
-\end{frame}
+%\section{Misc}
+%\begin{frame}{Misc}
+%  Mit \texttt{tuple()} und der generator expression lassen sich theoretisch auch tuple comprehensions bauen, ist aber konzeptionell eher Unsinn.
+%\end{frame}
 
 
 % nothing to do from here on
