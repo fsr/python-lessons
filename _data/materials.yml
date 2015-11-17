@@ -23,12 +23,12 @@ slides:
     number: 5
     name: Decorators
     url: https://ifsr.de/kurs-materialien/python/05_decorators.pdf
-    published: False
+    published: True
   -
     number: 6
     name: Comprehensions
     url: https://ifsr.de/kurs-materialien/python/06_comprehensions.pdf
-    published: False
+    published: True
   -
     number: 7
     name: Functions (advanced)

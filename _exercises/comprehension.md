@@ -1,14 +1,15 @@
 ---
 title: Easy to comprehend - Comprehensions
-status: drafty
-# number: 12
+status: finished
+authors: [felix, felixw]
+number: 13
 ---
 
 ### list
 
 Using comprehensions make a list containing numbers from 1 to 10.
 
-Read [this]({   { site.baseurl }}/misc/lorem) file word by word, using comprehensions build a new list that contains the length of every word.
+Read [this]({{ site.baseurl }}/misc/lorem) *(Rightclick -> Save As)* file word by word, using comprehensions build a new list that contains the length of every word.
 
 Write a function that, given two lists, builds the cartesian product of the lists with tuples.[^nested]
 
@@ -24,8 +25,15 @@ Try it with the two lists you've created earlier.
 
 ### dict
 
-Use dict comprehension to map every word of the text to it's length.
+Use dict comprehension to map every word of the text to it's length.[^mapping]
+
+[^mapping]:
+    So your dict should look like `{'lorem': 5, 'ipsum': 5, ...}`.
 
 ### generator
 
-Try the above by calling the `dict()` function on a (new) generator comprehension of tuples (the generator should generate tuples).
+Try the above by calling the `dict()` function on a (new) generator comprehension of tuples (the generator should generate tuples[^tuplegen]).
+
+
+[^tuplegen]:
+    You can generate tuples with a generator, using `tuple()`.
