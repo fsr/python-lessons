@@ -14,6 +14,8 @@ modernen Sprachen vorhanden.
 
 # List Comprehensions
 
+---
+
 
 Grundlegender Syntax:
 
@@ -21,7 +23,6 @@ Grundlegender Syntax:
 [EXPRESSION for LAUFVARIABLE in ITERABLE (if FILTER)]
 ```
 
----
 
 ### EXPRESSION
 
@@ -51,8 +52,9 @@ Eine optionale boolean expression, womit Einträge gefiltert werden
 (falls Expression `false`) Nützlich, wenn z.B. nur gerade Zahlen übernommen werden
 sollen, usw...
 
+---
 
-## Beispiel
+### Beispiel
 
 ```python
 varList = [var * 8 for var in range(10)]
@@ -67,10 +69,11 @@ evenVarList = [var * 8 for var in range(10) if var % 2 == 0]
 
 # Dict Comprehension
 
+---
 
 Grundlegender Syntax:
 
-```python 
+```python
 {KEY: VALUE for LAUFVARIABLE in ITERABLE (if FILTER)}
 ```
 
@@ -91,7 +94,6 @@ names = {key: len(key) for key in liste}
 
 
 # Generators
-
 
 ## Generator
 
