@@ -1,4 +1,3 @@
-	
 %%	Getting started:
 %%	1) Copy this file and name the copy it like the topic it covers
 %%	2) In the following make sure to modify the copy, NOT THE ORIGINAL
@@ -55,5 +54,72 @@ Oder als Parameter mitgegeben werden\\
 \lstinputlisting{resources/07_funtions_advanced/default.py}
 \end{frame}
 
+% ------------------------------- Aggregatoren -------------------------------
+\section{Aggregatoren}
+\begin{frame}{Aggregatoren}
+  \textbf{Aggregatoren} (auch Sammler genannt), sind sehr n\"utzlich, wenn man,
+  zus\"atzlich zu bereits definierten Parametern, in einer Funktion eine unbestimmte
+  Anzahl an Funktionsargumenten entgegen nehmen will.
+\end{frame}
+
+
+\subsection{Positionale Aggregatoren}
+\begin{frame}[fragile]{Positionale Aggregatoren}
+  \begin{itemize}
+    \item jede Funktion kann einen Aggregator haben
+    \item dieser muss der \textit{letzte} positionale Parameter sein
+    \item Positionale Aggregatoren werden durch einen \texttt{*} gekennzeichnet
+    \item nach einem Aggregator k\"onnen nur noch benamte Parameter definiert werden,
+    diese m\"ussen auch mit Namen aufgerufen werden \\[.5cm]
+  \end{itemize}
+  Der Inhalt des Aggregators wird in einem \textit{Tupel} gespeichert:
+  \lstinputlisting[firstline=1, lastline=2]{resources/07_funtions_advanced/positional_aggregators.py}
+\end{frame}
+
+\begin{frame}{Positionale Aggregatoren - Beispiel}
+  \lstinputlisting[firstline=5]{resources/07_funtions_advanced/positional_aggregators.py}
+\end{frame}
+
+\begin{frame}[fragile]{Positionale Aggregatoren}
+  \begin{itemize}
+    \item Eine Funktion kann auch nur einen Aggregator als Parameter entgegennehmen (keine anderen Parameter)
+    \item Ohne Argumente ergibt sich \texttt{len(args)} zu 0
+    \item Werden keine anderen Parameter erwartet, nennt man den Aggregator meist
+    \texttt{args} (kurz für \textit{Arguments}) \\[.75cm]
+  \end{itemize}
+  In \textbf{Python 3} kann man Aggregatoren auch ohne Namen definieren:
+  \lstinputlisting{resources/07_funtions_advanced/nameless_aggr.py}
+  Auf diesen Aggregator kann nicht zugegriffen werden. Er erzwingt lediglich, dass
+  alle folgenden Parameter mit Namen aufgerufen werden.
+\end{frame}
+
+
+\subsection{Benannte Aggregatoren}
+\begin{frame}[fragile]{Benannte Aggregatoren}
+  Analog zu Parametern gibt es auch benannte Aggregatoren. Diese werden mit \texttt{**}
+  vor dem Parameternamen definiert. Diese Aggregatoren akzeptieren lediglich
+  benannte Parameter und sind vom Typ \texttt{dict}.
+\end{frame}
+
+\begin{frame}[fragile]{Benannte Aggregatoren - Beispiel}
+  \lstinputlisting{resources/07_funtions_advanced/named_aggr.py} \ \\[.75cm]
+  Wenn eine Funktion keine anderen Parameter erwartet, nennt man den Aggregator meist
+  \texttt{**kwargs} (kurz für \textit{Keyword Arguments})
+\end{frame}
+
+
+\subsection{Benannte und Positionale Aggregatoren}
+\begin{frame}{Benannte und Positionale Aggregatoren}
+  Beide Aggregatoren können gleichzeitig in einer Funktion verwendet werden.
+  Die Regel dabei ist: Von jeder Sorte nur \textit{ein} Aggregator. \\[.5cm]
+  Ein Beispiel:
+  \lstinputlisting[firstline=1, lastline=9]{resources/07_funtions_advanced/mixed_aggr.py}
+\end{frame}
+
+\begin{frame}{Generelle Funktionsstruktur}
+  Wenn beide Aggregatoren zum Einsatz kommen sollen, ergibt sich folgende Funktionsstruktur:
+  \lstinputlisting[firstline=1, lastline=9]{resources/07_funtions_advanced/mixed_aggr.py}
+  \textit{Eckige Klammern stehen für optionale Parameter/Namen.}
+\end{frame}
 % nothing to do from here on
 \end{document}
