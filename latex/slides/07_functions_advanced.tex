@@ -1,413 +1,59 @@
-\documentclass[ignorenonframetext,]{beamer}
-\setbeamertemplate{caption}[numbered]
-\setbeamertemplate{caption label separator}{:}
-\setbeamercolor{caption name}{fg=normal text.fg}
-\usepackage{amssymb,amsmath}
-\usepackage{ifxetex,ifluatex}
-\usepackage{fixltx2e} % provides \textsubscript
-\usepackage{lmodern}
-\ifxetex
-  \usepackage{fontspec,xltxtra,xunicode}
-  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
-  \newcommand{\euro}{€}
-\else
-  \ifluatex
-    \usepackage{fontspec}
-    \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
-    \newcommand{\euro}{€}
-  \else
-    \usepackage[T1]{fontenc}
-    \usepackage[utf8]{inputenc}
-      \fi
-\fi
-% use upquote if available, for straight quotes in verbatim environments
-\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-% use microtype if available
-\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
-\usepackage{color}
-\usepackage{fancyvrb}
-\newcommand{\VerbBar}{|}
-\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-% Add ',fontsize=\small' for more characters per line
-\newenvironment{Shaded}{}{}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
-\newcommand{\ImportTok}[1]{{#1}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
-\newcommand{\BuiltInTok}[1]{{#1}}
-\newcommand{\ExtensionTok}[1]{{#1}}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
-\newcommand{\RegionMarkerTok}[1]{{#1}}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
-\newcommand{\NormalTok}[1]{{#1}}
+	
+%%	Getting started:
+%%	1) Copy this file and name the copy it like the topic it covers
+%%	2) In the following make sure to modify the copy, NOT THE ORIGINAL
+%%	3) Look for the points marked with "TODO" and complete them
+%%	4) compile this file
 
-% Comment these out if you don't want a slide with just the
-% part/section/subsection/subsubsection title:
-\AtBeginPart{
-  \let\insertpartnumber\relax
-  \let\partname\relax
-  \frame{\partpage}
-}
-\AtBeginSection{
-  \let\insertsectionnumber\relax
-  \let\sectionname\relax
-  \frame{\sectionpage}
-}
-\AtBeginSubsection{
-  \let\insertsubsectionnumber\relax
-  \let\subsectionname\relax
-  \frame{\subsectionpage}
+\input{../templates/slides_template}	% nothing to do here
+% TODO change "course_info" to the name of your actual …_info(.tex)
+\input{course_info} % TODO modify this if you have not already done so
+
+% meta-information
+\newcommand{\topic}{
+	% TODO fill in the actual topic
+	Funktionen (fortgeschritten)
 }
 
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-\setlength{\emergencystretch}{3em}  % prevent overfull lines
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{0}
+% nothing to do here
+\title{\topic}
+\supertitle{\course}
+\date{\today}
 
-\title{Advanced function (signatures)}
-\date{}
-
+% the actual document
 \begin{document}
-\frame{\titlepage}
 
-\section{Using functions}\label{using-functions}
-
-\begin{frame}[fragile]{Functions as Values}
-
-Functions can be assigned like normal values.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{def} \NormalTok{function(params):}
-    \ControlFlowTok{return} \DecValTok{4}
-
-\NormalTok{my_var }\OperatorTok{=} \NormalTok{function}
-
-\NormalTok{my_var(}\DecValTok{2}\NormalTok{)  }\CommentTok{# ==> 4}
-\end{Highlighting}
-\end{Shaded}
-
-\end{frame}
-
-\begin{frame}[fragile]
-
-Or passed as parameters.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{def} \NormalTok{callif(boolean, callback):}
-    \ControlFlowTok{if} \NormalTok{boolean:}
-        \NormalTok{callback()}
-
-\NormalTok{callif(}\VariableTok{True}\NormalTok{, }\KeywordTok{lambda} \NormalTok{: }\BuiltInTok{print}\NormalTok{(}\StringTok{"hello world"}\NormalTok{))}
-\end{Highlighting}
-\end{Shaded}
-
-\end{frame}
-
-\begin{frame}[fragile]{Methods are functions}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{class} \NormalTok{MyClass(}\BuiltInTok{object}\NormalTok{):}
-    \KeywordTok{def} \NormalTok{function(}\VariableTok{self}\NormalTok{, param):}
-        \ControlFlowTok{return} \DecValTok{4}
-
-
-\NormalTok{my_var }\OperatorTok{=} \NormalTok{MyClass.function}
-
-\NormalTok{my_var(MyClass(), }\DecValTok{2}\NormalTok{)  }\CommentTok{# ==> 4}
-\end{Highlighting}
-\end{Shaded}
-
-\end{frame}
-
-\begin{frame}[fragile]{Default Parameters}
-
-Functions may define default values for their parameters. Parameters
-with no default value are also often called positional parameters.
-Parameters with default arguments are often called named arguments (we
-will see why later).
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{def} \NormalTok{greet(name, greeting}\OperatorTok{=}\StringTok{'Hello'}\NormalTok{):}
-    \ControlFlowTok{return} \StringTok{'\{\} \{\}'}\NormalTok{.}\BuiltInTok{format}\NormalTok{(greeting, name)}
-
-\NormalTok{greet(}\StringTok{'Herbert'}\NormalTok{)  }\CommentTok{# ==> 'Hallo Herbert'}
-\NormalTok{greet(}\StringTok{'Herbert'}\NormalTok{, }\StringTok{'Gruess Gott'}\NormalTok{)  }\CommentTok{# ==> 'Gruess Gott Herbert'}
-\end{Highlighting}
-\end{Shaded}
-
-\end{frame}
-
-\begin{frame}[fragile]
-
-\begin{block}{Don't}
-
-Ever, EVER, even though the language allows it, make a mutable value the
-default value of a function. Mutable Values include \texttt{list},
-\texttt{dict}, \texttt{set} and your own classes (more precisely their
-attributes).
-
-Immutable values would be \texttt{string}, \texttt{function} (sort of),
-\texttt{int}, \texttt{type}and \texttt{None}.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{def} \NormalTok{func(param1, param2}\OperatorTok{=}\NormalTok{[]):}
-    \BuiltInTok{print}\NormalTok{(param2)}
-    \NormalTok{param2.append(param1)}
-\end{Highlighting}
-\end{Shaded}
-
-\end{block}
-
-\end{frame}
-
-\begin{frame}[fragile]
-
-One would expect this function to always print the empty list
-\texttt{{[}{]}}. However the default param is not recalculated. So what
-actually happens is this.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{func(}\DecValTok{1}\NormalTok{)  }\CommentTok{# ==> []}
-\NormalTok{func(}\DecValTok{2}\NormalTok{)  }\CommentTok{# ==> [1]}
-\NormalTok{func(}\StringTok{'j'}\NormalTok{) }\CommentTok{# ==> [1,2]}
-\end{Highlighting}
-\end{Shaded}
-
-Bugs like these are truly hard to find.
-
-\end{frame}
-
-\begin{frame}[fragile]
-
-\begin{block}{Do}
-
-If you actually want a mutable value as default, you simply make the
-default \texttt{None} and reassign.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{def} \NormalTok{func(param1, param2}\OperatorTok{=}\VariableTok{None}\NormalTok{):}
-    \NormalTok{param2 }\OperatorTok{=} \NormalTok{[] }\ControlFlowTok{if} \NormalTok{param2 }\OperatorTok{is} \VariableTok{None} \ControlFlowTok{else} \NormalTok{param2}
-    \ControlFlowTok{pass}
-\end{Highlighting}
-\end{Shaded}
-
-That is the save way.
-
-\end{block}
-
-\end{frame}
-
-\begin{frame}[fragile]{Call by name}
-
-Function parameters may be provided by their names. When calling
-functions by name the order in which the arguments are provided does not
-matter.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{def} \NormalTok{land(house, tree, pond):}
-    \ControlFlowTok{return} \StringTok{'You own land with a \{\} a \{\} and a \{\}'}\NormalTok{.}\BuiltInTok{format}\NormalTok{(house, tree, pond)}
-
-\NormalTok{land(}\StringTok{'green house'}\NormalTok{, }\StringTok{'maple'}\NormalTok{, }\StringTok{'fish pond'}\NormalTok{)}
-\CommentTok{# or called by name}
-\NormalTok{land(house}\OperatorTok{=}\StringTok{'green house'}\NormalTok{, pond}\OperatorTok{=}\StringTok{'fish pond'}\NormalTok{, tree}\OperatorTok{=}\StringTok{'maple'}\NormalTok{)}
-\CommentTok{# or mixed}
-\NormalTok{land(}\StringTok{'green house'}\NormalTok{, pond}\OperatorTok{=}\StringTok{'fish pond'}\NormalTok{, tree}\OperatorTok{=}\StringTok{'maple'}\NormalTok{)}
-\CommentTok{# but THIS does not work}
-\NormalTok{land(}\StringTok{'maple'}\NormalTok{, house}\OperatorTok{=}\StringTok{'green house'}\NormalTok{, tree}\OperatorTok{=}\StringTok{'maple'}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\end{frame}
+\maketitle
 
 \begin{frame}
+	\tableofcontents
+\end{frame}
 
-The rule is:
 
+\section{Nutzung von Funktionen}
+\begin{frame}[fragile]{Funktionen als Werte}
+Funktionen k\"onnen wir alle anderen Werte zugewiesen werden\\
+\lstinputlisting[lastline=5]{resources/07_funtions_advanced/use_func.py}
+
+\ \\[.25cm]
+Oder als Parameter mitgegeben werden\\
+\lstinputlisting[firstline=8, lastline=12]{resources/07_funtions_advanced/use_func.py}
+
+\end{frame}
+
+\begin{frame}[fragile]{Methoden sind Funktionen}
+\lstinputlisting[firstline=15]{resources/07_funtions_advanced/use_func.py}
+\end{frame}
+
+\section{Default Parameter}
+\begin{frame}[fragile]{Default Parameter}
 \begin{itemize}
-\tightlist
-\item
-  You may call as many parameters position as they wish.
-\item
-  You may call any parameter by name.
-\item
-  If a parameter is being called by name, any parameter following it has
-  to be called by name as well.
+	\item Funktionen k\"onnen vordefinierte Werte für Parameter haben.
+	\item Parameter ohne \texttt{default}-Werten werden positionale Argumente genannt
+	\item Parameter mit \texttt{default}-Werten werden name
 \end{itemize}
-
+\lstinputlisting{resources/07_funtions_advanced/default.py}
 \end{frame}
 
-\begin{frame}{Aggregate Parameters}
-
-\end{frame}
-
-\begin{frame}
-
-\begin{block}{Positional}
-
-Every function may have one aggregate parameter. This must be the last
-positional parameter. The aggregate parameter is denoted by the operator
-\texttt{*} (pronounced `star'). Only named arguments may follow an
-aggregate parameter. If an aggregate exists, arguments following it may
-only be called by name (obviously).
-
-\end{block}
-
-\end{frame}
-
-\begin{frame}[fragile]
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{def} \NormalTok{function(param1, }\OperatorTok{*}\NormalTok{aggr, param2}\OperatorTok{=}\DecValTok{0}\NormalTok{):}
-    \ControlFlowTok{pass}
-\NormalTok{function(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{)  }\CommentTok{# correct, aggr = (2,3,4)}
-\NormalTok{function(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{78}\NormalTok{,}\DecValTok{9}\NormalTok{,}\DecValTok{90}\NormalTok{,}\DecValTok{0}\NormalTok{)  }
-\CommentTok{# also correct, aggr = (2,4,5,6,78,9,90,0)}
-\NormalTok{function()  }\CommentTok{# incorrect param1 requires at least one argument}
-\NormalTok{function(}\DecValTok{1}\NormalTok{, param2}\OperatorTok{=}\DecValTok{7}\NormalTok{)  }\CommentTok{# correct, aggr = ()}
-\NormalTok{function(param2}\OperatorTok{=}\DecValTok{8}\NormalTok{)  }\CommentTok{# incorrect, param1 needs a value}
-\NormalTok{function(param2}\OperatorTok{=}\DecValTok{0}\NormalTok{, param1}\OperatorTok{=}\DecValTok{6}\NormalTok{)  }\CommentTok{# correct}
-\end{Highlighting}
-\end{Shaded}
-
-The type of an aggregate is \textbf{always} \texttt{tuple}.
-
-\end{frame}
-
-\begin{frame}[fragile]
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{def} \NormalTok{f(}\OperatorTok{*}\NormalTok{args):}
-    \BuiltInTok{print}\NormalTok{(}\BuiltInTok{type}\NormalTok{(args)) }\CommentTok{# ==> tuple}
-\end{Highlighting}
-\end{Shaded}
-
-As you can see a function can have only an aggregate as a parameter. If
-no argument is passed to the aggregate \texttt{len(args)\ ==\ 0}, if one
-is passed \texttt{len(args)\ ==\ 1} etc. If the aggregate is the only
-parameter it is often named \texttt{args} (short for `arguments').
-
-\end{frame}
-
-\begin{frame}[fragile]
-
-The aggregaor operator \texttt{*} may also occur without a name
-(python3), in which case it'll simply force any subsequent (named)
-parameters have to be called by name, and cannot be called positionally.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{def} \NormalTok{function(param1, param2, }\OperatorTok{*}\NormalTok{, param3}\OperatorTok{=}\DecValTok{6}\NormalTok{):}
-    \ControlFlowTok{pass}
-\end{Highlighting}
-\end{Shaded}
-
-\end{frame}
-
-\begin{frame}[fragile]
-
-\begin{block}{Named}
-
-Analog to the positional aggregate there's an aggregate for named values
-also. It is denoted using the \texttt{**} operator (pronounced `star
-star', aka \texttt{**kwargs} is pronounced `key duouble u args star
-star'). The named aggregator only aggregates named arguments and is of
-type \texttt{dict}.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{def} \NormalTok{function(param1, }\OperatorTok{**}\NormalTok{aggr):}
-    \ControlFlowTok{pass}
-
-\NormalTok{function(}\DecValTok{1}\NormalTok{)  }\CommentTok{# correct, aggr = \{\}}
-\NormalTok{function(}\DecValTok{1}\NormalTok{, some}\OperatorTok{=}\DecValTok{9}\NormalTok{)  }\CommentTok{# correct, aggr = \{'some':9\}}
-\NormalTok{function(some}\OperatorTok{=}\DecValTok{6}\NormalTok{)  }\CommentTok{# incorrect, param1 requires a value}
-\NormalTok{function(some}\OperatorTok{=}\DecValTok{0}\NormalTok{, param1}\OperatorTok{=}\DecValTok{8}\NormalTok{, param2}\OperatorTok{=}\DecValTok{4}\NormalTok{)  }
-\CommentTok{# correct, aggr = \{'some':0, 'param2':4\}}
-\end{Highlighting}
-\end{Shaded}
-
-If a function has no named arguments besides the aggregator, it is often
-named \texttt{kwargs} (keyword args).
-
-\end{block}
-
-\end{frame}
-
-\begin{frame}[fragile]
-
-\begin{block}{Mixing}
-
-Both aggregators can be used simultaneously in one function. The rule
-is, that each aggregator can only occur once.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{def} \NormalTok{function(}
-        \NormalTok{param1,}
-        \NormalTok{param2,}
-        \OperatorTok{*}\NormalTok{args,}
-        \NormalTok{kwparam1}\OperatorTok{=}\DecValTok{0}\NormalTok{,}
-        \NormalTok{kwparam2}\OperatorTok{=}\VariableTok{None}\NormalTok{,}
-        \OperatorTok{**}\NormalTok{kwargs}
-    \NormalTok{):}
-    \ControlFlowTok{pass}
-\end{Highlighting}
-\end{Shaded}
-
-\end{block}
-
-\end{frame}
-
-\begin{frame}[fragile]
-
-This leads to the following generalized function signature.
-
-\begin{verbatim}
-def name(
-        [params, ...]
-        [, *[aggregator]]
-        [, kwparams=kwvalue, ...]
-        [**kwaggreg]
-    ):
-    pass
-\end{verbatim}
-
-\emph{Note that the square brackets mean optional}
-
-\end{frame}
-
+% nothing to do from here on
 \end{document}
