@@ -23,9 +23,12 @@ def land(house, tree, pond):
     return 'You own land with a {} a {} and a {}'.format(house, tree, pond)
 
 land('green house', 'maple', 'fish pond')
-# oder mit Aufruf durch namen:
+
+# oder mit Aufruf durch Namen:
 land(house='green house', pond='fish pond', tree='maple')
+
 # or vermischt
 land('green house', pond='fish pond', tree='maple')
+
 # folgendes funktioniert NICHT!
 land('maple', house='green house', tree='maple'
