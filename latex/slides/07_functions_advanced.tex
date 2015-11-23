@@ -31,27 +31,67 @@
 
 \section{Nutzung von Funktionen}
 \begin{frame}[fragile]{Funktionen als Werte}
-Funktionen k\"onnen wir alle anderen Werte zugewiesen werden\\
-\lstinputlisting[lastline=5]{resources/07_funtions_advanced/use_func.py}
+  Funktionen k\"onnen wir alle anderen Werte zugewiesen werden\\
+  \lstinputlisting[lastline=5]{resources/07_funtions_advanced/use_func.py}
 
-\ \\[.25cm]
-Oder als Parameter mitgegeben werden\\
-\lstinputlisting[firstline=8, lastline=12]{resources/07_funtions_advanced/use_func.py}
-
+  \ \\[.25cm]
+  Oder als Parameter mitgegeben werden\\
+  \lstinputlisting[firstline=8, lastline=12]{resources/07_funtions_advanced/use_func.py}
 \end{frame}
 
 \begin{frame}[fragile]{Methoden sind Funktionen}
-\lstinputlisting[firstline=15]{resources/07_funtions_advanced/use_func.py}
+  \lstinputlisting[firstline=15]{resources/07_funtions_advanced/use_func.py}
 \end{frame}
 
-\section{Default Parameter}
+
+\subsection{Default Parameter}
 \begin{frame}[fragile]{Default Parameter}
-\begin{itemize}
-	\item Funktionen k\"onnen vordefinierte Werte für Parameter haben.
-	\item Parameter ohne \texttt{default}-Werten werden positionale Argumente genannt
-	\item Parameter mit \texttt{default}-Werten werden name
-\end{itemize}
-\lstinputlisting{resources/07_funtions_advanced/default.py}
+  \begin{itemize}
+  	\item Funktionen k\"onnen vordefinierte Werte für Parameter haben.
+  	\item Parameter ohne \texttt{default}-Werten werden positionale Argumente genannt
+  	\item Parameter mit \texttt{default}-Werten werden name
+  \end{itemize}
+  \lstinputlisting[lastline=5]{resources/07_funtions_advanced/default.py}
+\end{frame}
+
+\begin{frame}{ACHTUNG!}
+	\center{\textbf{Niemals \texttt{mutable Values} (änderbare Werte) als \texttt{default}-Parameter verwenden!}}\\[1cm]
+	\begin{description}
+		\item[mutable Values] \ \ \ \texttt{list}, \texttt{dict}, \texttt{set} und eigene Klassen \\
+\ \ \ \ \ (bzw. deren Attribute)
+		\item[immutable Values] \texttt{string}, \texttt{function}, \texttt{int}, \texttt{type} und \texttt{None}
+	\end{description}
+\end{frame}
+
+\begin{frame}{ACHTUNG!}
+	\center{\textbf{Warum?\\}}
+	\lstinputlisting[firstline=8, lastline=10]{resources/07_funtions_advanced/default.py}
+	Man denkt, die Funktion hat jedes mal eine leere List, jedoch passiert folgendes:\\
+	\lstinputlisting[firstline=12, lastline=14]{resources/07_funtions_advanced/default.py}
+	Die Liste wird einmalig zum Start angelegt und fortgeführt.
+\end{frame}
+
+\begin{frame}[fragile]{ACHTUNG!}
+	So sollte man es machen:\\[.5cm]
+	\lstinputlisting[firstline=16, lastline=19]{resources/07_funtions_advanced/default.py}
+	\ \\[.5cm]
+	Den \texttt{default}-Parameter als \texttt{None} setzten und dann, falls er \texttt{None} ist als z.B. leere Liste setzen.
+\end{frame}
+
+
+\subsection{Aufruf mit Namen}
+\begin{frame}[fragile]{Aufruf mit Namen}
+	Funktionsparameter können direkt mit ihrem Namen aufgerufen werden, dann spielt die Aufrufreihenfolge keine Rolle mehr.\\[1cm]
+	\lstinputlisting[firstline=22]{resources/07_funtions_advanced/default.py}
+\end{frame}
+
+\begin{frame}{Aufruf mit Namen}
+	Es gelten folgende Regeln:
+	\begin{itemize}
+		\item Alle Parameter können an ihrer Position angesprochen werden
+		\item Es können auch alle mit ihrem Namen angesprochen werden
+		\item Wenn eins mit dem Namen angesprochen wurde, m\"ussen die folgenden ebenfalls mit Namen angesprochen werden
+	\end{itemize}
 \end{frame}
 
 % ------------------------------- Aggregatoren -------------------------------
@@ -121,5 +161,6 @@ Oder als Parameter mitgegeben werden\\
   \lstinputlisting[firstline=1, lastline=9]{resources/07_funtions_advanced/mixed_aggr.py}
   \textit{Eckige Klammern stehen für optionale Parameter/Namen.}
 \end{frame}
+
 % nothing to do from here on
 \end{document}
