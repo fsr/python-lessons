@@ -1,5 +1,5 @@
 ---
-title: Objects and classes
+title: Objects and Classes
 number: 4
 status: reviewed
 authors: justus

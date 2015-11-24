@@ -1,5 +1,5 @@
 ---
-title: Functions as values
+title: Functions as Values
 status: finished
 authors: [justus, felixw]
 number: 14
@@ -15,34 +15,45 @@ Create a function that takes two numbers as arguments and multiplies them, retur
 Rename the function.[^renaming] Verify it works as intended.
 
 [^renaming]:
-    Declare a new variable, assign the function to it and then delete the old identifier
+    Declare a new variable, assign the function to it and then call just the 'new' function.
 
 ### More Advanced
 
-Create another function, which also takes two numbers as input. Instead of returning the result, it should return a function. This function should then return the product of the two numbers.
+Create a function, which takes a variable amount of integer numbers and returns the sum of all given numbers.
 
-{% highlight python %}
->>> result = my_func(2, 3)
->>> result()
-6
+(Re)write your `main()` function so that it calls your new function with all arguments you call your script with.[^sysargv]
+Since these arguments are interpreted as strings you will need to cast all arguments first.[^cast] A comprehension might come in handy for this!
+
+[^sysargv]:
+    The arguments your script is called with are stored in `sys.argv` (remember to import _sys_!).
+    The first entry in this list is __always__ the name of the script, so you should remove this entry somehow before moving on in the script.
+
+[^cast]:
+    You can cast a string to _int_ using `int()`
+
+{% highlight shell %}
+$ python3 my_script.py 5 12 7 18
+42
 {% endhighlight %}
 
-If you got that working, modify the inner function such that it takes a string, and when called returns the string capitalized[^docs] and concatenated with the product of the two numbers from the outer function.
+Now you should expect that you have some users who like to troll you and give something else than numbers as input.
+When you try to cast a string that contains no numbers to int, Python will raise a `ValueError`.
+Catch[^catch] that, print your own error message and end your script.
 
-[^docs]:
-    You might wanna take a look at the [string docs](https://docs.python.org/3/library/string.html) or [string method docs](https://docs.python.org/3/library/stdtypes.html?highlight=capitalize#string-methods)? ;)
+[^catch]:
+    Catch a exception by surrounding the possible exception source with __try/except__:
 
-{% highlight python %}
->>> result = my_func(2, 3)
->>> result('some string ')
-Some string 6
-{% endhighlight %}
+        try:
+            bad_command()
+        except ExceptionName:
+            # Handling
+
 
 ### Lambda
 
 Let's go for writing a _Lambda_ function. We'll do it step by step.
 
-First, try to rewrite your script so that the inner function contains only one line of code (the line with the `return` statement) and all the work is done inside the `return` statement, like so:
+First, try to rewrite your script so that the 'calculator' function contains only one line of code (the line with the `return` statement) and all the work is done inside the `return` statement, like so:
 
 {% highlight python %}
 def func():
