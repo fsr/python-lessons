@@ -31,7 +31,7 @@ Since these arguments are interpreted as strings you will need to cast all argum
 [^cast]:
     You can cast a string to _int_ using `int()`
 
-{% highlight shell %}
+{% highlight sh %}
 $ python3 my_script.py 5 12 7 18
 42
 {% endhighlight %}
