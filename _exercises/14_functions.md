@@ -1,25 +1,25 @@
 ---
 title: Functions as values
-status: drafty
-authors: justus
-# number: 14
+status: finished
+authors: [justus, felixw]
+number: 14
 lesson: 7
 ---
 
-## Regular
+### Regular
 
 Create a function that takes two numbers as arguments and multiplies them, returning the result.
 
-## Assignment
+### Assignment
 
 Rename the function.[^renaming] Verify it works as intended.
 
 [^renaming]:
     Declare a new variable, assign the function to it and then delete the old identifier
 
-## Curried
+### More Advanced
 
-Create another funciton, which also takes two numbers as input but returns a function, that takes no arguments, which when called returns the product of the two numbers.
+Create another function, which also takes two numbers as input. Instead of returning the result, it should return a function. This function should then return the product of the two numbers.
 
 {% highlight python %}
 >>> result = my_func(2, 3)
@@ -27,26 +27,29 @@ Create another funciton, which also takes two numbers as input but returns a fun
 6
 {% endhighlight %}
 
-If you got that working, modify the inner function such that it takes a string, and when called returns the string capitalized and concatenated with the product of the two numbers from the outer function.
+If you got that working, modify the inner function such that it takes a string, and when called returns the string capitalized[^docs] and concatenated with the product of the two numbers from the outer function.
+
+[^docs]:
+    You might wanna take a look at the [string docs](https://docs.python.org/3/library/string.html) or [string method docs](https://docs.python.org/3/library/stdtypes.html?highlight=capitalize#string-methods)? ;)
 
 {% highlight python %}
 >>> result = my_func(2, 3)
 >>> result('some string ')
-some string 6
+Some string 6
 {% endhighlight %}
 
-## Lambda
+### Lambda
 
-Now first try to rewrite it such that in the inner function immediately returns, that is the line with the `return` statement directly follows the line with the `def` function definition. (One single statement inside the function)
+Let's go for writing a _Lambda_ function. We'll do it step by step.
 
-Like so:
+First, try to rewrite your script so that the inner function contains only one line of code (the line with the `return` statement) and all the work is done inside the `return` statement, like so:
 
 {% highlight python %}
 def func():
     return "..."
 {% endhighlight %}
 
-Now replace it with a lambda expression.[^lambda]
+Now replace the whole inner function with a lambda expression.[^lambda]
 
 [^lambda]:
     `lambda param_a, param_b: expression`

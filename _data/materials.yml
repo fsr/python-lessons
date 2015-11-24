@@ -33,7 +33,7 @@ slides:
     number: 7
     name: Functions (advanced)
     url: https://ifsr.de/kurs-materialien/python/07_functions_advanced.pdf
-    published: False
+    published: True
   -
     number: 8
     name: Process
