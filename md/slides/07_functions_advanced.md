@@ -55,7 +55,7 @@ my_var(MyClass(), 2)  # ==> 4
 
 -   Parameter ohne `default`-Werten werden positionale Argumente genannt
 
--   Parameter mit `default`-Werten werden name
+-   Parameter mit `default`-Werten werden benannte Argumente genannt
 
 ---
 
@@ -146,16 +146,17 @@ land('green house', 'maple', 'fish pond')
 # oder mit Aufruf durch Namen:
 land(house='green house', pond='fish pond', tree='maple')
 
-# or vermischt
+# oder vermischt
 land('green house', pond='fish pond', tree='maple')
 
 # folgendes funktioniert NICHT!
-land('maple', house='green house', tree='maple'
+land('maple', house='green house', tree='maple')
 ```
 
 ---
 
 __Es gelten folgende Regeln:__
+
 -   Alle Parameter können an ihrer Position angesprochen werden
 -   Es können auch alle mit ihrem Namen angesprochen werden
 -   Wenn eins mit dem Namen angesprochen wurde, müssen die folgenden
