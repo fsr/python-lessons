@@ -2,6 +2,8 @@
 title: Functions as values
 status: drafty
 authors: justus
+# number: 14
+lesson: 7
 ---
 
 ## Regular

@@ -3,6 +3,7 @@ title: Easy to comprehend - Comprehensions
 status: finished
 authors: [felix, felixw]
 number: 13
+lesson: 6
 ---
 
 ### list
