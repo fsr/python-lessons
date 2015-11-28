@@ -33,8 +33,8 @@
 \section{Grundlagen}
 \subsection{Das Modul subprocess}
 \begin{frame}[fragile]{Das Modul subprocess}
-	Das Modul \texttt{subprocess} erlaubt die Ausführung externer Befehle und
-	Skripte von einem Python Skript aus. Man kann sich die Funktionsweise ähnlich
+	Das Modul \texttt{subprocess} erlaubt die Ausf\"uhrung externer Befehle und
+	Skripte von einem Python Skript aus. Man kann sich die Funktionsweise \"ahnlich
 	der eines Terminals vorstellen.
 \end{frame}
 
@@ -45,7 +45,7 @@
 		\item Subprozesse laufen asynchron
 		\item Sie laufen direkt auf dem System, nicht in einer Shell
 		(wenn nicht anders festgelegt)
-		\item Verfügbare Programme hängen vom System ab, auf dem sie ausgeführt werden
+		\item Verf\"ugbare Programme h\"angen vom System ab, auf dem sie ausgef\"uhrt werden
 		\item Der Aufruf ist allgemeing\"ultig, die Bibliothek verwandelt den
 		Aufruf unter Windows in einen kompatiblen \texttt{CreateProcess()} String
 	\end{itemize}
@@ -101,7 +101,7 @@
 \section{Popen Objekte}
 \begin{frame}{Popen Objekte}
 	Wenn Popen instanziiert wird, wird der darin enthaltene Prozess gestartet und
-	das zurückgegebene \texttt{Popen} Objekt enth\"alt Informationen \"uber den
+	das zur\"uckgegebene \texttt{Popen} Objekt enth\"alt Informationen \"uber den
 	laufenden Prozess.
 \end{frame}
 
@@ -113,7 +113,7 @@
 		\item \texttt{obj.stdout}, \texttt{obj.stdin}, \texttt{obj.stderr} \\
 			Input- und Output-Verbindungen, die beim Start gesetzt wurden
 		\item \texttt{process.pid} \\
-			Vom System verwendete \textit{Prozess ID}.
+			Vom System zugewiesene \textit{Prozess ID}.
 		\item \texttt{process.poll()} \\
 			Pr\"uft, ob der Prozess beendet wurde. Gibt den \textit{R\"uckgabewert}
 			des Prozesses zur\"uck oder \texttt{None}, wenn der Prozess noch l\"auft.
@@ -132,17 +132,62 @@
 			Wirft nach Ablauf von \textit{timeout} eine \texttt{TimeoutExpired} Exception.
 		\item \texttt{process.send\_signal(signal)} \\
 			Sendet das Signal \textit{signal} an den Prozess (z.B. \texttt{SIGTERM}).
+		\item \texttt{process.communicate(input=None, timeout=None)} \\
+			Schreibt die Daten aus \textit{input} in den Standardinput (\texttt{stdin})
+			des Prozesses (wenn stdin PIPE ist), wartet auf die Terminierung
+			des Prozesses und liest die Daten, die der Prozess in \texttt{stdout}
+			geschrieben hat (wenn stdout PIPE ist). \textit{timeout} funktioniert wie oben.
 	\end{itemize}
 \end{frame}
 
-% TODO
+\begin{frame}[fragile]{Interaktion mit dem Prozess}
+	\begin{itemize}
+		\item \texttt{process.terminate()} \\
+			Sendet ein Terminationssignal an den Prozess (\texttt{SIGTERM}).
+		\item \texttt{process.kill()} \\
+			Erzwingt die Beendigung des Prozesses (\texttt{SIGKILL}).
+	\end{itemize}
+\end{frame}
 
 \subsection{Nutzung des Kontextmanagers}
-% TODO
+\begin{frame}{Popen im Kontextmanager}
+	Popen kann mit dem Kontextmanager verwendet werden (siehe \textit{File Handling}). \\
+	Der Code daf\"ur w\"urde wie folgt aussehen:
+	\lstinputlisting{resources/08_process/context_mgr.py}
+\end{frame}
 
-\section{Vereinfachende Funktionen}
-% TODO
+\section{N\"utzliche Funktionen}
+\begin{frame}[fragile]{N\"utzliche Funktionen}
+	\texttt{subprocess} enth\"alt einige Kurzfassungen f\"ur h\"aufig genutzte Arbeitsabl\"aufe.
+	Intern rufen diese allerdings auch nur \texttt{Popen} auf.
+\end{frame}
 
-% TODO done? place the (sub)section headings correctly
+\begin{frame}{call}
+	\lstinputlisting[lastline=2]{resources/08_process/defs.py}
+	\begin{itemize}
+		\item Ruft einen Prozess auf, wartet auf Terminierung
+		\item gibt Returncode des Prozesses zur\"uck
+		\item \textbf{Beachte:} Einsatz eines unbenannten Aggregators
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{check\_call}
+	Argumente entsprechen den Argumenten von \texttt{call()}.
+	\begin{itemize}
+		\item Ruft Prozess auf, wartet auf Terminierung
+		\item gibt nichts zur\"uck, wenn Ausf\"uhrung erfolgreich (Returncode == 0)
+		\item wenn Aufruf nicht erfolgreich, wird \texttt{CalledProcessError} geworfen
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{check\_output}
+	\lstinputlisting[firstline=4]{resources/08_process/defs.py}
+	\begin{itemize}
+		\item f\"uhrt Kommando aus und gibt den Prozessoutput zur\"uck
+		\item wirft ebenfalls \texttt{CalledProcessError}, wenn der Returncode nicht 0 ist
+	\end{itemize}
+\end{frame}
+
+% TODO done? place the (sub)section headings correctly, enhance optic
 % nothing to do from here on
 \end{document}
