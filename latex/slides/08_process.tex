@@ -31,7 +31,6 @@
 
 
 \section{Grundlagen}
-\subsection{Das Modul subprocess}
 \begin{frame}[fragile]{Das Modul subprocess}
 	Das Modul \texttt{subprocess} erlaubt die Ausf\"uhrung externer Befehle und
 	Skripte von einem Python Skript aus. Man kann sich die Funktionsweise \"ahnlich
@@ -118,15 +117,14 @@
 			Pr\"uft, ob der Prozess beendet wurde. Gibt den \textit{R\"uckgabewert}
 			des Prozesses zur\"uck oder \texttt{None}, wenn der Prozess noch l\"auft.
 		\item \texttt{process.returncode} \\
-			% TODO
-			Der R\"uckgabewert von \texttt{process.poll()}.
+			Der R\"uckgabewert von \texttt{process.poll()} (der R\"uckgabewert des Prozesses)
 	\end{itemize}
 \end{frame}
 
 \subsection{Interaktion mit dem Prozess}
 \begin{frame}[fragile]{Interaktion mit dem Prozess}
 	\begin{itemize}
-		\item \texttt{process.wait(timeout=None} \\
+		\item \texttt{process.wait(timeout=None)} \\
 			Wartet \textit{timeout} Sekunden auf die Terminierung des Prozesses
 			(wartet unendlich lang, wenn timeout \textit{None} ist). \\
 			Wirft nach Ablauf von \textit{timeout} eine \texttt{TimeoutExpired} Exception.
@@ -162,13 +160,40 @@
 	Intern rufen diese allerdings auch nur \texttt{Popen} auf.
 \end{frame}
 
-\begin{frame}{call}
+\begin{frame}[fragile]{run}
+	Die wohl n\"utzlichste Funktion ist \texttt{subprocess.run()}:
 	\lstinputlisting[lastline=2]{resources/08_process/defs.py}
 	\begin{itemize}
-		\item Ruft einen Prozess auf, wartet auf Terminierung
-		\item gibt Returncode des Prozesses zur\"uck
+		\item eingef\"uhrt in Python 3.5
+		\item ruft durch \texttt{args} definierten Prozess auf
+		\item wartet auf Beendigung des Prozesses (wenn \textit{timeout} \texttt{None} ist)
+		\item gibt ein \texttt{CompletedProcess} Objekt zur\"uck
 		\item \textbf{Beachte:} Einsatz eines unbenannten Aggregators
 	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{CompletedProcess Objekt}
+	Ist der Rückgabewert von \texttt{run()}, der zur\"uckgegeben wird, wenn der Prozess beendet wurde.
+	Enth\"alt folgende Eigenschaften: \\[.25cm]
+	\begin{description}
+		\item[\texttt{args}] Argumente, mit denen der Prozess aufgerufen wurde.
+		\item[\texttt{returncode}] R\"uckgabewert des Prozesses
+		\item[\texttt{stdout}] Ausgabe des Prozesses
+		\item[\texttt{stderr}] stderr Output des Prozesses \\[.5cm]
+	\end{description}
+	Au{\ss}erdem gibt es die Funktion \texttt{check\_returncode()}, die einen \texttt{CalledProcessError}
+	beim Aufruf wirft, wenn der R\"uckgabewert nicht 0 ist.
+\end{frame}
+
+\begin{frame}[fragile]{call}
+	\lstinputlisting[firstline=5, lastline=6]{resources/08_process/defs.py}
+	\begin{itemize}
+		\item Ruft einen Prozess auf, wartet auf Terminierung
+		\item gibt Returncode des Prozesses zur\"uck \\[.5cm]
+	\end{itemize}
+	Diese Funktion macht das selbe, wie \\
+	\hspace*{1.5cm}\texttt{run(...).returncode}, \\
+	nur dass \textit{check} und \textit{input} nicht unterst\"utzt werden.
 \end{frame}
 
 \begin{frame}[fragile]{check\_call}
@@ -176,16 +201,21 @@
 	\begin{itemize}
 		\item Ruft Prozess auf, wartet auf Terminierung
 		\item gibt nichts zur\"uck, wenn Ausf\"uhrung erfolgreich (Returncode == 0)
-		\item wenn Aufruf nicht erfolgreich, wird \texttt{CalledProcessError} geworfen
+		\item wenn Aufruf nicht erfolgreich, wird \texttt{CalledProcessError} geworfen \\[.5cm]
 	\end{itemize}
+	Diese Funktion macht das selbe, wie \\
+	\hspace*{1.5cm}\texttt{run(..., check=True)}, \\
+	nur dass \textit{input} nicht unterst\"utzt wird.
 \end{frame}
 
 \begin{frame}[fragile]{check\_output}
-	\lstinputlisting[firstline=4]{resources/08_process/defs.py}
+	\lstinputlisting[firstline=9]{resources/08_process/defs.py}
 	\begin{itemize}
 		\item f\"uhrt Kommando aus und gibt den Prozessoutput zur\"uck
-		\item wirft ebenfalls \texttt{CalledProcessError}, wenn der Returncode nicht 0 ist
+		\item wirft ebenfalls \texttt{CalledProcessError}, wenn der Returncode nicht 0 ist \\[.5cm]
 	\end{itemize}
+	Diese Funktion macht das selbe, wie \\
+	\hspace*{1.5cm}\texttt{run(..., check=True, stdout=PIPE).stdout}
 \end{frame}
 
 % TODO done? place the (sub)section headings correctly, enhance optic
