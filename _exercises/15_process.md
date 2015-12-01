@@ -33,6 +33,7 @@ Since your terminal got a bit messy from the output of the last subprocess comma
 
 [^subprocess]:
     Remember you have do pass a list with every argument in a single string, if there are whitespaces in you command.
+    Use `subprocess.run()` here.
 
 [^time]:
     To wait a certain amount of time use `time.wait(in_seconds)` from the `time` module.
