@@ -128,55 +128,61 @@ das zurückgegebene `Popen` Objekt enthält Informationen über den laufenden Pr
 
 ## Informationen sammeln
 
--   `process.args`  
-    Gibt die Argumente zurück, mit denen der Prozess aufgerufen wurde.
+---
 
--   `obj.stdout`, `obj.stdin`, `obj.stderr`   
-    Input- und Output-Verbindungen, die beim Start gesetzt wurden
+`process.args`  
 
--   `process.pid`  
-    Vom System zugewiesene *Prozess ID*.
+Gibt die Argumente zurück, mit denen der Prozess aufgerufen wurde.
+
+`obj.stdout`, `obj.stdin`, `obj.stderr`   
+
+Input- und Output-Verbindungen, die beim Start gesetzt wurden
+
+`process.pid`  
+
+Vom System zugewiesene *Prozess ID*.
 
 
 ---
 
--   `process.poll()`  
-    Prüft, ob der Prozess beendet wurde. Gibt den *Rückgabewert* des
-    Prozesses zurück oder `None`, wenn der Prozess noch läuft.
+`process.poll()`  
+Prüft, ob der Prozess beendet wurde. Gibt den *Rückgabewert* des Prozesses zurück oder `None`, wenn der Prozess noch läuft.
 
--   `process.returncode`  
-    Der Rückgabewert von `process.poll()` (der Rückgabewert des Prozesses)
+`process.returncode`  
+
+Der Rückgabewert von `process.poll()` (der Rückgabewert des Prozesses)
 
 ---
 
 ## Interaktion mit dem Prozess
 
--   `process.wait(timeout=None)`  
-    Wartet *timeout* Sekunden auf die Terminierung des Prozesses (wartet
-    unendlich lang, wenn timeout *None* ist).  
-    Wirft nach Ablauf von *timeout* eine `TimeoutExpired` Exception.
+`process.wait(timeout=None)`  
+
+Wartet *timeout* Sekunden auf die Terminierung des Prozesses (wartet
+unendlich lang, wenn timeout *None* ist).  
+Wirft nach Ablauf von *timeout* eine `TimeoutExpired` Exception.
 
 ---
 
--   `process.send_signal(signal)`  
-    Sendet das Signal *signal* an den Prozess (z.B. `SIGTERM`).
+`process.send_signal(signal)`  
+
+Sendet das Signal *signal* an den Prozess (z.B. `SIGTERM`).
 
 ---
 
--   `process.communicate(input=None, timeout=None)`  
-    Schreibt die Daten aus *input* in den Standardinput (`stdin`) des
-    Prozesses (wenn stdin PIPE ist), wartet auf die Terminierung des
-    Prozesses und liest die Daten, die der Prozess in `stdout`
-    geschrieben hat (wenn stdout PIPE ist). *timeout* funktioniert
-    wie oben.
+`process.communicate(input=None, timeout=None)`  
+
+Schreibt die Daten aus *input* in den Standardinput (`stdin`) des Prozesses (wenn stdin PIPE ist), wartet auf die Terminierung des Prozesses und liest Daten, die der Prozess in `stdout` geschrieben hat (wenn stdout PIPE ist).
 
 ---
 
--   `process.terminate()`  
-    Sendet ein Terminationssignal an den Prozess (`SIGTERM`).
+`process.terminate()`  
 
--   `process.kill()`  
-    Erzwingt die Beendigung des Prozesses (`SIGKILL`).
+Sendet ein Terminationssignal an den Prozess (`SIGTERM`).
+
+`process.kill()`  
+
+Erzwingt die Beendigung des Prozesses (`SIGKILL`).
 
 ---
 
