@@ -19,3 +19,4 @@ build/
 _site/
 .sass-cache/
 rbuild/
+.jekyll-metadata
