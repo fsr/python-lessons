@@ -1,7 +1,7 @@
 ---
 title: Hand off the work - subprocess
 status: finished
-authors: felix
+authors: [felix, felixw]
 number: 15
 lesson: 8
 ---
