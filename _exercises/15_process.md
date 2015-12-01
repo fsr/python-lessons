@@ -36,7 +36,7 @@ Since your terminal got a bit messy from the output of the last `subprocess` com
     Use `subprocess.run()` here.
 
 [^time]:
-    To wait a certain amount of time use `time.wait(in_seconds)` from the `time` module.
+    To wait a certain amount of time use `time.sleep(in_seconds)` from the `time` module.
 
 [^clear]:
     Here again: UNIX command is `clear`, Windows command is `cls`.
