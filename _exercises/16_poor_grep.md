@@ -1,6 +1,6 @@
 ---
 title: Your own grep - using subprocess
-status: drafty
+status: finished
 authors: [felix, felixw]
 number: 16
 lesson: 8
@@ -31,3 +31,21 @@ print every item that contains the _exact_ search string. [^how]
 
 [^how]:
     Best way is to iterate over the items and see if your search string is `in` your item... ;)
+
+
+### Step 3
+
+To be more flexible, your script should take a path for the directory and a string to search for as input.
+The script should then run the command in the given directory[^dir] and search for your string.
+
+[^dir]:
+    Do you remember the `cwd` argument?
+
+### Step 4
+
+Make sure that you won't get trolled by any user and make sure, that the given directory is existing.[^osisdir]
+
+If not, you should print an error message and quit the script.
+
+[^osisdir]:
+    You can use `os.path.isdir()` to check that. Also see the [docs](https://docs.python.org/3.5/library/os.path.html) for how this command works.

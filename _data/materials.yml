@@ -38,7 +38,7 @@ slides:
     number: 8
     name: Process
     url: https://ifsr.de/kurs-materialien/python/08_process.pdf
-    published: False
+    published: True
   -
     number: 9
     name: Web client
