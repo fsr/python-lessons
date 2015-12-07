@@ -29,7 +29,7 @@ Unterstützt werden:
 Das Öffnen einer URL wird über die Funktion `urlopen()` realisiert:
 
 ```python
-import urllib
+import urllib.request
 
 urllib.request.urlopen(url, data=None, [timeout, ] *,
                        cafile=None, capath=None, cadefault=False,
