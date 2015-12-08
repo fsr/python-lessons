@@ -1,6 +1,7 @@
 ---
 title: Dad? What's for breakfast?
 number: 18
+lesson: 9
 status: finished
 authors: felixw
 ---

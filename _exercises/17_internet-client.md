@@ -2,6 +2,7 @@
 title: On the client side of the internet
 status: drafty
 number: 17
+lesson: 9
 authors: [justus, felixw]
 ---
 
