@@ -2,7 +2,7 @@
 title: Dad? What's for breakfast?
 number: 18
 lesson: 9
-status: finished
+status: reviewed
 authors: felixw
 ---
 
@@ -46,7 +46,7 @@ Write now a function that gets the content of that file[^decoding] and reads the
 
 Looks like that data is just a list of dicts where every dict represents a separate meal. That makes working with it pretty easy!
 
-So an example meal dict could look like this (with better formatting...):[^dictslists]
+So an example meal dict could look like this _(with better formatting...)_:[^dictslists]
 
 {% highlight json %}
 [
