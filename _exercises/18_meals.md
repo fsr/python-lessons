@@ -18,7 +18,7 @@ At first, let us analyze  what we need to do. The OpenMensa delivers the meals v
 
 `http://openmensa.org/api/v2/canteens/$mensaID/days/$date/meals`
 
-The $mensaID of the _alte Mensa_ is __79__. The date has to be formatted as _ISO-8601_ string (e.g. `2015-12-08`)[^formatting].
+The $mensaID of the _Alte Mensa_ is __79__. The date has to be formatted as _ISO-8601_ string (e.g. `2015-12-08`)[^formatting].
 
 [^formatting]:
     This is equal to the output of `time.strftime("%Y-%m-%d")`.
@@ -73,7 +73,7 @@ So an example meal dict could look like this (with better formatting...):[^dicts
 
 So let's get to work with formatting everything.
 
-Write a function that prints the meals you gathered to the command line, nicely formatted. It should at least display The name of the meal and the price.
+Write a function that prints the meals you gathered to the command line, nicely formatted. It should at least display the name of the meal and the price.
 
 You can pimp that by displaying the notes related to the meal.
 
