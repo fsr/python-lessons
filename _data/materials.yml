@@ -43,7 +43,7 @@ slides:
     number: 9
     name: Web client
     url: https://ifsr.de/kurs-materialien/python/09_web_client.pdf
-    published: False
+    published: True
   -
     number: 10
     name: Regex
