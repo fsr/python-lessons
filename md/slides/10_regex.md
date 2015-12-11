@@ -6,7 +6,7 @@ title: re - Regular Expressions
 
 ---
 
-Das `re` Modul der python standard library ist die Python Implementierung von regulären Ausdrücken.
+Das `re` Modul der Python Standard Library ist die Python Implementierung von _regulären Ausdrücken_.
 
 Reguläre Ausdrücke werden verwendet um die Struktur von Text/Sprachen zu beschreiben.
 
@@ -21,9 +21,11 @@ Ein erstellter regulärer Ausdruck kann verwendet werden um:
 
 Die Anwendung eines regulären Ausdruckes nennt man Matching.
 
-Matcht der reguläre Ausdruck einem String, bedeutet dies, dass der String die Struktur hat die der reguläre Ausdruck beschreibt.
+Matcht der reguläre Ausdruck einem String, bedeutet dies, dass der String die Struktur hat, die der reguläre Ausdruck beschreibt.
 
-Reguläre ausdrücke werden oft auch "regex" genannt (kurz für regular Expression).
+---
+
+Reguläre Ausdrücke werden oft auch 'regex' genannt (kurz für __regular expression__).
 
 # Matching Regeln
 
@@ -33,83 +35,87 @@ Jeder Buchstabe und jede Zahl matcht immer **einmal** sich selbst.
 
 d.h.
 
-Der String `"a"` matcht der regex `"a"`.  
-Der String `"abc"` matcht der regex `"abc"`, nicht aber regex `"a"`.  
-`"4"` matcht `"4"`, nicht aber `"5"`, `"a"` oder `"41"` usw.
+Der String `'a'` matcht der regex `'a'`.  
+Der String `'abc'` matcht der regex `'abc'`, nicht aber regex `'a'`.  
+`'4'` matcht `'4'`, nicht aber `'5'`, `'a'` oder `'41'` usw.
 
 
 ## Sonderzeichen
 
 `.` (Punkt) matcht **einem** beliebingen Schriftzeichen, außer `\n` (newline)
 
-Für die regex `"."` gilt
+Für die regex `'.'` gilt
 
-- `"a"` matcht
-- `"b"` matcht
-- `"4"` matcht
-- `"ab"` matcht nicht, denn `"."` ist nur ein Zeichen und `"ab"` sind zwei.
+- `'a'` matcht
+- `'b'` matcht
+- `'4'` matcht
+- `'ab'` matcht nicht, denn `'.'` ist nur ein Zeichen und `'ab'` sind zwei.
 
 ---
 
 `[]` matcht jedem der in den Klammern stehenden Zeichen, jedoch nur **einmal** (wie bei `.`).
 
-Für die regex `"[abg]"` gilt also
+Für die regex `'[abg]'` gilt also
 
-- `"a"` matcht
-- `"b"` matcht
-- `"g"` matcht
-- `"ab"` matcht nicht (zwei zeichen matchen nicht einem)
+- `'a'` matcht
+- `'b'` matcht
+- `'g'` matcht
+- `'ab'` matcht nicht (zwei zeichen matchen nicht einem).
 
 ---
 
-`()` erstellt eine Gruppe. Alles was in den Klammern steht, muss genauso vor kommen
+![wow](~/Downloads/Wow.gif)
 
-Für die regex `"(abc)"` gilt
+---
 
-- `"a"` matcht nicht
-- `"ab"` matcht nicht
+`()` erstellt eine Gruppe. Alles was in den Klammern steht, muss genau so vor kommen.
+
+Für die regex `'(abc)'` gilt
+
+- `'a'` matcht nicht
+- `'ab'` matcht nicht
 - `'abc'` matcht
 
 ---
 
-`\` zum escaped ein Sonderzeichen.
+`\` escaped ein Sonderzeichen.
 
 Alle hier aufgeführten Sonderzeichen können nicht in einem Pattern vorkommen, als das, was sie eigentlich bedeuten, dafür müssen sie extra markiert werden.
 
-- `"\\"` als Pattern matcht auf den String `"\"`
-- `"\."` als Pattern matcht auf den String `"."`
+- `'\\'` als Pattern matcht auf den String `'\'`
+- `'\.'` als Pattern matcht auf den String `'.'`
 
 ---
 
-`^` Matcht dem Anfang eines Stings  
-Es matcht alles, was bis zum ersten auftreten des Patterns existert
+`^` matcht dem Anfang eines Strings  
+Es matcht alles, was bis zum ersten Auftreten des Patterns existert
 
-Für die regex `"^a"` ergibt sich also
+Für die regex `'^a'` ergibt sich also
 
-- `"a"` matcht
-- `"ba"` matcht nicht, da der falsche Character am Begin steht
-- `"aba"` matcht
+- `'a'` matcht
+- `'ba'` matcht nicht, da der falsche Character am Begin steht
+- `'aba'` matcht
 
 ---
 
-`$` Matcht dem Ende eines Strings (oder das Zeilenende)  
+`$` matcht dem Ende eines Strings (oder dem Zeilenende)  
 
-Für die regex `"a$"` folgt daraus
+Für die regex `'a$'` folgt daraus
 
-- `"a"` matcht
-- `"ba"` matcht
-- `"bab"` matcht nicht, da der falsche Character am Ende steht
-- `"aba"` matcht
+- `'a'` matcht
+- `'ba'` matcht
+- `'bab'` matcht nicht, da der falsche Character am Ende steht
+- `'aba'` matcht
 
 ---
 
 `|` ist ein ODER entweder die regex davor oder der danach.
 
-Für die regex `"a|b"` gilt
+Für die regex `'a|b'` gilt
 
-- `"a"` matcht
-- `"b"` matcht
-- `"ab"` matcht nicht, da `"a|b"` mit [ab] gleichzusetzen ist
+- `'a'` matcht
+- `'b'` matcht
+- `'ab'` matcht nicht, da `'a|b'` mit [ab] gleichzusetzen ist
 
 ---
 
@@ -120,63 +126,63 @@ So kann man auch sagen, wie häufig ein Zeichen auftreten soll.
 
 `*` Die vorangestellte regex muss 0 - n Mal vorkommen
 
-Für die regex `"a*"` gilt
+Für die regex `'a*'` gilt
 
-- `""` matcht
-- `"a"` matcht
-- `"aa"` matcht
-- `"aaaab"` matcht nicht, da ein anderes Zeichen als "a" vorkommt
+- `''` matcht
+- `'a'` matcht
+- `'aa'` matcht
+- `'aaaab'` matcht nicht, da ein anderes Zeichen als 'a' vorkommt
 
 ---
 
 `+` Die vorangestellte regex muss 1 - n Mal vorkommen  
 
-Für die regex `"a+"` gilt
+Für die regex `'a+'` gilt
 
-- `""` matcht nicht, da es kein mal vorkommt
-- `"a"` matcht
-- `"aa"` matcht
-- `"ab"` matcht nicht, da ein anderes Zeichen als "a" vorkommt
+- `''` matcht nicht, da es kein mal vorkommt
+- `'a'` matcht
+- `'aa'` matcht
+- `'ab'` matcht nicht, da ein anderes Zeichen als 'a' vorkommt
 
 ---
 
 `?` Die vorangestellte regex muss 0 - 1 Mal vorkommen  
 
-Für die regex `"a?"` gilt
+Für die regex `'a?'` gilt
 
-- `""` matcht
-- `"a"` matcht
-- `"aa"` matcht nicht, da das Zeichen öfter, als nur ein mal vorkommt
+- `''` matcht
+- `'a'` matcht
+- `'aa'` matcht nicht, da das Zeichen öfter, als nur ein mal vorkommt
 
 ---
 
 `{m}` Die vorangestellte regex muss genau m Mal vorkommen
 
-Für die regex `"y{3}"` gilt
+Für die regex `'y{3}'` gilt
 
-- `"yyy"` matcht
-- `"y"` matcht nicht, da es zu wenige Zeichen sind
-- `"yyyy"` matcht nicht, da es mehr Zeichen sind
+- `'yyy'` matcht
+- `'y'` matcht nicht, da es zu wenige Zeichen sind
+- `'yyyy'` matcht nicht, da es mehr Zeichen sind
 
 ---
 
 `{m,n}` Die vorangestellte regex muss m - n Mal vorkommen
 
-Für die regex `"y{2,5}"` gilt
+Für die regex `'y{2,5}'` gilt
 
-- `"yyy"` matcht
-- `"y"` matcht nicht, da es zu wenige Zeichen sind
-- `"yyyy"` matcht
-- `"yyyyyy"` matcht nicht, da es zu viele Zeichen sind
+- `'yyy'` matcht
+- `'y'` matcht nicht, da es zu wenige Zeichen sind
+- `'yyyy'` matcht
+- `'yyyyyy'` matcht nicht, da es zu viele Zeichen sind
 
 ---
 
 Des weiteren gibt es noch spezielle Sequenzen, wie z. B.  
 `\d` für Unicode Ziffern, äquivalent für `[0-9]`  
 `\D` ist das Gegenteil, alles was keine Unicode Ziffern sind  
-`\s` für alle Whitespace Charaktere, das entspricht `"[ \\t\\n\\r\\f\\v]"`  
+`\s` für alle Whitespace Charaktere, das entspricht `'[ \\t\\n\\r\\f\\v]'`  
 `\S` entspricht wieder dem Gegenteil  
-`\w` für alle Unicode Zeichen `"[a-zA-Z0-9_]"`  
+`\w` für alle Unicode Zeichen `'[a-zA-Z0-9_]'`  
 `\W` für alle Nicht-Unicode Zeichen  
 `[^...]` entspricht allem, was nicht in den Klammern steht
 
