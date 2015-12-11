@@ -44,7 +44,7 @@ Der String `'abc'` matcht der regex `'abc'`, nicht aber regex `'a'`.
 
 `.` (Punkt) matcht **einem** beliebingen Schriftzeichen, außer `\n` (newline)
 
-Für die regex `'.'` gilt
+Für die regex `'.'` gilt:
 
 - `'a'` matcht
 - `'b'` matcht
@@ -55,7 +55,7 @@ Für die regex `'.'` gilt
 
 `[]` matcht jedem der in den Klammern stehenden Zeichen, jedoch nur **einmal** (wie bei `.`).
 
-Für die regex `'[abg]'` gilt also
+Für die regex `'[abg]'` gilt also:
 
 - `'a'` matcht
 - `'b'` matcht
@@ -64,13 +64,9 @@ Für die regex `'[abg]'` gilt also
 
 ---
 
-![wow](~/Downloads/Wow.gif)
-
----
-
 `()` erstellt eine Gruppe. Alles was in den Klammern steht, muss genau so vor kommen.
 
-Für die regex `'(abc)'` gilt
+Für die regex `'(abc)'` gilt:
 
 - `'a'` matcht nicht
 - `'ab'` matcht nicht
@@ -87,20 +83,19 @@ Alle hier aufgeführten Sonderzeichen können nicht in einem Pattern vorkommen, 
 
 ---
 
-`^` matcht dem Anfang eines Strings  
-Es matcht alles, was bis zum ersten Auftreten des Patterns existert
+`^` matcht ab dem Anfang eines Strings oder ab jedem `\n`
 
-Für die regex `'^a'` ergibt sich also
+Für die regex `'^a'` ergibt sich also:
 
 - `'a'` matcht
-- `'ba'` matcht nicht, da der falsche Character am Begin steht
+- `'ba'` matcht nicht, da der falsche Character am Anfang steht.
 - `'aba'` matcht
 
 ---
 
 `$` matcht dem Ende eines Strings (oder dem Zeilenende)  
 
-Für die regex `'a$'` folgt daraus
+Für die regex `'a$'` folgt daraus:
 
 - `'a'` matcht
 - `'ba'` matcht
@@ -109,9 +104,9 @@ Für die regex `'a$'` folgt daraus
 
 ---
 
-`|` ist ein ODER entweder die regex davor oder der danach.
+`|` ist ein __ODER__. Entweder die regex davor oder danach muss matchen.
 
-Für die regex `'a|b'` gilt
+Für die regex `'a|b'` gilt:
 
 - `'a'` matcht
 - `'b'` matcht
@@ -119,14 +114,14 @@ Für die regex `'a|b'` gilt
 
 ---
 
-Regexes bauen sich dann aus kleineren regexes auf.  
-So kann man auch sagen, wie häufig ein Zeichen auftreten soll.
+Regular Expressions setzen sich aus kleineren Regular Expressions zusammen.  
+So kann man z.B. auch festlegen, wie häufig ein Zeichen auftreten soll.
 
 ---
 
-`*` Die vorangestellte regex muss 0 - n Mal vorkommen
+`*` - Die _vorangestellte_ Regex muss 0 - n Mal vorkommen.
 
-Für die regex `'a*'` gilt
+Für die regex `'a*'` gilt:
 
 - `''` matcht
 - `'a'` matcht
@@ -135,9 +130,9 @@ Für die regex `'a*'` gilt
 
 ---
 
-`+` Die vorangestellte regex muss 1 - n Mal vorkommen  
+`+` - Die _vorangestellte_ Regex muss 1 - n Mal vorkommen.
 
-Für die regex `'a+'` gilt
+Für die regex `'a+'` gilt:
 
 - `''` matcht nicht, da es kein mal vorkommt
 - `'a'` matcht
@@ -146,9 +141,9 @@ Für die regex `'a+'` gilt
 
 ---
 
-`?` Die vorangestellte regex muss 0 - 1 Mal vorkommen  
+`?` - Die _vorangestellte_ regex muss 0 - 1 Mal vorkommen.  
 
-Für die regex `'a?'` gilt
+Für die regex `'a?'` gilt:
 
 - `''` matcht
 - `'a'` matcht
@@ -156,9 +151,9 @@ Für die regex `'a?'` gilt
 
 ---
 
-`{m}` Die vorangestellte regex muss genau m Mal vorkommen
+`{m}` - Die _vorangestellte_ regex muss genau m Mal vorkommen.
 
-Für die regex `'y{3}'` gilt
+Für die regex `'y{3}'` gilt:
 
 - `'yyy'` matcht
 - `'y'` matcht nicht, da es zu wenige Zeichen sind
@@ -166,9 +161,9 @@ Für die regex `'y{3}'` gilt
 
 ---
 
-`{m,n}` Die vorangestellte regex muss m - n Mal vorkommen
+`{m,n}` -  Die _vorangestellte_ regex muss m - n Mal vorkommen.
 
-Für die regex `'y{2,5}'` gilt
+Für die regex `'y{2,5}'` gilt:
 
 - `'yyy'` matcht
 - `'y'` matcht nicht, da es zu wenige Zeichen sind
@@ -177,14 +172,15 @@ Für die regex `'y{2,5}'` gilt
 
 ---
 
-Des weiteren gibt es noch spezielle Sequenzen, wie z. B.  
-`\d` für Unicode Ziffern, äquivalent für `[0-9]`  
-`\D` ist das Gegenteil, alles was keine Unicode Ziffern sind  
-`\s` für alle Whitespace Charaktere, das entspricht `'[ \\t\\n\\r\\f\\v]'`  
-`\S` entspricht wieder dem Gegenteil  
-`\w` für alle Unicode Zeichen `'[a-zA-Z0-9_]'`  
-`\W` für alle Nicht-Unicode Zeichen  
-`[^...]` entspricht allem, was nicht in den Klammern steht
+Desweiteren gibt es noch spezielle Sequenzen, wie z. B.  
+
+- `\d` für Unicode Ziffern, äquivalent für `[0-9]`  
+- `\D` ist das Gegenteil, alles was keine Unicode Ziffern sind  
+- `\s` für alle Whitespace Zeichen, das entspricht `'[ \\t\\n\\r\\f\\v]'`  
+- `\S` entspricht wieder dem Gegenteil  
+- `\w` für alle Unicode Zeichen `'[a-zA-Z0-9_]'`  
+- `\W` für alle Nicht-Unicode Zeichen  
+- `[^...]` entspricht allem, was nicht in den Klammern steht
 
 # Methoden
 
@@ -193,17 +189,23 @@ Des weiteren gibt es noch spezielle Sequenzen, wie z. B.
 ```python
 compile(pattern, flags=0)
 ```
-Wandelt einen String in ein regular expression Objekt um  
+Wandelt einen String in ein regular expression Objekt um.
+
+---
 
 ```python
 search(pattern, string, flags=0)
 ```
-Sucht in `string` nach dem Pattern `pattern`
+Sucht in `string` nach dem Pattern `pattern`.
+
+---
 
 ```python
 match(pattern, string, flags=0)
 ```
-Sucht am Begin des Strings nach dem Pattern
+Sucht am Begin des Strings nach dem Pattern.
+
+---
 
 ```python
 fullmatch(pattern, string, flags=0)
