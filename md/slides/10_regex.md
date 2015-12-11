@@ -176,8 +176,14 @@ Desweiteren gibt es noch spezielle Sequenzen, wie z. B.
 
 - `\d` für Unicode Ziffern, äquivalent für `[0-9]`  
 - `\D` ist das Gegenteil, alles was keine Unicode Ziffern sind  
+
+---
+
 - `\s` für alle Whitespace Zeichen, das entspricht `'[ \\t\\n\\r\\f\\v]'`  
 - `\S` entspricht wieder dem Gegenteil  
+
+---
+
 - `\w` für alle Unicode Zeichen `'[a-zA-Z0-9_]'`  
 - `\W` für alle Nicht-Unicode Zeichen  
 - `[^...]` entspricht allem, was nicht in den Klammern steht
@@ -217,7 +223,9 @@ Der komplette String und das Pattern müssen übereinstimmen.
 ```pyhton
 findall(pattern, string, flags=0)
 ```
-Gibt eine Liste von Strings mit allen passenden Übereinstimmungen zurück  
+Gibt eine Liste von Strings mit allen passenden Übereinstimmungen zurück.  
+
+---
 
 ```python
 finditer(pattern, string, flags=0)
@@ -230,7 +238,7 @@ Die restlichen Funktionen können in den [Docs](https://docs.python.org/3/librar
 
 ---
 
-Ein solches Objekt hat im Großen und Ganzen die selben Methoden, jedoch ohne zusaätzliches Pattern, da das Objekt an sich bereits ein Pattern enthält.
+Ein solches Objekt hat im Großen und Ganzen die selben Methoden, jedoch ohne zusätzliches Pattern, da das Objekt an sich bereits ein Pattern enthält.
 
 # Match Objekt
 
@@ -240,12 +248,14 @@ Ein solches Objekt hat im Großen und Ganzen die selben Methoden, jedoch ohne zu
 ```python
 start([group])
 ```
-Gibt die Startposition des Patterns im String zurück  
+Gibt die Startposition des Patterns im String zurück.  
 
 ```python
-start([group])
+end([group])
 ```
-Gibt die Endposition des Patterns im String zurück  
+Gibt die Endposition des Patterns im String zurück.  
+
+---
 
 ```python
 span([group])
