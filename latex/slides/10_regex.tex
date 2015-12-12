@@ -1,514 +1,246 @@
-\documentclass[ignorenonframetext,]{beamer}
-\setbeamertemplate{caption}[numbered]
-\setbeamertemplate{caption label separator}{:}
-\setbeamercolor{caption name}{fg=normal text.fg}
-\usepackage{amssymb,amsmath}
-\usepackage{ifxetex,ifluatex}
-\usepackage{fixltx2e} % provides \textsubscript
-\usepackage{lmodern}
-\ifxetex
-  \usepackage{fontspec,xltxtra,xunicode}
-  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
-  \newcommand{\euro}{€}
-\else
-  \ifluatex
-    \usepackage{fontspec}
-    \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
-    \newcommand{\euro}{€}
-  \else
-    \usepackage[T1]{fontenc}
-    \usepackage[utf8]{inputenc}
-      \fi
-\fi
-% use upquote if available, for straight quotes in verbatim environments
-\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-% use microtype if available
-\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
-\usepackage{color}
-\usepackage{fancyvrb}
-\newcommand{\VerbBar}{|}
-\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-% Add ',fontsize=\small' for more characters per line
-\newenvironment{Shaded}{}{}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
-\newcommand{\ImportTok}[1]{{#1}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
-\newcommand{\BuiltInTok}[1]{{#1}}
-\newcommand{\ExtensionTok}[1]{{#1}}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
-\newcommand{\RegionMarkerTok}[1]{{#1}}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
-\newcommand{\NormalTok}[1]{{#1}}
 
-% Comment these out if you don't want a slide with just the
-% part/section/subsection/subsubsection title:
-\AtBeginPart{
-  \let\insertpartnumber\relax
-  \let\partname\relax
-  \frame{\partpage}
-}
-\AtBeginSection{
-  \let\insertsectionnumber\relax
-  \let\sectionname\relax
-  \frame{\sectionpage}
-}
-\AtBeginSubsection{
-  \let\insertsubsectionnumber\relax
-  \let\subsectionname\relax
-  \frame{\subsectionpage}
+%%	Getting started:
+%%	1) Copy this file and name the copy it like the topic it covers
+%%	2) In the following make sure to modify the copy, NOT THE ORIGINAL
+%%	3) Look for the points marked with "TODO" and complete them
+%%	4) compile this file
+
+\input{../templates/slides_template}	% nothing to do here
+% TODO change "course_info" to the name of your actual …_info(.tex)
+\input{course_info} % TODO modify this if you have not already done so
+
+% meta-information
+\newcommand{\topic}{
+	% TODO fill in the actual topic
+	Regul\"are Ausdr\"ucke
 }
 
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-\setlength{\emergencystretch}{3em}  % prevent overfull lines
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{0}
+% nothing to do here
+\title{\topic}
+\supertitle{\course}
+\date{\today}
 
-\title{re - Regular Expressions}
-\date{}
-
+% the actual document
 \begin{document}
-\frame{\titlepage}
 
-\section{Grundlage}\label{grundlage}
+\maketitle
 
 \begin{frame}
-
-Das \texttt{re} Modul der python standard library ist die Python
-Implementierung von regulären Ausdrücken.
-
-Reguläre Ausdrücke werden verwendet um die Struktur von Text/Sprachen zu
-beschreiben.
-
+	\tableofcontents
 \end{frame}
 
-\begin{frame}
-
-Ein erstellter regulärer Ausdruck kann verwendet werden um:
-
-\begin{itemize}
-\tightlist
-\item
-  die Struktur eines Textes zu überprüfen
-\item
-  bestimmte Teile eines Textes zu extrahieren
-\end{itemize}
-
+\section{Grundlagen}
+\begin{frame}{Grundlagen}
+	Das \texttt{re} Modul der Python Standard Library ist die Python Implementierung von regulären Ausdrücken.\\[.25cm]
+	Reguläre Ausdrücke werden verwendet um die Struktur von Text/Sprachen zu beschreiben.
 \end{frame}
 
-\begin{frame}
-
-Die Anwendung eines regulären Ausdruckes nennt man Matching.
-
-Matcht der reguläre Ausdruck einem String, bedeutet dies, dass der
-String die Struktur hat die der reguläre Ausdruck beschreibt.
-
-Reguläre ausdrücke werden oft auch ``regex'' genannt (kurz für regular
-Expression).
-
+\begin{frame}{Grundlagen}
+	Ein erstellter regul\"arer Ausdruck kann verwendet werden um:
+	\begin{itemize}
+		\item die Struktur eines Textes zu \"uberpr\"ufen
+		\item bestimmte Teile eines Textes zu extraktieren
+	\end{itemize}
 \end{frame}
 
-\section{Matching Regeln}\label{matching-regeln}
+\begin{frame}{Grundlagen}
+	Die Anwendung eines regulären Ausdruckes nennt man Matching.\\[.25cm]
+Matcht der reguläre Ausdruck einem String, bedeutet dies, dass der String die Struktur hat, die der reguläre Ausdruck beschreibt.\\[.25cm]
+Reguläre Ausdrücke werden oft auch 'regex' genannt (kurz für \textbf{regular expression}).
+\end{frame}
 
-\begin{frame}
+\section{Matching Regeln}
+\begin{frame}{Matching Regeln}
+	Jeder Buchstabe und jede Zahl matcht immer \textbf{einmal} sich selbst.\\[.25cm]
+	Das bedeutet:\\
+	\begin{itemize}
+		\item 	Der String \texttt{'a'} matcht der regex \texttt{'a'}.\\
+		\item Der String \texttt{'abc'} matcht der regex \texttt{'abc'}, nicht aber regex \texttt{'a'}.\\
+		\item \texttt{'4'} matcht \texttt{'4'}, nicht aber \texttt{'5'}, \texttt{'a'} oder \texttt{'41'} usw.
+	\end{itemize}
+\end{frame}
 
-Jeder Buchstabe und jede Zahl matcht immer \textbf{einmal} sich selbst.
-
-d.h.
-
-Der String \texttt{"a"} matcht der regex \texttt{"a"}.\\
-Der String \texttt{"abc"} matcht der regex \texttt{"abc"}, nicht aber
-regex \texttt{"a"}.\\
-\texttt{"4"} matcht \texttt{"4"}, nicht aber \texttt{"5"}, \texttt{"a"}
-oder \texttt{"41"} usw.
-
+\subsection{Sonderzeichen}
+\begin{frame}{Sonderzeichen}
+	\texttt{.} (Punkt) matcht \textbf{einem} beliebingen Schriftzeichen, außer \texttt{'\textbackslash{}n'} (newline)\\[.25cm]
+	Für die regex `'.'` gilt:\\
+	\begin{itemize}
+		\item \texttt{'a'} matcht
+		\item \texttt{'b'} matcht
+		\item \texttt{'4'} matcht
+		\item \texttt{'ab'} matcht nicht, denn \texttt{'.'} ist nur ein Zeichen und \texttt{'ab'} sind zwei.
+	\end{itemize}
 \end{frame}
 
 \begin{frame}{Sonderzeichen}
-
-\texttt{.} (Punkt) matcht \textbf{einem} beliebingen Schriftzeichen,
-außer \texttt{\textbackslash{}n} (newline)
-
-Für die regex \texttt{"."} gilt
-
-\begin{itemize}
-\tightlist
-\item
-  \texttt{"a"} matcht
-\item
-  \texttt{"b"} matcht
-\item
-  \texttt{"4"} matcht
-\item
-  \texttt{"ab"} matcht nicht, denn \texttt{"."} ist nur ein Zeichen und
-  \texttt{"ab"} sind zwei.
-\end{itemize}
-
+	\texttt{[]} matcht jedem der in den Klammern stehenden Zeichen, jedoch nur \textbf{einmal} (wie bei \texttt{.}).\\[.25cm]
+	Für die regex `'[abg]'` gilt also:\\
+	\begin{itemize}
+		\item \texttt{'a'} matcht
+		\item \texttt{'b'} matcht
+		\item \texttt{'g'} matcht
+		\item \texttt{'ab'} matcht nicht (zwei zeichen matchen nicht einem).
+	\end{itemize}
 \end{frame}
 
-\begin{frame}
-
-\texttt{{[}{]}} matcht jedem der in den Klammern stehenden Zeichen,
-jedoch nur \textbf{einmal} (wie bei \texttt{.}).
-
-Für die regex \texttt{"{[}abg{]}"} gilt also
-
-\begin{itemize}
-\tightlist
-\item
-  \texttt{"a"} matcht
-\item
-  \texttt{"b"} matcht
-\item
-  \texttt{"g"} matcht
-\item
-  \texttt{"ab"} matcht nicht (zwei zeichen matchen nicht einem)
-\end{itemize}
-
+\begin{frame}{Sonderzeichen}
+	\texttt{()} erstellt eine Gruppe. Alles was in den Klammern steht, muss genau so vor kommen.\\[.25cm]
+	Für die regex `'(abc)'` gilt:\\
+	\begin{itemize}
+		\item \texttt{'a'} matcht nicht
+		\item \texttt{'ab'} matcht nicht
+		\item \texttt{'abc'} matcht
+	\end{itemize}
 \end{frame}
 
-\begin{frame}
-
-\texttt{()} erstellt eine Gruppe. Alles was in den Klammern steht, muss
-genauso vor kommen
-
-Für die regex \texttt{"(abc)"} gilt
-
-\begin{itemize}
-\tightlist
-\item
-  \texttt{"a"} matcht nicht
-\item
-  \texttt{"ab"} matcht nicht
-\item
-  \texttt{\textquotesingle{}abc\textquotesingle{}} matcht
-\end{itemize}
-
+\begin{frame}{Sonderzeichen}
+	\texttt{\textbackslash} escaped ein Sonderzeichen.\\[.25cm]
+	Alle hier aufgeführten Sonderzeichen können nicht in einem Pattern vorkommen, als das, was sie eigentlich bedeuten, dafür müssen sie extra markiert werden.\\
+	\begin{itemize}
+		\item \texttt{'\textbackslash\textbackslash'} als Pattern matcht auf den String \texttt{'\textbackslash'}
+		\item \texttt{'\textbackslash.'} als Pattern matcht auf den String \texttt{'.'}
+	\end{itemize}
 \end{frame}
 
-\begin{frame}
-
-\texttt{\textbackslash{}} zum escaped ein Sonderzeichen.
-
-Alle hier aufgeführten Sonderzeichen können nicht in einem Pattern
-vorkommen, als das, was sie eigentlich bedeuten, dafür müssen sie extra
-markiert werden.
-
-\begin{itemize}
-\tightlist
-\item
-  \texttt{"\textbackslash{}\textbackslash{}"} als Pattern matcht auf den
-  String \texttt{"\textbackslash{}"}
-\item
-  \texttt{"\textbackslash{}."} als Pattern matcht auf den String
-  \texttt{"."}
-\end{itemize}
-
+\begin{frame}{Sonderzeichen}
+	\texttt{\^} matcht ab dem Anfang eines Strings oder ab jedem \texttt{\textbackslash{}n}\\[.25cm]
+	Für die regex \texttt{'\^{}a'} ergibt sich also:\\
+	\begin{itemize}
+		\item \texttt{'a'} matcht
+		\item \texttt{'ba'} matcht nicht, da der falsche Character am Anfang steht.
+		\item \texttt{'aba'} matcht
+	\end{itemize}	
 \end{frame}
 
-\begin{frame}
-
-\texttt{\^{}} Matcht dem Anfang eines Stings\\
-Es matcht alles, was bis zum ersten auftreten des Patterns existert
-
-Für die regex \texttt{"\^{}a"} ergibt sich also
-
-\begin{itemize}
-\tightlist
-\item
-  \texttt{"a"} matcht
-\item
-  \texttt{"ba"} matcht nicht, da der falsche Character am Begin steht
-\item
-  \texttt{"aba"} matcht
-\end{itemize}
-
+\begin{frame}{Sonderzeichen}
+	\texttt{\$} matcht dem Ende eines Strings (oder dem Zeilenende)\\[.25cm]
+	Für die regex \texttt{'a\$'} folgt daraus:\\
+	\begin{itemize}
+		\item \texttt{'a'} matcht
+		\item \texttt{'ba'} matcht
+		\item \texttt{'bab'} matcht nicht, da der falsche Character am Ende steht
+		\item \texttt{'aba'} matcht
+	\end{itemize}
 \end{frame}
 
-\begin{frame}
-
-\texttt{\$} Matcht dem Ende eines Strings (oder das Zeilenende)
-
-Für die regex \texttt{"a\$"} folgt daraus
-
-\begin{itemize}
-\tightlist
-\item
-  \texttt{"a"} matcht
-\item
-  \texttt{"ba"} matcht
-\item
-  \texttt{"bab"} matcht nicht, da der falsche Character am Ende steht
-\item
-  \texttt{"aba"} matcht
-\end{itemize}
-
+\begin{frame}{Sonderzeichen}
+	\texttt{|} ist ein \textbf{ODER}. Entweder die regex davor oder danach muss matchen.\\[.25cm]
+	Für die regex `'a|b'` gilt:\\
+	\begin{itemize}
+		\item \texttt{'a'} matcht
+		\item \texttt{'b'} matcht
+		\item \texttt{'ab'} matcht nicht, da \texttt{'a|b'} mit [ab] gleichzusetzen ist
+	\end{itemize}
 \end{frame}
 
-\begin{frame}
-
-\texttt{\textbar{}} ist ein ODER entweder die regex davor oder der
-danach.
-
-Für die regex \texttt{"a\textbar{}b"} gilt
-
-\begin{itemize}
-\tightlist
-\item
-  \texttt{"a"} matcht
-\item
-  \texttt{"b"} matcht
-\item
-  \texttt{"ab"} matcht nicht, da \texttt{"a\textbar{}b"} mit {[}ab{]}
-  gleichzusetzen ist
-\end{itemize}
-
+\subsection{Zusammengesetzte Regex}
+\begin{frame}{Zusammengesetzte Regex}
+	Regular Expressions setzen sich aus kleineren Regular Expressions zusammen.\\
+	So kann man z.B. auch festlegen, wie häufig ein Zeichen auftreten soll.
 \end{frame}
 
-\begin{frame}
-
-Regexes bauen sich dann aus kleineren regexes auf.\\
-So kann man auch sagen, wie häufig ein Zeichen auftreten soll.
-
+\begin{frame}{Zusammengesetzte Regex}
+	\texttt{*} - Die \textit{vorangestellte} Regex muss 0 - n Mal vorkommen.\\[.25cm]
+	Für die regex `'a*'` gilt:\\
+	\begin{itemize}
+		\item \texttt{''} matcht
+		\item \texttt{'a'} matcht
+		\item \texttt{'aa'} matcht
+		\item \texttt{'aaaab'} matcht nicht, da ein anderes Zeichen als 'a' vorkommt
+	\end{itemize}
 \end{frame}
 
-\begin{frame}
-
-\texttt{*} Die vorangestellte regex muss 0 - n Mal vorkommen
-
-Für die regex \texttt{"a*"} gilt
-
-\begin{itemize}
-\tightlist
-\item
-  \texttt{""} matcht
-\item
-  \texttt{"a"} matcht
-\item
-  \texttt{"aa"} matcht
-\item
-  \texttt{"aaaab"} matcht nicht, da ein anderes Zeichen als ``a''
-  vorkommt
-\end{itemize}
-
+\begin{frame}{Zusammengesetzte Regex}
+	\texttt{+} - Die \textit{vorangestellte} Regex muss 1 - n Mal vorkommen.\\[.25cm]
+	Für die regex `'a+'` gilt:\\
+	\begin{itemize}
+		\item \texttt{''} matcht nicht, da es kein mal vorkommt
+		\item \texttt{'a'} matcht
+		\item \texttt{'aa'} matcht
+		\item \texttt{'ab'} matcht nicht, da ein anderes Zeichen als 'a' vorkommt
+	\end{itemize}
 \end{frame}
 
-\begin{frame}
-
-\texttt{+} Die vorangestellte regex muss 1 - n Mal vorkommen
-
-Für die regex \texttt{"a+"} gilt
-
-\begin{itemize}
-\tightlist
-\item
-  \texttt{""} matcht nicht, da es kein mal vorkommt
-\item
-  \texttt{"a"} matcht
-\item
-  \texttt{"aa"} matcht
-\item
-  \texttt{"ab"} matcht nicht, da ein anderes Zeichen als ``a'' vorkommt
-\end{itemize}
-
+\begin{frame}{Zusammengesetzte Regex}
+	\texttt{?} - Die \textit{vorangestellte} regex muss 0 - 1 Mal vorkommen.\\[.25cm]
+	Für die regex `'a?'` gilt:\\
+	\begin{itemize}
+		\item \texttt{''} matcht
+		\item \texttt{'a'} matcht
+		\item \texttt{'aa'} matcht nicht, da das Zeichen öfter, als nur ein mal vorkommt
+	\end{itemize}
 \end{frame}
 
-\begin{frame}
-
-\texttt{?} Die vorangestellte regex muss 0 - 1 Mal vorkommen
-
-Für die regex \texttt{"a?"} gilt
-
-\begin{itemize}
-\tightlist
-\item
-  \texttt{""} matcht
-\item
-  \texttt{"a"} matcht
-\item
-  \texttt{"aa"} matcht nicht, da das Zeichen öfter, als nur ein mal
-  vorkommt
-\end{itemize}
-
+\begin{frame}{Zusammengesetzte Regex}
+	\texttt{\{m\}} - Die \textit{vorangestellte} regex muss genau m Mal vorkommen.\\[.25cm]
+	Für die regex `'y\{3\}'` gilt:\\
+	\begin{itemize}
+		\item \texttt{'yyy'} matcht
+		\item \texttt{'y'} matcht nicht, da es zu wenige Zeichen sind
+		\item \texttt{'yyyy'} matcht nicht, da es mehr Zeichen sind
+	\end{itemize}
 \end{frame}
 
-\begin{frame}
-
-\texttt{\{m\}} Die vorangestellte regex muss genau m Mal vorkommen
-
-Für die regex \texttt{"y\{3\}"} gilt
-
-\begin{itemize}
-\tightlist
-\item
-  \texttt{"yyy"} matcht
-\item
-  \texttt{"y"} matcht nicht, da es zu wenige Zeichen sind
-\item
-  \texttt{"yyyy"} matcht nicht, da es mehr Zeichen sind
-\end{itemize}
-
+\begin{frame}{Zusammengesetzte Regex}
+	\texttt{\{m,n\}} -  Die \textit{vorangestellte} regex muss m - n Mal vorkommen.\\[.25cm]
+	Für die regex `'y\{2,5\}'` gilt:\\
+	\begin{itemize}
+		\item \texttt{'yyy'} matcht
+		\item \texttt{'y'} matcht nicht, da es zu wenige Zeichen sind
+		\item \texttt{'yyyy'} matcht
+		\item \texttt{'yyyyyy'} matcht nicht, da es zu viele Zeichen sind
+	\end{itemize}
 \end{frame}
 
-\begin{frame}
-
-\texttt{\{m,n\}} Die vorangestellte regex muss m - n Mal vorkommen
-
-Für die regex \texttt{"y\{2,5\}"} gilt
-
-\begin{itemize}
-\tightlist
-\item
-  \texttt{"yyy"} matcht
-\item
-  \texttt{"y"} matcht nicht, da es zu wenige Zeichen sind
-\item
-  \texttt{"yyyy"} matcht
-\item
-  \texttt{"yyyyyy"} matcht nicht, da es zu viele Zeichen sind
-\end{itemize}
-
+\subsection{Spezielle Sequenzen}
+\begin{frame}{Spezielle Sequenzen}
+	Desweiteren gibt es noch spezielle Sequenzen, wie z. B.\\[.25cm]
+	\begin{itemize}
+		\item \texttt{\textbackslash{}d} für Unicode Ziffern, äquivalent für \texttt{[0-9]}
+		\item \texttt{\textbackslash{}D} ist das Gegenteil, alles was keine Unicode Ziffern sind
+		\item \texttt{\textbackslash{}s} für alle Whitespace Zeichen, das entspricht \texttt{'[\ \textbackslash{}t\textbackslash{}n\textbackslash{}r\textbackslash{}f\textbackslash{}v]'}
+		\item \texttt{\textbackslash{}S} entspricht wieder dem Gegenteil
+		\item \texttt{\textbackslash{}w} für alle Unicode Zeichen \texttt{'[a-zA-Z0-9\_]'}
+		\item \texttt{\textbackslash{}W} für alle Nicht-Unicode Zeichen
+		\item \texttt{[\^{}...]} entspricht allem, was nicht in den Klammern steht
+	\end{itemize}
 \end{frame}
 
-\begin{frame}
-
-Des weiteren gibt es noch spezielle Sequenzen, wie z. B.\\
-\texttt{\textbackslash{}d} für Unicode Ziffern, äquivalent für
-\texttt{{[}0-9{]}}\\
-\texttt{\textbackslash{}D} ist das Gegenteil, alles was keine Unicode
-Ziffern sind\\
-\texttt{\textbackslash{}s} für alle Whitespace Charaktere, das
-entspricht
-\texttt{"{[}\ \textbackslash{}\textbackslash{}t\textbackslash{}\textbackslash{}n\textbackslash{}\textbackslash{}r\textbackslash{}\textbackslash{}f\textbackslash{}\textbackslash{}v{]}"}\\
-\texttt{\textbackslash{}S} entspricht wieder dem Gegenteil\\
-\texttt{\textbackslash{}w} für alle Unicode Zeichen
-\texttt{"{[}a-zA-Z0-9\_{]}"}\\
-\texttt{\textbackslash{}W} für alle Nicht-Unicode Zeichen\\
-\texttt{{[}\^{}...{]}} entspricht allem, was nicht in den Klammern steht
-
+\section{Methoden}
+\begin{frame}[fragile]{Methoden}
+	\lstinputlisting[lastline=1]{resources/10_regex/methods.py}
+	Wandelt einen String in ein regular expression Objekt um.\\[.25cm]
+	\lstinputlisting[firstline=3, lastline=3]{resources/10_regex/methods.py}
+	Sucht in `string` nach dem Pattern `pattern`.\\[.25cm]
+	\lstinputlisting[firstline=5, lastline=5]{resources/10_regex/methods.py}
+	Sucht am Begin des Strings nach dem Pattern.
 \end{frame}
 
-\section{Methoden}\label{methoden}
-
-\begin{frame}[fragile]
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\BuiltInTok{compile}\NormalTok{(pattern, flags}\OperatorTok{=}\DecValTok{0}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-Wandelt einen String in ein regular expression Objekt um
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{search(pattern, string, flags}\OperatorTok{=}\DecValTok{0}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-Sucht in \texttt{string} nach dem Pattern \texttt{pattern}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{match(pattern, string, flags}\OperatorTok{=}\DecValTok{0}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-Sucht am Begin des Strings nach dem Pattern
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{fullmatch(pattern, string, flags}\OperatorTok{=}\DecValTok{0}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-Der komplette String und das Pattern müssen übereinstimmen.
-
+\begin{frame}[fragile]{Methoden}
+	\lstinputlisting[firstline=7, lastline=7]{resources/10_regex/methods.py}
+	Der komplette String und das Pattern müssen übereinstimmen.\\[.25cm]
+	\lstinputlisting[firstline=9, lastline=9]{resources/10_regex/methods.py}
+	Gibt eine Liste von Strings mit allen passenden Übereinstimmungen zurück.\\[.25cm]
+	\lstinputlisting[firstline=11, lastline=11]{resources/10_regex/methods.py}
+	Gibt einen Iterator, welcher `match` Objekte beinhaltet zurück\\[.25cm]
+	\textbf{\href{https://docs.python.org/3/library/re.html}{Die restlichen Funktionen können in den Docs gefunden werden.}}
 \end{frame}
 
-\begin{frame}[fragile]
-
-\begin{verbatim}
-findall(pattern, string, flags=0)
-\end{verbatim}
-
-Gibt eine Liste von Strings mit allen passenden Übereinstimmungen zurück
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{finditer(pattern, string, flags}\OperatorTok{=}\DecValTok{0}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-Gibt einen Iterator, welcher \texttt{match} Objekte beinhaltet zurück
-
-Die restlichen Funktionen können in den
-\href{https://docs.python.org/3/library/re.html}{Docs} gefunden werden.
-
+\section{reqular expression Objekt}
+\begin{frame}{reqular expression Objekt}
+	Ein solches Objekt hat im Großen und Ganzen die selben Methoden, jedoch ohne zusätzliches Pattern, da das Objekt an sich bereits ein Pattern enthält.
 \end{frame}
 
-\section{regular expression Objekt}\label{regular-expression-objekt}
-
-\begin{frame}
-
-Ein solches Objekt hat im Großen und Ganzen die selben Methoden, jedoch
-ohne zusaätzliches Pattern, da das Objekt an sich bereits ein Pattern
-enthält.
-
+\section{Match Objekt}
+\begin{frame}{Match Objekt}
+	\lstinputlisting[lastline=1]{resources/10_regex/match.py}
+	Gibt die Startposition des Patterns im String zurück.\\[.25cm]
+	\lstinputlisting[firstline=3, lastline=3]{resources/10_regex/match.py}
+	Gibt die Endposition des Patterns im String zurück.\\[.25cm]
+	\lstinputlisting[firstline=5, lastline=5]{resources/10_regex/match.py}
+	Gibt ein Tuple zurück \texttt{(m.start([group]), m.end([group]))}
 \end{frame}
 
-\section{Match Objekt}\label{match-objekt}
 
-\begin{frame}[fragile]
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{start([group])}
-\end{Highlighting}
-\end{Shaded}
-
-Gibt die Startposition des Patterns im String zurück
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{start([group])}
-\end{Highlighting}
-\end{Shaded}
-
-Gibt die Endposition des Patterns im String zurück
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{span([group])}
-\end{Highlighting}
-\end{Shaded}
-
-Gibt ein Tuple zurück \texttt{(m.start({[}group{]}),m.end({[}group{]}))}
-
-\end{frame}
-
+% nothing to do from here on
 \end{document}
