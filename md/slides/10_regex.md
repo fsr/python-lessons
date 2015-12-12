@@ -112,6 +112,9 @@ Für die regex `'a|b'` gilt:
 - `'b'` matcht
 - `'ab'` matcht nicht, da `'a|b'` mit [ab] gleichzusetzen ist
 
+
+## Zusammengesetzte Regex
+
 ---
 
 Regular Expressions setzen sich aus kleineren Regular Expressions zusammen.  
@@ -170,6 +173,9 @@ Für die regex `'y{2,5}'` gilt:
 - `'yyyy'` matcht
 - `'yyyyyy'` matcht nicht, da es zu viele Zeichen sind
 
+
+## Spezielle Sequenzen
+
 ---
 
 Desweiteren gibt es noch spezielle Sequenzen, wie z. B.  
@@ -179,7 +185,7 @@ Desweiteren gibt es noch spezielle Sequenzen, wie z. B.
 
 ---
 
-- `\s` für alle Whitespace Zeichen, das entspricht `'[ \\t\\n\\r\\f\\v]'`  
+- `\s` für alle Whitespace Zeichen, das entspricht `'[ \t\n\r\f\v]'`  
 - `\S` entspricht wieder dem Gegenteil  
 
 ---
@@ -260,4 +266,4 @@ Gibt die Endposition des Patterns im String zurück.
 ```python
 span([group])
 ```
-Gibt ein Tuple zurück `(m.start([group]),m.end([group]))`
+Gibt ein Tuple zurück `(m.start([group]), m.end([group]))`
