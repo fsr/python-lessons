@@ -2,7 +2,7 @@
 title: Dear regex, Merry Christmas!
 # number: 19
 lesson: 10
-status: drafty
+status: finished
 authors: [felixw, felix]
 ---
 
@@ -35,15 +35,17 @@ We will need those names for step 5.
 Find out, who was naughty and who was nice. Or at least you check if the child was nice all the time.  
 Check with an regex if the whishlist contains `'ich war immer lieb'` or `'ich war immer artig'`.
 
-### Step 4 - What has Santa have to buy?
+### Step 4 - What does Santa have to buy?
 
+Santa does't want to read whole letters. He wants to get a list of items to buy for every _good_ child.
 
-What do those kiddies wish for christmas?
-
-They follow a pattern (start with a `- `).[^finditer]
+The whishes follow a pattern (every new wish starts with a `- `).[^finditer]<sup>,</sup>[^groups]
 
 [^finditer]:
     In the previous steps we only needed a single match. Here we should use `finditer` to get an iterable of all available match objects.
+    
+[^groups]:
+    Do not forget: You can use groups to get the information out of them!
 
 ### Step 5 - Results for Santa!
 
@@ -58,3 +60,7 @@ Name von Kind 2: Wünsche
 Note that children that didn't write a correct wishlist are naughty in Santa's eyes, too!
 
 Dump your generated list also as a text file that can be sent to Santa later.
+
+### Done!
+
+Merry Christmas!
