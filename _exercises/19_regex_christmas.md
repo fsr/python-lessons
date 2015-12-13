@@ -1,6 +1,6 @@
 ---
 title: Dear regex, Merry Christmas!
-number: 19
+# number: 19
 lesson: 10
 status: drafty
 authors: felixw
@@ -18,12 +18,15 @@ First of all, your script should get the [christmas wishes](../misc/christmas.js
 
 Then, load the data, using the `json` module[^using] to have the data in a python-readable format. Now, analyze the the data you got. Does it follow a pattern?
 
+[^using]:
+    Have a look at the [docs](https://docs.python.org/3.5/library/json.html?highlight=json.loads) if you need a little refreshment in terms of _"How to read json data"_.
+
 ### Step 2 - Sort out the Spam.
 
 Now there are some kiddies who were not able to write a good wish letter.
 
 
-### Step 3 - `He's gonna find out who's naughty and nice...`
+### Step 3 - _"He know's if you've been bad or good..."_
 
 Find out, who was naughty and who was nice.
 
