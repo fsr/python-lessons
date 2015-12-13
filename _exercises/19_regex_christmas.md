@@ -37,7 +37,10 @@ Check with an regex if the whishlist contains `'ich war immer lieb'` or `'ich wa
 
 ### Step 4 - What does Santa have to buy?
 
-Santa does't want to read whole letters. He wants to get a list of items to buy for every _good_ child.
+Santa doesn't want to read whole letters. He wants to get a list of items to buy for every _good_ child.[^dict]
+
+[^dict]:
+    So start to build a new dict with an entry for every good child.
 
 The whishes follow a pattern (every new wish starts with a `- `).[^finditer]<sup>,</sup>[^groups]
 
