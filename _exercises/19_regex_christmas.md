@@ -1,5 +1,5 @@
 ---
-title: Dear Regex, Merry Christmas!
+title: Dear regex, Merry Christmas!
 number: 19
 lesson: 10
 status: drafty
@@ -43,4 +43,4 @@ Name von Kind 2: Wünsche
 ...
 ```
 
-Note that childrens that didn't write a correct wishlist are naughty in Santa's eyes, too!
+Note that children that didn't write a correct wishlist are naughty in Santa's eyes, too!
