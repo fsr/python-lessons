@@ -48,7 +48,7 @@ slides:
     number: 10
     name: Regex
     url: https://ifsr.de/kurs-materialien/python/10_regex.pdf
-    published: False
+    published: True
   -
     number: 11
     name: Web server

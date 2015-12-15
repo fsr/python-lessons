@@ -1,6 +1,6 @@
 ---
 title: Dear regex, Merry Christmas!
-# number: 19
+number: 19
 lesson: 10
 status: finished
 authors: [felixw, felix]
@@ -46,7 +46,7 @@ The whishes follow a pattern (every new wish starts with a `- `).[^finditer]<sup
 
 [^finditer]:
     In the previous steps we only needed a single match. Here we should use `finditer` to get an iterable of all available match objects.
-    
+
 [^groups]:
     Do not forget: You can use groups to get the information out of them!
 
