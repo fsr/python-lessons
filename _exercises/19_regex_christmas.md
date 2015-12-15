@@ -2,7 +2,7 @@
 title: Dear regex, Merry Christmas!
 number: 19
 lesson: 10
-status: finished
+status: reviewed
 authors: [felixw, felix]
 ---
 
