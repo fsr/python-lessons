@@ -66,4 +66,4 @@ Dump your generated list also as a text file that can be sent to Santa later.
 
 ### Done!
 
-Merry Christmas!
+Merry Christmas! :santa:
