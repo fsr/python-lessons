@@ -15,7 +15,7 @@ First of all, your script should get the [christmas wishes](../misc/christmas.js
 The full URL is `http://fsr.github.io/python-lessons/misc/christmas.json`.
 
 [^urllib]:
-    Remember to `import urllib.request` and have a look at our last lesson regarding the URL library. Hint: use something like `urllib.request.urlopen()` with a context manager and `.read()` to get the data.
+    Remember to `import urllib.request` and have a look at our last lesson regarding the URL library. Hint: use something like `urllib.request.urlopen()` with `.read().decode("UTF-8")` to get the data.
 
 Then, parse the data, using the `json` module[^using] to have the data in a python-readable format. Now, analyze the the data you got. Does it follow a pattern?
 
