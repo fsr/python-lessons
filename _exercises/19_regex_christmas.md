@@ -33,7 +33,7 @@ We will need those names for step 5.
 ### Step 3 - _"He know's if you've been bad or good..."_
 
 Find out, who was naughty and who was nice. Or at least you check if the child was nice all the time.  
-Check with an regex if the whishlist contains `'ich war immer lieb'` or `'ich war immer artig'`.
+Check with an regex if the whishlist contains `'immer lieb'` or `'immer artig'` or `'immer brav'`.
 
 ### Step 4 - What does Santa have to buy?
 
