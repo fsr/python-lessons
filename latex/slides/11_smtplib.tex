@@ -1,0 +1,51 @@
+
+%%	Getting started:
+%%	1) Copy this file and name the copy it like the topic it covers
+%%	2) In the following make sure to modify the copy, NOT THE ORIGINAL
+%%	3) Look for the points marked with "TODO" and complete them
+%%	4) compile this file
+
+\input{../templates/slides_template}	% nothing to do here
+% TODO change "course_info" to the name of your actual …_info(.tex)
+\input{course_info} % TODO modify this if you have not already done so
+
+% meta-information
+\newcommand{\topic}{
+	% TODO fill in the actual topic
+	Mails in Python senden
+}
+
+% nothing to do here
+\title{\topic}
+\supertitle{\course}
+\date{\today}
+
+% the actual document
+\begin{document}
+
+\maketitle
+
+\begin{frame}
+	\tableofcontents
+\end{frame}
+
+\section{Grundlagen: Mails senden}
+\subsection{Das Modul \texttt{smtplib}}
+\begin{frame}[fragile]{Das Modul \texttt{smtplib}}
+	Das Modul \texttt{smtplib} definiert eine SMTP\textbf{*}-Client Session, die genutzt werden kann, um von jedem beliebigen, internetf\"ahigen Ger\"at E-Mails zu verschicken. \\[1cm]
+	
+	\textbf{*}\textit{SMTP} steht für \textbf{S}imple \textbf{M}ail \textbf{T}ransfer
+	\textbf{P}rotocol und ist das Standard-Protokoll zum E-Mail Versand.
+\end{frame}
+
+
+\section{Komplexere Mails senden}
+\subsection{Das Modul \texttt{email}}
+\begin{frame}[fragile]{Das Modul \texttt{email}}
+	%Zeug über email.mime.MIMEText?
+	Insert stuff here.
+\end{frame}
+
+
+% nothing to do from here on
+\end{document}
