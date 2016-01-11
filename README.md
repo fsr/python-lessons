@@ -36,4 +36,4 @@ Almost every task is linked to a lesson. The corresponding PDF is linked automat
 Solutions for all tasks on this page can be found at [this repository](https://github.com/Feliix42/python-solutions).
 
 
-These lessons are created and maintained by @h4llow3En, @justusadam and @feliix42.
+These lessons are created and maintained by [@h4llow3En](https://github.com/h4llow3En), [@justusadam](https://github.com/justusadam) and [@feliix42](https://github.com/Feliix42).
