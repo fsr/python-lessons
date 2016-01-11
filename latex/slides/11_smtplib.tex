@@ -48,10 +48,28 @@
 \section{Komplexere Mails senden}
 \subsection{Das Modul \texttt{email}}
 \begin{frame}[fragile]{Das Modul \texttt{email}}
-	%Zeug über email.mime.MIMEText?
-	Insert stuff here.
+	Um mehr Möglichkeiten zur Gestaltung der E-Mail zu haben, lohnt sich die Verwendung des Moduls \texttt{email}.\\[.5cm]
+	Mit \texttt{email.mime} lassen sich Emails individuell bauen und zusammensetzen. Außerdem kann man mehrteilige Mails und Mails mit Anhängen (z.B. Bildern) erstellen.
 \end{frame}
 
+\begin{frame}[fragile]{Die Klasse \texttt{MIMEText}}
+	Die Klasse \texttt{email.mime.text.MIMEText()} erstellt ein MIME Objekt, welches hautps\"achlich aus Text besteht und einfach dem SMTP-Objekt \"ubergeben werden kann: \\ \ \\
+	\lstinputlisting{resources/11_sendmail/defs.py} \ \\
+	
+	\begin{description}
+		\item[\_text] Ein String, der den Inhalt der Nachricht enth\"alt.
+		\item[\_subtype] Der Untertyp des Objekts, per default \texttt{plain}
+		\item[charset] Der Zeichensatz, der zur Kodierung der Zeichen verwendet werden soll. Standardm\"a\ss{}ig \texttt{us-ascii} oder \texttt{utf8}, abh\"angig von dem eingegebenen Text.
+	\end{description}
+\end{frame}
+
+\begin{frame}[fragile]{Die Meta-Felder}
+	Wenn das \texttt{MIMEText} Objekt instanziiert ist, muss dieses mit weiteren Informationen erg\"anzt werden:
+\end{frame}
+
+\begin{frame}{Das fertige Skript}
+	\lstinputlisting[firstline=4,lastline=20]{resources/11_sendmail/mailer.py}
+\end{frame}
 
 % nothing to do from here on
 \end{document}
