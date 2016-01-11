@@ -65,10 +65,17 @@
 
 \begin{frame}[fragile]{Die Meta-Felder}
 	Wenn das \texttt{MIMEText} Objekt instanziiert ist, muss dieses mit weiteren Informationen erg\"anzt werden:
+	\lstinputlisting[firstline=10,lastline=15]{resources/11_sendmail/mailer.py}
+	\begin{description}
+		\item[From] Daten des Absenders (nur Mail oder Name und Mail)
+		\item[To] Daten des Empfängers (nur Mail oder Name und Mail)
+		\item[Subject] Betreff der Mail
+	\end{description}
+	Die Message l\"asst sich au\ss{}erdem noch um einen \texttt{Cc} oder einen \texttt{Bcc} erweitern.
 \end{frame}
 
 \begin{frame}{Das fertige Skript}
-	\lstinputlisting[firstline=4,lastline=20]{resources/11_sendmail/mailer.py}
+	\lstinputlisting[firstline=4,lastline=17]{resources/11_sendmail/mailer.py}
 \end{frame}
 
 % nothing to do from here on

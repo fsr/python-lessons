@@ -8,13 +8,10 @@ def buildmessage():
     message = MIMEText('Text der E-Mail.')
 
     # set the sender of your mail
-    message['From'] = '{nam} <{mail}>'.format(nam='Name des Absenders',
-                                              mail='Mail des Absenders')
+    message['From'] = 'Sender name <sender@example.com>'
     # set the receiver of your mail
-    message['To'] = '{nam} <{mail}>'.format(nam='Name des Empfaengers',
-                                            mail='Mail des Empfaengers')
-    # you might wanna set a BCC?
-    # message['Bcc'] = 'root <bcc-receiver@mail.com>'
+    message['To'] = 'Receiver name <receiver@example.com>'
+
     message['Subject'] = 'Betreff der E-Mail'
 
     return message
