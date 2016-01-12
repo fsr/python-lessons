@@ -44,17 +44,17 @@
 	\textbf{P}rotocol und ist das Standard-Protokoll zum E-Mail Versand.
 \end{frame}
 
-\begin{frame}[fragile]{Verbundung zum Server}
+\begin{frame}[fragile]{Verbindung zum Server}
 	Die smtplib kann sich zu einem SMTP-Server verbinden\\[.5cm]
 	\lstinputlisting[firstline=3, lastline=3]{resources/11_sendmail/defs.py}
 	
 	\ \\[.25cm]
-	Der Server kann zum einen als einheitlicher \texttt{String} (inkl. Port) oder als \texttt{host} und \texttt{port} angeben werden
+	Der Server kann zum einen als einheitlicher \texttt{String} (inkl. Port) oder als \texttt{host} und \texttt{port} angeben werden.
 \end{frame}
 
 \begin{frame}[fragile]{Login auf dem Server}
-	Zum einen muss zuerst eine sichere \texttt{tls}-Verbindung mithilfe von der Methode \texttt{starttls()} hergestellt werden.\\[.25cm]
-	Der eigentliche Login erfolgt durch:\\
+	Zur heutigen Zeit arbeiten die meisten SMTP-Server mit \texttt{TLS}, um eine sichere Verbindung zu gewährleisten. Diese muss mithilfe von der Methode \texttt{starttls()} hergestellt werden.\\[.25cm]
+	Der eigentliche Login erfolgt im Anschluss durch:\\
 	\lstinputlisting[firstline=5, lastline=5]{resources/11_sendmail/defs.py}
 	\ \\[.25cm]
 	Der Parameter \texttt{initial\_response\_ok} kann in unserem Fall vernachlässigt werden.
@@ -64,12 +64,13 @@
 	Das tatsächliche Versenden der Mail funktioniert dann mit folgender Methode:\\[.25cm]
 	\lstinputlisting[firstline=7]{resources/11_sendmail/defs.py}
 	\ \\[.25cm]
-	Jedoch l\"asst sich das ganze auch mit einem \texttt{MIME}-Objekt vereinfachen, auf das später noch eingegangen wird.
+	Jedoch l\"asst sich das ganze auch mit einem \texttt{MIME}-Objekt vereinfachen, auf das später noch eingegangen wird. \\
+	Dieses wird mit \texttt{send\_message()} versendet.
 \end{frame}
 
 \begin{frame}{Schließen der Verbindung}
 	Zum Schluss darf nicht vergessen werden, die Verbindung zum SMTP-Server wieder zu schließen.\\
-	Dies geschieht mit der methode \texttt{quit()} oder man stellt die Verbindung mithilfe eines Filehandlers her.
+	Dies geschieht mit der Methode \texttt{quit()} oder man stellt die Verbindung mithilfe eines \textit{Filehandlers} her.
 \end{frame}
 
 \begin{frame}[fragile]{Die vollst\"andige Serverkommunikation}
