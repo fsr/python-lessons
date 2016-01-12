@@ -19,14 +19,14 @@ def buildmessage():
 
 def main():
     message = buildmessage()
-    server = 'Servername' + ':' + 'Port'
+    server = 'Servername'
+    port = 587  # This is the default Port of an smtp server
 
     try:
-        smtpObj = smtplib.SMTP(server)
-        smtpObj.starttls()
-        smtpObj.login('user', 'pass')
-        smtpObj.send_message(message)
-        smtpObj.quit()
+        with smtplib.SMTP(host=server, port=port) as smtpObj:
+            smtpObj.starttls()
+            smtpObj.login('user', 'pass')
+            smtpObj.send_message(message)
     except SMTPException:
         print("Error: unable to send email.")
 
