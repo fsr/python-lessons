@@ -18,7 +18,7 @@ von jedem beliebigen, internetfähigen Gerät E-Mails zu verschicken.
 
 ---
 
-### Verbundung zum Server
+### Verbindung zum Server
 
 
 Die smtplib kann sich zu
@@ -30,16 +30,15 @@ smtplib.SMTP(host=’ ’, port=0, local_hostname=None,
 ```
 
 Der Server kann zum einen als einheitlicher `String` (inkl. Port) oder
-als `host` und `port` angeben werden
+als `host` und `port` angeben werden.
 
 ---
 
 ### Login auf dem Server
 
 
-Zum einen muss zuerst eine sichere `tls`-Verbindung mithilfe von der Methode `starttls()`
-hergestellt werden.  
-Der eigentliche Login erfolgt durch:  
+Zur heutigen Zeit arbeiten die meisten SMTP-Server mit `TLS`, um eine sichere Verbindung zu gewährleisten. Diese muss mithilfe von der Methode `starttls()` hergestellt werden.  
+Der eigentliche Login erfolgt im Anschluss durch:    
 
 ```python
 SMTP.login(user, password, ∗, initial_response_ok=True)
@@ -60,16 +59,16 @@ SMTP.sendmail(from_addr, to_addrs, msg, mail_options=[],
               rcpt_options=[])
 ```
 
-Dies lässt sich mit einem `MIME`-Objekt vereinfachen,
-auf das später noch eingegangen wird.
+Jedoch lässt sich das ganze auch mit einem `MIME`-Objekt vereinfachen, auf das später noch eingegangen wird.  
+Dieses wird mit `send_message()` versendet.
 
 ---
 
 ### Schließen der Verbindung
 
 Zum Schluss darf nicht vergessen werden, die Verbindung zum SMTP-Server wieder zu schließen.  
-Dies geschieht mit der methode `quit()` oder man stellt die Verbindung
-mithilfe eines Filehandlers her.
+Dies geschieht mit der Methode `quit()` oder man stellt die Verbindung
+mithilfe eines `Filehandlers` her.
 
 
 #Komplexere Mails senden
