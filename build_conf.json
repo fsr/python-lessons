@@ -12,9 +12,10 @@
                 "05_decorators.tex",
                 "06_comprehensions.tex",
                 "07_functions_advanced.tex",
-        		"08_process.tex",
-        		"09_web_client.tex",
-                "10_regex.tex"
+                "08_process.tex",
+        		    "09_web_client.tex",
+                "10_regex.tex",
+                "11_smtplib.tex"
             ]
         },
         "html": {
