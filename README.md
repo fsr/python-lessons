@@ -8,7 +8,7 @@ Exercises to go along with the courses can be found [on GitHub pages](http://fsr
 
 The slides in the `md` folder need to be compiled with **reveal.js**.
 
-Therefore, `pandoc` has to be installed on your computer. Mac users can simply install it with *homebrew*:
+Therefore, `pandoc` has to be installed on your computer. You can find these Instructions [here](http://pandoc.org/installing.html). Mac users can simply install it with *homebrew*:
 `brew install pandoc`
 
 
