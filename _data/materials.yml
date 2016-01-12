@@ -51,6 +51,6 @@ slides:
     published: True
   -
     number: 11
-    name: Web server
-    url: https://ifsr.de/kurs-materialien/python/11_web_server.pdf
-    published: False
+    name: Mails in Python
+    url: https://ifsr.de/kurs-materialien/python/11_smtplib.pdf
+    published: True
