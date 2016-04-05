@@ -14,8 +14,10 @@
 \maketitle
 
 \begin{frame}{Gliederung}
-	\setbeamertemplate{section in toc}[sections numbered]
-	\tableofcontents
+	\begin{multicols}{2}
+		\setbeamertemplate{section in toc}[sections numbered]
+		\tableofcontents
+	\end{multicols}
 \end{frame}
 
 % --------------------------- Über den Kurs -----------------------------------
@@ -169,7 +171,7 @@
 
 
 % ------------------------- Strings - Verknüpfen -------------------------------
-\subsubsection{Verknüpfen}
+\subsection{Verknüpfen}
 \begin{frame}[fragile]{Strings - Verknüpfen}
 	\begin{itemize}
 	    \item Strings können durch Konkatenation verknüpft werden \\
