@@ -1,162 +1,218 @@
-\input{../templates/slides_template}	% nothing to do here
-% TODO change "course_info" to the name of your actual …_info(.tex)
-\input{../templates/course_info} % TODO modify this if you have not already done so
-\usepackage[utf8]{inputenc}
+% The Slide Definitions
+\input{../templates/course_definitions}
 
-% meta-information
-\newcommand{\topic}{
-	% TODO fill in the actual topic
-	Builtin Datenstrukturen
-}
+% Author and Course information
+\input{../templates/course_information}
 
-% nothing to do here
-\title{\topic}
-\supertitle{\course}
+% Presentation title
+\title{Builtin Datenstrukturen}
 \date{\today}
 
-% the actual document
+
 \begin{document}
 
 \maketitle
 
-\begin{frame}
+\begin{frame}{Gliederung}
+	\setbeamertemplate{section in toc}[sections numbered]
 	\tableofcontents
 \end{frame}
 
-\section{exceptions}
+
+% #############################################################################
+% ------------------------------- 1. Exceptions -------------------------------
+% #############################################################################
+\section{Exceptions}
+
 \begin{frame}{Exception Handling}
-\begin{itemize}
-	\item Alle Exceptions erben von \texttt{Exception}
-	\item Catching mit try/except
-	\item \texttt{finally} um Code auszuf\"uhren, der \textit{unbedingt} laufen muss, egal ob eine Exception vorliegt oder nicht
-\end{itemize}
-\end{frame}
-\begin{frame}{Exception Handling}
-\lstinputlisting{resources/03_builtins/exceptions.py}
+	\begin{itemize}
+		\item Alle Exceptions erben von \alert{\texttt{Exception}}
+		\item Catching mit try/except
+		\item \alert{\texttt{finally}} um Code auszuführen, der \textit{unbedingt} laufen muss, egal ob eine Exception vorliegt oder nicht
+	\end{itemize}
 \end{frame}
 
-\section{booleans}
+\begin{frame}{Exception Handling - Beispiel}
+    \lstinputlisting{resources/03_builtins/exceptions.py}
+\end{frame}
+
+
+% #############################################################################
+% -------------------------------- 2. Booleans --------------------------------
+% #############################################################################
+\section{Booleans}
+
 \begin{frame}{Boolsche Werte}
-\begin{itemize}
-	\item \textit{type} ist \texttt{bool}
-	\item M\"ogliche Werte: \texttt{True} oder \texttt{False}
-	\item Operationen sind \textit{und}, \textit{oder}, \textit{nicht} (\texttt{and, or, not})
-\end{itemize}
+	\begin{itemize}
+		\item \textit{type} ist \alert{\texttt{bool}}
+		\item Mögliche Werte: \texttt{True} oder \texttt{False}
+		\item Operationen sind \textit{und}, \textit{oder}, \textit{nicht} (\texttt{and, or, not})
+	\end{itemize}
 \end{frame}
 
-\section{list}
-\begin{frame}{list}
 
-\begin{itemize}
-	\item enth\"alt variable Anzahl von Objekten
-	\item eine Liste kann beliebig viele verschiedene Datentypen enthalten (z.B. \texttt{bool} und \texttt{list})
-	\item Auch Listen k\"onnen in Listen gespeichert werden!
-	\item Listenobjekte haben eine feste Reihenfolge (\textit{first in, last out})
-	\item optimiert f\"ur einseitige Benutzung wie z.B. Queue (\texttt{append} und \texttt{pop})
-\end{itemize}
-\end{frame}
+% #############################################################################
+% --------------------------------- 3. Lists ----------------------------------
+% #############################################################################
+\section{Lists}
+
 \begin{frame}{list}
+	\begin{itemize}
+		\item enthält variable Anzahl von Objekten
+		\item eine Liste kann beliebig viele verschiedene Datentypen enthalten (z.B. \texttt{bool} und \texttt{list})
+		\item Auch Listen können in Listen gespeichert werden!
+		\item Listenobjekte haben eine feste Reihenfolge (\textit{first in, last out})
+		\item optimiert für einseitige Benutzung wie z.B. Queue (\alert{\texttt{append}} und \alert{\texttt{pop}})
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{list - Beispiel}
 	\lstinputlisting{resources/03_builtins/list.py}
 \end{frame}
 
-\section{tuple}
+
+% #############################################################################
+% --------------------------------- 4. Tuples ---------------------------------
+% #############################################################################
+\section{Tuples}
+
 \begin{frame}{tuple}
-\begin{itemize}
-	\item Gruppiert Daten
-	\item kann nicht mehr ver\"andert werden, sobald es erstellt wurde
-	\item Funktionen mit mehreren R\"uckgabewerten geben ein Tupel zur\"uck
-\end{itemize}
+	\begin{itemize}
+		\item Gruppiert Daten
+		\item kann nicht mehr verändert werden, sobald es erstellt wurde
+		\item Funktionen mit mehreren Rückgabewerten geben ein Tupel zurück
+	\end{itemize}
 \end{frame}
-\begin{frame}{tuple}
+
+\begin{frame}{tuple - Beispiel}
 	\lstinputlisting{resources/03_builtins/tuple.py}
 \end{frame}
 
 
-\section{dict}
+% #############################################################################
+% --------------------------------- 5. Dicts ----------------------------------
+% #############################################################################
+\section{Dicts}
+
 \begin{frame}{dict}
-\begin{itemize}
-	\item einfache HashMap
-	\item ungeordnet
-	\item jeder hashbare Typ kann ein Key sein
-	\item jedem Key ist dann ein Value zugeordnet
-\end{itemize}
-\end{frame}
-\begin{frame}{dict}
-\lstinputlisting{resources/03_builtins/dict.py}
+	\begin{itemize}
+		\item einfache Hashmap
+		\item ungeordnet
+		\item jeder hashbare Typ kann ein Key sein
+		\item jedem Key ist dann ein Value zugeordnet
+	\end{itemize}
 \end{frame}
 
-\section{set/frozenset}
-\begin{frame}{set/frozenset}
-\begin{itemize}
-	\item kann nur hashbare Eintr\"age enthalten
-	\item \texttt{set} selbst ist nicht hashbar
-	\item \texttt{frozensets} sind hashbar, jedoch nicht mehr ver\"anderbar
-	\item enth\"alt jedes Element nur einmal
-	\item schnellere \"Uberpr\"ufung mit \texttt{in} (pr\"uft, ob Element enthalten ist)
-	\item M\"ogliche Operationen: \texttt{superset()}, \texttt{subset()}, \texttt{isdisjoint()}, \texttt{difference()}, \texttt{<, >, disdisjoint(), -}
-	\item ungeordnet
-	\item (frozen)sets k\"onnen frozensets enthalten
-\end{itemize}
+\begin{frame}{dict - Beispiel}
+    \lstinputlisting[lastline=10]{resources/03_builtins/dict.py}
 \end{frame}
+
+\begin{frame}{dict - Beispiel}
+    \lstinputlisting[firstline=11]{resources/03_builtins/dict.py}
+\end{frame}
+
+
+% #############################################################################
+% ----------------------------- 6. Set/Frozenset ------------------------------
+% #############################################################################
+\section{Set/Frozenset}
+
 \begin{frame}{set/frozenset}
+	\begin{itemize}
+		\item kann nur hashbare Einträge enthalten
+		\item \texttt{set} selbst ist nicht hashbar
+		\item \texttt{frozensets} sind hashbar, jedoch nicht mehr veränderbar
+		\item enthält jedes Element nur einmal
+		\item schnellere Überprüfung mit \alert{\texttt{in}} (prüft, ob Element enthalten ist)
+		\item Mögliche Operationen: \alert{\texttt{superset()}}, \alert{\texttt{subset()}}, \alert{\texttt{isdisjoint()}}, \alert{\texttt{difference()}}, \alert{\texttt{<}}, \alert{\texttt{>}}, \alert{\texttt{disdisjoint()}}, \alert{\texttt{-}}
+		\item ungeordnet
+		\item (frozen)sets können frozensets enthalten (da sie einen festen Hashwert haben)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{set/frozenset - Beispiel}
 	\lstinputlisting{resources/03_builtins/set.py}
 \end{frame}
 
-\section{iteraton}
+
+% #############################################################################
+% ------------------------------- 7. Iterations -------------------------------
+% #############################################################################
+\section{Iterations}
+
 \begin{frame}{Iteration}
-\begin{itemize}
-	\item nur foreach
-	\item f\"ur Iterationen \"uber Integer gibt es \texttt{range([start], stop, step=1)}
-	\item um Iteratoren zu kombinieren kann man \texttt{zip(iterator\_1, iterator\_2, ..., iterator\_n)} verwenden
-	\item alles mit einer \texttt{\_\_iter\_\_} Methode ist iterierbar
-	% TODO: stateful Iterator erklaeren oder entfernen
-	\item \texttt{iter(iterable)} konstruiert einen \textit{stateful iterator}
-\end{itemize}
-\end{frame}
-\begin{frame}{Iteration}
-	% TODO am Ende noch mal gucken, ob die Zeilen passen!
-	\lstinputlisting[lastline=28]{resources/03_builtins/iterate.py}
-\end{frame}
-\begin{frame}{Iteration}
-	\lstinputlisting[firstline=30]{resources/03_builtins/iterate.py}
+	\begin{itemize}
+		\item nur foreach
+		\item für Iterationen über Integer gibt es \\ \hspace{0.5cm} \texttt{range([start], stop, step=1)}
+		\item um Iteratoren zu kombinieren kann man \\ \hspace{0.5cm} \texttt{zip(iterator\_1, iterator\_2, ..., iterator\_n)} verwenden
+		\item alles mit einer \alert{\texttt{\_\_iter\_\_}} Methode ist iterierbar
+		% TODO: stateful Iterator erklaeren oder entfernen
+		\item \texttt{iter(iterable)} konstruiert einen \textit{stateful iterator}
+	\end{itemize}
 \end{frame}
 
-\section{unpacking}
-\begin{frame}{Unpacking}
-\begin{itemize}
-	\item einfaches Aufl\"osen von Listen und Tupeln in einzelne Variablen
-	\item n\"utzlich in \texttt{for}-Schleifen
-\end{itemize}
+\begin{frame}{Iteration - Beispiel}
+	\lstinputlisting[lastline=15]{resources/03_builtins/iterate.py}
 \end{frame}
-\begin{frame}{unpacking}
+
+\begin{frame}{Iteration - Beispiel}
+	\lstinputlisting[firstline=18]{resources/03_builtins/iterate.py}
+\end{frame}
+
+
+% #############################################################################
+% ------------------------------- 8. Unpacking --------------------------------
+% #############################################################################
+\section{Unpacking}
+
+\begin{frame}{Unpacking}
+	\begin{itemize}
+		\item einfaches Auflösen von Listen und Tupeln in einzelne Variablen
+		\item nützlich in \alert{\texttt{for}}-Schleifen
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Unpacking - Beispiel}
 	\lstinputlisting{resources/03_builtins/unpacking.py}
 \end{frame}
 
+
+% #############################################################################
+% ----------------------------- 9. File Handling ------------------------------
+% #############################################################################
 \section{File Handling}
+
 \begin{frame}{File Handling}
-\begin{itemize}
-	\item Dateien k\"onnen mit \texttt{open(filename, mode="r")} ge\"offnet werden
-	\item \textit{File Handler} sind Iteratoren \"uber die Zeilen einer Datei
-	\item \textbf{Wichtig:} File Handler m\"ussen auch wieder geschlossen werden
-	\item \texttt{r} steht f\"ur Lesezugriff,  \texttt{w} f\"ur Schreibzugriff
-\end{itemize}
-\textbf{Beachte:} Wird eine Datei mit Schreibzugriff ge\"offnet, wird sie geleert! Also wichtige Inhalte vorher auslesen.
+	\begin{itemize}
+		\item Dateien können mit \alert{\texttt{open(filename, mode="r")}} geöffnet werden
+		\item \textit{File Handler} sind Iteratoren über die Zeilen einer Datei
+		\item \textbf{Wichtig:} File Handler müssen auch wieder geschlossen werden
+		\item \texttt{r} steht für Lesezugriff,  \texttt{w} für Schreibzugriff
+	\end{itemize}
+	\textbf{Beachte:} Wird eine Datei mit Schreibzugriff geöffnet, wird sie geleert! Also wichtige Inhalte vorher auslesen.
 \end{frame}
-\begin{frame}{File Handling}
+
+\begin{frame}{File Handling - Beispiel}
 	\lstinputlisting{resources/03_builtins/file.py}
 \end{frame}
 
+
+% #############################################################################
+% ---------------------------- 10. Context Manager ----------------------------
+% #############################################################################
 \section{Context Manager}
+
 \begin{frame}{Context Manager}
-\begin{itemize}
-	\item Aufruf mit \texttt{with}
-	\item kann jedes Objekt sein, welches eine \texttt{\_\_enter\_\_} und \texttt{\_\_exit\_\_} Methode hat
-	\item praktisch beim \textit{File Handling}
-\end{itemize}
+	\begin{itemize}
+		\item Aufruf mit \alert{\texttt{with}}
+		\item kann jedes Objekt sein, welches eine \texttt{\_\_enter\_\_} und \texttt{\_\_exit\_\_} Methode hat
+		\item praktisch beim \textit{File Handling}
+	\end{itemize}
 \end{frame}
+
 \begin{frame}{Context Manager}
 	\lstinputlisting{resources/03_builtins/cm.py}
 \end{frame}
 
-% nothing to do from here on
+
 \end{document}
