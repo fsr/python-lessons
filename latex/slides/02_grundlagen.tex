@@ -1,36 +1,23 @@
+% The Slide Definitions
+\input{../templates/course_definitions}
 
-%%	Getting started:
-%%	1) Copy this file and name the copy it like the topic it covers
-%%	2) In the following make sure to modify the copy, NOT THE ORIGINAL
-%%	3) Look for the points marked with "TODO" and complete them
-%%	4) compile this file
+% Author and Course information
+\input{../templates/course_information}
 
-\input{../templates/slides_template}	% nothing to do here
-% TODO change "course_info" to the name of your actual …_info(.tex)
-\input{../templates/course_info} % TODO modify this if you have not already done so
-\usepackage{comment}
-
-% meta-information
-\newcommand{\topic}{
-	% TODO fill in the actual topic
-	Grundlagen von Python
-}
-
-% nothing to do here
-\title{\topic}
-\supertitle{\course}
+% Presentation title
+\title{Grundlagen}
 \date{\today}
 
-% the actual document
+
 \begin{document}
 
 \maketitle
 
-\begin{frame}
+\begin{frame}{Gliederung}
+	\setbeamertemplate{section in toc}[sections numbered]
 	\tableofcontents
 \end{frame}
 
-%% Für einzelne Zeilen Code \codeline{} vewenden (ist mit Markup) für einzelne Worte \texttt{} verwenden (auch in Tabellen!)
 
 
 \section{Scriptcharakter}
@@ -43,8 +30,8 @@
 \end{frame}
 
 \begin{frame}[fragile]{Scriptcharakter}
-	\lstinputlisting{resources/02_grundlagen/boilerplate.py}
-	Soll das entsprechende Modul ausführbar sein und nicht nur als Bibliothek dienen, definiert man üblicherweise eine main-Funktion.\\
+	\lstinputlisting{resources/02_grundlagen/boilerplate.py} \ \\[.5cm]
+	Soll das entsprechende Modul ausführbar sein und nicht nur als Bibliothek dienen, definiert man üblicherweise eine \alert{main}-Funktion.\\
 	Zus\"atzlich f\"ugt man am Ende des Moduls die Boilerplate ein.\\
 \end{frame}
 
@@ -73,7 +60,11 @@
 \subsection{Das Scoping Problem}
 \begin{frame}[fragile]{Das Problem mit dem Scope}
 	\lstinputlisting{resources/02_grundlagen/scope.py}
-	\textit{Das Problem:} Variablen sind zwar nach innen sichtbar, werden aber beim Reassignment innerhalb der Funktion neu angelegt und verschwinden so aus dem Scope.
+\end{frame}
+
+\begin{frame}{Das Problem mit dem Scope}
+	\textbf{\alert{Das Problem:}} \\[.25cm]
+	Variablen sind zwar nach innen sichtbar, werden aber beim Reassignment innerhalb der Funktion neu angelegt und verschwinden so aus dem Scope.
 \end{frame}
 
 \begin{frame}[fragile]{Die Lösung}
@@ -86,16 +77,16 @@
 		\item Python ist auch fundamental objektorientiert
 		\item Alles in Python ist ein Objekt
 		\item Selbst die Datentypen \texttt{int}, \texttt{bool}, \texttt{str} und \texttt{type} sind Instanzen von \texttt{object} und haben folglich Methoden und Attribute
-		\item Der Typ jedes Wertes und jeder Variable lässt sich mit \texttt{type()} ermitteln
+		\item Der Typ jedes Wertes und jeder Variable lässt sich mit \alert{\texttt{type()}} ermitteln
 	\end{itemize}
 \end{frame}
 
 \section{Klassen und Attribute}
-% TODO: Dieser Frame muss noch mal überarbeitet werden
+% TODO: Dieser Frame muss noch mal überarbeitet werden!
 \begin{frame}[fragile]{Klassen und Attribute}
 	\begin{itemize}
-		\item Typen in Python werden ausgedrückt durch Klassen (Keyword \texttt{class})
-		\item Klassen dienen als Vorlage bzw. Schablone -> Objekte sind dann Instanzen davon
+		\item Typen in Python werden ausgedrückt durch Klassen (Keyword \alert{\texttt{class}})
+		\item Klassen dienen als Vorlage bzw. Schablone $\rightarrow$ Objekte sind dann Instanzen davon
 		\item Die Besonderheit: alle Variablen und Werte sind Instanzen von \texttt{object}
 	\end{itemize}
 	\texttt{object} und alle Typen selbst sind widerum Objekte, genauer gesagt Instanzen vom Typ \texttt{type} und \texttt{type} widerum ist eine Subklasse von \texttt{object}.
@@ -116,7 +107,7 @@
 \begin{frame}[fragile]{Klassen und Attribute}
 	\begin{itemize}
 		\item Zugriff auf Attribute über Punktnotation (wie in Ruby/Java)
-		\item Attribute werden wie Variablen mithilfe von \texttt{=} gesetzt
+		\item Attribute werden wie Variablen mithilfe von \alert{\texttt{=}} gesetzt
 		\item Man kann Objekten jederzeit neue Attribute hinzufügen (auch \texttt{type}-Objekten)
 		\item Ist außerhalb des Initialisierers nicht empfehlenswert
 	\end{itemize}
@@ -127,9 +118,9 @@
 \begin{frame}[fragile]{Methoden}
 	\begin{itemize}
 		\item Methoden sind Funktionen
-		\item Allgemeiner Typ von Methoden ist daher \texttt{function}
-		\item Methoden liegen im Namespace der zugehörigen Klasse, müssen daher mit \texttt{ClassName.method\_name()} angesteuert werden (oder auf dem Objekt aufgerufen werden)
-		\item Methoden haben ein implizites erstes Argument (typischerweise "self" genannt, kann aber variieren)
+		\item Allgemeiner Typ von Methoden ist daher \alert{\texttt{function}}
+		\item Methoden liegen im Namespace der zugehörigen Klasse, müssen daher mit \alert{\texttt{ClassName.method\_name()}} angesteuert werden (oder auf dem Objekt aufgerufen werden)
+		\item Methoden haben ein implizites erstes Argument (typischerweise \texttt{self} genannt, kann aber variieren)
 		\item Beim Aufruf auf einer Instanz wird das Objekt selbst automatisch übergeben
 	\end{itemize}
 \end{frame}
@@ -141,13 +132,18 @@
 	Die Folgenden beginnen und enden normalerweise mit zwei Unterstrichen.
 
 	\begin{description}
-		\item[Initialisierer] Oft auch (fälschlicherweise) Konstruktor genannt.\\ Name: \texttt{\_\_init\_\_}\\
+		\item[Initialisierer] Oft auch (fälschlicherweise) Konstruktor genannt.\\ Name: \alert{\texttt{\_\_init\_\_}}\\
 			Wird immer aufgerufen wenn eine neue Instanz der Klasse erstellt wird.
 		\item[Finalisierer] Oft auch (fälschlicherweise) Destructor genannt.\\
-			Name: \texttt{\_\_del\_\_}\\
+			Name: \alert{\texttt{\_\_del\_\_}}\\
 			Wird immer aufgerufen wenn das Objekt vom Garbage Collector aufgeräumt wird. (selten verwendet)
-		\item[String Konvertierer] Äquivalent zu Java's \texttt{toString} Methode. Name: \texttt{\_\_str\_\_}
-		\item[String Repräsentation] Ähnlich wie \texttt{\_\_str\_\_} aber gedacht für eine für Debug verwendbare Repräsentation anstatt für Output wie \texttt{\_\_str\_\_}.
+	\end{description}
+\end{frame}
+
+\begin{frame}[fragile]{Methoden}
+    \begin{description}
+		\item[String Konvertierer] Äquivalent zu Java's \texttt{toString} Methode. \\ Name: \alert{\texttt{\_\_str\_\_}}
+		\item[String Repräsentation] Ähnlich wie \alert{\texttt{\_\_str\_\_}} aber gedacht für eine für Debug verwendbare Repräsentation anstatt für Output wie \alert{\texttt{\_\_str\_\_}}.
 	\end{description}
 \end{frame}
 
@@ -157,10 +153,10 @@
 \end{frame}
 
 \begin{frame}[fragile]{Klassen- und Objektattribute im Detail}
-	Gewöhnlich definiert man Instanzattribute allerdings im \textit{Initialisierer}.
-	\lstinputlisting{resources/02_grundlagen/instanceattributes.py}
+	Gewöhnlich definiert man Instanzattribute allerdings im \textbf{Initialisierer}.
+	\lstinputlisting{resources/02_grundlagen/instanceattributes.py} \ \\[.5cm]
 	\begin{itemize}
-		\item Instanzattribute sollten immer in \_\_init\_\_ definiert werden, um sicherzustellen, dass alle Instanzen die gleichen Attribute haben
+		\item Instanzattribute sollten immer in \alert{\texttt{\_\_init\_\_}} definiert werden, um sicherzustellen, dass alle Instanzen die gleichen Attribute haben
 	\end{itemize}
 \end{frame}
 
