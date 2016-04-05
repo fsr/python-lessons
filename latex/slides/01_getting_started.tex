@@ -1,35 +1,23 @@
+% The Slide Definitions
+\input{../templates/course_definitions}
+\usepackage{comment}
 
-%%	Getting started:
-%%	1) Copy this file and name the copy it like the topic it covers
-%%	2) In the following make sure to modify the copy, NOT THE ORIGINAL
-%%	3) Look for the points marked with "TODO" and complete them
-%%	4) compile this file
+% Author and Course information
+\input{../templates/course_information}
 
-\input{../templates/slides_template}	% nothing to do here
-% TODO change "course_info" to the name of your actual …_info(.tex)
-\input{../templates/course_info} % TODO modify this if you have not already done so
-
-% meta-information
-\newcommand{\topic}{
-	% TODO fill in the actual topic
-	Getting started
-}
-
-% nothing to do here
-\title{\topic}
-\supertitle{\course}
+% Presentation title
+\title{Grundlagen}
 \date{\today}
 
-% the actual document
+
 \begin{document}
 
 \maketitle
 
-\begin{frame}
+\begin{frame}{Gliederung}
+	\setbeamertemplate{section in toc}[sections numbered]
 	\tableofcontents
 \end{frame}
-
-% own content here
 
 % --------------------------- Über den Kurs -----------------------------------
 \section{Über diesen Kurs}
@@ -48,12 +36,13 @@
 	\end{itemize}
 \end{frame}
 
+
 % ----------------------- Der Python Interpreter ------------------------------
 \section{Der Python Interpreter}
 \begin{frame}{Der Python Interpreter}
 	\begin{itemize}
     	\item Die zwei verbreitet verwendeten Python Versionen sind 2.7 und 3.5, wir werden 3.5 nutzen, weil es cooler ist und bessere Features hat
-		\item Python kann \textcolor{blue}{\href{http://www.python.org}{hier}} heruntergeladen und installiert werden oder mit dem Paketmanager eurer Wahl. (Das Paket sollte \texttt{python3} und \texttt{python3-dev} sein, außer unter Arch)
+		\item Python kann \alert{\href{http://www.python.org}{hier}} heruntergeladen und installiert werden oder mit dem Paketmanager eurer Wahl. (Das Paket sollte \texttt{python3} und \texttt{python3-dev} sein, außer unter Arch)
     	\item Python funktioniert am besten unter UNIX (ist aber okay unter Windows)
     	\item Den Interpreter startet man mit \texttt{python3} im Terminal oder mit \texttt{Python.exe}
     	\item Der Interpreter stellt die volle Funktionalität von Python bereit, einschließlich dem Erstellen von Klassen und Funktionen
@@ -131,10 +120,11 @@
 	    \item Kein geschweiften Klammern für Codeblöcke
 	    \item Einrückungen zeigen Codeblöcke an
 	    \item Funktionsaufrufe immer mit runden Klammern
-	    \item Funktionen definieren mit \codeline{def <funktionsname>([parameter_liste, ...]):}
-	    \item Variablen mit der Struktur \codeline{__name__} sind spezielle Werte (gewöhnlich aus \codeline{builtin} oder Methoden von Standardtypen)\\
-	      z.B. \codeline{__file__} ist immer der Name des Scriptes (in welchem \codeline{__file__} aufgerufen wird),
-	      \codeline{__builtin__} ist das Modul mit den immer verfügbaren Funktionen und Datentypen wie \codeline{list} oder \codeline{tuple}
+	    \item Funktionen definieren mit \\
+	   		  \alert{\texttt{def <funktionsname>([parameter\_liste, ...]):}}
+	    \item Variablen mit der Struktur \alert{\texttt{\_\_name\_\_}} sind spezielle Werte (gewöhnlich aus \alert{\texttt{builtin}} oder Methoden von Standardtypen)\\
+	      z.B. \alert{\texttt{\_\_file\_\_}} ist immer der Name des Scriptes (in welchem \alert{\texttt{\_\_file\_\_}} aufgerufen wird),
+	      \alert{\texttt{\_\_builtin\_\_}} ist das Modul mit den immer verfügbaren Funktionen und Datentypen wie \alert{\texttt{list}} oder \alert{\texttt{tuple}}
 	\end{itemize}
 \end{frame}
 
@@ -143,11 +133,11 @@
 \section{Operatoren}
 \begin{frame}[fragile]{Operatoren}
 	\begin{description}
-	    \item[mathematisch] \codeline{+}, \codeline{-}, \codeline{*}, \codeline{/}
-	    \item[vergleichend] \codeline{<}, \codeline{>}, \codeline{<=}, \codeline{>=}, \codeline{==} (Wert gleich), \codeline{is} (gleiches Objekt/gleiche Referenz)
-	    \item[logisch] \codeline{and}, \codeline{or}, \codeline{not}\\ \codeline{(a && b) || (!c)} aus C oder Java entspricht \codeline{(a and b) or not c} in Python
-	    \item[bitweise] \codeline{&}, \codeline{\|}, \codeline{\<\<}, \codeline{\>\>}, \codeline{\^} (xor), \codeline{\~} (invertieren)
-	    \item[Accessoren] \codeline{.} (für Methoden und Attribute), \codeline{[]} (für Datenstrukturen mit Index)
+	    \item[mathematisch] \alert{\texttt{+}}, \alert{\texttt{-}}, \alert{\texttt{*}}, \alert{\texttt{/}}
+	    \item[vergleichend] \alert{\texttt{<}}, \alert{\texttt{>}}, \alert{\texttt{<=}}, \alert{\texttt{>=}}, \alert{\texttt{==}} (Wert gleich), \alert{\texttt{is}} (gleiches Objekt/gleiche Referenz)
+	    \item[logisch] \alert{\texttt{and}}, \alert{\texttt{or}}, \alert{\texttt{not}}\alert{\texttt{(a \&\& b) || (!c)}} aus C oder Java entspricht \alert{\texttt{(a and b) or not c}} in Python
+	    \item[bitweise] \alert{\texttt{\&}}, \alert{\texttt{|}}, \alert{\texttt{<<}}, \alert{\texttt{>>}}, \alert{\texttt{\^}} (xor), \alert{\texttt{\~}} (invertieren)
+	    \item[Accessoren] \alert{\texttt{.}} (für Methoden und Attribute), \alert{\texttt{[]}} (für Datenstrukturen mit Index)
 	\end{description}
 \end{frame}
 
@@ -158,8 +148,8 @@
 	\begin{description}
 	    \item[\textbf{Klassen}] \textit{PascalCase}, alles direkt zusammen, groß beginnend und jedes neue Wort groß
 	    \item[\textbf{Variablen, Funktionen, Methoden}] \textit{snake\_case}, alles klein und Wörter mit Unterstrich getrennt \\
-	    \textbf{Merke:} Da \codeline{-} ein Operator ist, ist es in Namen von Variablen, Funktionen etc. \textbf{nicht} zulässig (damit Python eine Kontextfreie Sprache ist)
-	    \item[\textbf{protected Variablen, Funktionen, Methoden}] beginnen mit einem Unterstrich \codeline{\_} oder mit zweien \codeline{\_\_} für private
+	    \textbf{Merke:} Da \alert{\texttt{-}} ein Operator ist, ist es in Namen von Variablen, Funktionen etc. \textbf{nicht} zulässig (damit Python eine Kontextfreie Sprache ist)
+	    \item[\textbf{protected Variablen, Funktionen, Methoden}] beginnen mit einem Unterstrich \alert{\texttt{\_}} oder mit zweien \alert{\texttt{\_\_}} für private
 	    \item[\textbf{Merke}] Python hat kein Zugriffsmanagement. Die Regel mit dem Unterstrich ist nur eine Konvention um zu verhindern, dass andere Teile des Codes nutzen, der eine hohe Wahrscheinlichkeit hat in Zukunft verändert zu werden.
 	\end{description}
 \end{frame}
@@ -170,10 +160,10 @@
 \subsection{Grundlagen}
 \begin{frame}[fragile]{Strings - Grundlagen}
 	\begin{itemize}
-	    \item Der Typ eines Strings ist \codeline{str}.
+	    \item Der Typ eines Strings ist \alert{\texttt{str}}.
 	    \item Strings sind in Python immutable (nicht veränderbar). Jede String Operation erzeugt einen neuen String.
-	    \item Ein String kann erzeugt werden mit einer Zeichenkette in Anführungszeichen, \codeline{\'\'} oder \codeline{\"\"} (beide sind äquivalent).
-	    \item rohe Strings mir dem Präfix \codeline{r}, \codeline{r\"mystring\"} oder \codeline{r\'mystring\'}
+	    \item Ein String kann erzeugt werden mit einer Zeichenkette in Anführungszeichen, \alert{\texttt{'{}'{}}} oder \alert{\texttt{"{}"{}}} (beide sind äquivalent).
+	    \item rohe Strings mir dem Präfix \alert{\texttt{r}}, \alert{\texttt{r"mystring"}} oder \alert{\texttt{r'mystring'}}
 	    \item Strings in Python3 sind UTF-8 encoded.
 	\end{itemize}
 \end{frame}
@@ -195,13 +185,13 @@
 % ------------------------ Strings - Formatierung ------------------------------
 \subsection{Formatierung}
 \begin{frame}[fragile]{Strings - Formatierung}
-	Wir wollen den String \codeline{'my string 4 vier'} erzeugen.
+	Wir wollen den String \alert{\texttt{'my string 4 vier'}} erzeugen.
 
 	\lstinputlisting[lastline=10]{resources/01_getting_started/string_format.py}
 \end{frame}
 
 \begin{frame}[fragile]{Strings - Formatierung}
-	Wir wollen den String \codeline{'my string 4 vier'} erzeugen.
+	Wir wollen den String \alert{\texttt{'my string 4 vier'}} erzeugen.
 	\lstinputlisting[firstline=12]{resources/01_getting_started/string_format.py}
 \end{frame}
 
