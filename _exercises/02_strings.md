@@ -21,7 +21,7 @@ Write a script that reads an input string from the command line and then prints 
 Modify the script so it asks for the name using input, `input("message")`, and then greet the person `"Hello NAME, welcome to python"` using string formatting with the `format` method.[^format]
 
 [^format]:
-    Format strings work like so: "hello {}, welcome".format('grandma') -> "hello grandma, welcome"
+    Formatting strings works like this: `"hello {}, welcome".format('grandma')` -> "hello grandma, welcome"
 
 ### Step 3
 
