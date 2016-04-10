@@ -1,36 +1,24 @@
+% The Slide Definitions
+\input{../templates/course_definitions}
 
-%%	Getting started:
-%%	1) Copy this file and name the copy it like the topic it covers
-%%	2) In the following make sure to modify the copy, NOT THE ORIGINAL
-%%	3) Look for the points marked with "TODO" and complete them
-%%	4) compile this file
+% Author and Course information
+\input{../templates/course_information}
 
-\input{../templates/slides_template.tex}	 % nothing to do here
-% TODO change "course_info" to the name of your actual …_info(.tex)
-\input{../templates/course_info} % TODO modify this if you have not already done so
-\usepackage{comment}
-
-% meta-information
-\newcommand{\topic}{
-	% TODO fill in the actual topic
-	Module, Pakete und PIP
-}
-
-% nothing to do here
-\title{\topic}
-\supertitle{\course}
+% Presentation title
+\title{Module, Packete und PIP}
 \date{\today}
 
-% the actual document
+
 \begin{document}
 
 \maketitle
 
-\begin{frame}
-	\tableofcontents
+\begin{frame}{Gliederung}
+	\begin{multicols}{2}
+		\setbeamertemplate{section in toc}[sections numbered]
+		\tableofcontents
+	\end{multicols}
 \end{frame}
-
-%% Für einzelne Zeilen Code \codeline{} vewenden (ist mit Markup) für einzelne Worte \texttt{} verwenden (auch in Tabellen!)
 
 % ---------------------------------- Module ----------------------------------
 
@@ -41,9 +29,9 @@
 		\item Ein Modul ist die python-interne Repr\"asentation einer \texttt{.py} Datei
 		\item Der Dateiname setzt sich daher aus Modulname + \texttt{.py} zusammen
 		\item Module beinhalten eine beliebige Anzahl an Definitionen (Klassen, Funktionen, Variablen/Konstanten)
-		\item Das komplette Modul wird mit \texttt{import} hinzugef\"ugt
-		\item Einzelne Inhalte mit \texttt{from} Modul \texttt{import} Name
-		\item Mit Hilfe von \texttt{as} kann ein Alias f\"ur den importierten Namen angelegt werden
+		\item Das komplette Modul wird mit \alert{\texttt{import}} hinzugef\"ugt
+		\item Einzelne Inhalte mit \alert{\texttt{from}} Modul \alert{\texttt{import}} Name
+		\item Mit Hilfe von \alert{\texttt{as}} kann ein Alias f\"ur den importierten Namen angelegt werden
 	\end{itemize}
 \end{frame}
 
@@ -54,16 +42,19 @@
 
 \begin{frame}{Ein Beispiel}
 	In einem anderen Python-Script kann ich diese Funktionen nutzen:
-	\lstinputlisting{resources/04_modules_and_packages/modules.py}
+	\lstinputlisting[lastline=15]{resources/04_modules_and_packages/modules.py}
 \end{frame}
 
-
+\begin{frame}{Ein Beispiel}
+	In einem anderen Python-Script kann ich diese Funktionen nutzen:
+	\lstinputlisting[firstline=17]{resources/04_modules_and_packages/modules.py}
+\end{frame}
 
 \subsection{Der Sinn der Boilerplate}
 \begin{frame}{Der Sinn der Boilerplate}
 	\begin{itemize}
 		\item Verhindert, dass Code beim Importieren eines Scriptes ausgef\"uhrt wird
-		\item Beim Aufruf des Moduls \"uber \texttt{import} ist der Name des Moduls nicht \texttt{\_\_main\_\_}, sondern der Name des Scriptes (im vorherigen Beispiel w\"are das \texttt{incdec})
+		\item Beim Aufruf des Moduls \"uber \texttt{import} ist der Name des Moduls \alert{nicht \texttt{\_\_main\_\_}}, sondern der Name des Scriptes (im vorherigen Beispiel w\"are das \texttt{incdec})
 	\end{itemize}
 \end{frame}
 
@@ -72,8 +63,8 @@
 \subsection{Suchpfad f\"ur Module}
 \begin{frame}{Suchpfad f\"ur Module}
 	\begin{itemize}
-		\item Python sucht Module beim Import an allen im \textbf{PYTHONPATH} aufgelisteten Ordnern
-		\item dieser findet sich in Python unter \texttt{sys.path}, in der Kommandozeile in der Umgebungsvariable PYTHONPATH
+		\item Python sucht Module beim Import an allen im \alert{\textbf{PYTHONPATH}} aufgelisteten Ordnern
+		\item dieser findet sich in Python unter \alert{\texttt{sys.path}}, in der Kommandozeile in der Umgebungsvariable PYTHONPATH
 		\item \texttt{sys.path} l\"asst sich zur Laufzeit im Interpreter \"andern (z.B. um nachtr\"aglich neue eigene Module hinzuzuf\"ugen)
 	\end{itemize}
 \end{frame}
@@ -84,9 +75,9 @@
 		\item die \textit{Standardbibliothek} der derzeitig verwendeten Python-Version
 		\item das \textit{aktuelle Verzeichnis}, in dem der Interpreter aufgerufen wurde
 		\item eine \textit{Verzeichnis mit plattfomspezifischen Modulen}, z.B.
-			"/usr/local/Cellar/python3/3.4.3/Frameworks/Python.framework/
-			Versions/3.4/lib/python3.4/plat-darwin" f\"ur Mac
-		\item \textit{Benutzerspezifische Module f\"ur die jeweilige Python Version}, z.B. "/usr/local/lib/python3.4/site-packages" f\"ur Python 3.4
+			"/usr/local/Cellar/python3/3.5.1/Frameworks/Python.framework/
+			Versions/3.5/lib/python3.5/plat-darwin" f\"ur Mac
+		\item \textit{Benutzerspezifische Module f\"ur die jeweilige Python Version}, z.B. "/usr/local/lib/python3.5/site-packages" f\"ur Python 3.5
 	\end{itemize}
 \end{frame}
 
@@ -115,7 +106,7 @@
 \section{Packages}
 \begin{frame}{Packages}
 	\begin{itemize}
-		\item Packages sind Ordner, die mindestens ein \texttt{\_\_init\_\_.py} Modul enthalten.
+		\item Packages sind Ordner, die mindestens ein \alert{\texttt{\_\_init\_\_.py}} Modul enthalten.
 		\item der Inhalt dieses Moduls ist prinzipiell egal
 		\item Packages k\"onnen genau wie Module importiert werden
 		\item Wird das Package selbst importiert, sind alle Definitionen in \texttt{\_\_init\_\_.py} \"uber das importierte Package erreichbar.
@@ -160,11 +151,11 @@
 
 \subsection{Die requirements.txt}
 \begin{frame}{Die requirements.txt}
-	Wenn jemand Scripte ausf\"uhren m\"ochte, in denen Module verwendet werden, die mit Hilfe von PIP installiert wurden, ist es hilfreich eine \texttt{requirements.txt} mitzuliefern.\\
+	Wenn jemand Scripte ausf\"uhren m\"ochte, in denen Module verwendet werden, die mit Hilfe von PIP installiert wurden, ist es hilfreich eine \alert{\texttt{requirements.txt}} mitzuliefern.\\
 	In dieser sind alle Module aufgelistet, die ben\"otigt werden.\\[.5cm]
 	\lstinputlisting{resources/05_pip/requirements.txt}
 
-	Via \texttt{pip install -r requirements.txt} k\"onnen alle Module von der Liste installiert werden
+	Via \alert{\texttt{pip install -r requirements.txt}} k\"onnen alle Module von der Liste installiert werden
 \end{frame}
 
 \end{document}

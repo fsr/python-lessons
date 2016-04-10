@@ -1,41 +1,33 @@
-%%	Getting started:
-%%	1) Copy this file and name the copy it like the topic it covers
-%%	2) In the following make sure to modify the copy, NOT THE ORIGINAL
-%%	3) Look for the points marked with "TODO" and complete them
-%%	4) compile this file
+% The Slide Definitions
+\input{../templates/course_definitions}
 
-\input{../templates/slides_template}	% nothing to do here
-% TODO change "course_info" to the name of your actual …_info(.tex)
-\input{../templates/course_info} % TODO modify this if you have not already done so
+% Author and Course information
+\input{../templates/course_information}
 
-% meta-information
-\newcommand{\topic}{
-	% TODO fill in the actual topic
-	Funktionen (fortgeschritten)
-}
-
-% nothing to do here
-\title{\topic}
-\supertitle{\course}
+% Presentation title
+\title{Funktionen (fortgeschritten)}
 \date{\today}
 
-% the actual document
+
 \begin{document}
 
 \maketitle
 
-\begin{frame}
-	\tableofcontents
+\begin{frame}{Gliederung}
+        \begin{multicols}{2}
+                \setbeamertemplate{section in toc}[sections numbered]
+                \tableofcontents
+        \end{multicols}
 \end{frame}
 
 
 \section{Nutzung von Funktionen}
 \begin{frame}[fragile]{Funktionen als Werte}
-  Funktionen k\"onnen wie alle anderen Werte zugewiesen werden\\
+  Funktionen k\"onnen wie alle anderen Werte zugewiesen werden\\[.25cm]
   \lstinputlisting[lastline=5]{resources/07_funtions_advanced/use_func.py}
 
   \ \\[.25cm]
-  Oder als Parameter mitgegeben werden\\
+  Oder als Parameter mitgegeben werden\\[.25cm]
   \lstinputlisting[firstline=8, lastline=12]{resources/07_funtions_advanced/use_func.py}
 \end{frame}
 
@@ -55,7 +47,7 @@
 \end{frame}
 
 \begin{frame}{ACHTUNG!}
-	\center{\textbf{Niemals \texttt{mutable Values} (änderbare Werte) als \texttt{default}-Parameter verwenden!}}\\[1cm]
+	\center{\alert{\textbf{Niemals \texttt{mutable Values} (änderbare Werte) als \texttt{default}-Parameter verwenden!}}}\\[1cm]
 	\begin{description}
 		\item[mutable Values] \ \ \ \texttt{list}, \texttt{dict}, \texttt{set} und eigene Klassen \\
 \ \ \ \ \ (bzw. deren Attribute)
@@ -64,9 +56,9 @@
 \end{frame}
 
 \begin{frame}{ACHTUNG!}
-	\center{\textbf{Warum?\\}}
+	\textbf{Warum?}\\[.25cm]
 	\lstinputlisting[firstline=8, lastline=10]{resources/07_funtions_advanced/default.py}
-	Man denkt, die Funktion hat jedes mal eine leere List, jedoch passiert folgendes:\\
+	Man denkt, die Funktion hat jedes mal eine leere List, jedoch passiert folgendes:\\[.25cm]
 	\lstinputlisting[firstline=12, lastline=14]{resources/07_funtions_advanced/default.py}
 	Die Liste wird einmalig zum Start angelegt und fortgeführt.
 \end{frame}
@@ -81,7 +73,7 @@
 
 \subsection{Aufruf mit Namen}
 \begin{frame}[fragile]{Aufruf mit Namen}
-	Funktionsparameter können direkt mit ihrem Namen aufgerufen werden, dann spielt die Aufrufreihenfolge keine Rolle mehr.\\[1cm]
+	Funktionsparameter können direkt mit ihrem Namen aufgerufen werden, dann spielt die Aufrufreihenfolge keine Rolle mehr.\\[.25cm]
 	\lstinputlisting[firstline=22]{resources/07_funtions_advanced/default.py}
 \end{frame}
 
@@ -123,7 +115,7 @@
 \begin{frame}[fragile]{Positionale Aggregatoren}
   \begin{itemize}
     \item Eine Funktion kann auch nur einen Aggregator als Parameter entgegennehmen (keine anderen Parameter)
-    \item Ohne Argumente ergibt sich \texttt{len(args)} zu 0
+    \item Ohne Argumente ergibt sich f\"ur \texttt{len(args)} 0
     \item Werden keine anderen Parameter erwartet, nennt man den Aggregator meist
     \texttt{args} (kurz für \textit{Arguments}) \\[.75cm]
   \end{itemize}
@@ -154,12 +146,13 @@
   Die Regel dabei ist: Von jeder Sorte nur \textit{ein} Aggregator. \\[.5cm]
   Ein Beispiel:
   \lstinputlisting[firstline=12, lastline=18]{resources/07_funtions_advanced/mixed_aggr.py}
+    \textit{Eckige Klammern stehen für optionale Parameter/Namen.}
 \end{frame}
 
 \begin{frame}{Generelle Funktionsstruktur}
   Wenn beide Aggregatoren zum Einsatz kommen sollen, ergibt sich folgende Funktionsstruktur: \\[.25cm]
   \lstinputlisting[firstline=1, lastline=9]{resources/07_funtions_advanced/mixed_aggr.py}
-  \textit{Eckige Klammern stehen für optionale Parameter/Namen.}
+
 \end{frame}
 
 % nothing to do from here on
