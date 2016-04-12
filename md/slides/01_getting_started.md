@@ -124,7 +124,7 @@ if __name__ == '__main__':
 ## Wichtige Eigenschaften:
 
 -   Keine Semikolons
--   Kein geschweiften Klammern für Codeblöcke
+-   Keine geschweiften Klammern für Codeblöcke
 -   Einrückungen zeigen Codeblöcke an
 -   Funktionsaufrufe immer mit runden Klammern
 
@@ -134,11 +134,7 @@ if __name__ == '__main__':
 ```python
 def <funktionsname>([parameter_liste, ...]):
 ```
--   Variablen mit der Struktur `__name__` sind spezielle Werte (gewöhnlich aus `builtin` oder
-    Methoden von Standardtypen)\
-    z.B. `__file__` ist immer der Name es Scriptes (in welchem `__file__`aufgerufen wird), `__builtin__`
-    ist das Modul mit den immer verfügbaren Funktionen und Datentypen
-    wie `list` oder `tuple`
+-   Variablen mit der Struktur `__name__` sind spezielle Werte (gewöhnlich aus `builtin` oder Methoden von Standardtypen)
 
 # Operatoren
 
@@ -164,7 +160,7 @@ def <funktionsname>([parameter_liste, ...]):
 
 `&`, `|`, `<<`, `>>`, `^` (xor), `~` (invertieren)
 
-Accessoren
+## Accessoren
 
 `.` (für Methoden und Attribute), `[]` (für Datenstrukturen mit Index)
 
@@ -180,7 +176,7 @@ Accessoren
 ## Variablen, Funktionen, Methoden
 
 *snake\_case*, alles klein und Wörter mit Unterstrich getrennt  
-**Merke:** Da `_` ein Operator ist, ist es in Namen von Variablen,
+**Merke:** Da `-` ein Operator ist, ist es in Namen von Variablen,
 Funktionen etc. **nicht** zulässig (damit Python eine Kontextfreie Sprache ist)
 
 ---
@@ -188,6 +184,8 @@ Funktionen etc. **nicht** zulässig (damit Python eine Kontextfreie Sprache ist)
 ## protected Variablen, Funktionen, Methoden
 
 beginnen mit einem Unterstrich `_` oder mit zweien `__` für private
+
+---
 
 **Merke**  
 Python hat kein Zugriffsmanagement. Die Regel mit dem Unterstrich
