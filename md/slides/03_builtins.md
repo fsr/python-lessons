@@ -287,7 +287,7 @@ f  # ==> 8
 g  # ==> [7, 46, 42]
 ```
 
-# Contenxt Manager
+# Context Manager
 
 ---
 
