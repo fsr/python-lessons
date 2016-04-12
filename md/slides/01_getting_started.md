@@ -180,7 +180,7 @@ Accessoren
 ## Variablen, Funktionen, Methoden
 
 *snake\_case*, alles klein und Wörter mit Unterstrich getrennt  
-**Merke:** Da ein Operator ist, ist es in Namen von Variablen,
+**Merke:** Da `_` ein Operator ist, ist es in Namen von Variablen,
 Funktionen etc. **nicht** zulässig (damit Python eine Kontextfreie Sprache ist)
 
 ---
