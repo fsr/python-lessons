@@ -14,4 +14,4 @@ Modules and concepts this course wants to teach:
 
 
 
-Feedback for these lessons is very much welcome. I you like or hate something about a lesson let us know, either on [GitHub}(https://github.com/fsr/python-lessons/issues/new), via <a href="mailto:felix@ifsr.de">Mail</a> or just tell us in person ;)
+Feedback for these lessons is very much welcome. I you like or hate something about a lesson let us know, either on [GitHub](https://github.com/fsr/python-lessons/issues/new), via <a href="mailto:felix@ifsr.de">Mail</a> or just tell us in person ;)
