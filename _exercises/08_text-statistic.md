@@ -7,9 +7,9 @@ lesson: 3
 ---
 
 ### Step 1
-Write some [lorem ipsum text](http://www.loremipsum.de) into a file.
+Write some [lorem ipsum text](http://www.loremipsum.de) into a file. You can do this manually.
 
-Read the file[^filereading] and make a statistic of how often every word appears in the file[^dict] and print your results to the command line.
+Read the file[^filereading] using Python and make a statistic of how often every word appears in the file[^dict] and print your results to the command line.
 
 ### Step 2
 Now parameterize the function.[^parameterize]
