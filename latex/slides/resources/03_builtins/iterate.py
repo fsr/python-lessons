@@ -2,9 +2,9 @@ for i in [1,2,3]:
     if i > 9:
         break
     # code
-    pass
-else:
-    # wenn kein break vorkommt
+    else:
+        pass
+        # wenn kein break vorkommt
 
 for i in (1,2,3):
     # code
