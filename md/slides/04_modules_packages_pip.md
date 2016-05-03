@@ -52,7 +52,11 @@ from incdec import increment
 
 # Diese kann jetzt sofort aufgerufen werden
 increment(3)    # => 4
+```
 
+---
+
+```python
 # Alias fuer Module verwenden
 import incdec as plusoneminusone
 
@@ -88,10 +92,10 @@ folgende Module:
 -   die *Standardbibliothek* der derzeitig verwendeten Python-Version
 -   das *aktuelle Verzeichnis*, in dem der Interpreter aufgerufen wurde
 -   eine *Verzeichnis mit plattfomspezifischen Modulen*, z.B.
-    “/usr/local/Cellar/python3/3.4.3/Frameworks/Python.framework/
-    Versions/3.4/lib/python3.4/plat-darwin” für Mac
+    “/usr/local/Cellar/python3/3.5.1/Frameworks/Python.framework/
+    Versions/3.5/lib/python3.5/plat-darwin” für Mac
 -   *Benutzerspezifische Module für die jeweilige Python Version*, z.B.
-    “/usr/local/lib/python3.4/site-packages” für Python 3.4
+    “/usr/local/lib/python3.5/site-packages” für Python 3.5
 
 ## Suchpfad modifizieren
 
