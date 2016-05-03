@@ -125,7 +125,7 @@ entsprechenden Codezeile verfügbar.
 
 Python liefert viele nützliche Module
 bereits in der Standardbibliothek mit, z.B.: `sys`, `os`, `http`, `re`,
-`fuctools`, `itertools`, `collections`, `hashlib`, `urllib` und viele
+`functools`, `itertools`, `collections`, `hashlib`, `urllib` und viele
 mehr.
 
 Daher bezeichnet man Python oft auch als **Batteries included**.
