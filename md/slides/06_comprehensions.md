@@ -27,7 +27,7 @@ Grundlegender Syntax:
 ### EXPRESSION
 
 ein beliebiger Ausdruck (man stelle sich ein implizites
-`return` vor). Wie ein Wert, eine Variable, eine Gleichung, etc ...  
+`return` vor), etwa ein Wert, eine Variable, eine Gleichung, etc ...  
 
 `EXPRESSION` wird am Ende in der Liste abgelegt.
 
@@ -104,7 +104,7 @@ enthalten.
 ---
 
 Die grundlegende Syntax ist gleich der einer *List Comprehension*. Da
-sich und auch aus Iterables bauen lassen gilt prinzipiell:
+sich `list` und `dict` auch aus Iterables bauen lassen, gilt prinzipiell:
 
 ```python
 list(EXPR for VAR in ITERABLE) == [EXPR for VAR in ITERABLE]
