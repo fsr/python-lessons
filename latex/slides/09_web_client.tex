@@ -1,45 +1,36 @@
+% The Slide Definitions
+\input{../templates/course_definitions}
 
-%%	Getting started:
-%%	1) Copy this file and name the copy it like the topic it covers
-%%	2) In the following make sure to modify the copy, NOT THE ORIGINAL
-%%	3) Look for the points marked with "TODO" and complete them
-%%	4) compile this file
+% Author and Course information
+\input{../templates/course_information}
 
-\input{../templates/slides_template}	% nothing to do here
-% TODO change "course_info" to the name of your actual …_info(.tex)
-\input{../templates/course_info} % TODO modify this if you have not already done so
-
-% meta-information
-\newcommand{\topic}{
-	% TODO fill in the actual topic
-	Python als Webclient
-}
-
-% nothing to do here
-\title{\topic}
-\supertitle{\course}
+% Presentation title
+% TODO Change the topic of the lesson
+\title{Cool Topic}
 \date{\today}
 
-% the actual document
+
 \begin{document}
+
 \maketitle
 
-\begin{frame}
+\begin{frame}{Gliederung}
+	\setbeamertemplate{section in toc}[sections numbered]
 	\tableofcontents
 \end{frame}
 
 
 \begin{frame}[fragile]{Das Package urllib}
-	Das Package \texttt{urllib} ist eine n\"utzliche Sammlung mehrerer Module
+	Das Package \texttt{urllib} ist eine nützliche Sammlung mehrerer Module
 	zur Arbeit mit URLs.
 \end{frame}
 
 
 \section{urllib.request}
 \begin{frame}[fragile]{urllib.request}
-	Das Modul \texttt{urllib.request} enth\"alt Funktionen und Klassen, welche
-	beim \"Offnen von URLs (vor allem \"uber HTTP) helfen. \\[.5cm]
-	Unterst\"utzt werden:
+	Das Modul \alert{\texttt{urllib.request}} enthält Funktionen und Klassen, welche
+	beim Öffnen von URLs (vor allem über HTTP) helfen. \\[.5cm]
+	Unterstützt werden:
 	\begin{itemize}
 		\item verschiedene Authentifizierungsarten
 		\item Weiterleitungen
@@ -48,19 +39,19 @@
 	\end{itemize}
 \end{frame}
 
-\subsection{\"Offnen einer URL}
-\begin{frame}[fragile]{\"Offnen einer URL}
-	Das \"offnen einer URL wird \"uber die Funktion \texttt{urlopen()} realisiert:
+\subsection{Öffnen einer URL}
+\begin{frame}[fragile]{Öffnen einer URL}
+	Das Öffnen einer URL wird über die Funktion \alert{\texttt{urlopen()}} realisiert:
 	\lstinputlisting[lastline=5]{resources/09_web_client/urllib_calls.py}
 \end{frame}
 
-\begin{frame}[fragile]{\"Offnen einer URL}
+\begin{frame}[fragile]{Öffnen einer URL}
 	\begin{description}
-		\item[\textbf{url}] ein String f\"ur simple URLs oder ein \texttt{Request} Objekt f\"ur komplexere Anfragen
+		\item[\textbf{url}] ein String für simple URLs oder ein \texttt{Request} Objekt für komplexere Anfragen
 		\item[\textbf{data}] Daten, die an den Server gesendet werden sollen. \\
 		vom Typ \texttt{bytes} oder ein Iterable von \texttt{bytes} Objekten \\[.75cm]
 	\end{description}
-	\textbf{R\"uckgabewerte}
+	\textbf{Rückgabewerte}
 	\begin{description}
 		\item bei URLs mit http-Requests \\
 		\hspace*{1cm}\texttt{httplib.client.HTTPResponse} Objekt
@@ -71,13 +62,13 @@
 
 \subsection{Request Klasse}
 \begin{frame}{Request Klasse}
-	Um komplexere Anfragen stellen zu k\"onnen, kann man Request Objekte verwenden:
-	\lstinputlisting[firstline=7, lastline=10]{resources/09_web_client/urllib_calls.py}
+	Um komplexere Anfragen stellen zu können, kann man Request Objekte verwenden:
+	\lstinputlisting[firstline=8, lastline=10]{resources/09_web_client/urllib_calls.py}
 \end{frame}
 
 \begin{frame}{Request Klasse}
 	\begin{description}
-		\item[\textbf{url}] muss String mit g\"ultiger URl sein
+		\item[\textbf{url}] muss String mit gültiger URl sein
 		\item[\textbf{data}] wie bei \textit{urlopen}
 		\item[\textbf{headers}] \texttt{dict} mit \texttt{\{Header-Name : Header-Value, ...\}} oder \\
 		\texttt{list} von Tupeln mit \texttt{[(Header-Name, Header-Value), ...]}
@@ -99,22 +90,22 @@
 \begin{frame}[fragile]{HTTPResponse Klasse}
 	Objekte dieser Klasse werden nicht direkt vom User erstellt.
 	\lstinputlisting[firstline=13]{resources/09_web_client/urllib_calls.py} \ \\[.5cm]
-	Klasse enth\"alt Funktionen und Variablen wie:
+	Klasse enthält Funktionen und Variablen wie:
 	\begin{itemize}
-		\item \texttt{read()} - gibt zur\"uckgelieferten Inhalt zur\"uck
-		\item \texttt{getheader()} oder \texttt{getheaders()} liefert einen/alle Header zur\"uck
-		\item \texttt{status} gibt den HTML Statuscode zur\"uck
-		\item \texttt{version} gibt die HTML Version zur\"uck
+		\item \texttt{read()} - gibt zurückgelieferten Inhalt zurück
+		\item \texttt{getheader()} oder \texttt{getheaders()} liefert einen/alle Header zurück
+		\item \texttt{status} gibt den HTML Statuscode zurück
+		\item \texttt{version} gibt die HTML Version zurück
 	\end{itemize}
 \end{frame}
 
 
 \section{Andere Module}
 \begin{frame}[fragile]{Andere Module}
-	Das Package \texttt{urllib} enth\"alt au{\ss}erdem folgende Module:
+	Das Package \alert{\texttt{urllib}} enthält au{\ss}erdem folgende Module:
 	\begin{itemize}
 		\item \texttt{urllib.error} \ \\
-			Enth\"alt Exceptions, die von \texttt{urllib.request} geworfen werden.
+			Enthält Exceptions, die von \texttt{urllib.request} geworfen werden.
 		\item \texttt{urllib.parse} \ \\
 			Zum Parsen von URLs.
 		\item \texttt{urllib.robotparse} \ \\
@@ -126,10 +117,10 @@
 \section{Das Requests-Modul}
 \subsection{Installation}
 \begin{frame}{Das Requests Modul}
-	Das Requests Modul ist eine gute und f\"ur Menschen verst\"andliche Alternative
+	Das Requests Modul ist eine gute und für Menschen verständliche Alternative
 	zu \texttt{urllib.requests}, das HTTP Requests vereinfacht. \\[.75cm]
 
-	Das Requests Package l\"asst sich ganz einfach \"uber \textbf{pip} installieren: \\
+	Das Requests Package lässt sich ganz einfach über \textbf{pip} installieren: \\
 	\texttt{pip install requests}
 \end{frame}
 
