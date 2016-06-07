@@ -1,38 +1,29 @@
+% The Slide Definitions
+\input{../templates/course_definitions}
 
-%%	Getting started:
-%%	1) Copy this file and name the copy it like the topic it covers
-%%	2) In the following make sure to modify the copy, NOT THE ORIGINAL
-%%	3) Look for the points marked with "TODO" and complete them
-%%	4) compile this file
+% Author and Course information
+\input{../templates/course_information}
 
-\input{../templates/slides_template}	% nothing to do here
-% TODO change "course_info" to the name of your actual …_info(.tex)
-\input{../templates/course_info} % TODO modify this if you have not already done so
-
-% meta-information
-\newcommand{\topic}{
-	% TODO fill in the actual topic
-	Subprozesse in Python
-}
-
-% nothing to do here
-\title{\topic}
-\supertitle{\course}
+% Presentation title
+\title{Funktionen (fortgeschritten)}
 \date{\today}
 
-% the actual document
+
 \begin{document}
 
 \maketitle
 
-\begin{frame}
-	\tableofcontents
+\begin{frame}{Gliederung}
+        \begin{multicols}{2}
+                \setbeamertemplate{section in toc}[sections numbered]
+                \tableofcontents
+        \end{multicols}
 \end{frame}
 
 
 \section{Grundlagen}
 \begin{frame}[fragile]{Das Modul subprocess}
-	Das Modul \texttt{subprocess} erlaubt die Ausf\"uhrung externer Befehle und
+	Das Modul \alert{subprocess} erlaubt die Ausf\"uhrung externer Befehle und
 	Skripte von einem Python Skript aus. Man kann sich die Funktionsweise \"ahnlich
 	der eines Terminals vorstellen.
 \end{frame}
@@ -41,7 +32,7 @@
 \subsection{Eigenschaften}
 \begin{frame}[fragile]{Eigenschaften}
 	\begin{itemize}
-		\item Subprozesse laufen asynchron
+		\item Subprozesse laufen \alert{asynchron}
 		\item Sie laufen direkt auf dem System, nicht in einer Shell
 		(wenn nicht anders festgelegt)
 		\item Verf\"ugbare Programme h\"angen vom System ab, auf dem sie ausgef\"uhrt werden
@@ -82,7 +73,7 @@
 \begin{frame}[fragile]{Einige wichtige Argumente}
 	\begin{description}
 		\item[\texttt{args}] Die aufzurufenden Argumente. Sollten vom Typ
-			\texttt{tuple} oder \texttt{list} sein. Im Prinzip splittet man den
+			\alert{tuple} oder \alert{list} sein. Im Prinzip splittet man den
 			Konsolenbefehl an den Leerzeichen: \\
 			\texttt{ls -A *.md} entspricht \texttt{['ls', '-A', '*.md']}
 		\item[\texttt{shell}] F\"uhrt den Befehl in einer Shell aus.
@@ -218,6 +209,5 @@
 	\hspace*{1.5cm}\texttt{run(..., check=True, stdout=PIPE).stdout}
 \end{frame}
 
-% TODO done? place the (sub)section headings correctly, enhance optic
 % nothing to do from here on
 \end{document}
