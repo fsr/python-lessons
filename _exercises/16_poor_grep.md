@@ -10,7 +10,7 @@ lesson: 8
 
 Use the script from the previous exercise and modify it.
 
-Assign the return value of the `subprocess.run()` to an variable an print it after clearing the terminal.
+Assign the return value of the `subprocess.run()` to an variable and print it after clearing the terminal.
 
 What do you get? Does it return the expected value?
 

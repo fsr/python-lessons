@@ -54,11 +54,11 @@ The whishes follow a pattern (every new wish starts with a `- `).[^finditer]<sup
 
 Gather all your results and print them out in a nicely readable format, like:
 
-```
+{% highlight sh %}
 Name von Kind 1: unartig/keine Wünsche
 Name von Kind 2: Wünsche
 ...
-```
+{% endhighlight %}
 
 Note that children that didn't write a correct wishlist are naughty in Santa's eyes, too!
 

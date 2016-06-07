@@ -41,9 +41,11 @@ It should at least accept +, -, \*, / as operators.[^strategy] [^ifelse] [^excep
 
 **Example:**
 
-    Enter your equation:
-    2 - 4  
-    -2
+{% highlight sh %}
+Enter your equation:
+2 - 4  
+-2
+{% endhighlight %}
 
 ### Step 2
 

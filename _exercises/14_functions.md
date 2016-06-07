@@ -22,7 +22,7 @@ Rename the function.[^renaming] Verify it works as intended.
 Create a function, which takes a variable amount of integer numbers and returns the sum of all given numbers.
 
 (Re)write your `main()` function so that it calls your new function with all arguments you call your script with.[^sysargv]
-Since these arguments are interpreted as strings you will need to cast all arguments first.[^cast] A comprehension might come in handy for this!
+Since these arguments are interpreted as strings you will need to cast all arguments first.[^cast]
 
 [^sysargv]:
     The arguments your script is called with are stored in `sys.argv` (remember to import _sys_!).

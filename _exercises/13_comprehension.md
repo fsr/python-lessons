@@ -14,10 +14,11 @@ Read [this]({{ site.baseurl }}/misc/lorem) *(Rightclick -> Save As)* file word b
 
 Write a function that, given two lists, builds the cartesian product of the lists with tuples.[^nested]
 
-```python
+{% highlight python %}
 >>> function([1,2,3], [6,7,8])
 [(1, 6), (1, 7), (1, 8), (2, 6), (2, 7), (2, 8), (3, 6), (3, 7), (3, 8)]
-```
+
+{% endhighlight %}
 
 Try it with the two lists you've created earlier.
 
