@@ -133,8 +133,8 @@ Klasse enthält Funktionen und Variablen wie:
 
 -   `read()` - gibt zurückgelieferten Inhalt zurück
 -   `getheader()` oder `getheaders()` liefert einen/alle Header zurück
--   `status` gibt den HTML Statuscode zurück
--   `version` gibt die HTML Version zurück
+-   `status` gibt den HTTP Statuscode zurück
+-   `version` gibt die HTTP Version zurück
 
 
 # Andere Module
