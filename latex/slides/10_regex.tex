@@ -1,37 +1,29 @@
+% The Slide Definitions
+\input{../templates/course_definitions}
 
-%%	Getting started:
-%%	1) Copy this file and name the copy it like the topic it covers
-%%	2) In the following make sure to modify the copy, NOT THE ORIGINAL
-%%	3) Look for the points marked with "TODO" and complete them
-%%	4) compile this file
+% Author and Course information
+\input{../templates/course_information}
 
-\input{../templates/slides_template}	% nothing to do here
-% TODO change "course_info" to the name of your actual …_info(.tex)
-\input{../templates/course_info} % TODO modify this if you have not already done so
-
-% meta-information
-\newcommand{\topic}{
-	% TODO fill in the actual topic
-	Regul\"are Ausdr\"ucke
-}
-
-% nothing to do here
-\title{\topic}
-\supertitle{\course}
+% Presentation title
+% TODO Change the topic of the lesson
+\title{Regul\"are Ausdr\"ucke}
 \date{\today}
 
-% the actual document
+
 \begin{document}
 
 \maketitle
 
-\begin{frame}
-	\tableofcontents
+\begin{frame}{Gliederung}
+        \begin{multicols}{2}
+                \setbeamertemplate{section in toc}[sections numbered]
+                \tableofcontents
+        \end{multicols}
 \end{frame}
 
 \section{Grundlagen}
 \begin{frame}{Grundlagen}
-	Das \texttt{re} Modul der Python Standard Library ist die Python Implementierung von regulären Ausdrücken.\\[.25cm]
+	Das \alert{re} Modul der Python Standard Library ist die Python Implementierung von regulären Ausdrücken.\\[.25cm]
 	Reguläre Ausdrücke werden verwendet um die Struktur von Text/Sprachen zu beschreiben.
 \end{frame}
 
@@ -46,12 +38,12 @@
 \begin{frame}{Grundlagen}
 	Die Anwendung eines regulären Ausdruckes nennt man Matching.\\[.25cm]
 Matcht der reguläre Ausdruck einem String, bedeutet dies, dass der String die Struktur hat, die der reguläre Ausdruck beschreibt.\\[.25cm]
-Reguläre Ausdrücke werden oft auch 'regex' genannt (kurz für \textbf{regular expression}).
+Reguläre Ausdrücke werden oft auch 'regex' genannt (kurz für \alert{regular expression}).
 \end{frame}
 
 \section{Matching Regeln}
 \begin{frame}{Matching Regeln}
-	Jeder Buchstabe und jede Zahl matcht immer \textbf{einmal} sich selbst.\\[.25cm]
+	Jeder Buchstabe und jede Zahl matcht immer \alert{einmal} sich selbst.\\[.25cm]
 	Das bedeutet:\\
 	\begin{itemize}
 		\item 	Der String \texttt{'a'} matcht der regex \texttt{'a'}.\\
@@ -62,8 +54,8 @@ Reguläre Ausdrücke werden oft auch 'regex' genannt (kurz für \textbf{regular 
 
 \subsection{Sonderzeichen}
 \begin{frame}{Sonderzeichen}
-	\texttt{.} (Punkt) matcht \textbf{einem} beliebingen Schriftzeichen, außer \texttt{'\textbackslash{}n'} (newline)\\[.25cm]
-	Für die regex `'.'` gilt:\\
+	\texttt{.} (Punkt) matcht \alert{einem} beliebingen Schriftzeichen, außer \texttt{'\textbackslash{}n'} (newline)\\[.25cm]
+	Für die regex \texttt{'.'} gilt:\\
 	\begin{itemize}
 		\item \texttt{'a'} matcht
 		\item \texttt{'b'} matcht
@@ -73,8 +65,8 @@ Reguläre Ausdrücke werden oft auch 'regex' genannt (kurz für \textbf{regular 
 \end{frame}
 
 \begin{frame}{Sonderzeichen}
-	\texttt{[]} matcht jedem der in den Klammern stehenden Zeichen, jedoch nur \textbf{einmal} (wie bei \texttt{.}).\\[.25cm]
-	Für die regex `'[abg]'` gilt also:\\
+	\texttt{[]} matcht jedem der in den Klammern stehenden Zeichen, jedoch nur \alert{einmal} (wie bei \texttt{.}).\\[.25cm]
+	Für die regex \texttt{'[abg]'} gilt also:\\
 	\begin{itemize}
 		\item \texttt{'a'} matcht
 		\item \texttt{'b'} matcht
@@ -85,7 +77,7 @@ Reguläre Ausdrücke werden oft auch 'regex' genannt (kurz für \textbf{regular 
 
 \begin{frame}{Sonderzeichen}
 	\texttt{()} erstellt eine Gruppe. Alles was in den Klammern steht, muss genau so vor kommen.\\[.25cm]
-	Für die regex `'(abc)'` gilt:\\
+	Für die regex \texttt{'(abc)'} gilt:\\
 	\begin{itemize}
 		\item \texttt{'a'} matcht nicht
 		\item \texttt{'ab'} matcht nicht
@@ -140,8 +132,8 @@ Reguläre Ausdrücke werden oft auch 'regex' genannt (kurz für \textbf{regular 
 \end{frame}
 
 \begin{frame}{Zusammengesetzte Regex}
-	\texttt{*} - Die \textit{vorangestellte} Regex muss 0 - n Mal vorkommen.\\[.25cm]
-	Für die regex `'a*'` gilt:\\
+	\texttt{*} - Die \alert{vorangestellte} Regex muss 0 - n Mal vorkommen.\\[.25cm]
+	Für die regex \texttt{'a*'} gilt:\\
 	\begin{itemize}
 		\item \texttt{''} matcht
 		\item \texttt{'a'} matcht
@@ -151,8 +143,8 @@ Reguläre Ausdrücke werden oft auch 'regex' genannt (kurz für \textbf{regular 
 \end{frame}
 
 \begin{frame}{Zusammengesetzte Regex}
-	\texttt{+} - Die \textit{vorangestellte} Regex muss 1 - n Mal vorkommen.\\[.25cm]
-	Für die regex `'a+'` gilt:\\
+	\texttt{+} - Die \alert{vorangestellte} Regex muss 1 - n Mal vorkommen.\\[.25cm]
+	Für die regex \texttt{'a+'} gilt:\\
 	\begin{itemize}
 		\item \texttt{''} matcht nicht, da es kein mal vorkommt
 		\item \texttt{'a'} matcht
@@ -162,8 +154,8 @@ Reguläre Ausdrücke werden oft auch 'regex' genannt (kurz für \textbf{regular 
 \end{frame}
 
 \begin{frame}{Zusammengesetzte Regex}
-	\texttt{?} - Die \textit{vorangestellte} regex muss 0 - 1 Mal vorkommen.\\[.25cm]
-	Für die regex `'a?'` gilt:\\
+	\texttt{?} - Die \alert{vorangestellte} regex muss 0 - 1 Mal vorkommen.\\[.25cm]
+	Für die regex \texttt{'a?'} gilt:\\
 	\begin{itemize}
 		\item \texttt{''} matcht
 		\item \texttt{'a'} matcht
@@ -172,8 +164,8 @@ Reguläre Ausdrücke werden oft auch 'regex' genannt (kurz für \textbf{regular 
 \end{frame}
 
 \begin{frame}{Zusammengesetzte Regex}
-	\texttt{\{m\}} - Die \textit{vorangestellte} regex muss genau m Mal vorkommen.\\[.25cm]
-	Für die regex `'y\{3\}'` gilt:\\
+	\texttt{\{m\}} - Die \alert{vorangestellte} regex muss genau m Mal vorkommen.\\[.25cm]
+	Für die regex \texttt{'y\{3\}'} gilt:\\
 	\begin{itemize}
 		\item \texttt{'yyy'} matcht
 		\item \texttt{'y'} matcht nicht, da es zu wenige Zeichen sind
@@ -182,8 +174,8 @@ Reguläre Ausdrücke werden oft auch 'regex' genannt (kurz für \textbf{regular 
 \end{frame}
 
 \begin{frame}{Zusammengesetzte Regex}
-	\texttt{\{m,n\}} -  Die \textit{vorangestellte} regex muss m - n Mal vorkommen.\\[.25cm]
-	Für die regex `'y\{2,5\}'` gilt:\\
+	\texttt{\{m,n\}} -  Die \alert{vorangestellte} regex muss m - n Mal vorkommen.\\[.25cm]
+	Für die regex \texttt{'y\{2,5\}'} gilt:\\
 	\begin{itemize}
 		\item \texttt{'yyy'} matcht
 		\item \texttt{'y'} matcht nicht, da es zu wenige Zeichen sind
