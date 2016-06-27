@@ -1,34 +1,23 @@
+% The Slide Definitions
+\input{../templates/course_definitions}
 
-%%	Getting started:
-%%	1) Copy this file and name the copy it like the topic it covers
-%%	2) In the following make sure to modify the copy, NOT THE ORIGINAL
-%%	3) Look for the points marked with "TODO" and complete them
-%%	4) compile this file
+% Author and Course information
+\input{../templates/course_information}
 
-\input{../templates/slides_template}	% nothing to do here
-% TODO change "course_info" to the name of your actual …_info(.tex)
-\input{../templates/course_info} % TODO modify this if you have not already done so
-
-% meta-information
-\newcommand{\topic}{
-	% TODO fill in the actual topic
-	Mails in Python senden
-}
-
-% nothing to do here
-\title{\topic}
-\supertitle{\course}
+% Presentation title
+% TODO Change the topic of the lesson
+\title{Mails in Python senden}
 \date{\today}
 
-% the actual document
+
 \begin{document}
 
 \maketitle
 
-\begin{frame}
+\begin{frame}{Gliederung}
+	\setbeamertemplate{section in toc}[sections numbered]
 	\tableofcontents
 \end{frame}
-
 
 \begin{frame}
 	Die folgenden Folien enthalten eine praktische Anleitung zum Senden von Mails in Python.
@@ -38,7 +27,7 @@
 \section{Grundlagen: Mails senden}
 \subsection{Das Modul \texttt{smtplib}}
 \begin{frame}[fragile]{Das Modul \texttt{smtplib}}
-	Das Modul \texttt{smtplib} definiert eine SMTP\textbf{*}-Client Session, die genutzt werden kann, um von jedem beliebigen, internetf\"ahigen Ger\"at E-Mails zu verschicken. \\[1cm]
+	Das Modul \texttt{\alert{smtplib}} definiert eine SMTP\textbf{*}-Client Session, die genutzt werden kann, um von jedem beliebigen, internetf\"ahigen Ger\"at E-Mails zu verschicken. \\[1cm]
 	
 	\textbf{*}\textit{SMTP} steht für \textbf{S}imple \textbf{M}ail \textbf{T}ransfer 
 	\textbf{P}rotocol und ist das Standard-Protokoll zum E-Mail Versand.
@@ -49,12 +38,12 @@
 	\lstinputlisting[firstline=3, lastline=3]{resources/11_sendmail/defs.py}
 	
 	\ \\[.25cm]
-	Der Server kann zum einen als einheitlicher \texttt{String} (inkl. Port) oder als \texttt{host} und \texttt{port} angeben werden.
+	Der Server kann zum einen als einheitlicher \texttt{String} (inkl. Port) oder einzeln als \texttt{host} und \texttt{port} angeben werden.
 \end{frame}
 
 \begin{frame}[fragile]{Login auf dem Server}
-	Zur heutigen Zeit arbeiten die meisten SMTP-Server mit \texttt{TLS}, um eine sichere Verbindung zu gewährleisten. Diese muss mithilfe von der Methode \texttt{starttls()} hergestellt werden.\\[.25cm]
-	Der eigentliche Login erfolgt im Anschluss durch:\\
+	Heutzutage arbeiten die meisten SMTP-Server mit \texttt{TLS}, um eine sichere Verbindung zu gewährleisten. Diese muss mithilfe der Methode \texttt{\alert{starttls()}} hergestellt werden.\\[.25cm]
+	Der eigentliche Login erfolgt im Anschluss durch:\\[.25cm]
 	\lstinputlisting[firstline=5, lastline=5]{resources/11_sendmail/defs.py}
 	\ \\[.25cm]
 	Der Parameter \texttt{initial\_response\_ok} kann in unserem Fall vernachlässigt werden.
@@ -65,17 +54,17 @@
 	\lstinputlisting[firstline=7]{resources/11_sendmail/defs.py}
 	\ \\[.25cm]
 	Jedoch l\"asst sich das ganze auch mit einem \texttt{MIME}-Objekt vereinfachen, auf das später noch eingegangen wird. \\
-	Dieses wird mit \texttt{send\_message()} versendet.
+	Dieses wird mit \texttt{\alert{send\_message()}} versendet.
 \end{frame}
 
 \begin{frame}{Schließen der Verbindung}
 	Zum Schluss darf nicht vergessen werden, die Verbindung zum SMTP-Server wieder zu schließen.\\
-	Dies geschieht mit der Methode \texttt{quit()} oder man stellt die Verbindung mithilfe eines \textit{Filehandlers} her.
+	Dies geschieht mit der Methode \texttt{\alert{quit()}} oder man stellt die Verbindung mithilfe eines \textit{Filehandlers} her.
 \end{frame}
 
 \begin{frame}[fragile]{Die vollst\"andige Serverkommunikation}
 	\lstinputlisting[linerange={3-3,19-34}]{resources/11_sendmail/mailer.py}
-	\ \\[1cm]
+	%\ \\[1cm]
 	Auf \texttt{buildmessage()} wird im folgenden Teil eingegangen.
 \end{frame}
 
@@ -83,7 +72,7 @@
 \subsection{Das Modul \texttt{email}}
 \begin{frame}[fragile]{Das Modul \texttt{email}}
 	Um mehr Möglichkeiten zur Gestaltung der E-Mail zu haben, lohnt sich die Verwendung des Moduls \texttt{email}.\\[.5cm]
-	Mit \texttt{email.mime} lassen sich Emails individuell bauen und zusammensetzen. Außerdem kann man mehrteilige Mails und Mails mit Anhängen (z.B. Bildern) erstellen.
+	Mit \texttt{\alert{email.mime}} lassen sich Emails individuell bauen und zusammensetzen. Außerdem kann man mehrteilige Mails und Mails mit Anhängen (z.B. Bildern) erstellen.
 \end{frame}
 
 \begin{frame}[fragile]{Die Klasse \texttt{MIMEText}}

@@ -30,14 +30,14 @@ smtplib.SMTP(host=’ ’, port=0, local_hostname=None,
 ```
 
 Der Server kann zum einen als einheitlicher `String` (inkl. Port) oder
-als `host` und `port` angeben werden.
+einzeln als `host` und `port` angeben werden.
 
 ---
 
 ### Login auf dem Server
 
 
-Zur heutigen Zeit arbeiten die meisten SMTP-Server mit `TLS`, um eine sichere Verbindung zu gewährleisten. Diese muss mithilfe von der Methode `starttls()` hergestellt werden.  
+Heutzutage Zeit arbeiten die meisten SMTP-Server mit `TLS`, um eine sichere Verbindung zu gewährleisten. Diese muss mithilfe von der Methode `starttls()` hergestellt werden.  
 Der eigentliche Login erfolgt im Anschluss durch:    
 
 ```python
