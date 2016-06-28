@@ -6,7 +6,8 @@ status: drafty
 authors: [felixw, felix]
 ---
 
-[...]
+When you deploy a program on a remote server debugging and monitoring your scripts gets harder since you will have to log in to the server in order to read logs.
+To make the monitoring easier you could implement a function that sends you a mail with some debugging information in case of an error.
 
 In this exercise we are going to write our own really small and dead simple implementation of a mailing list or group notification system using Python.
 Our goal is to write a script that gathers some mail addresses from a predefined server and uses a text file as source for some kind of newsletter.
@@ -48,16 +49,25 @@ Initialize the `MIMEText` object with the content you already read from the file
 
 message['From'] = 'Your Name <mail@example.com>'
 message['To'] = 'Poor Guy <alwaysgetsspammed@badluckbri.an>'
-# you might set more inforamtion like the subject and Cc/Bcc
+# you might set more inforamtion like the Subject and Cc/Bcc
 {% endhighlight %}
+
+Set the subject of your mail and use a timestamp within the subject to indicate when the mail has been sent.[^time]
+
+[^time]:
+    You might use the function `datetime.date.today()` to get some date information.
+
+## Verify it works
+
+Set your own mail address as hidden CC _(Bcc)_ to verify your program and the mail sending work as expected.
 
 ## Adjust the settings
 
 Now comes the part where we make a connection to the server and authenticate to send the mail we just built.
 Use the context manager to open a `SMTP` connection and log in with the user data we provide you with. Don't forget to enable starttls before starting!
 
-After the login was successfull, sou can use `smtplib.send_message(...)` to send your own mail to the world.
+After the login was successful, you can use `smtplib.send_message(...)` to send your own mail to the world.
 
 ## Know your Errors
 
-Don't forget the error handling! Try to catch every error that could occur to make your script run as fast as possible!
+Don't forget the error handling! Try to catch every error that could occur to make your script run as safe as possible!
