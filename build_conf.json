@@ -15,7 +15,8 @@
                 "08_process.tex",
         		    "09_web_client.tex",
                 "10_regex.tex",
-                "11_smtplib.tex"
+                "11_smtplib.tex",
+                "12_curses.tex",
             ]
         },
         "html": {

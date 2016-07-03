@@ -1,0 +1,134 @@
+% The Slide Definitions
+\input{../templates/course_definitions}
+
+% Author and Course information
+\input{../templates/course_information}
+
+% Presentation title
+\title{\texttt{ncurses} in Python}
+\date{\today}
+
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Gliederung}
+	\setbeamertemplate{section in toc}[sections numbered]
+	\tableofcontents
+\end{frame}
+
+
+
+\section{Das Modul \texttt{curses}}
+
+\begin{frame}{Das Modul \texttt{curses}}
+	\texttt{\alert{curses}} bietet ein Interface für die \glqq{}curses\grqq{}-Bibliothek, den de-facto Standard für fortgeschrittenes Terminal Handling.
+\end{frame}
+
+\begin{frame}{Das Modul \texttt{curses}}
+	\begin{itemize}
+		\item curses ist vor allem in Unix-Umgebungen weit verbreitet
+		\item dieses Modul wurde auf die API von \emph{ncurses}, einer Open-Source Library  für curses, zugeschnitten und funktioniert nur unter Linux und BSD Varianten von Unix
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Mitgelieferte Submodule}
+	\begin{description}
+		\item [\texttt{curses.ascii}] zur Arbeit mit ASCII-kodierten Zeichen
+		\item [\texttt{curses.panel}] Support für Panels, also mehrere Fenster übereinander (Fenster mit Ebenen)
+		\item [\texttt{curses.textpad}] Widget zum editieren von Text mit \emph{emacs}-artigen Key-Bindings
+	\end{description}	
+\end{frame}
+
+
+\section{Erstellen eines simplen Fensters}
+
+\subsection{Grundlegende Funktionen}
+
+\begin{frame}{Grundlegende Funktionen}
+	Zum Erstellen eines \texttt{curses}-Fensters benutzt man den Befehl
+	
+	\lstinputlisting[lastline=1]{resources/12_curses/functions.py}
+	
+	\begin{itemize}
+		\item instanziiert die Bibliothek, gibt ein \texttt{WindowObject} zurück, welches den gesamten Screen repräsentiert
+		\item Fehler beim Terminal öffnen können zum Beenden des Interpreters führen!
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Grundlegende Funktionen}
+	\lstinputlisting[firstline=3, lastline=3]{resources/12_curses/functions.py}
+	
+	\begin{itemize}
+		\item deinitialisiert Bibliothek
+		\item führt Terminal in normalen Zustand zurück
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\texttt{curses} liefert einen eigenen Wrapper zum Starten und Beenden:
+	
+	\lstinputlisting[firstline=5, lastline=5]{resources/12_curses/functions.py}
+	
+	\begin{itemize}
+		\item setzt nützliche Standards, initialisiert curses und ruft \emph{func} auf
+		\item Wrapper fängt Exceptions, stellt Terminal wieder her und wirft Exception erneut
+		\item \emph{func} muss \alert{\texttt{stdscr}} als erstes Argument akzeptieren (für das \texttt{WindowObject})
+	\end{itemize}
+\end{frame}
+
+
+\subsection{Darstellen von Symbolen}
+
+\begin{frame}{Darstellen von Symbolen}
+	Zur Darstellung einzelner Symbole verwendet man \texttt{addch}:
+	
+	\lstinputlisting[firstline=7, lastline=8]{resources/12_curses/functions.py}
+	
+	\begin{description}
+		\item [\texttt{ch}] zu schreibendes ASCII-Zeichen (im ASCII-Format!) \\ Zum konvertieren ggf. auf \texttt{ord()} zurück greifen.
+		\item [\texttt{y, x}] Koordinaten, an die das Zeichen geschrieben wird. Beachte invertierte Reihenfolge!
+		\item [\texttt{attr}] zu setzende Attribute
+	\end{description}
+\end{frame}
+
+\begin{frame}{Darstellen von Symbolen}
+	Zum Darstellen eines Strings existiert die Funktion \texttt{addstr()}:
+	
+	\lstinputlisting[firstline=10, lastline=11]{resources/12_curses/functions.py}
+	
+	\begin{itemize}
+		\item fügt ab \texttt{(y, x)} den gegebenen String ein
+		\item überschreibt alle vorher vorhandenen Zeichen
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Zeichen entfernen}
+	\lstinputlisting[firstline=13, lastline=15]{resources/12_curses/functions.py}
+	
+	\begin{itemize}
+		\item Funktionen zum löschen einzelner Zeichen, einer ganzen Zeile oder dem gesamten Fenster
+	\end{itemize}
+\end{frame}
+
+
+\subsection{Allgemeine Hinweise}
+
+\begin{frame}{Allgemeine Hinweise}
+	\begin{itemize}
+		\item Werden bei Funktionen \texttt{x} und \texttt{y} weg gelassen und sind optional, wird die Funktion an der aktuellen Cursorstelle ausgeführt.
+		\item Beachte die invertierte Zählweise!
+		\begin{itemize}
+			\item Punkt (0, 0) liegt oben links in der Ecke vom Terminal
+			\item x zählt von da nach rechts aufwärts
+			\item y zählt von da nach unten abwärts
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+
+
+
+\end{document}
