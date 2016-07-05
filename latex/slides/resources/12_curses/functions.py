@@ -14,3 +14,10 @@ window.delch([y, x])
 window.deleteln()
 window.erase()
 
+curses.textpad.rectangle(win, uly, ulx, lry, lrx)
+
+curses.textpad.Textbox(win)
+
+Textbox().edit([validator])
+Textbox().do_command(ch)
+Textbox().gather()

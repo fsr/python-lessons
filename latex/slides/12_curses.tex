@@ -128,7 +128,25 @@
 	\end{itemize}
 \end{frame}
 
+\section{Arbeiten mit \texttt{curses.textpad}}
+\begin{frame}{\texttt{rectangle}}
+	\lstinputlisting[firstline=17, lastline=17]{resources/12_curses/functions.py}
+	\begin{itemize}
+		\item erzeugt im WindowObject \texttt{win} ein Rechteck
+		\item Anfangspunkt ist (\texttt{ulx}, \texttt{uly}) (ul $\hat=$ upper left corner)
+		\item Endpunkt ist (\texttt{lrx}, \texttt{lry}) (lr $\hat=$ lower right corner)
+	\end{itemize}
+\end{frame}
 
+\begin{frame}{\texttt{Textbox}}
+	\lstinputlisting[firstline=19, lastline=23]{resources/12_curses/functions.py}
+	\begin{itemize}
+		\item Eine \texttt{Textbox} wird mit einem WindowObject erstellt und hat diese drei Funktionen
+		\item \texttt{edit()} \glqq{}Editormodus\grqq{} wobei der \texttt{validator} eine Funktion sein muss
+		\item \texttt{do\_command()} f\"uhrt einen Befehl aus \href{http://bit.ly/29sJ8QJ}{(Link hier)}
+		\item \texttt{gather()} gibt den Inhalt der Textbox zur\"uck
+	\end{itemize}
+\end{frame}
 
 
 \end{document}
