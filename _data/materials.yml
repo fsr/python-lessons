@@ -54,3 +54,9 @@ slides:
     name: Mails in Python
     url: https://ifsr.de/kurs-materialien/python/11_smtplib.pdf
     published: True
+  -
+    number: 12
+    name: ncurses in Python
+    url: https://www.ifsr.de/kurs-materialien/python/12_curses.pdf
+    published: True
+
