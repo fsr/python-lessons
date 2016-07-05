@@ -15,7 +15,7 @@ First we have to create a screen with curses so we can build our CLI around it.
 
 # The editor itself
 
-In order to have an editor, we have to build one. Maybe with a nice frame around it?[^textpad]
+In order to have an editor, we need a field to edit and write something: a textbox. Maybe with a nice frame around it?[^textpad]
 
 [^textpad]:
     It is time for `curses.textpad`!
@@ -23,15 +23,15 @@ In order to have an editor, we have to build one. Maybe with a nice frame around
 # Where?!
 
 The editor is working but it is not useful if you can not save the file...
-Add an open function which opens (or creates) a file to write the data in.
+Add an `open_file` function which opens (or creates) a file to write the data in.
 
 # Save it!
 
-Don't forget to save the file!
+Don't forget to save the file when you are done editing!
 
 # Make the creator an editor
 
-For now we only can create new texts that overwrite the old ones...
+For now we can only create new text files that overwrite the old ones...
 Time to load the old text![^load]
 
 [^load]:
