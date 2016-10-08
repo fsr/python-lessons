@@ -1,5 +1,6 @@
 ---
 title: Funktionen (fortgeschritten)
+theme: ifsr
 ---
 
 # Nutzung von Funktionen

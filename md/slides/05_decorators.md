@@ -1,5 +1,6 @@
 ---
 title: Decorators
+theme: ifsr
 ---
 
 # Fakten über Funktionen

@@ -1,5 +1,6 @@
 ---
 title: Grundlagen von Python
+theme: ifsr
 ---
 # Scriptcharakter
 
