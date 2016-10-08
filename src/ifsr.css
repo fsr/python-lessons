@@ -1,0 +1,343 @@
+/**
+ * Black theme for reveal.js.
+ *
+ * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+@import url(https://fonts.googleapis.com/css?family=Exo+2);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic);
+/*********************************************
+ * GLOBAL STYLES
+ *********************************************/
+/* line 7, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+body {
+  background: #111;
+  background-color: #111; }
+
+/* line 12, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal {
+  font-family: "Open Sans", sans-serif;
+  font-size: 30px;
+  font-weight: normal;
+  color: #eee; }
+
+/* line 19, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+::selection {
+  color: #fff;
+  background: #b1e11c;
+  text-shadow: none; }
+
+/* line 26, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal .slides > section,
+.reveal .slides > section > section {
+  line-height: 1.3;
+  font-weight: inherit; }
+
+/*********************************************
+ * HEADERS
+ *********************************************/
+/* line 40, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: 0 0 20px 0;
+  color: #eee;
+  font-family: "Exo 2", Impact, sans-serif;
+  font-weight: normal;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  text-transform: none;
+  text-shadow: none;
+  word-wrap: break-word; }
+
+/* line 55, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal h1 {
+  font-size: 3.77em; }
+
+/* line 56, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal h2 {
+  font-size: 2.11em; }
+
+/* line 57, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal h3 {
+  font-size: 1.55em; }
+
+/* line 58, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal h4 {
+  font-size: 1em; }
+
+/* line 60, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal h1 {
+  text-shadow: none; }
+
+/*********************************************
+ * OTHER
+ *********************************************/
+/* line 69, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal p {
+  margin: 20px 0;
+  line-height: 1.3; }
+
+/* Ensure certain elements are never larger than the slide itself */
+/* line 77, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal img,
+.reveal video,
+.reveal iframe {
+  max-width: 95%;
+  max-height: 95%; }
+
+/* line 82, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal strong,
+.reveal b {
+  font-weight: bold; }
+
+/* line 86, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal em {
+  font-style: italic; }
+
+/* line 92, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal ol,
+.reveal dl,
+.reveal ul {
+  display: inline-block;
+  text-align: left;
+  margin: 0 0 0 1em; }
+
+/* line 99, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal ol {
+  list-style-type: decimal; }
+
+/* line 103, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal ul {
+  list-style-type: disc; }
+
+/* line 107, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal ul ul {
+  list-style-type: square; }
+
+/* line 111, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal ul ul ul {
+  list-style-type: circle; }
+
+/* line 118, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal ul ul,
+.reveal ul ol,
+.reveal ol ol,
+.reveal ol ul {
+  display: block;
+  margin-left: 40px; }
+
+/* line 123, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal dt {
+  font-weight: bold; }
+
+/* line 127, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal dd {
+  margin-left: 40px; }
+
+/* line 132, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal q,
+.reveal blockquote {
+  quotes: none; }
+
+/* line 136, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal blockquote {
+  display: block;
+  position: relative;
+  width: 70%;
+  margin: 20px auto;
+  padding: 5px;
+  font-style: italic;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2); }
+
+/* line 148, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal blockquote p:first-child,
+.reveal blockquote p:last-child {
+  display: inline-block; }
+
+/* line 152, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal q {
+  font-style: italic; }
+
+/* line 156, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal pre {
+  display: block;
+  position: relative;
+  width: 90%;
+  margin: 20px auto;
+  text-align: left;
+  font-size: 0.55em;
+  font-family: monospace;
+  line-height: 1.2em;
+  word-wrap: break-word;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3); }
+
+/* line 171, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal code {
+  font-family: monospace; }
+
+/* line 175, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal pre code {
+  display: block;
+  padding: 5px;
+  overflow: auto;
+  max-height: 400px;
+  word-wrap: normal; }
+
+/* line 183, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal table {
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 189, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal table th {
+  font-weight: bold; }
+
+/* line 194, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal table th,
+.reveal table td {
+  text-align: left;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  border-bottom: 1px solid; }
+
+/* line 201, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal table th[align="center"],
+.reveal table td[align="center"] {
+  text-align: center; }
+
+/* line 206, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal table th[align="right"],
+.reveal table td[align="right"] {
+  text-align: right; }
+
+/* line 211, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal table tbody tr:last-child th,
+.reveal table tbody tr:last-child td {
+  border-bottom: none; }
+
+/* line 215, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal sup {
+  vertical-align: super; }
+
+/* line 218, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal sub {
+  vertical-align: sub; }
+
+/* line 222, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal small {
+  display: inline-block;
+  font-size: 0.6em;
+  line-height: 1.2em;
+  vertical-align: top; }
+
+/* line 229, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal small * {
+  vertical-align: top; }
+
+/*********************************************
+ * LINKS
+ *********************************************/
+/* line 238, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal a {
+  color: #b1e11c;
+  text-decoration: none;
+  -webkit-transition: color 0.15s ease;
+  -moz-transition: color 0.15s ease;
+  transition: color 0.15s ease; }
+
+/* line 246, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal a:hover {
+  color: #d0ee75;
+  text-shadow: none;
+  border: none; }
+
+/* line 253, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal .roll span:after {
+  color: #fff;
+  background: #7b9d14; }
+
+/*********************************************
+ * IMAGES
+ *********************************************/
+/* line 263, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal section img {
+  margin: 15px 0px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 4px solid #eee;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); }
+
+/* line 271, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal section img.plain {
+  border: 0;
+  box-shadow: none; }
+
+/* line 276, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal a img {
+  -webkit-transition: all 0.15s linear;
+  -moz-transition: all 0.15s linear;
+  transition: all 0.15s linear; }
+
+/* line 282, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal a:hover img {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #b1e11c;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
+
+/*********************************************
+ * NAVIGATION CONTROLS
+ *********************************************/
+/* line 295, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal .controls .navigate-left,
+.reveal .controls .navigate-left.enabled {
+  border-right-color: #b1e11c; }
+
+/* line 300, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal .controls .navigate-right,
+.reveal .controls .navigate-right.enabled {
+  border-left-color: #b1e11c; }
+
+/* line 305, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal .controls .navigate-up,
+.reveal .controls .navigate-up.enabled {
+  border-bottom-color: #b1e11c; }
+
+/* line 310, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal .controls .navigate-down,
+.reveal .controls .navigate-down.enabled {
+  border-top-color: #b1e11c; }
+
+/* line 314, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal .controls .navigate-left.enabled:hover {
+  border-right-color: #d0ee75; }
+
+/* line 318, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal .controls .navigate-right.enabled:hover {
+  border-left-color: #d0ee75; }
+
+/* line 322, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal .controls .navigate-up.enabled:hover {
+  border-bottom-color: #d0ee75; }
+
+/* line 326, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal .controls .navigate-down.enabled:hover {
+  border-top-color: #d0ee75; }
+
+/*********************************************
+ * PROGRESS BAR
+ *********************************************/
+/* line 335, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.2); }
+
+/* line 338, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
+.reveal .progress span {
+  background: #b1e11c;
+  -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
+
+/*# sourceMappingURL=ifsr.css.map */
