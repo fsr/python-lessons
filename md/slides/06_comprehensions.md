@@ -1,5 +1,6 @@
 ---
 title: Comprehensions
+theme: ifsr
 ---
 
 # Basics
