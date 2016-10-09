@@ -1,8 +1,3 @@
----
-title: Subprozesse in Python
-theme: ifsr
----
-
 # Grundlagen
 
 ---

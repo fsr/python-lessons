@@ -1,7 +1,3 @@
----
-title: Grundlagen von Python
-theme: ifsr
----
 # Scriptcharakter
 
 ---
@@ -40,7 +36,7 @@ if __name__ == '__main__':
 -   Andere Fehler findet man erst, wenn die betreffende Zeile
     ausgeführt wird.
 
-# Programmier-paradigmen
+# Programmierparadigmen
 
 ## Imperatives Programmieren
 

@@ -1,7 +1,3 @@
----
-title: Getting started
-theme: ifsr
----
 # Über diesen Kurs
 
 ---

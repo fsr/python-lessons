@@ -1,11 +1,3 @@
----
-title: Mails in Python senden
-theme: ifsr
----
-
-Die folgenden Folien enthalten eine praktische Anleitung zum Senden von
-Mails in Python.
-
 # Grundlagen: Mails senden
 
 
