@@ -1,0 +1,46 @@
+{
+    "Getting started": {
+        "theme": "ifsr",
+        "source": "01_getting_started"
+    },
+    "Grundlagen von Python": {
+        "theme": "ifsr",
+        "source": "02_grundlagen"
+    },
+    "Builtin Datenstrukturen": {
+        "theme": "ifsr",
+        "source": "03_builtins"
+    },
+    "Module, Pakete und PIP": {
+        "theme": "ifsr",
+        "source": "04_modules_packages_pip"
+    },
+    "Decorators": {
+        "theme": "ifsr",
+        "source": "05_decorators"
+    },
+    "Comprehensions": {
+        "theme": "ifsr",
+        "source": "06_comprehensions"
+    },
+    "Funktionen (fortgeschritten)": {
+        "theme": "ifsr",
+        "source": "07_functions_advanced"
+    },
+    "Subprozesse in Python": {
+        "theme": "ifsr",
+        "source": "08_process"
+    },
+    "Web Client": {
+        "theme": "ifsr",
+        "source": "09_web_client"
+    },
+    "re - Regular Expressions": {
+        "theme": "ifsr",
+        "source": "10_regex"
+    },
+    "Mails in Python senden": {
+        "theme": "ifsr",
+        "source": "11_smtplib"
+    }
+}

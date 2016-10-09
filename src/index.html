@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <title>Index</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="reveal.js/css/reveal.css" />
+    <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+    <style type="text/css">
+        code {
+            white-space: pre;
+        }
+    </style>
+    <link rel="stylesheet" href="reveal.js/css/theme/ifsr.css" id="theme">
+    <script>
+        if (window.location.search.match(/print-pdf/gi)) {
+            var link = document.createElement("link");
+            link.rel = "stylesheet";
+            link.type = "text/css";
+            link.href = "reveal.js/css/print/pdf.css";
+            document.getElementsByTagName("head")[0].appendChild(link);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            {content}
+        </div>
+    </div>
+
+    <script src="reveal.js/lib/js/head.min.js"></script>
+    <script src="reveal.js/js/reveal.js"></script>
+
+    <script>
+        Reveal.initialize({
+            controls: false,
+            progress: false,
+            history: false,
+            center: true,
+            theme: "ifsr",
+            transition: Reveal.getQueryHash().transition || "slide",
+            hideAddressBar: true,
+
+            dependencies: [{
+                src: "reveal.js/lib/js/classList.js",
+                condition: function() {
+                    return !document.body.classList;
+                }
+            }, ]
+        });
+    </script>
+</body>
+
+</html>

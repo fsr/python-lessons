@@ -1,8 +1,3 @@
----
-title: re - Regular Expressions
-theme: ifsr
----
-
 # Grundlage
 
 ---
