@@ -43,7 +43,7 @@ body {
 .reveal h5,
 .reveal h6 {
   margin: 0 0 20px 0;
-  color: #eee;
+  color: #b1e11c;
   font-family: "Exo 2", Impact, sans-serif;
   font-weight: normal;
   line-height: 1.2;
@@ -54,11 +54,11 @@ body {
 
 /* line 55, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
 .reveal h1 {
-  font-size: 3.77em; }
+  font-size: 2.5em; }
 
 /* line 56, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
 .reveal h2 {
-  font-size: 2.11em; }
+  font-size: 2em; }
 
 /* line 57, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
 .reveal h3 {
@@ -243,7 +243,7 @@ body {
  *********************************************/
 /* line 238, /Users/h4llow3En/projects/python/pylesson/html/reveal.js/css/theme/template/theme.scss */
 .reveal a {
-  color: #b1e11c;
+  color: #eee;
   text-decoration: none;
   -webkit-transition: color 0.15s ease;
   -moz-transition: color 0.15s ease;
