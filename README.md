@@ -11,10 +11,11 @@ The slides in the `md` folder need to be compiled with **reveal.js**.
 Therefore, `pandoc` has to be installed on your computer. You can find these Instructions [here](http://pandoc.org/installing.html). Mac users can simply install it with *homebrew*:
 `brew install pandoc`
 
+Run `./install.sh` to initialize the html folder with reveal.js and copy the ifsr.css this only have to be done once
 
-Make the install script and the build script executable, using `chmod +x filename.sh`, then install reveal.js once by running `./reveal.js-install.sh`.
+To build the slides simply run `./build_reveal.py`. The compiled html files are in the `html` folder.
 
-After the installation you can compile the Markdown files by running the build script. The compiled html files are in the `rbuild` folder.
+If you add new slides don't forget to add them to `reveal.json`
 
 
 ## Instructions for teachers and contributors
