@@ -14,6 +14,12 @@
     [mercurial](http://mercurial.selenic.com/))
 
 
+<div class="notes">
+Es ist für 11 Kurseinheiten offiziell Material vorhanden.
+Alle weiteres Stunden sollten sich auf Wünsche der Studenten beziehen.
+</div>
+
+
 # Der Python Interpreter
 
 ---

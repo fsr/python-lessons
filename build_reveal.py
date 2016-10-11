@@ -24,7 +24,7 @@ def main():
                          '--template', 'md/template.html',
                          'md/{}.md'.format(source), '--no-highlight',
                          '--variable', 'theme={}'.format(theme),
-                         '--variable', 'title={}'.format(title),
+                         '--variable', 'pagetitle={}'.format(title),
                          '-o', 'html/{}.html'.format(source)])
         index += index_link.format(link=source + '.html', title=title)
     generated_index = index_content.format(links=index)

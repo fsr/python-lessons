@@ -42,5 +42,9 @@
     "Mails in Python senden": {
         "theme": "ifsr",
         "source": "11_smtplib"
+    },
+    "ncurses in Python": {
+        "theme": "ifsr",
+        "source": "12_curses"
     }
 }
