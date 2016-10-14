@@ -15,6 +15,9 @@ $endif$
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="stylesheet" href="$revealjs-url$/css/reveal.css"/>
   <link rel="stylesheet" href="$revealjs-url$/lib/css/zenburn.css">
+  <script src="https://repl.it/lib/api.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/token.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/repl.it.js" type="text/javascript" charset="utf-8"></script>
     <style type="text/css">code{white-space: pre;}</style>
 $if(highlighting-css)$
     <style type="text/css">
@@ -28,6 +31,7 @@ $endfor$
 $else$
     <link rel="stylesheet" href="$revealjs-url$/css/theme/$if(theme)$$theme$$else$black$endif$.css" id="theme">
 $endif$
+    <link rel="stylesheet" href="css/repl.css">
     <!-- If the query includes 'print-pdf', include the PDF print sheet -->
     <script>
       if( window.location.search.match( /print-pdf/gi ) ) {

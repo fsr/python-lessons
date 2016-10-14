@@ -11,11 +11,15 @@ The slides in the `md` folder need to be compiled with **reveal.js**.
 Therefore, `pandoc` has to be installed on your computer. You can find these Instructions [here](http://pandoc.org/installing.html). Mac users can simply install it with *homebrew*:
 `brew install pandoc`
 
+Before installing create a `src/js/token.js` from `src/js/token.js.example` and insert your [repl.it API](https://repl.it/site/blog/api-docs) token.
+
 Run `./install.sh` to initialize the html folder with reveal.js and copy the ifsr.css this only have to be done once
 
 To build the slides simply run `./build_reveal.py`. The compiled html files are in the `html` folder and easily can be accessed via the `index.html`
 
 If you add new slides don't forget to add them to `reveal.json`.
+
+
 
 An online copy can be found [here](https://python.felixdoering.com).
 

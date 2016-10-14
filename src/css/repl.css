@@ -1,0 +1,47 @@
+/* line 1, /Users/h4llow3En/projects/custom-repl.it-embedding/repl.scss */
+.exec {
+  background: #dcdcdc;
+  width: 100%;
+  color: black; }
+  /* line 5, /Users/h4llow3En/projects/custom-repl.it-embedding/repl.scss */
+  .exec pre {
+    box-shadow: none; }
+  /* line 8, /Users/h4llow3En/projects/custom-repl.it-embedding/repl.scss */
+  .exec .repl {
+    width: 100%;
+    background: #dcdcdc; }
+  /* line 12, /Users/h4llow3En/projects/custom-repl.it-embedding/repl.scss */
+  .exec .repl-top {
+    background: darkgray;
+    padding: 5px 5px 5px 5px; }
+  /* line 16, /Users/h4llow3En/projects/custom-repl.it-embedding/repl.scss */
+  .exec .repl-code {
+    width: 100%;
+    background-color: white; }
+  /* line 20, /Users/h4llow3En/projects/custom-repl.it-embedding/repl.scss */
+  .exec .repl-result {
+    padding-left: 20px;
+    padding-bottom: 5px; }
+  /* line 24, /Users/h4llow3En/projects/custom-repl.it-embedding/repl.scss */
+  .exec .input {
+    text-align: left;
+    color: black;
+    margin-top: 0px;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-bottom: 10px; }
+  /* line 32, /Users/h4llow3En/projects/custom-repl.it-embedding/repl.scss */
+  .exec .run-button {
+    width: 100px;
+    height: 30px;
+    font-size: 16px;
+    border-style: none;
+    color: black;
+    text-align: center;
+    background: #b1e11c; }
+    /* line 40, /Users/h4llow3En/projects/custom-repl.it-embedding/repl.scss */
+    .exec .run-button:hover {
+      background: #e0f3a3;
+      color: #4d4d4d; }
+
+/*# sourceMappingURL=repl.css.map */

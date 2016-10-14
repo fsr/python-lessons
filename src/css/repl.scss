@@ -1,0 +1,45 @@
+.exec {
+    background: #dcdcdc;
+    width: 100%;
+    color: black;
+    pre {
+        box-shadow: none;
+    }
+    .repl {
+        width: 100%;
+        background: #dcdcdc;
+    }
+    .repl-top {
+        background: darken(#dcdcdc, 20%);
+        padding: 5px 5px 5px 5px;
+    }
+    .repl-code {
+        width: 100%;
+        background-color: white;
+    }
+    .repl-result {
+        padding-left: 20px;
+        padding-bottom: 5px;
+    }
+    .input {
+        text-align: left;
+        color: black;
+        margin-top: 0px;
+        padding-top: 10px;
+        padding-left: 20px;
+        padding-bottom: 10px;
+    }
+    .run-button {
+        width: 100px;
+        height: 30px;
+        font-size: 16px;
+        border-style: none;
+        color: black;
+        text-align: center;
+        background: #b1e11c;
+        &:hover {
+            background: lighten(#b1e11c, 30%);
+            color: lighten(black, 30%);
+        }
+    }
+}

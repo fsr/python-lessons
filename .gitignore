@@ -5,6 +5,7 @@ build/
 .c9/
 
 
+token.js
 *.log
 *.aux
 *.vrb
