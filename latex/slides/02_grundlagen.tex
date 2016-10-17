@@ -14,8 +14,10 @@
 \maketitle
 
 \begin{frame}{Gliederung}
-	\setbeamertemplate{section in toc}[sections numbered]
-	\tableofcontents
+	\begin{multicols}{2}
+		\setbeamertemplate{section in toc}[sections numbered]
+		\tableofcontents
+	\end{multicols}
 \end{frame}
 
 
@@ -113,6 +115,34 @@
 	\end{itemize}
 \end{frame}
 
+\subsection{Klassen- und Objektattribute im Detail}
+\begin{frame}[fragile]{Klassen- und Objektattribute im Detail}
+	Klassenattribute sind für jede Instanz eines Objektes gleich.
+	\lstinputlisting{resources/02_grundlagen/classattributes.py}
+\end{frame}
+
+\begin{frame}{Klassen- und Objektattribute im Detail}
+	Gewöhnlich definiert man Instanzattribute allerdings im \textbf{Initialisierer}.
+	\lstinputlisting{resources/02_grundlagen/instanceattributes.py} 
+	\begin{itemize}
+		\item Instanzattribute sollten immer in \alert{\texttt{\_\_init\_\_}} definiert werden, um sicherzustellen, dass alle Instanzen die gleichen Attribute haben
+	\end{itemize}
+\end{frame}
+
+\subsection{Super- und Subklassen}
+\begin{frame}[fragile]{Super- und Subklassen}
+	Eine Klasse kann Attribute einer anderen Klasse erben, indem sie mit \alert{\texttt{class subclass(superclass):}} definiert wird.
+	\begin{itemize}
+		\item Subklassen enthalten von Anfang an alle Attribute der Superklasse.
+		\item Es können neue Variablen und Methoden hinzugefügt, und auch alte überschrieben werden.
+		\item Die Attribute der Superklasse können mit \alert{\texttt{super()}} aufgerufen werden.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Super- und Subklassen}
+	\lstinputlisting{resources/02_grundlagen/inheritance.py}
+\end{frame}
+
 
 \section{Methoden}
 \begin{frame}[fragile]{Methoden}
@@ -147,26 +177,8 @@
 	\end{description}
 \end{frame}
 
-\begin{frame}[fragile]{Klassen- und Objektattribute im Detail}
-	Klassenattribute sind für jede Instanz eines Objektes gleich.
-	\lstinputlisting{resources/02_grundlagen/classattributes.py}
-\end{frame}
 
-\begin{frame}[fragile]{Klassen- und Objektattribute im Detail}
-	Gewöhnlich definiert man Instanzattribute allerdings im \textbf{Initialisierer}.
-	\lstinputlisting{resources/02_grundlagen/instanceattributes.py} 
-	\begin{itemize}
-		\item Instanzattribute sollten immer in \alert{\texttt{\_\_init\_\_}} definiert werden, um sicherzustellen, dass alle Instanzen die gleichen Attribute haben
-	\end{itemize}
-\end{frame}
 
-\begin{frame}[fragile]{Klassen- und Objektattribute im Detail}
-	Eine Klasse kann Attribute einer anderen Klasse erben, indem wir sie mit  \alert{\texttt{class subclass(superclass):}} definieren.
-	\begin{itemize}
-		\item Subklassen enthalten von Anfang an alle Attribute der Superklasse.
-		\item Es können neue Variablen und Methoden hinzugefügt, und auch alte überschrieben werden.
-		\item Die Attribute der Superklasse können mit \alert{super()} aufgerufen werden.
-	\end{itemize}
-\end{frame}
+
 
 \end{document}

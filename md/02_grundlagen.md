@@ -141,6 +141,84 @@ im Initialisierer) und sind für jede Instanz unterschiedlich.
     `type`-Objekten)
 -   Ist außerhalb des Initialisierers nicht empfehlenswert
 
+
+## Klassen- und Objektattribute im Detail
+
+---
+
+Klassenattribute sind für jede Instanz eines Objektes gleich.
+```python
+class TestClass:
+    # jeder Instanz wird bei Erstellung bereits
+    # dieses Attribut zugewiesen
+    num = 12
+
+def main():
+    a = TestClass()
+    b = TestClass()
+    # beide Variablen haben fuer 'num' von der
+    # Erstellung an den gleichen Wert
+
+    # das Aendern der Variable ueberschreibt das
+    # Klassenattribut mit einem Instanzattribut
+    a.num = -3
+    print(b.num)  # -> liefert immer noch 12
+```
+
+---
+
+Gewöhnlich definiert man Instanzattribute allerdings im
+*Initialisierer*.
+```python
+class Human:
+    def __init__(self, firstname, lastname):
+        # die beiden Parameterwerte werden in Instanz-
+        # attributen gespeichert.
+        self.firstname = firstname
+        self.lastame = lastname
+
+def main():
+    # instanziiert zwei Objekte vom Typ 'Human'
+    matthias = Human("Matthias", "Stuhlbein")
+    john = Human("John", "Doe")
+```
+Instanzattribute sollten immer in \_\_init\_\_ definiert werden, um
+sicherzustellen, dass alle Instanzen die gleichen Attribute haben
+
+
+## Super- und Subklassen
+
+Eine Klasse kann Attribute einer anderen Klasse erben, indem sie mit
+```python
+class subclass(superclass):
+```
+definiert wird.
+
+---
+
+- Subklassen enthalten von Anfang an alle Attribute der Superklasse.
+-  Es können neue Variablen und Methoden hinzugefügt, und auch alte überschrieben werden.
+-  Die Attribute der Superklasse können mit `super()` aufgerufen werden.
+
+---
+
+```python
+class Human():
+    def __init__(self, fistname, lastname, dob):
+        self.firstname = firstname
+        self.lastname = lastname
+        self.dob = dob
+
+
+class Child(Human):
+    # Ein Child ist einfach nur ein Human mit den
+    # zusaetzlichen Attributen father und mother
+    def __init__(self, fistname, lastname, dob, father, mother):
+        super.__init__(fistname, lastname, dob)
+        self.father = father
+        self.mother = mother
+```
+
 # Methoden
 
 ---
@@ -187,46 +265,3 @@ Wird immer aufgerufen wenn das Objekt vom Garbage Collector aufgeräumt wird.
 
 **String Repräsentation**  
 Ähnlich wie `__str__` aber gedacht für eine für Debug verwendbare Repräsentation anstatt für Output wie `__str__`.
-
-## Klassen- und Objektattribute im Detail
-
----
-
-Klassenattribute sind für jede Instanz eines Objektes gleich.
-```python
-class TestClass:
-    # jeder Instanz wird bei Erstellung bereits
-    # dieses Attribut zugewiesen
-    num = 12
-
-def main():
-    a = TestClass()
-    b = TestClass()
-    # beide Variablen haben fuer 'num' von der
-    # Erstellung an den gleichen Wert
-
-    # das Aendern der Variable ueberschreibt das
-    # Klassenattribut mit einem Instanzattribut
-    a.num = -3
-    print(b.num)  # -> liefert immer noch 12
-```
-
----
-
-Gewöhnlich definiert man Instanzattribute allerdings im
-*Initialisierer*.
-```python
-class Human:
-    def __init__(self, firstname, lastname):
-        # die beiden Parameterwerte werden in Instanz-
-        # attributen gespeichert.
-        self.firstname = firstname
-        self.lastame = lastname
-
-def main():
-    # instanziiert zwei Objekte vom Typ 'Human'
-    matthias = Human("Matthias", "Stuhlbein")
-    john = Human("John", "Doe")
-```
-Instanzattribute sollten immer in \_\_init\_\_ definiert werden, um
-sicherzustellen, dass alle Instanzen die gleichen Attribute haben
