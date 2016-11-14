@@ -4,7 +4,7 @@ def return_hello():
 
 say_hello = return_hello
 
-print say_hello()
+print(say_hello())
 # => Hello
 
 
@@ -15,7 +15,7 @@ def greet(name):
     greeting = return_hello() + name
     return greeting
 
-print greet("World")
+print(greet("World"))
 # => Hello World
 
 
@@ -25,7 +25,7 @@ def greet():
         return "Hello"
     return say_hello
 
-print greet()
+print(greet())
 # Hello
 
 
@@ -37,5 +37,5 @@ def which_date(function):
     date = "25th June 2015"
     return function(date)
 
-print which_date(say_date)
+print(which_date(say_date))
 # => Today it's 25th June 2015

@@ -9,12 +9,12 @@ def tell_the_world(func):
     return complete_sentence
 
 # normaler Aufruf:
-print tell_the_world(get_date)("25th June 2015")
+print(tell_the_world(get_date)("25th June 2015"))
 
 # als decorator
 get_date = tell_the_world(get_date)
 
-print get_date("25th June 2015")
+print(get_date("25th June 2015"))
 # => Hello World, today it's 25th June 2015.
 
 
@@ -30,7 +30,7 @@ def tell_the_world(func):
 def get_date(date):
     return "today it's {}.".format(date)
 
-print get_date("25th June 2015")
+print(get_date("25th June 2015"))
 # => Hello World, today it's 25th June 2015.
 
 
@@ -47,5 +47,5 @@ def tell_the_date_to(name):
 def get_date(date):
     return "today it's {}.".format(date)
 
-print get_date("25th June 2015")
+print(get_date("25th June 2015"))
 # => Hello John Doe, today it's 25th June 2015.

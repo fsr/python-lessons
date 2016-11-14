@@ -12,7 +12,7 @@ def return_hello():
 
 say_hello = return_hello
 
-print say_hello()
+print(say_hello())
 # => Hello
 ```
 
@@ -28,7 +28,7 @@ def greet(name):
     greeting = return_hello() + name
     return greeting
 
-print greet("World")
+print(greet("World"))
 # => Hello World
 ```
 
@@ -43,7 +43,7 @@ def greet():
         return "Hello"
     return say_hello
 
-print greet()
+print(greet())
 # Hello
 ```
 
@@ -60,7 +60,7 @@ def which_date(function):
     date = "25th June 2015"
     return function(date)
 
-print which_date(say_date)
+print(which_date(say_date))
 # => Today it's 25th June 2015
 ```
 
@@ -92,12 +92,12 @@ def tell_the_world(func):
 
 ```python
 # normaler Aufruf:
-print tell_the_world(get_date)("25th June 2015")
+print(tell_the_world(get_date)("25th June 2015"))
 
 # als decorator
 get_date = tell_the_world(get_date)
 
-print get_date("25th June 2015")
+print(get_date("25th June 2015"))
 # => Hello World, today it's 25th June 2015.
 ```
 
@@ -120,7 +120,7 @@ def tell_the_world(func):
 def get_date(date):
     return "today it's {}.".format(date)
 
-print get_date("25th June 2015")
+print(get_date("25th June 2015"))
 # => Hello World, today it's 25th June 2015.
 ```
 
@@ -149,6 +149,6 @@ def tell_the_date_to(name):
 def get_date(date):
     return "today it's {}.".format(date)
 
-print get_date("25th June 2015")
+print(get_date("25th June 2015"))
 # => Hello John Doe, today it's 25th June 2015.
 ```
