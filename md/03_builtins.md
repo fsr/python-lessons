@@ -210,10 +210,10 @@ s2.add(5)  # ==> AttributeError: 'frozenset' object has no attribute 'add'
 for i in [1,2,3]:
     if i > 9:
         break
-    # code
-    else:
-        pass
-        # wenn kein break vorkommt
+        # verlässt die Schleife
+else:
+    pass
+    # wenn kein break vorkommt
 
 for i in (1,2,3):
     # code
