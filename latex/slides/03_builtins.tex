@@ -138,32 +138,7 @@
 
 
 % #############################################################################
-% ------------------------------- 7. Iterations -------------------------------
-% #############################################################################
-\section{Iterations}
-
-\begin{frame}{Iteration}
-	\begin{itemize}
-		\item nur foreach
-		\item für Iterationen über Integer gibt es \\ \hspace{0.5cm} \texttt{range([start], stop, step=1)}
-		\item um Iteratoren zu kombinieren kann man \\ \hspace{0.5cm} \texttt{zip(iterator\_1, iterator\_2, ..., iterator\_n)} verwenden
-		\item alles mit einer \alert{\texttt{\_\_iter\_\_}} Methode ist iterierbar
-		% TODO: stateful Iterator erklaeren oder entfernen
-		\item \texttt{iter(iterable)} konstruiert einen \textit{stateful iterator}
-	\end{itemize}
-\end{frame}
-
-\begin{frame}{Iteration - Beispiel}
-	\lstinputlisting[lastline=15]{resources/03_builtins/iterate.py}
-\end{frame}
-
-\begin{frame}{Iteration - Beispiel}
-	\lstinputlisting[firstline=18]{resources/03_builtins/iterate.py}
-\end{frame}
-
-
-% #############################################################################
-% ------------------------------- 8. Unpacking --------------------------------
+% ------------------------------- 7. Unpacking --------------------------------
 % #############################################################################
 \section{Unpacking}
 
@@ -176,6 +151,44 @@
 
 \begin{frame}{Unpacking - Beispiel}
 	\lstinputlisting{resources/03_builtins/unpacking.py}
+\end{frame}
+
+
+% #############################################################################
+% ------------------------------- 8. Iterations -------------------------------
+% #############################################################################
+\section{Iterations}
+
+\begin{frame}{Iteratoren}
+	\begin{itemize}
+		\item alles mit einer \alert{\texttt{\_\_next\_\_}} Methode ist ein \textit{Iterator}
+		\item Iteratoren stellen eine folge von Elementen dar, aus welcher man mit \alert{\texttt{next(iterator)}} das nächste Element holen kann
+		\item wenn der Iterator erschöpft ist wird eine \alert{\texttt{StopIteration}} Exception ausgelöst
+		\item gehören zu den \textit{Iterables}
+	\end{itemize}
+	\textbf{Wichtig:} Iteratoren besitzen einen internen Zustand und sollten deswegen nicht von mehreren Benutzern gleichzeitig benutzt werden!
+	Dies kann mit der Verwendung mehrerer unabhängiger Iteratoren umgangen werden.
+\end{frame}
+
+\begin{frame}{Iterables}
+	\begin{itemize}
+		\item alles mit einer \alert{\texttt{\_\_iter\_\_}} Methode ist eine \textit{Iterable}
+		\item \textit{Iterables} liefern mit \alert{\texttt{iter(obj)}} einen \textit{Iterator} über sich selbst
+		\item \alert{\texttt{for}} Schleifen ermöglichen ein einfaches Durchlaufen
+		\item eine \textit{Iterable} über Integer ist \\ \hspace{0.5cm} \texttt{range([start], stop, step=1)}
+		\item um Iterables zu kombinieren kann man \\ \hspace{0.5cm} \texttt{zip(iterable\_1, iterable\_2, ..., iterable\_n)} verwenden
+		\item \hspace{0.5cm} \texttt{any(iterable)} prüft ob mindestens ein Element einer \textit{Iterable} wahr ist
+		\item \hspace{0.5cm} \texttt{all(iterable)} prüft ob alle Elemente einer \textit{Iterable} wahr sind
+	\end{itemize}
+	\textbf{Wichtig:} Während des Iterierens können einige Iterables nicht verändert werden
+\end{frame}
+
+\begin{frame}{Iteration - Beispiele}
+	\lstinputlisting[lastline=18]{resources/03_builtins/iterate.py}
+\end{frame}
+
+\begin{frame}{Iteration - Beispiele}
+	\lstinputlisting[firstline=20]{resources/03_builtins/iterate.py}
 \end{frame}
 
 
