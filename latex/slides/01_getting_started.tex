@@ -14,184 +14,163 @@
 \maketitle
 
 \begin{frame}{Gliederung}
-	\begin{multicols}{2}
-		\setbeamertemplate{section in toc}[sections numbered]
-		\tableofcontents
-	\end{multicols}
+	\setbeamertemplate{section in toc}[sections numbered]
+	\tableofcontents
 \end{frame}
 
-% --------------------------- Über den Kurs -----------------------------------
-\section{Über diesen Kurs}
-\begin{frame}{Über diesen Kurs}
+% --------------------------- Dieser Kurs & Links -----------------------------
+\section{Dieser Kurs \& Links}
+\begin{frame}{Dieser Kurs \& Links}
 	\begin{itemize}
-    	\item 12 Kurseinheiten
-    	\item setzt grundlegende Programmierkenntnisse voraus
-    	\item Ressourcen
-    	\begin{itemize}
-    	    \item \href{http://auditorium.inf.tu-dresden.de}{auditorium} %TODO: add link to our group once it exists
-	        \item Google (python/python3 meine frage hier) landet oft in der python 2.7 Doku (Versionsswitcher im Menü)
-    	    \item \href{docs.python.org}{offizielle Dokumentation}
-    	    \item unsere \href{https://github.com/fsr}{Github-Organisation}
-    	\end{itemize}
-    	\item Hinweis: SCM's sind hilfreich (\href{https://git-scm.com}{git}, \href{http://mercurial.selenic.com/}{mercurial})
+		\item Ressourcen
+		\begin{itemize}
+			\item \url{http://auditorium.inf.tu-dresden.de}
+			\item Beim Googlen: Vermeidet die python 2.7 Doku
+			\item \url{docs.python.org}: offizielle Dokumentation
+			\item \url{https://github.com/fsr}: iFSR auf Github
+			\item[ich] \url{mailto:anton.obersteiner1@mailbox.tu-dresden.de}
+		\end{itemize}
+		% \item Hinweis: SCM's sind hilfreich (\href{https://git-scm.com}{git}, \href{http://mercurial.selenic.com/}{mercurial})
 	\end{itemize}
 \end{frame}
 
 
-% ----------------------- Der Python Interpreter ------------------------------
-\section{Der Python Interpreter}
+% ----------------------- Python & Umgebung ------------------------------
+\section{Python \& Umgebung}
 \begin{frame}{Der Python Interpreter}
 	\begin{itemize}
-    	\item Die zwei verbreitet verwendeten Python Versionen sind 2.7 und 3.5, wir werden 3.5 nutzen, weil es cooler ist und bessere Features hat
-		\item Python kann \alert{\href{http://www.python.org}{hier}} heruntergeladen und installiert werden oder mit dem Paketmanager eurer Wahl. (Das Paket sollte \texttt{python3} und \texttt{python3-dev} sein, außer unter Arch)
-    	\item Python funktioniert am besten unter UNIX (ist aber okay unter Windows)
-    	\item Den Interpreter startet man mit \texttt{python3} im Terminal oder mit \texttt{Python.exe}
-    	\item Der Interpreter stellt die volle Funktionalität von Python bereit, einschließlich dem Erstellen von Klassen und Funktionen
+		\item Übliche Python-Versionen: 2.7 und 3.x (bessere Features)
+		\item Python auf \url{https://www.python.org} heruntergeladen und installieren
+		\item UNIX: \texttt{...install... python3 python3-dev}
+		\item<2-> Python wird interpretiert, nicht kompiliert
 	\end{itemize}
+	\onslide<2->\lstinputlisting{resources/01_getting_started/mistake.py}
+\end{frame}
+\begin{frame}{Editor/IDE}
+	\begin{description}
+		\item[Editor] empfohlen (benutzen wir im Kurs)
+		\begin{itemize}
+			\item \url{https://atom.io} (weil Github)
+			\item \url{http://www.sublimetext.com/3}
+			\item \url{https://c9.i}: cloud9 (online, free für open source Projekte)
+			\item \texttt{idle} aus \texttt{python3-dev}
+		\end{itemize}
+		\item[IDEs] hilfreich bei größeren Projekten, hier nicht genutzt
+		\begin{itemize}
+			\item \href{https://jetbrains.com/pycharm}{PyCharm} (free + professional für Studenten)
+		\end{itemize}
+		\lstinputlisting{resources/01_getting_started/Planet.py}
+		IDLE?
+	\end{description}
+\end{frame}
+\begin{frame}{Python ausführen}
+	\begin{itemize}
+		\item Python-Datei: \texttt{text\_file.py}
+		\item Im Terminal starten: \texttt{python3} bzw. \texttt{Python.exe}
+		\item Ausführbar machen: Windows: Python wählen
+		\item Linux: \texttt{\#!/usr/bin/env python3} in die erste Zeile!
+		\item dann: graphisch oder \texttt{chmod +x Planet.py}
+	\end{itemize}
+	\lstinputlisting{resources/01_getting_started/hi_dad.py}
+	IDLE!
 \end{frame}
 
-% --------------------------- Python Scripte ----------------------------------
-\section{Python Scripte}
-\begin{frame}{Python Scripte}
-\begin{description}
-   	\item[Editor] empfohlen (benutzen wir im Kurs)
-    \begin{itemize}
-        \item \href{https://atom.io}{atom} (weil Github)
-        \item \href{http://www.sublimetext.com/3}{Sublime Text 3} ("Winrar-free")
-        \item \href{https://c9.i}{cloud9} (online, free für open source Projekte)
-    \end{itemize}
-    \item[IDEs] hilfreich bei grö\ss{}eren Projekten, hier nicht genutzt
-    \begin{itemize}
-       	\item \href{https://jetbrains.com/pycharm}{PyCharm} (free + professional für Studenten)
-   	\end{itemize}
-\end{description}
-\end{frame}
-\begin{frame}{Python Scripte}
-\begin{description}
-   	\item[Struktur]
-   	\begin{itemize}
-       	\item Python Scripte sind Textdateien, die auf \texttt{.py} enden
-        \item Python Packages sind Ordner mit einer \texttt{\_\_init\_\_.py} Datei (behandeln wir später)
-    \end{itemize}
-\end{description}
-\end{frame}
-
-
-% ----------------------- Grundlagen der Sprache ------------------------------
-\section{Grundlagen der Sprache}
-\begin{frame}[fragile]{Grundlagen der Sprache}
-    Python ist eine schwach typisierte Scriptsprache (weakly typed scripting language). Es gibt Typen (anders als in JavaScript), aber Variablen haben keine festen Typen.\\
-
-    \textbf{Kommentare:}
-    \lstinputlisting{resources/01_getting_started/comments.py}
-\end{frame}
-
-\begin{frame}
+% ----------------------- Datentypen ------------------------------
+\section{Datentypen}
+\begin{frame}{Datentypen}
 	\textbf{builtin Datentypen:}\\
 	\begin{tabular}{c|l}
 		Name & Funktion \\ \hline
-		\texttt{object} & Basistyp, alles erbt von \texttt{object} \\
-		\texttt{int} & Ganzzahl "beliebiger" Größe \\
-		\texttt{float} & Kommazahl "beliebiger" Größe \\
-		\texttt{bool} & Wahrheitswert (\texttt{True}, \texttt{False})\\
-		\texttt{None} & Typ des \texttt{None}-Objektes \\
-		\texttt{type} & Grundtyp aller Typen (z.B. \texttt{int} ist eine Instanz von \texttt{int}) \\
-		\texttt{list} & standard Liste \\
-		\texttt{tuple} & unveränderbares n-Tupel \\
+		\color{gray}\texttt{object} & \color{gray}Basistyp, alles erbt von \texttt{object} \\
+		\onslide<2->{\color{blue}\texttt{str} & \color{blue}Strings, Zeichenketten} \\
+		\onslide<3->{\color{blue}\texttt{int} & \color{blue}Ganzzahl "beliebiger" Größe} \\
+		\onslide<4->{\texttt{bool} & Wahrheitswert (\texttt{True}, \texttt{False})} \\
+		\onslide<5->{\texttt{function} & Funktionen } \\
+		\onslide<6->{\color{blue}\texttt{float} & \color{blue}Kommazahl: \texttt{d = sqrt(2); d**2 == 2?} } \\
+		\onslide<7->{\texttt{None} & Das Nichts \\
+		\color{gray}\texttt{type} & \color{gray}Grundtyp aller Typen (z.B. \texttt{type(x) == int}) \\
+		\hline}
+		\onslide<8->{\color{blue}\texttt{list} & \color{blue}standard Liste: \texttt{L = [1, 2, "drei"]} } \\
+		\onslide<9->{\texttt{tuple} & unveränderbares n-Tupel \\
 		\texttt{set} & (mathematische) Menge von Objekten \\
-		\texttt{frozenset} & unveränderbare (mathematische) Menge von Objekten \\
-		\texttt{dict} & Hash-Map \\
+		\color{gray}\texttt{frozenset} & \color{gray}unveränderbare (mathematische) Menge von Objekten \\
+		\texttt{dict} & Hash-Map } \\
 	\end{tabular}
 \end{frame}
 
-
-% ------------------------- Das erste Programm --------------------------------
-\section{Das erste Programm}
-\begin{frame}[fragile]{Das erste Programm}
-	Ein simples "Hallo Welt"-Programm:\\[.5cm]
-	\lstinputlisting{resources/01_getting_started/hello_world.py}
+% ----------------------- Konvention, Indent & Kommentare ------------------------------
+\section{Konvention, Indent \& Kommentare}
+\subsection{Namenskonvention}
+\begin{frame}[fragile]{Namenskonvention}
+	\begin{description}
+		\item[\textbf{Klassen}] \textit{PascalCase}
+		\item[\textbf{Variablen, Funktionen, Methoden}] \textit{snake\_case} \\
+		\item[\textbf{protected Variablen, Funktionen, Methoden}] \alert{\texttt{\_intern}} oder \alert{\texttt{\_\_privat\_\_}}
+		\item[\textbf{Merke}] kein Zugriffsmanagement: man könnte, sollte aber nicht
+	\end{description}
+\end{frame}
+\subsection{Indent und Kommentare}
+\begin{frame}[fragile]{Indent und Kommentare}
+	\begin{itemize}
+		\item Funktionen definieren mit \\
+			\texttt{def <funktionsname>([parameter\_liste, ...]): block}
+		\item Codeblöcke sind gleichmäßig eingerückt (\texttt{Tab} \alert{\texttt{!=}} \texttt{Space}) \\
+	\end{itemize}
+	\textbf{Kommentare:}
+	\lstinputlisting{resources/01_getting_started/comments.py}
 \end{frame}
 
-
-% ----------------------- Wichtige Eigenschaften ------------------------------
-\begin{frame}[fragile]{Das erste Programm}
-	\textbf{Wichtige Eigenschaften:}
+% ------------------------- Erste Aufgabe --------------------------------
+\section{Erste Aufgabe}
+\begin{frame}[fragile]{Erste Aufgabe}
+	Eine simple Debug-Funktion: \\[.5cm]
+	\lstinputlisting{resources/01_getting_started/debug_question.py}
+\end{frame}
+\begin{frame}[fragile]{Debug-Funktion}
+	\onslide<2->\textbf{Boilerplate:}
 	\begin{itemize}
-	    \item Keine Semikolons
-	    \item Keine geschweiften Klammern für Codeblöcke
-	    \item Einrückungen zeigen Codeblöcke an
-	    \item Funktionsaufrufe immer mit runden Klammern
-	    \item Funktionen definieren mit \\
-	   		  \alert{\texttt{def <funktionsname>([parameter\_liste, ...]):}}
-	    \item Variablen mit der Struktur \alert{\texttt{\_\_name\_\_}} sind spezielle Werte (gewöhnlich aus \alert{\texttt{builtin}} oder Methoden von Standardtypen)
+		\item<2-> Variablen mit der Struktur \alert{\texttt{\_\_name\_\_}} sind spezielle Werte
+		\item<3-> Operatoren?
 	\end{itemize}
+	\lstinputlisting{resources/01_getting_started/debug_concat.py}
+	\onslide<2->{\lstinputlisting{resources/01_getting_started/debug_main.py}}
 \end{frame}
 
 
 % ------------------------------ Operatoren -----------------------------------
 \section{Operatoren}
+\subsection{gewöhnliche Operatoren}
 \begin{frame}[fragile]{Operatoren}
 	\begin{description}
-	    \item[mathematisch] \alert{\texttt{+}}, \alert{\texttt{-}}, \alert{\texttt{*}}, \alert{\texttt{/}}
-	    \item[vergleichend] \alert{\texttt{<}}, \alert{\texttt{>}}, \alert{\texttt{<=}}, \alert{\texttt{>=}}, \alert{\texttt{==}} (Wert gleich), \alert{\texttt{is}} (gleiches Objekt/gleiche Referenz)
-	    \item[logisch] \alert{\texttt{and}}, \alert{\texttt{or}}, \alert{\texttt{not}}\alert{\texttt{(a \&\& b) || (!c)}} aus C oder Java entspricht \alert{\texttt{(a and b) or not c}} in Python
-	    \item[bitweise] \alert{\texttt{\&}}, \alert{\texttt{|}}, \alert{\texttt{<<}}, \alert{\texttt{>>}}, \alert{\texttt{\^}} (xor), \alert{\texttt{\~}} (invertieren)
-	    \item[Accessoren] \alert{\texttt{.}} (für Methoden und Attribute), \alert{\texttt{[]}} (für Datenstrukturen mit Index)
+		\item[mathematisch] \alert{\texttt{+}}, \alert{\texttt{-}}, \alert{\texttt{*}}, \alert{\texttt{/}}, \alert{\texttt{//}}, \alert{\texttt{\%}}, \texttt{2 ** 5} nicht: \texttt{2 \^{} 5}
+		\item[bitweise]<2-> \alert{\texttt{\&}}, \alert{\texttt{|}}, \alert{\texttt{<<}}, \alert{\texttt{>>}}, \alert{\texttt{\^}} (xor), \alert{\texttt{\~}} (invertieren)
+		\item[vergleichend]<3-> \alert{\texttt{<}}, \alert{\texttt{>}}, \alert{\texttt{<=}}, \alert{\texttt{>=}}, \alert{\texttt{==}} (Wert gleich), \alert{\texttt{is}} (gleiches Objekt/gleiche Referenz)
+		\item[logisch]<4-> \alert{\texttt{and}}, \alert{\texttt{or}}, \alert{\texttt{not}}
+		\item[Aufgabe]<5-> \texttt{if/else}, \texttt{return <wert>}, \texttt{type}
 	\end{description}
+	\onslide<5->\lstinputlisting{resources/01_getting_started/if_question.py}
 \end{frame}
-
-
-% -------------------------- Namenskonvention -------------------------------
-\section{Namenskonvention}
-\begin{frame}[fragile]{Namenskonvention}
+\subsection{If/Else-Aufgabe}
+\begin{frame}[fragile]{If/Else/Boolean}
+	\lstinputlisting{resources/01_getting_started/if.py}
+	\onslide<2->\lstinputlisting{resources/01_getting_started/if_boolean.py}
+\end{frame}
+\subsection{besondere Operatoren}
+\begin{frame}[fragile]{besondere Operatoren}
 	\begin{description}
-	    \item[\textbf{Klassen}] \textit{PascalCase}, alles direkt zusammen, groß beginnend und jedes neue Wort groß
-	    \item[\textbf{Variablen, Funktionen, Methoden}] \textit{snake\_case}, alles klein und Wörter mit Unterstrich getrennt \\
-	    \textbf{Merke:} Da \alert{\texttt{-}} ein Operator ist, ist es in Namen von Variablen, Funktionen etc. \textbf{nicht} zulässig (damit Python eine Kontextfreie Sprache ist)
-	    \item[\textbf{protected Variablen, Funktionen, Methoden}] beginnen mit einem Unterstrich \alert{\texttt{\_}} oder mit zweien \alert{\texttt{\_\_}} für private
-	    \item[\textbf{Merke}] Python hat kein Zugriffsmanagement. Die Regel mit dem Unterstrich ist nur eine Konvention um zu verhindern, dass andere Teile des Codes nutzen, der eine hohe Wahrscheinlichkeit hat in Zukunft verändert zu werden.
+		\onslide<1->{\item[\alert{\texttt{()}}] für Aufrufbares (Funktionen): \item \texttt{debug("{}A", 1, 7)}}
+		\onslide<2->{\item[\alert{\texttt{[]}}] für Datenstrukturen mit Index: \item \texttt{name[0]}, \texttt{"name"[1:3]}}
+		\onslide<3->{\item[\alert{\texttt{.}}] für Methoden und Attribute: \item \texttt{"name".index("m")}}
 	\end{description}
 \end{frame}
 
-
-% ------------------------- Strings - Grundlagen -------------------------------
-\section{Strings}
-\subsection{Grundlagen}
-\begin{frame}[fragile]{Strings - Grundlagen}
-	\begin{itemize}
-	    \item Der Typ eines Strings ist \alert{\texttt{str}}.
-	    \item Strings sind in Python immutable (nicht veränderbar). Jede String Operation erzeugt einen neuen String.
-	    \item Ein String kann erzeugt werden mit einer Zeichenkette in Anführungszeichen, \alert{\texttt{'{}'{}}} oder \alert{\texttt{"{}"{}}} (beide sind äquivalent).
-	    \item rohe Strings mir dem Präfix \alert{\texttt{r}}, \alert{\texttt{r"mystring"}} oder \alert{\texttt{r'mystring'}}
-	    \item Strings in Python3 sind UTF-8 encoded.
-	\end{itemize}
-\end{frame}
-
-
-% ------------------------- Strings - Verknüpfen -------------------------------
-\subsection{Verknüpfen}
-\begin{frame}[fragile]{Strings - Verknüpfen}
-	\begin{itemize}
-	    \item Strings können durch Konkatenation verknüpft werden \\
-	    \lstinputlisting[lastline=1]{resources/01_getting_started/string_concatenation.py}
-	    \item Listen, Tupel etc. von Strings können via `str.join` verknüpft werden \\
-	    \lstinputlisting[firstline=3]{resources/01_getting_started/string_concatenation.py}
-	    Dabei ist der String, auf welchem die Methode aufgerufen wird, der Separator.
-	\end{itemize}
-\end{frame}
-
-
-% ------------------------ Strings - Formatierung ------------------------------
-\subsection{Formatierung}
-\begin{frame}[fragile]{Strings - Formatierung}
-	Wir wollen den String \alert{\texttt{'my string 4 vier'}} erzeugen.
-
-	\lstinputlisting[lastline=10]{resources/01_getting_started/string_format.py}
-\end{frame}
-
-\begin{frame}[fragile]{Strings - Formatierung}
-	Wir wollen den String \alert{\texttt{'my string 4 vier'}} erzeugen.
-	\lstinputlisting[firstline=12]{resources/01_getting_started/string_format.py}
+% ------------------------ Zusatz und Ausblick ------------------------------
+\section{Zusatz und Ausblick}
+\begin{frame}[fragile]{Zusatz und Ausblick}
+	Unschön:
+	\lstinputlisting{resources/01_getting_started/debug_concat.py}
+	\onslide<2->\lstinputlisting[lastline=10]{resources/01_getting_started/debug_format.py}
+	\onslide<3->\lstinputlisting[lastline=10]{resources/01_getting_started/debug_loop_question.py}
 \end{frame}
 
 
