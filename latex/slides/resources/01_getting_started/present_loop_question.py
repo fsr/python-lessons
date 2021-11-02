@@ -1,4 +1,4 @@
-def debug_list(name, positions):
+def present_list(name, infos):
     return f"{name}@({...})"
 
 positions = ["APB", "E005", "Di5"]

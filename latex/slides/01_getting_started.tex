@@ -24,9 +24,9 @@
 	\begin{itemize}
 		\item Ressourcen
 		\begin{itemize}
-			\item \url{http://auditorium.inf.tu-dresden.de}
-			\item Beim Googlen: Vermeidet die python 2.7 Doku
+			\item Beim Suchen: Vermeidet die python 2.7 Doku
 			\item \url{docs.python.org}: offizielle Dokumentation
+			\item \url{http://auditorium.inf.tu-dresden.de}
 			\item \url{https://github.com/fsr}: iFSR auf Github
 			\item[ich] \url{mailto:anton.obersteiner1@mailbox.tu-dresden.de}
 		\end{itemize}
@@ -48,18 +48,19 @@
 \end{frame}
 \begin{frame}{Editor/IDE}
 	\begin{description}
-		\item[Editor] empfohlen (benutzen wir im Kurs)
+		\item[Editor] einfache Färbung/Vervollständigung
 		\begin{itemize}
 			\item \url{https://atom.io} (weil Github)
 			\item \url{http://www.sublimetext.com/3}
 			\item \url{https://c9.i}: cloud9 (online, free für open source Projekte)
-			\item \texttt{idle} aus \texttt{python3-dev}
 		\end{itemize}
-		\item[IDEs] hilfreich bei größeren Projekten, hier nicht genutzt
+		\item[IDEs] mehr Unterstützung $\to$ besonders für große Projekte
 		\begin{itemize}
 			\item \href{https://jetbrains.com/pycharm}{PyCharm} (free + professional für Studenten)
+			\item IntelliJ, VSCode, ...
+			\item \texttt{idle} aus \texttt{python3-dev} oder \texttt{idle}
 		\end{itemize}
-		\lstinputlisting{resources/01_getting_started/Planet.py}
+		\lstinputlisting{resources/01_getting_started/hello_world.py}
 		IDLE?
 	\end{description}
 \end{frame}
@@ -68,11 +69,11 @@
 		\item Python-Datei: \texttt{text\_file.py}
 		\item Im Terminal starten: \texttt{python3} bzw. \texttt{Python.exe}
 		\item Ausführbar machen: Windows: Python wählen
-		\item Linux: \texttt{\#!/usr/bin/env python3} in die erste Zeile!
+		\item Linux: Pfad in die erste Zeile!
 		\item dann: graphisch oder \texttt{chmod +x Planet.py}
 	\end{itemize}
 	\lstinputlisting{resources/01_getting_started/hi_dad.py}
-	IDLE!
+	IDLE! $\to$ Variablen, Funktionen, Typen
 \end{frame}
 
 % ----------------------- Datentypen ------------------------------
@@ -120,20 +121,14 @@
 	\lstinputlisting{resources/01_getting_started/comments.py}
 \end{frame}
 
-% ------------------------- Erste Aufgabe --------------------------------
-\section{Erste Aufgabe}
-\begin{frame}[fragile]{Erste Aufgabe}
-	Eine simple Debug-Funktion: \\[.5cm]
-	\lstinputlisting{resources/01_getting_started/debug_question.py}
-\end{frame}
-\begin{frame}[fragile]{Debug-Funktion}
-	\onslide<2->\textbf{Boilerplate:}
-	\begin{itemize}
-		\item<2-> Variablen mit der Struktur \alert{\texttt{\_\_name\_\_}} sind spezielle Werte
-		\item<3-> Operatoren?
-	\end{itemize}
-	\lstinputlisting{resources/01_getting_started/debug_concat.py}
-	\onslide<2->{\lstinputlisting{resources/01_getting_started/debug_main.py}}
+% ------------------------- Aufgabe --------------------------------
+\section{Aufgabe}
+\begin{frame}[fragile]{Aufgabe}
+	Eine simple Text-Funktion: \\[.5cm]
+	\lstinputlisting{resources/01_getting_started/present_question.py}
+	\onslide<2->\lstinputlisting{resources/01_getting_started/present_concat.py}
+	\onslide<3->\lstinputlisting{resources/01_getting_started/present_main.py}
+	\onslide<4-> Operatoren?
 \end{frame}
 
 
@@ -142,7 +137,8 @@
 \subsection{gewöhnliche Operatoren}
 \begin{frame}[fragile]{Operatoren}
 	\begin{description}
-		\item[mathematisch] \alert{\texttt{+}}, \alert{\texttt{-}}, \alert{\texttt{*}}, \alert{\texttt{/}}, \alert{\texttt{//}}, \alert{\texttt{\%}}, \texttt{2 ** 5} nicht: \texttt{2 \^{} 5}
+		\item[text] \alert{\texttt{+}}, \alert{\texttt{*}}, \alert{\texttt{\%}}
+		\item[mathematisch]<2-> \alert{\texttt{+}}, \alert{\texttt{-}}, \alert{\texttt{*}}, \alert{\texttt{/}}, \alert{\texttt{//}}, \alert{\texttt{\%}}, \texttt{2 ** 5} nicht: \texttt{2 \^{} 5}
 		\item[bitweise]<2-> \alert{\texttt{\&}}, \alert{\texttt{|}}, \alert{\texttt{<<}}, \alert{\texttt{>>}}, \alert{\texttt{\^}} (xor), \alert{\texttt{\~}} (invertieren)
 		\item[vergleichend]<3-> \alert{\texttt{<}}, \alert{\texttt{>}}, \alert{\texttt{<=}}, \alert{\texttt{>=}}, \alert{\texttt{==}} (Wert gleich), \alert{\texttt{is}} (gleiches Objekt/gleiche Referenz)
 		\item[logisch]<4-> \alert{\texttt{and}}, \alert{\texttt{or}}, \alert{\texttt{not}}
@@ -158,7 +154,7 @@
 \subsection{besondere Operatoren}
 \begin{frame}[fragile]{besondere Operatoren}
 	\begin{description}
-		\onslide<1->{\item[\alert{\texttt{()}}] für Aufrufbares (Funktionen): \item \texttt{debug("{}A", 1, 7)}}
+		\onslide<1->{\item[\alert{\texttt{()}}] für Aufrufbares (Funktionen): \item \texttt{present("{}A", 19, "DD")}}
 		\onslide<2->{\item[\alert{\texttt{[]}}] für Datenstrukturen mit Index: \item \texttt{name[0]}, \texttt{"name"[1:3]}}
 		\onslide<3->{\item[\alert{\texttt{.}}] für Methoden und Attribute: \item \texttt{"name".index("m")}}
 	\end{description}
@@ -168,9 +164,9 @@
 \section{Zusatz und Ausblick}
 \begin{frame}[fragile]{Zusatz und Ausblick}
 	Unschön:
-	\lstinputlisting{resources/01_getting_started/debug_concat.py}
-	\onslide<2->\lstinputlisting[lastline=10]{resources/01_getting_started/debug_format.py}
-	\onslide<3->\lstinputlisting[lastline=10]{resources/01_getting_started/debug_loop_question.py}
+	\lstinputlisting{resources/01_getting_started/present_concat.py}
+	\onslide<2->\lstinputlisting[lastline=10]{resources/01_getting_started/present_format.py}
+	\onslide<3->\lstinputlisting[lastline=10]{resources/01_getting_started/present_loop_question.py}
 \end{frame}
 
 
