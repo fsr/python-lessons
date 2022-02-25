@@ -78,6 +78,7 @@ Grundlegender Syntax:
 Fast der gleiche Syntax, nur diesmal mit 2 Expressions: __KEY__ und
 __VALUE__. Ansonsten gelten die gleichen Regeln.
 
+---
 
 ## Beispiel
 
@@ -99,8 +100,13 @@ enthalten.
 
 ---
 
-Die grundlegende Syntax ist gleich der einer *List Comprehension*. Da
-sich `list` und `dict` auch aus Iterables bauen lassen, gilt prinzipiell:
+Grundlegender Syntax:
+
+```python
+(EXPRESSION for LAUFVARIABLE in ITERABLE (if FILTER))
+```
+
+Da sich `list` und `dict` auch aus Iterables bauen lassen, gilt prinzipiell:
 
 ```python
 list(EXPR for VAR in ITERABLE) == [EXPR for VAR in ITERABLE]
@@ -110,6 +116,64 @@ und
 dict((KEY, VAL) for VAR in ITERABLE) == {KEY: VAL for VAR in ITERABLE}
 ```
 
+**Aber:** Generatoren sind lazy, sie erzeugen die Elemente erst wenn sie iteriert werden.
+
 ---
 
-**Aber:** Generators verhalten sich anders als Lists oder Dicts!
+## Beispiel
+
+```python
+# liefert gerade Zahlen von 0 bis 10 (10 nicht enthalten)
+generator = (i for i in range(10) if i % 2 == 0)
+
+# gibt 0, 2, 4, 6 und 8 aus
+for number in generator:
+    print(number)
+
+# gibt nichts aus, generator ist erschöpft
+for number in generator:
+    print(number)
+
+# wenn alle Elemente sofort erzeugt werden würde mindestens 4GB Speicher benötigt
+for number in (i for i in range(2**32)):
+    print(number)
+```
+
+
+# Nesting
+
+## Nesting
+
+`for` Schleifen in Comprehensions können verschachtelt werden.
+Dabei werden sie von Links nach Rechts ausgeführt, was man bei Variablen beachten muss.
+
+**Wichtig:** Starke Verschachtelung verringert die Lesbarkeit!
+
+---
+
+## Beispiel
+
+```python
+# erzeugt eine Liste welche jede Zahl n
+# von 0 bis 4 (4 nicht enthalten) n mal enthält
+list1 = [i for i in range(4) for _ in range(i)]
+
+# gleicher Code ohne Comprehension
+list2 = []
+for i in range(4):
+    for _ in range(i):
+        l.append(i)
+
+list1 == list2 == [1,2,2,3,3,3]
+
+# löst einen NameError aus, weil
+# a erst durch die zweiten Schleife entsteht
+[i for i in range(a) for a in range(i)]
+
+# zählt für jede Zahl n von 0 bis 4 (4 nicht enthalten)
+# von 0 bis n-1, weil EXPRESSION erst nach der letzten
+# Schleife evaluiert wird
+list3 = [a for i in range(4) for a in range(i)]
+
+list3 == [0,0,1,0,1,2]
+```
