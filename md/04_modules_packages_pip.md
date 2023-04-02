@@ -175,11 +175,11 @@ gibt mehrere Möglichkeiten:
 -   die aktuellste Version eines Moduls:
     `pip install Modulname`
 -   eine bestimmte Version:
-    `pip install Modulname == 2.1`
+    `pip install Modulname==2.1`
 -   alle Versionen ab einem Minimum:
-    `pip install Modulname >= 2.1`
+    `pip install Modulname>=2.1`
 -   alle Versionen bis zu einem Maximum:
-    `pip install Modulname <= 2.1`
+    `pip install Modulname<=2.1`
 
 ## Die requirements.txt
 
