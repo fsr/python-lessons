@@ -193,70 +193,7 @@ s1.add(s2)
 s2.add(5)  # ==> AttributeError: 'frozenset' object has no attribute 'add'
 ```
 
-# Iteraton
-
----
-
--   nur foreach
--   für Iterationen über Integer gibt es `range([start], stop, step=1)`
--   um Iteratoren zu kombinieren kann man
-    `zip(iterator_1, iterator_2, ..., iterator_n)` verwenden
--   alles mit einer `__iter__` Methode ist iterierbar
--   `iter(iterable)` konstruiert einen *stateful iterator*
-
----
-
-```python
-for i in [1,2,3]:
-    if i > 9:
-        break
-    # code
-    else:
-        pass
-        # wenn kein break vorkommt
-
-for i in (1,2,3):
-    # code
-    pass
-
-for i in {1:'value1', 2:'value2'}:
-    # iteration ueber die keys
-    pass
-```
-
----
-
-```python
-for i in {1:'value1', 2:'value2'}.items():
-    # i ist tuple von (key, value)
-    pass
-
-for value1, value2 in [
-        (1, 'werner'),
-        (3, 'geh mal in den keller'),
-        (42, 'ich glaub die russen komm\'')
-    ]:
-    # iteration mit tuple unpacking
-    # code
-```
-
----
-
-```python
-# oder auch
-
-for value1, value2 in zip([1,3,42], ['werner',
-                                     'geh mal in den keller',
-                                     'ich glaub die russen komm\'',
-                                     'dieser string wird in \
-der iteration nicht auftauchen', 'dieser auch nicht'])
-
-for key, value in {1:'value1', 2:'value2'}.items():
-    # iteration ueber keys und values mit tuple unpacking
-    pass
-```
-
-# unpacking
+# Unpacking
 
 ---
 
@@ -282,6 +219,78 @@ a, b, c = 1, 2, 4
 d, e, f, *g = [3, 0, 8, 7, 46, 42]
 f  # ==> 8
 g  # ==> [7, 46, 42]
+```
+
+# Iterations
+
+## Iteratoren
+
+---
+
+  - alles mit einer `__next__` Methode ist ein *Iterator*
+  - Iteratoren stellen eine folge von Elementen dar, aus welcher man mit `next(iterator)` das nächste Element holen kann
+  - wenn der Iterator erschöpft ist wird eine `StopIteration` Exception ausgelöst
+  - gehören zu den *Iterables*
+
+**Wichtig:** Iteratoren besitzen einen internen Zustand und sollten deswegen nicht von mehreren Benutzern gleichzeitig benutzt werden!
+
+Dies kann mit der Verwendung mehrerer unabhängiger Iteratoren umgangen werden.
+
+## Iterables
+
+---
+
+  - alles mit einer `__iter__` Methode ist eine *Iterable*
+  - *Iterables* liefern mit `iter(obj)` einen *Iterator* über sich selbst
+  - `for` Schleifen ermöglichen ein einfaches Durchlaufen
+  - eine *Iterable* über Integer ist `range([start], stop, step=1)`
+  - um Iterables zu kombinieren kann man `zip(iterable_1, iterable_2, ..., iterable_n)` verwenden
+  - `any(iterable)` prüft ob mindestens ein Element einer *Iterable* wahr ist
+  - `all(iterable)` prüft ob alle Elemente einer *Iterable* wahr sind
+
+**Wichtig:** Während des Iterierens können einige Iterables nicht verändert werden
+
+## Beispiele
+
+---
+
+```python
+for i in [1,2,3]:
+    if i > 9:
+        break
+        # verlässt die Schleife
+else:
+    # wenn kein break vorkommt
+    print("keine Zahl größer als 9")
+
+# Iterator über die Zahlen von 0 bis 3 (3 nicht enthalten)
+iterator = iter(range(0, 3))
+
+# gibt 0, 1 und 2 aus
+for i in iterator:
+    print(i)
+
+# kein Output, Iterator ist erschöpft
+for i in iterator:
+    print(i)
+
+# gibt 1, 'value1' und 2, 'value2' aus
+for i in {1:'value1', 2:'value2'}.items():
+    # i ist ein Tuple von (key, value)
+    print(i[0], i[1])
+
+# iteration mit tuple unpacking
+# gleiche Ausgabe wie letztes Beispiel
+for key, value in {1:'value1', 2:'value2'}.items():
+    print(key, value)
+
+# zip verbindet zwei Iterables und stoppt wenn einer die Elemente ausgehen
+# -4 wird deswegen nicht ausgegeben
+for value1, value2 in zip((1,2,3), (-1,-2,-3,-4)):
+    print(value1, value2)
+
+# True != False
+any((False, True, False)) != all((False, True, False))
 ```
 
 # Context Manager
@@ -313,7 +322,7 @@ with MyManager() as m:
     m.do_things()
 ```
 
-#File Handling
+# File Handling
 
 ---
 
